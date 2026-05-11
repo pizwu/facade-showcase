@@ -142,9 +142,9 @@
 
     /* ── ARTICLE CONTENT ── */
     .article-content {
-      background: var(--bg-light);
-      padding: var(--section-gap) var(--side-pad);
-    }
+       background: var(--bg-light);
+       padding: var(--section-gap) var(--side-pad) 64px;
+     }
     .article-content-inner {
       max-width: 720px;
       margin: 0 auto;
@@ -320,12 +320,15 @@
       gap: 32px;
     }
     .related-card {
-      background: white;
-      border: 1px solid #e1e8f0;
-      border-radius: 6px;
-      overflow: hidden;
-      transition: transform 0.25s, box-shadow 0.25s;
-    }
+       background: white;
+       border: 1px solid #e1e8f0;
+       border-radius: 6px;
+       overflow: hidden;
+       transition: transform 0.25s, box-shadow 0.25s;
+       text-decoration: none;
+       color: inherit;
+       display: block;
+     }
     .related-card:hover {
       transform: translateY(-4px);
       box-shadow: 0 8px 24px rgba(13, 31, 60, 0.1);
@@ -595,31 +598,6 @@
   </div>
 </section>
 
-<!-- ══ HIGHLIGHT BOX ══ -->
-<section class="highlight-box" data-section="highlight-summary" data-section-title="要點整理" data-section-purpose="方便忙碌的管理者快速抓取重點，提升內容實用性">
-  <div class="highlight-box-inner">
-    <h3 class="highlight-title reveal" data-text="highlight-title" data-text-description="重點整理標題">新主管避雷指南</h3>
-    <div class="highlight-grid">
-      <div class="highlight-item reveal">
-        <div class="highlight-item-title" data-text="highlight-1-title" data-text-description="重點1標題">用「帶人」思維取代「管事」思維</div>
-        <div class="highlight-item-text" data-text="highlight-1-text" data-text-description="重點1說明">先理解再要求，建立信任比建立權威更重要</div>
-      </div>
-      <div class="highlight-item reveal reveal-delay-1">
-        <div class="highlight-item-title" data-text="highlight-2-title" data-text-description="重點2標題">因材施教，避免一視同盲</div>
-        <div class="highlight-item-text" data-text="highlight-2-text" data-text-description="重點2說明">不同員工需要不同的管理方式和成長支援</div>
-      </div>
-      <div class="highlight-item reveal reveal-delay-2">
-        <div class="highlight-item-title" data-text="highlight-3-title" data-text-description="重點3標題">關注過程，幫助員工成功</div>
-        <div class="highlight-item-text" data-text="highlight-3-text" data-text-description="重點3說明">而不只是監督員工達標，提供需要的資源</div>
-      </div>
-      <div class="highlight-item reveal reveal-delay-3">
-        <div class="highlight-item-title" data-text="highlight-4-title" data-text-description="重點4標題">前90天是關鍵期</div>
-        <div class="highlight-item-text" data-text="highlight-4-text" data-text-description="重點4說明">多聽少說，投資時間了解團隊現狀</div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- ══ AUTHOR SECTION ══ -->
 <section class="author-section" data-section="author-intro" data-section-title="關於作者" data-section-purpose="建立余明道個人權威感和信任度，為CTA鋪墊">
   <div class="author-inner">
@@ -653,27 +631,27 @@
   <div class="related-inner">
     <h3 class="related-title reveal" data-text="related-title" data-text-description="延伸閱讀標題">延伸閱讀</h3>
     <div class="related-grid">
-      <article class="related-card reveal">
-        <img src="https://images.pexels.com/photos/5686014/pexels-photo-5686014.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=650&amp;w=940" alt="team leadership meeting" data-img-query="team leadership business meeting" data-img-orientation="landscape" data-img-description="團隊領導會議場景">
-        <div class="related-card-content">
-          <h4 class="related-card-title" data-text="related-1-title" data-text-description="相關文章1標題">為什麼你的主管培訓「上完就忘」？3個讓學習真正落地的方法</h4>
-          <p class="related-card-excerpt" data-text="related-1-excerpt" data-text-description="相關文章1摘要">多數企業培訓課後效果不彰，問題出在缺乏系統性的落地機制...</p>
-        </div>
-      </article>
-      <article class="related-card reveal reveal-delay-1">
-        <img src="https://images.pexels.com/photos/5862377/pexels-photo-5862377.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=650&amp;w=940" alt="manager coaching employee workplace" data-img-query="manager coaching employee workplace" data-img-orientation="landscape" data-img-description="主管教練員工職場場景">
-        <div class="related-card-content">
-          <h4 class="related-card-title" data-text="related-2-title" data-text-description="相關文章2標題">HR如何判斷主管培訓需求？5個觀察指標告訴你</h4>
-          <p class="related-card-excerpt" data-text="related-2-excerpt" data-text-description="相關文章2摘要">從這5個客觀指標，提前發現主管能力短板，避免等到離職潮才處理...</p>
-        </div>
-      </article>
-      <article class="related-card reveal reveal-delay-2">
-        <img src="https://images.pexels.com/photos/8761519/pexels-photo-8761519.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=650&amp;w=940" alt="corporate training workshop session" data-img-query="corporate training workshop session" data-img-orientation="landscape" data-img-description="企業培訓工作坊場景">
-        <div class="related-card-content">
-          <h4 class="related-card-title" data-text="related-3-title" data-text-description="相關文章3標題">中小企業主管培訓預算怎麼抓？完整成本效益分析</h4>
-          <p class="related-card-excerpt" data-text="related-3-excerpt" data-text-description="相關文章3摘要">培訓投資如何計算ROI？用數據說話，讓老闆看見培訓的真實價值...</p>
-        </div>
-      </article>
+      <a href="blog-post.html" class="related-card reveal">
+         <img src="https://images.pexels.com/photos/5686014/pexels-photo-5686014.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=650&amp;w=940" alt="team leadership meeting" data-img-query="team leadership business meeting" data-img-orientation="landscape" data-img-description="團隊領導會議場景">
+         <div class="related-card-content">
+           <h4 class="related-card-title" data-text="related-1-title" data-text-description="相關文章1標題">為什麼你的主管培訓「上完就忘」？3個讓學習真正落地的方法</h4>
+           <p class="related-card-excerpt" data-text="related-1-excerpt" data-text-description="相關文章1摘要">多數企業培訓課後效果不彰，問題出在缺乏系統性的落地機制...</p>
+         </div>
+       </a>
+       <a href="blog-post.html" class="related-card reveal reveal-delay-1">
+         <img src="https://images.pexels.com/photos/5862377/pexels-photo-5862377.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=650&amp;w=940" alt="manager coaching employee workplace" data-img-query="manager coaching employee workplace" data-img-orientation="landscape" data-img-description="主管教練員工職場場景">
+         <div class="related-card-content">
+           <h4 class="related-card-title" data-text="related-2-title" data-text-description="相關文章2標題">HR如何判斷主管培訓需求？5個觀察指標告訴你</h4>
+           <p class="related-card-excerpt" data-text="related-2-excerpt" data-text-description="相關文章2摘要">從這5個客觀指標，提前發現主管能力短板，避免等到離職潮才處理...</p>
+         </div>
+       </a>
+       <a href="blog-post.html" class="related-card reveal reveal-delay-2">
+         <img src="https://images.pexels.com/photos/8761519/pexels-photo-8761519.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=650&amp;w=940" alt="corporate training workshop session" data-img-query="corporate training workshop session" data-img-orientation="landscape" data-img-description="企業培訓工作坊場景">
+         <div class="related-card-content">
+           <h4 class="related-card-title" data-text="related-3-title" data-text-description="相關文章3標題">中小企業主管培訓預算怎麼抓？完整成本效益分析</h4>
+           <p class="related-card-excerpt" data-text="related-3-excerpt" data-text-description="相關文章3摘要">培訓投資如何計算ROI？用數據說話，讓老闆看見培訓的真實價值...</p>
+         </div>
+       </a>
     </div>
   </div>
 </section>
