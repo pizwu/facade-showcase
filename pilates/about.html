@@ -1,0 +1,1200 @@
+<!DOCTYPE html><html lang="zh-Hant"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>關於我們｜身研所 Somatics Studio｜復健導向皮拉提斯的專業差異</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&amp;family=Noto+Sans+TC:wght@300;400;500&amp;family=Noto+Serif+TC:wght@300;400&amp;display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg-primary: #FAF8F5;
+  --bg-secondary: #F3EFE8;
+  --bg-deep: #2C2825;
+  --text-primary: #2C2825;
+  --text-muted: #7A6E66;
+  --text-light: #B5A99E;
+  --accent: #C8956C;
+  --accent-soft: #E8D5C4;
+  --border: #E2DAD0;
+  --font-serif: 'Cormorant Garamond', 'Noto Serif TC', serif;
+  --font-sans: 'Noto Sans TC', sans-serif;
+  --section-gap: 120px;
+  --content-max: 1080px;
+  --side-pad: 48px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-sans);
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Nav ── */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  background: rgba(250, 248, 245, 0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav-inner {
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding: 0 var(--side-pad);
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-logo {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+.nav-logo-zh {
+  font-family: var(--font-serif);
+  font-size: 17px;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  color: var(--text-primary);
+}
+.nav-logo-en {
+  font-size: 10px;
+  font-weight: 300;
+  letter-spacing: 0.18em;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+  list-style: none;
+}
+.nav-links a {
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.25s;
+}
+.nav-links a:hover { color: var(--text-primary); }
+.nav-links a[href="about.html"] { color: var(--text-primary); }
+
+.nav-cta {
+  background: var(--text-primary);
+  color: var(--bg-primary) !important;
+  padding: 9px 22px !important;
+  border-radius: 2px;
+  font-size: 13px !important;
+  font-weight: 400 !important;
+  letter-spacing: 0.1em;
+  transition: background 0.25s !important;
+}
+.nav-cta:hover { background: var(--accent) !important; color: #fff !important; }
+
+/* ── Section wrapper ── */
+.section-wrap {
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding: 0 var(--side-pad);
+}
+
+/* ── Common ── */
+.section-header {
+  margin-bottom: 64px;
+}
+.section-tag {
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  color: var(--accent);
+  text-transform: uppercase;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.section-tag::before {
+  content: '';
+  width: 20px;
+  height: 1px;
+  background: var(--accent);
+}
+.section-title {
+  font-family: var(--font-serif);
+  font-size: clamp(26px, 3vw, 38px);
+  font-weight: 400;
+  letter-spacing: 0.03em;
+  line-height: 1.4;
+  color: var(--text-primary);
+  margin-bottom: 16px;
+}
+.section-desc {
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 1.9;
+  color: var(--text-muted);
+  max-width: 560px;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: #fff;
+  padding: 14px 32px;
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-decoration: none;
+  border-radius: 2px;
+  transition: background 0.25s, transform 0.2s;
+  display: inline-block;
+}
+.btn-primary:hover { background: #b5784f; transform: translateY(-1px); }
+
+.btn-ghost {
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: color 0.25s;
+}
+.btn-ghost:hover { color: var(--text-primary); }
+.btn-ghost::after { content: '→'; transition: transform 0.2s; }
+.btn-ghost:hover::after { transform: translateX(3px); }
+
+/* ── Hero ── */
+.hero {
+  padding-top: 64px;
+  padding-bottom: 80px;
+  background: var(--bg-primary);
+}
+
+.hero-layout {
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding: 0 var(--side-pad);
+  padding-top: 80px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.hero-content { }
+
+.hero-label {
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.22em;
+  color: var(--accent);
+  text-transform: uppercase;
+  margin-bottom: 28px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.hero-label::before {
+  content: '';
+  display: block;
+  width: 28px;
+  height: 1px;
+  background: var(--accent);
+}
+
+.hero-title {
+  font-family: var(--font-serif);
+  font-size: clamp(34px, 4.2vw, 52px);
+  font-weight: 400;
+  line-height: 1.3;
+  color: var(--text-primary);
+  margin-bottom: 24px;
+  letter-spacing: 0.03em;
+}
+.hero-title em {
+  font-style: italic;
+  color: var(--accent);
+}
+
+.hero-subtitle {
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 1.9;
+  color: var(--text-muted);
+  margin-bottom: 32px;
+}
+
+.hero-body {
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.9;
+  color: var(--text-muted);
+  margin-bottom: 44px;
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.hero-visual {
+  position: relative;
+}
+
+.hero-img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  display: block;
+  border-radius: 2px;
+}
+
+/* ── 專業背景 ── */
+.credentials {
+  padding: var(--section-gap) 0;
+  background: var(--bg-deep);
+}
+
+.credentials .section-tag,
+.credentials .section-tag::before { color: var(--accent); background: var(--accent); }
+.credentials .section-title { color: #FAF8F5; }
+.credentials .section-desc { color: #9A8E86; max-width: 640px; }
+
+.credentials-intro {
+  margin-bottom: 64px;
+}
+
+.credentials-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: rgba(255,255,255,0.06);
+  margin-bottom: 48px;
+}
+
+.credential-card {
+  background: #342E2A;
+  padding: 44px 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.credential-icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.credential-icon svg {
+  width: 24px;
+  height: 24px;
+  stroke: var(--accent);
+  fill: none;
+}
+
+.credential-title {
+  font-family: var(--font-serif);
+  font-size: 18px;
+  font-weight: 400;
+  color: #FAF8F5;
+  letter-spacing: 0.03em;
+  margin-bottom: 8px;
+}
+
+.credential-desc {
+  font-size: 13px;
+  font-weight: 300;
+  line-height: 1.8;
+  color: #9A8E86;
+}
+
+.credentials-summary {
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 1.9;
+  color: #9A8E86;
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+/* ── 服務哲學 ── */
+.philosophy {
+  padding: var(--section-gap) 0;
+  background: var(--bg-secondary);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.philosophy::before {
+  content: '心';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: var(--font-serif);
+  font-size: 320px;
+  color: var(--border);
+  opacity: 0.3;
+  pointer-events: none;
+  line-height: 1;
+}
+
+.philosophy-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 var(--side-pad);
+}
+
+.philosophy-quote {
+  font-family: var(--font-serif);
+  font-size: clamp(28px, 3.5vw, 44px);
+  font-weight: 400;
+  line-height: 1.35;
+  color: var(--text-primary);
+  margin-bottom: 32px;
+  letter-spacing: 0.03em;
+}
+.philosophy-quote em {
+  font-style: italic;
+  color: var(--accent);
+}
+
+.philosophy-content {
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 1.9;
+  color: var(--text-muted);
+  margin-bottom: 32px;
+  text-align: left;
+}
+
+.philosophy-highlight {
+  font-family: var(--font-serif);
+  font-size: 18px;
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1.7;
+  color: var(--text-primary);
+  padding: 24px 32px;
+  border-left: 3px solid var(--accent);
+  background: var(--bg-primary);
+  margin: 48px 0;
+}
+
+/* ── 工作室環境 ── */
+.studio {
+  padding: var(--section-gap) 0;
+  background: var(--bg-primary);
+}
+
+.studio-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.studio-visual {
+  position: relative;
+}
+
+.studio-img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  display: block;
+  border-radius: 2px;
+}
+
+.studio-features {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 32px;
+}
+
+.studio-feature {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 18px 20px;
+  background: var(--bg-secondary);
+  border-left: 2px solid var(--accent);
+  border-radius: 2px;
+}
+
+.studio-feature-icon {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.studio-feature-icon svg {
+  width: 18px;
+  height: 18px;
+  stroke: var(--accent);
+  fill: none;
+}
+
+.studio-feature-text {
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--text-muted);
+  line-height: 1.7;
+  letter-spacing: 0.04em;
+}
+
+/* ── 承諾 ── */
+.promises {
+  padding: var(--section-gap) 0;
+  background: var(--bg-deep);
+}
+
+.promises .section-tag,
+.promises .section-tag::before { color: var(--accent); background: var(--accent); }
+.promises .section-title { color: #FAF8F5; }
+.promises .section-desc { color: #9A8E86; }
+
+.promises-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: rgba(255,255,255,0.06);
+  margin-top: 64px;
+  margin-bottom: 48px;
+}
+
+.promise-card {
+  background: #342E2A;
+  padding: 40px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.promise-icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.promise-icon svg {
+  width: 24px;
+  height: 24px;
+  stroke: var(--accent);
+  fill: none;
+}
+
+.promise-title {
+  font-family: var(--font-serif);
+  font-size: 18px;
+  font-weight: 400;
+  color: #FAF8F5;
+  letter-spacing: 0.03em;
+  margin-bottom: 8px;
+}
+
+.promise-desc {
+  font-size: 13px;
+  font-weight: 300;
+  line-height: 1.8;
+  color: #9A8E86;
+}
+
+.promises-summary {
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 1.9;
+  color: #9A8E86;
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+/* ── CTA ── */
+.cta-section {
+  padding: 100px 0;
+  background: var(--bg-primary);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-section::before {
+  content: '身';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: var(--font-serif);
+  font-size: 380px;
+  color: var(--border);
+  opacity: 0.3;
+  pointer-events: none;
+  line-height: 1;
+}
+
+.cta-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 0 var(--side-pad);
+}
+
+.cta-eyebrow {
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  color: var(--accent);
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+
+.cta-title {
+  font-family: var(--font-serif);
+  font-size: clamp(28px, 3.5vw, 44px);
+  font-weight: 400;
+  line-height: 1.35;
+  color: var(--text-primary);
+  margin-bottom: 20px;
+  letter-spacing: 0.03em;
+}
+
+.cta-subtitle {
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 1.9;
+  color: var(--text-muted);
+  margin-bottom: 48px;
+}
+
+.cta-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.cta-note {
+  margin-top: 24px;
+  font-size: 12px;
+  font-weight: 300;
+  color: var(--text-light);
+  letter-spacing: 0.06em;
+}
+
+.btn-outline {
+  border: 1px solid var(--text-muted);
+  color: var(--text-muted);
+  padding: 13px 28px;
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  border-radius: 2px;
+  transition: all 0.25s;
+  display: inline-block;
+}
+.btn-outline:hover { border-color: var(--text-primary); color: var(--text-primary); }
+
+/* ── Footer ── */
+footer {
+  background: var(--bg-deep);
+  padding: 64px 0 36px;
+  color: #9A8E86;
+}
+
+.footer-inner {
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding: 0 var(--side-pad);
+}
+
+.footer-top {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 48px;
+  padding-bottom: 48px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  margin-bottom: 32px;
+}
+
+.footer-logo-zh {
+  font-family: var(--font-serif);
+  font-size: 22px;
+  font-weight: 400;
+  color: #FAF8F5;
+  margin-bottom: 4px;
+  letter-spacing: 0.06em;
+}
+.footer-logo-en {
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  color: #7A6E66;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+.footer-tagline {
+  font-family: var(--font-serif);
+  font-size: 14px;
+  font-style: italic;
+  font-weight: 300;
+  color: #7A6E66;
+  line-height: 1.7;
+}
+
+.footer-col-title {
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  color: #FAF8F5;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.footer-col ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.footer-col a {
+  font-size: 13px;
+  font-weight: 300;
+  color: #7A6E66;
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  transition: color 0.2s;
+}
+.footer-col a:hover { color: #FAF8F5; }
+
+.footer-contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+.footer-contact-item svg {
+  width: 14px;
+  height: 14px;
+  stroke: var(--accent);
+  fill: none;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.footer-contact-item span {
+  font-size: 13px;
+  font-weight: 300;
+  color: #7A6E66;
+  line-height: 1.6;
+  letter-spacing: 0.04em;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.footer-copy {
+  font-size: 12px;
+  font-weight: 300;
+  letter-spacing: 0.06em;
+  color: #5A5550;
+}
+
+/* ── Scroll Reveal ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-delay-1 { transition-delay: 0.08s; }
+.reveal-delay-2 { transition-delay: 0.16s; }
+.reveal-delay-3 { transition-delay: 0.24s; }
+.reveal-delay-4 { transition-delay: 0.32s; }
+
+/* ── RWD ── */
+@media (max-width: 960px) {
+  :root { --side-pad: 32px; --section-gap: 80px; }
+
+  .hero-layout,
+  .studio-layout {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .credentials-grid,
+  .promises-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-top { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 700px) {
+  :root { --side-pad: 20px; --section-gap: 64px; }
+
+  .nav-links { display: none; }
+  .nav-cta { display: inline-block !important; }
+
+  .hero-layout { padding-top: 60px; }
+  .credential-card,
+  .promise-card { padding: 32px 24px; }
+  
+  .footer-top { grid-template-columns: 1fr; }
+  
+  .cta-section::before,
+  .philosophy::before { font-size: 200px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ── Navigation ── -->
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo" style="text-decoration:none;">
+      <span class="nav-logo-zh">身研所</span>
+      <span class="nav-logo-en">Somatics Studio</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="about.html">關於教練</a></li>
+      <li><a href="services.html">服務項目</a></li>
+      <li><a href="blog.html">專業分享</a></li>
+      <li><a href="visit.html">來店資訊</a></li>
+      <li><a href="contact.html" class="nav-cta">預約初次諮詢</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ── Hero ── -->
+<section class="hero" data-section="hero" data-section-title="為什麼選擇復健導向" data-section-purpose="直接回應價格比較疑慮，建立專業差異化認知">
+  <div class="hero-layout">
+    <div class="hero-content">
+      <div class="hero-label reveal">為什麼選擇復健導向</div>
+      <h1 class="hero-title reveal reveal-delay-1" data-text="hero-title" data-text-description="直接回應同樣都叫皮拉提斯為什麼要選復健導向的疑問">
+        同樣都叫皮拉提斯，<br>
+        為什麼要選<em>復健導向</em>？
+      </h1>
+      <p class="hero-subtitle reveal reveal-delay-2" data-text="hero-subtitle" data-text-description="說明復健導向與一般皮拉提斯的本質差異">
+        一般皮拉提斯教的是標準動作，復健導向皮拉提斯看的是妳身體哪裡需要重新學會動。這是兩種完全不同的專業。
+      </p>
+      <div class="hero-body reveal reveal-delay-3" data-text="hero-body" data-text-description="用具體場景說明復健導向的差別在於評估和客製化">
+        當妳因為姿勢問題或術後恢復來找皮拉提斯老師，妳需要的不是「做得標準」，而是「做得對」。復健導向皮拉提斯的差別在於：我會先評估妳的動作模式、找出問題根源，然後設計適合妳的練習方式。<br><br>
+
+        這就是為什麼同樣一小時的課程，我們談論的不是次數，而是妳身體的真實需要。
+      </div>
+      <div class="hero-actions reveal reveal-delay-4">
+        <a href="#process" class="btn-primary">了解評估流程</a>
+        <a href="#promises" class="btn-ghost">看看我的承諾</a>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <img class="hero-img reveal reveal-delay-2" src="https://images.pexels.com/photos/6111605/pexels-photo-6111605.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=650&amp;w=940" alt="教練進行動作評估的專業場景" data-img-query="pilates rehabilitation assessment professional guidance" data-img-orientation="landscape" data-img-description="教練細心評估學員動作模式的專業場景">
+    </div>
+  </div>
+</section>
+
+<!-- ── 專業背景 ── -->
+<section class="credentials" data-section="credentials" data-section-title="專業背景深度介紹" data-section-purpose="建立專業可信度，說明為何有能力處理復健導向需求">
+  <div class="section-wrap">
+    <div class="credentials-intro reveal">
+      <div class="section-header">
+        <p class="section-tag">專業背景</p>
+        <h2 class="section-title" data-text="credentials-title" data-text-description="專業背景區塊標題，強調專業背景與安心保證的關聯">
+          我的專業背景，也是妳的安心保證
+        </h2>
+        <p class="section-desc" data-text="credentials-desc" data-text-description="說明認證和訓練如何讓我能真正看懂身體的語言">
+          這些認證和訓練，讓我能真正看懂妳身體的語言
+        </p>
+      </div>
+    </div>
+
+    <div class="credentials-grid">
+      <div class="credential-card reveal">
+        <div class="credential-icon">
+          <svg viewBox="0 0 24 24" stroke-width="1.5">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+          </svg>
+        </div>
+        <h3 class="credential-title" data-text="credential-1-title" data-text-description="第一項認證標題">
+          STOTT Pilates 完整器械認證
+        </h3>
+        <p class="credential-desc" data-text="credential-1-desc" data-text-description="說明完整認證的範圍和專業性">
+          Matwork、Reformer、Cadillac &amp; Barrels 完整認證，確保我能運用各種器械設計最適合妳的練習內容。
+        </p>
+      </div>
+
+      <div class="credential-card reveal reveal-delay-1">
+        <div class="credential-icon">
+          <svg viewBox="0 0 24 24" stroke-width="1.5">
+            <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+          </svg>
+        </div>
+        <h3 class="credential-title" data-text="credential-2-title" data-text-description="第二項認證標題">
+          物理治療輔助訓練背景
+        </h3>
+        <p class="credential-desc" data-text="credential-2-desc" data-text-description="說明物理治療背景如何幫助識別動作問題">
+          專精動作功能評估，4 年術後動作恢復指導經驗，讓我能辨識出動作代償模式和肌肉不平衡的根源。
+        </p>
+      </div>
+
+      <div class="credential-card reveal reveal-delay-2">
+        <div class="credential-icon">
+          <svg viewBox="0 0 24 24" stroke-width="1.5">
+            <circle cx="12" cy="12" r="10"></circle>
+            <path d="M12 8v4l3 3"></path>
+          </svg>
+        </div>
+        <h3 class="credential-title" data-text="credential-3-title" data-text-description="第三項認證標題">
+          復健導向皮拉提斯專業訓練
+        </h3>
+        <p class="credential-desc" data-text="credential-3-desc" data-text-description="說明復健導向專業訓練的價值">
+          深入學習復健導向皮拉提斯方法學，專精姿勢矯正與動作重新教育的系統性訓練。
+        </p>
+      </div>
+
+      <div class="credential-card reveal reveal-delay-3">
+        <div class="credential-icon">
+          <svg viewBox="0 0 24 24" stroke-width="1.5">
+            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+            <circle cx="9" cy="7" r="4"></circle>
+            <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+          </svg>
+        </div>
+        <h3 class="credential-title" data-text="credential-4-title" data-text-description="第四項經驗標題">
+          累積豐富一對一教學經驗
+        </h3>
+        <p class="credential-desc" data-text="credential-4-desc" data-text-description="說明服務學員的經驗範圍">
+          累計指導超過 150 位一對一學員，涵蓋辦公室姿勢問題、術後恢復與核心訓練各種需求。
+        </p>
+      </div>
+    </div>
+
+    <p class="credentials-summary reveal reveal-delay-4" data-text="credentials-summary" data-text-description="專業背景總結，說明為何花時間深入學習復健導向">
+      我花了很多年時間深入學習復健導向皮拉提斯，不只是因為想要更多認證，而是因為我發現：很多姿勢問題的根源，在於身體忘記了正確的動作模式。我的訓練讓我能辨識出哪些肌肉過度緊張、哪些關節活動度受限，以及如何設計動作序列幫助身體重新建立平衡。這些專業基礎，是我能為妳提供真正有效指導的原因。
+    </p>
+  </div>
+</section>
+
+<!-- ── 服務哲學 ── -->
+<section class="philosophy" data-section="philosophy" data-section-title="服務哲學" data-section-purpose="說明一對一陪伴的意義，建立情感共鳴">
+  <div class="philosophy-inner">
+    <h2 class="philosophy-quote reveal" data-text="philosophy-quote" data-text-description="品牌核心主張作為哲學引言">
+      「身體記得怎麼動，<br>
+      才是<em>真的</em>會動。」
+    </h2>
+
+    <div class="philosophy-content reveal reveal-delay-1" data-text="philosophy-content" data-text-description="說明為什麼選擇一對一的原因和理念">
+      <p style="margin-bottom: 24px;">我選擇只做一對一，不是因為收費比較高，而是因為每個人的身體都有自己的故事。</p>
+
+      <p style="margin-bottom: 24px;">妳的肩頸緊繃可能來自工作壓力，也可能是因為某次受傷後養成的代償動作。妳的核心無力可能是生產後的正常現象，也可能是長期姿勢不良的結果。</p>
+
+      <p>這些細節，只有在一對一的環境中，我才能慢慢觀察、細心聆聽，然後真正理解妳的身體需要什麼。團體課很有效率，但妳值得被更仔細地照顧。</p>
+    </div>
+
+    <blockquote class="philosophy-highlight reveal reveal-delay-2" data-text="philosophy-highlight" data-text-description="哲學引言強調個人化的重要性">
+      「很多人問我為什麼不開團體課，其實答案很簡單：妳的身體不是標準版本，為什麼要用標準化的方式練習？」
+    </blockquote>
+  </div>
+</section>
+
+<!-- ── 工作室環境 ── -->
+<section class="studio" data-section="studio" data-section-title="工作室環境" data-section-purpose="讓訪客感受空間氛圍，降低不知道是什麼地方的不安感">
+  <div class="section-wrap">
+    <div class="studio-layout">
+      <div class="studio-content">
+        <div class="section-header reveal">
+          <p class="section-tag">工作室環境</p>
+          <h2 class="section-title" data-text="studio-title" data-text-description="工作室環境區塊標題，強調被細心照顧的感受">
+            在這裡，妳會感受到<br>
+            被細心照顧
+          </h2>
+          <p class="section-desc" data-text="studio-desc" data-text-description="說明空間設計理念和希望營造的感受">
+            這個空間的每個細節，都是為了讓妳感到安心而設計。明亮但不刺眼的自然光線，溫度總是保持舒適，器械的擺放讓妳有充足的活動空間。
+          </p>
+        </div>
+
+        <div class="reveal reveal-delay-1" data-text="studio-content" data-text-description="說明工作室節奏和專屬感">
+          <p style="font-size: 14px; font-weight: 300; line-height: 1.9; color: var(--text-muted); margin-bottom: 32px;">
+            更重要的是，這裡的節奏很慢。不會有人在旁邊趕時間，不會有器械不夠用的窘境，更不會有其他人的眼光讓妳感到不自在。<br><br>
+
+            這個小時完全屬於妳，妳可以盡情專注在自己身體的感受上。
+          </p>
+        </div>
+
+        <div class="studio-features">
+          <div class="studio-feature reveal reveal-delay-2">
+            <div class="studio-feature-icon">
+              <svg viewBox="0 0 24 24" stroke-width="1.5">
+                <circle cx="12" cy="12" r="10"></circle>
+                <circle cx="12" cy="12" r="3"></circle>
+              </svg>
+            </div>
+            <span class="studio-feature-text" data-text="studio-feature-1" data-text-description="工作室特色1：明亮空間設計">
+              明亮乾淨的白色主調，營造純淨安心感
+            </span>
+          </div>
+
+          <div class="studio-feature reveal reveal-delay-3">
+            <div class="studio-feature-icon">
+              <svg viewBox="0 0 24 24" stroke-width="1.5">
+                <rect x="3" y="3" width="7" height="7"></rect>
+                <rect x="14" y="3" width="7" height="7"></rect>
+                <rect x="14" y="14" width="7" height="7"></rect>
+                <rect x="3" y="14" width="7" height="7"></rect>
+              </svg>
+            </div>
+            <span class="studio-feature-text" data-text="studio-feature-2" data-text-description="工作室特色2：完整專業器械">
+              完整的 Reformer、Cadillac 專業器械
+            </span>
+          </div>
+
+          <div class="studio-feature reveal reveal-delay-4">
+            <div class="studio-feature-icon">
+              <svg viewBox="0 0 24 24" stroke-width="1.5">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              </svg>
+            </div>
+            <span class="studio-feature-text" data-text="studio-feature-3" data-text-description="工作室特色3：隱私保護">
+              獨立空間，保護妳的練習隱私
+            </span>
+          </div>
+
+          <div class="studio-feature reveal reveal-delay-5">
+            <div class="studio-feature-icon">
+              <svg viewBox="0 0 24 24" stroke-width="1.5">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+            </div>
+            <span class="studio-feature-text" data-text="studio-feature-4" data-text-description="工作室特色4：交通便利">
+              鄰近捷運，交通便利不匆忙
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <div class="studio-visual">
+        <img class="studio-img reveal reveal-delay-1" src="https://images.pexels.com/photos/25599829/pexels-photo-25599829.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=650&amp;w=940" alt="明亮乾淨的白色工作室空間" data-img-query="bright clean pilates studio white space professional" data-img-orientation="landscape" data-img-description="明亮乾淨的白色皮拉提斯工作室，展現溫暖專業的練習環境">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── 給妳的承諾 ── -->
+<section class="promises" id="promises" data-section="promises" data-section-title="給妳的承諾" data-section-purpose="消除最後疑慮，用承諾建立信任感">
+  <div class="section-wrap">
+    <div class="section-header reveal">
+      <p class="section-tag">我的承諾</p>
+      <h2 class="section-title" data-text="promises-title" data-text-description="承諾區塊標題，直接說明對每位學員的承諾">
+        我對每位學員的承諾
+      </h2>
+      <p class="section-desc" data-text="promises-desc" data-text-description="承諾區塊說明，引導訪客理解選擇教練需要信任">
+        我知道選擇一位教練需要很多信任。妳要相信這個人真的懂妳的需要，也要相信她會用專業和溫暖陪伴妳的進步。
+      </p>
+    </div>
+
+    <div class="promises-grid">
+      <div class="promise-card reveal">
+        <div class="promise-icon">
+          <svg viewBox="0 0 24 24" stroke-width="1.5">
+            <circle cx="12" cy="12" r="10"></circle>
+            <circle cx="12" cy="12" r="3"></circle>
+          </svg>
+        </div>
+        <h3 class="promise-title" data-text="promise-1-title" data-text-description="第一項承諾標題：完全的注意力">
+          完全的注意力
+        </h3>
+        <p class="promise-desc" data-text="promise-1-desc" data-text-description="承諾在上課時間專注完全在學員身上">
+          這一小時，我的專注完全在妳身上，不會分心處理其他事情
+        </p>
+      </div>
+
+      <div class="promise-card reveal reveal-delay-1">
+        <div class="promise-icon">
+          <svg viewBox="0 0 24 24" stroke-width="1.5">
+            <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+          </svg>
+        </div>
+        <h3 class="promise-title" data-text="promise-2-title" data-text-description="第二項承諾標題：誠實的評估">
+          誠實的評估
+        </h3>
+        <p class="promise-desc" data-text="promise-2-desc" data-text-description="承諾會誠實評估是否適合，不會為了收費而迴避">
+          如果我覺得其他方式更適合妳，我會直接告訴妳，不會為了收費而迴避
+        </p>
+      </div>
+
+      <div class="promise-card reveal reveal-delay-2">
+        <div class="promise-icon">
+          <svg viewBox="0 0 24 24" stroke-width="1.5">
+            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+            <circle cx="9" cy="7" r="4"></circle>
+            <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+          </svg>
+        </div>
+        <h3 class="promise-title" data-text="promise-3-title" data-text-description="第三項承諾標題：持續的關注">
+          持續的關注
+        </h3>
+        <p class="promise-desc" data-text="promise-3-desc" data-text-description="承諾課後進度追蹤和關心是服務的一部分">
+          課後的進度追蹤和關心，是服務的一部分，不是額外收費
+        </p>
+      </div>
+
+      <div class="promise-card reveal reveal-delay-3">
+        <div class="promise-icon">
+          <svg viewBox="0 0 24 24" stroke-width="1.5">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+          </svg>
+        </div>
+        <h3 class="promise-title" data-text="promise-4-title" data-text-description="第四項承諾標題：安全的保證">
+          安全的保證
+        </h3>
+        <p class="promise-desc" data-text="promise-4-desc" data-text-description="承諾每個動作都在安全監督下進行">
+          每個動作都在我的安全監督下，絕不冒險
+        </p>
+      </div>
+    </div>
+
+    <p class="promises-summary reveal reveal-delay-4" data-text="promises-summary" data-text-description="承諾總結，說明如果不合適會誠實告知">
+      如果第一堂課後妳覺得我們不合適，我會誠實告訴妳原因，並推薦更適合妳的選擇。因為我相信，找到對的人比較重要。
+    </p>
+  </div>
+</section>
+
+<!-- ── CTA ── -->
+<section class="cta-section" data-section="cta" data-section-title="預約諮詢" data-section-purpose="溫暖邀請開始對話">
+  <div class="cta-inner">
+    <p class="cta-eyebrow reveal">開始妳的旅程</p>
+    <h2 class="cta-title reveal reveal-delay-1" data-text="cta-title" data-text-description="CTA標題，重申初次諮詢的低門檻">
+      準備好找回身體的記憶了嗎？
+    </h2>
+    <p class="cta-subtitle reveal reveal-delay-2" data-text="cta-subtitle" data-text-description="CTA副標題，說明免費諮詢的流程">
+      初次 30 分鐘諮詢完全免費，我們可以先聊聊妳的狀況，看看這裡是否適合妳。
+    </p>
+    <div class="cta-actions reveal reveal-delay-3">
+      <a href="https://instagram.com/somatics.studio" class="btn-primary" target="_blank">
+        私訊預約免費諮詢
+      </a>
+      <a href="tel:+886-2-2345-6789" class="btn-outline">
+        02-2345-6789
+      </a>
+    </div>
+    <p class="cta-note reveal reveal-delay-4">台北市大安區工作室 · 週一至週六開放預約 · 捷運忠孝敦化步行5分鐘</p>
+  </div>
+</section>
+
+<!-- ── Footer ── -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="footer-logo-zh">身研所</div>
+        <div class="footer-logo-en">Somatics Studio</div>
+        <p class="footer-tagline">
+          身體記得怎麼動，<br>才是真的會動。
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <div class="footer-col-title">頁面</div>
+        <ul>
+          <li><a href="about.html">關於教練</a></li>
+          <li><a href="services.html">服務項目</a></li>
+          <li><a href="blog.html">專業分享</a></li>
+          <li><a href="visit.html">來店資訊</a></li>
+          <li><a href="contact.html">預約諮詢</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <div class="footer-col-title">聯絡</div>
+        <div class="footer-contact-item">
+          <svg viewBox="0 0 24 24" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+          <span>台北市大安區仁愛路四段<br>捷運忠孝敦化步行 5 分鐘</span>
+        </div>
+        <div class="footer-contact-item">
+          <svg viewBox="0 0 24 24" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.62 3.38A2 2 0 0 1 3.58 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.5a16 16 0 0 0 6 6l.92-.92a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.72 16.92z"></path></svg>
+          <span>02-2345-6789</span>
+        </div>
+        <div class="footer-contact-item">
+          <svg viewBox="0 0 24 24" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+          <span>@somatics.studio</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2024 身研所 Somatics Studio · 台北市大安區</p>
+      <p class="footer-copy">一對一皮拉提斯 · 姿勢矯正 · 術後動作恢復</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // IntersectionObserver scroll reveal
+  const revealEls = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(el => {
+      if (el.isIntersecting) {
+        el.target.classList.add('visible');
+        observer.unobserve(el.target);
+      }
+    });
+  }, {
+    threshold: 0.08,
+    rootMargin: '0px 0px -24px 0px'
+  });
+
+  // Hero delayed reveal
+  const heroReveals = document.querySelectorAll('.hero .reveal');
+  setTimeout(() => {
+    heroReveals.forEach(el => {
+      observer.observe(el);
+    });
+  }, 80);
+
+  // Non-hero reveals
+  revealEls.forEach(el => {
+    if (!el.closest('.hero')) {
+      observer.observe(el);
+    }
+  });
+</script>
+
+
+</body></html>

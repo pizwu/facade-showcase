@@ -1,0 +1,1277 @@
+<!DOCTYPE html><html lang="zh-TW"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>服務項目｜疊工作室 DDIE Studio｜台中室內設計</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&amp;family=Noto+Sans+TC:wght@300;400;500&amp;family=Noto+Serif+TC:wght@300;400&amp;display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg-primary: #faf8f5;
+  --bg-secondary: #f3efe9;
+  --bg-deep: #2c2820;
+  --text-primary: #2c2820;
+  --text-muted: #7a7168;
+  --text-light: #b0a898;
+  --accent: #8a7560;
+  --accent-warm: #c4a882;
+  --green-mist: #d4ddd4;
+  --border: #e5dfd6;
+  --font-serif: 'Cormorant Garamond', 'Noto Serif TC', serif;
+  --font-sans: 'Noto Sans TC', sans-serif;
+  --section-gap: 120px;
+  --content-max: 1080px;
+  --side-pad: 48px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-sans);
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-weight: 300;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+/* ── NAV ── */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  background: rgba(250, 248, 245, 0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+.nav-inner {
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding: 0 var(--side-pad);
+  height: 68px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav-logo {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: var(--text-primary);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.nav-logo span {
+  font-size: 0.72rem;
+  font-family: var(--font-sans);
+  font-weight: 300;
+  letter-spacing: 0.12em;
+  color: var(--text-muted);
+  display: block;
+  margin-top: -2px;
+}
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+  list-style: none;
+}
+.nav-links a {
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.25s;
+}
+.nav-links a:hover { color: var(--text-primary); }
+.nav-cta {
+  background: var(--accent);
+  color: #fff !important;
+  padding: 10px 22px;
+  border-radius: 40px;
+  font-size: 0.78rem !important;
+  letter-spacing: 0.1em !important;
+  transition: background 0.25s !important;
+}
+.nav-cta:hover { background: var(--bg-deep) !important; color: #fff !important; }
+
+/* ── REVEAL ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.72s ease, transform 0.72s ease;
+}
+.reveal.visible { opacity: 1; transform: none; }
+.reveal-delay-1 { transition-delay: 0.08s; }
+.reveal-delay-2 { transition-delay: 0.16s; }
+.reveal-delay-3 { transition-delay: 0.24s; }
+.reveal-delay-4 { transition-delay: 0.32s; }
+
+/* ── PAGE HEADER ── */
+.page-header {
+  padding-top: 68px;
+  padding-bottom: 80px;
+  background: var(--bg-primary);
+  position: relative;
+}
+.page-header::before {
+  content: '服務';
+  font-family: var(--font-serif);
+  font-size: 12rem;
+  color: rgba(44,40,32,0.03);
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  line-height: 1;
+  user-select: none;
+  pointer-events: none;
+}
+.page-header-inner {
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding: 0 var(--side-pad);
+  text-align: center;
+  padding-top: 72px;
+}
+.page-header-kicker {
+  font-size: 0.76rem;
+  letter-spacing: 0.2em;
+  color: var(--accent);
+  font-weight: 400;
+  margin-bottom: 24px;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+.page-header-kicker::before {
+  content: '';
+  display: inline-block;
+  width: 32px;
+  height: 1px;
+  background: var(--accent);
+}
+.page-header-kicker::after {
+  content: '';
+  display: inline-block;
+  width: 32px;
+  height: 1px;
+  background: var(--accent);
+}
+.page-header-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2.4rem, 5vw, 3.8rem);
+  font-weight: 300;
+  line-height: 1.3;
+  color: var(--text-primary);
+  margin-bottom: 20px;
+  letter-spacing: 0.02em;
+}
+.page-header-desc {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  font-weight: 300;
+  line-height: 1.8;
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+/* ── SECTION HELPERS ── */
+.section-label {
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
+  color: var(--accent);
+  font-weight: 400;
+  display: block;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+.section-title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.9rem, 3.6vw, 2.8rem);
+  font-weight: 300;
+  line-height: 1.35;
+  color: var(--text-primary);
+}
+.section-desc {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  margin-top: 20px;
+  line-height: 1.85;
+}
+
+/* ── SERVICE GUIDE ── */
+.service-guide {
+  padding: var(--section-gap) var(--side-pad);
+  max-width: var(--content-max);
+  margin: 0 auto;
+}
+.service-guide-header {
+  text-align: center;
+  margin-bottom: 72px;
+}
+.service-guide-header .section-desc {
+  max-width: 480px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.service-guide-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+.service-guide-card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 36px 32px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  cursor: pointer;
+}
+.service-guide-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 24px 60px rgba(44,40,32,0.1);
+  border-color: var(--accent);
+}
+.service-guide-icon {
+  width: 64px;
+  height: 64px;
+  background: var(--bg-primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 24px;
+}
+.service-guide-icon svg {
+  width: 28px;
+  height: 28px;
+  stroke: var(--accent);
+  fill: none;
+}
+.service-guide-situation {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+.service-guide-recommend {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+.service-guide-explain {
+  font-size: 0.78rem;
+  color: var(--text-light);
+  line-height: 1.5;
+}
+
+/* ── SERVICE DETAIL ── */
+.service-detail {
+  padding: var(--section-gap) var(--side-pad);
+  max-width: var(--content-max);
+  margin: 0 auto;
+}
+.service-detail-inner {
+  display: grid;
+  grid-template-columns: 420px 1fr;
+  gap: 80px;
+  align-items: center;
+}
+.service-detail.reverse .service-detail-inner {
+  grid-template-columns: 1fr 420px;
+}
+.service-detail.reverse .service-detail-content {
+  grid-order: 1;
+}
+.service-detail.reverse .service-detail-img-wrap {
+  grid-order: 2;
+}
+.service-detail-img-wrap {
+  position: relative;
+}
+.service-detail-img {
+  width: 100%;
+  height: 480px;
+  border-radius: 16px;
+  display: block;
+  background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--accent-warm) 100%);
+}
+.service-detail-tag {
+  position: absolute;
+  top: 28px;
+  right: -24px;
+  background: var(--bg-primary);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 14px 20px;
+  box-shadow: 0 8px 32px rgba(44,40,32,0.08);
+}
+.service-detail-tag-label {
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  color: var(--accent);
+  font-weight: 400;
+}
+.service-detail-content {}
+.service-detail-title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  font-weight: 300;
+  color: var(--text-primary);
+  margin-top: 16px;
+  margin-bottom: 12px;
+}
+.service-detail-subtitle {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin-bottom: 28px;
+}
+.service-detail-desc {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.85;
+  margin-bottom: 32px;
+}
+.service-detail-features {
+  margin-bottom: 32px;
+}
+.service-detail-features-title {
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: var(--text-primary);
+  margin-bottom: 16px;
+}
+.service-detail-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.service-detail-list li {
+  font-size: 0.82rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+.service-detail-list li::before {
+  content: '';
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--accent-warm);
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+.service-detail-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.service-detail-meta-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.8rem;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border);
+}
+.service-detail-meta-label {
+  color: var(--text-light);
+}
+.service-detail-meta-value {
+  color: var(--text-primary);
+  font-weight: 400;
+}
+
+/* ── SECONDARY SERVICE ── */
+.service-secondary {
+  padding: var(--section-gap) 0;
+  background: var(--bg-secondary);
+}
+.service-secondary-inner {
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding: 0 var(--side-pad);
+}
+.service-secondary .service-detail {
+  padding: 0;
+}
+
+/* ── SERVICE COMPARISON ── */
+.service-comparison {
+  padding: var(--section-gap) 0;
+  background: var(--bg-deep);
+  position: relative;
+  overflow: hidden;
+}
+.service-comparison::before {
+  content: '差異';
+  font-family: var(--font-serif);
+  font-size: 18rem;
+  color: rgba(255,255,255,0.02);
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  line-height: 1;
+  user-select: none;
+  pointer-events: none;
+}
+.service-comparison-inner {
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding: 0 var(--side-pad);
+}
+.service-comparison-header {
+  text-align: center;
+  margin-bottom: 72px;
+}
+.service-comparison-header .section-label { color: var(--accent-warm); }
+.service-comparison-header .section-title { color: #f5f0e8; }
+.service-comparison-header .section-desc { 
+  color: rgba(255,255,255,0.45);
+  max-width: 480px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.comparison-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px;
+  border-radius: 16px;
+  overflow: hidden;
+}
+.comparison-side {
+  padding: 52px 48px;
+  position: relative;
+}
+.comparison-side.general {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+.comparison-side.ours {
+  background: var(--accent);
+  color: #fff;
+}
+.comparison-label {
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  font-weight: 400;
+  margin-bottom: 28px;
+  display: block;
+}
+.comparison-side.general .comparison-label { color: rgba(255,255,255,0.4); }
+.comparison-side.ours .comparison-label { color: rgba(255,255,255,0.9); }
+.comparison-title {
+  font-family: var(--font-serif);
+  font-size: 1.6rem;
+  font-weight: 300;
+  line-height: 1.45;
+  margin-bottom: 24px;
+}
+.comparison-side.general .comparison-title { color: rgba(255,255,255,0.6); }
+.comparison-side.ours .comparison-title { color: #fff; }
+.comparison-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.comparison-list li {
+  font-size: 0.9rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  line-height: 1.6;
+}
+.comparison-side.general .comparison-list li { color: rgba(255,255,255,0.45); }
+.comparison-side.ours .comparison-list li { color: rgba(255,255,255,0.9); }
+.comparison-list li::before {
+  content: '';
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.comparison-side.general .comparison-list li::before {
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.2);
+}
+.comparison-side.ours .comparison-list li::before {
+  background: rgba(255,255,255,0.2);
+}
+
+/* ── FAQ ── */
+.faq {
+  padding: var(--section-gap) var(--side-pad);
+  max-width: var(--content-max);
+  margin: 0 auto;
+}
+.faq-header {
+  text-align: center;
+  margin-bottom: 64px;
+}
+.faq-list {
+  max-width: 720px;
+  margin: 0 auto;
+}
+.faq-item {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  margin-bottom: 16px;
+  overflow: hidden;
+  transition: border-color 0.25s;
+}
+.faq-item.active {
+  border-color: var(--accent);
+}
+.faq-question {
+  width: 100%;
+  padding: 28px 32px;
+  background: var(--bg-secondary);
+  border: none;
+  text-align: left;
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: var(--text-primary);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: background 0.25s;
+}
+.faq-question:hover {
+  background: var(--bg-primary);
+}
+.faq-icon {
+  width: 20px;
+  height: 20px;
+  transition: transform 0.25s;
+}
+.faq-item.active .faq-icon {
+  transform: rotate(180deg);
+}
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+  background: var(--bg-primary);
+}
+.faq-item.active .faq-answer {
+  max-height: 300px;
+  padding: 0 32px 28px;
+}
+.faq-answer-content {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+  padding-top: 8px;
+}
+
+/* ── CTA ── */
+.cta-section {
+  padding: var(--section-gap) var(--side-pad);
+  max-width: var(--content-max);
+  margin: 0 auto;
+}
+.cta-inner {
+  background: var(--bg-secondary);
+  border-radius: 24px;
+  padding: 88px 64px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+.cta-inner::before {
+  content: '';
+  position: absolute;
+  top: -60px;
+  right: -60px;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(196,168,130,0.15) 0%, transparent 70%);
+}
+.cta-text {}
+.cta-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 3.5vw, 2.8rem);
+  font-weight: 300;
+  line-height: 1.35;
+  color: var(--text-primary);
+  margin-top: 16px;
+  margin-bottom: 20px;
+}
+.cta-desc {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.85;
+}
+.cta-right {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.cta-option {
+  background: var(--bg-primary);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 28px 32px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  text-decoration: none;
+  transition: border-color 0.25s, box-shadow 0.25s, transform 0.2s;
+}
+.cta-option:hover {
+  border-color: var(--accent);
+  box-shadow: 0 8px 32px rgba(138,117,96,0.12);
+  transform: translateX(4px);
+}
+.cta-option-icon {
+  width: 48px;
+  height: 48px;
+  background: var(--bg-secondary);
+  border-radius: 50%;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cta-option-icon svg { stroke: var(--accent); fill: none; }
+.cta-option-text {}
+.cta-option-label {
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+.cta-option-sub {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+.cta-option-arrow {
+  margin-left: auto;
+  color: var(--text-light);
+  transition: transform 0.25s, color 0.25s;
+}
+.cta-option:hover .cta-option-arrow {
+  transform: translateX(4px);
+  color: var(--accent);
+}
+
+/* ── FOOTER ── */
+footer {
+  background: var(--bg-deep);
+  padding: 72px var(--side-pad) 40px;
+}
+.footer-inner {
+  max-width: var(--content-max);
+  margin: 0 auto;
+}
+.footer-top {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  gap: 64px;
+  padding-bottom: 56px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.footer-brand {}
+.footer-logo {
+  font-family: var(--font-serif);
+  font-size: 1.3rem;
+  color: #f5f0e8;
+  font-weight: 300;
+  letter-spacing: 0.04em;
+}
+.footer-logo-sub {
+  font-size: 0.68rem;
+  letter-spacing: 0.18em;
+  color: rgba(255,255,255,0.3);
+  margin-top: 4px;
+  display: block;
+}
+.footer-tagline {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.4);
+  line-height: 1.8;
+  margin-top: 20px;
+  max-width: 260px;
+}
+.footer-col-title {
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  color: var(--accent-warm);
+  margin-bottom: 20px;
+  display: block;
+}
+.footer-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.footer-links a {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.45);
+  text-decoration: none;
+  transition: color 0.25s;
+}
+.footer-links a:hover { color: rgba(255,255,255,0.8); }
+.footer-contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.83rem;
+  color: rgba(255,255,255,0.45);
+  margin-bottom: 12px;
+  line-height: 1.6;
+}
+.footer-contact-item svg { flex-shrink: 0; margin-top: 2px; stroke: rgba(255,255,255,0.25); fill: none; }
+.footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 32px;
+}
+.footer-copyright {
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.2);
+  letter-spacing: 0.05em;
+}
+.footer-ig {
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.3);
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  transition: color 0.25s;
+}
+.footer-ig:hover { color: rgba(255,255,255,0.65); }
+
+/* ── RWD ── */
+@media (max-width: 960px) {
+  :root { --side-pad: 32px; --section-gap: 88px; }
+  .service-guide-grid { grid-template-columns: 1fr; gap: 20px; }
+  .service-detail-inner { grid-template-columns: 1fr; gap: 48px; }
+  .service-detail.reverse .service-detail-inner { grid-template-columns: 1fr; }
+  .service-detail.reverse .service-detail-content { grid-order: 1; }
+  .service-detail.reverse .service-detail-img-wrap { grid-order: 2; }
+  .service-detail-img { height: 320px; }
+  .service-detail-tag { right: 16px; }
+  .comparison-grid { grid-template-columns: 1fr; }
+  .cta-inner { grid-template-columns: 1fr; padding: 56px 40px; }
+  .footer-top { grid-template-columns: 1fr 1fr; gap: 40px; }
+}
+@media (max-width: 700px) {
+  :root { --side-pad: 20px; --section-gap: 72px; }
+  .nav-links { display: none; }
+  .nav-cta { display: flex; }
+  .page-header-inner { padding-top: 48px; }
+  .page-header-title { font-size: 2.4rem; }
+  .service-guide-card { padding: 28px 24px; }
+  .comparison-side { padding: 36px 28px; }
+  .cta-inner { padding: 48px 28px; }
+  .footer-top { grid-template-columns: 1fr; }
+  .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo" data-text="nav-logo" data-text-description="品牌名稱，導覽列左上角">
+      疊工作室
+      <span data-text="nav-logo-en" data-text-description="品牌英文名稱">DDIE STUDIO</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="portfolio.html">作品集</a></li>
+      <li><a href="services.html">服務項目</a></li>
+      <li><a href="about.html">關於我們</a></li>
+      <li><a href="blog.html">設計誌</a></li>
+      <li><a href="contact.html" class="nav-cta">預約諮詢</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- PAGE HEADER -->
+<section class="page-header" data-section="page-header" data-section-title="服務項目頁面標題" data-section-purpose="建立頁面脈絡，幫助訪客快速了解頁面主題">
+  <div class="page-header-inner">
+    <div class="reveal">
+      <span class="page-header-kicker" data-text="page-header-kicker" data-text-description="頁面小標">OUR SERVICES</span>
+    </div>
+    <div class="reveal reveal-delay-1">
+      <h1 class="page-header-title" data-text="page-header-title" data-text-description="服務頁面主標題">找到最適合你的<br>設計服務</h1>
+    </div>
+    <div class="reveal reveal-delay-2">
+      <p class="page-header-desc" data-text="page-header-desc" data-text-description="服務頁面說明文">每個屋主的需求都不一樣，從全案設計到純諮詢服務，我們提供不同深度的專業方案。</p>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICE GUIDE -->
+<section class="service-guide" data-section="service-guide" data-section-title="服務導覽" data-section-purpose="消除選擇困擾，讓訪客快速找到對應服務">
+  <div class="service-guide-header reveal">
+    <span class="section-label" data-text="guide-label" data-text-description="服務導覽小標">SERVICE GUIDE</span>
+    <h2 class="section-title" data-text="guide-title" data-text-description="服務導覽主標題">不確定需要什麼？先看看你的情況</h2>
+    <p class="section-desc" data-text="guide-desc" data-text-description="服務導覽說明文">每個屋主的需求都不一樣，我們提供不同深度的服務方案</p>
+  </div>
+  <div class="service-guide-grid">
+    <div class="service-guide-card reveal reveal-delay-1" data-section="guide-card-1" data-section-title="情境引導卡片一" data-section-purpose="幫助預售屋買家找到對應服務">
+      <div class="service-guide-icon">
+        <svg width="28" height="28" viewBox="0 0 28 28" stroke-width="1.5">
+          <rect x="4" y="4" width="20" height="20" rx="2"></rect>
+          <line x1="9" y1="9" x2="19" y2="9"></line>
+          <line x1="9" y1="14" x2="15" y2="14"></line>
+          <line x1="9" y1="19" x2="11" y2="19"></line>
+        </svg>
+      </div>
+      <p class="service-guide-situation" data-text="guide-situation-1" data-text-description="第一種情境描述">剛買預售屋，想要從零開始規劃</p>
+      <h3 class="service-guide-recommend" data-text="guide-recommend-1" data-text-description="推薦服務名稱">住宅全案設計</h3>
+      <p class="service-guide-explain" data-text="guide-explain-1" data-text-description="服務說明">從格局配置到完工交屋，一次到位的完整服務</p>
+    </div>
+    <div class="service-guide-card reveal reveal-delay-2" data-section="guide-card-2" data-section-title="情境引導卡片二" data-section-purpose="幫助舊屋屋主找到對應服務">
+      <div class="service-guide-icon">
+        <svg width="28" height="28" viewBox="0 0 28 28" stroke-width="1.5">
+          <path d="M14 2L24 8L24 22L4 22L4 8Z"></path>
+          <rect x="9" y="13" width="10" height="9"></rect>
+        </svg>
+      </div>
+      <p class="service-guide-situation" data-text="guide-situation-2" data-text-description="第二種情境描述">老屋想翻新，但不確定預算和可能性</p>
+      <h3 class="service-guide-recommend" data-text="guide-recommend-2" data-text-description="推薦服務名稱">舊屋翻新 + 格局規劃顧問</h3>
+      <p class="service-guide-explain" data-text="guide-explain-2" data-text-description="服務說明">先評估結構與預算，再決定改造範圍</p>
+    </div>
+    <div class="service-guide-card reveal reveal-delay-3" data-section="guide-card-3" data-section-title="情境引導卡片三" data-section-purpose="幫助猶豫期訪客找到對應服務">
+      <div class="service-guide-icon">
+        <svg width="28" height="28" viewBox="0 0 28 28" stroke-width="1.5">
+          <circle cx="14" cy="14" r="10"></circle>
+          <path d="M14 6V14L18 16"></path>
+        </svg>
+      </div>
+      <p class="service-guide-situation" data-text="guide-situation-3" data-text-description="第三種情境描述">空間格局有問題，想了解改善方向</p>
+      <h3 class="service-guide-recommend" data-text="guide-recommend-3" data-text-description="推薦服務名稱">格局規劃顧問</h3>
+      <p class="service-guide-explain" data-text="guide-explain-3" data-text-description="服務說明">純諮詢服務，給你專業建議和初步方案</p>
+    </div>
+  </div>
+</section>
+
+<!-- FULL DESIGN SERVICE -->
+<section class="service-detail" id="full-design" data-section="full-design" data-section-title="住宅全案設計" data-section-purpose="詳細介紹主力服務，建立專業信任感">
+  <div class="service-detail-inner">
+    <div class="service-detail-img-wrap reveal">
+      <img class="service-detail-img" src="https://images.pexels.com/photos/34538288/pexels-photo-34538288.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=650&amp;w=940" style="object-fit:cover;width:100%;height:100%" data-img-query="Taiwan residential interior design living room completed warm modern" data-img-orientation="landscape" data-img-description="住宅全案設計完工案例，展現專業設計品質">
+      <div class="service-detail-tag">
+        <div class="service-detail-tag-label">主力服務</div>
+      </div>
+    </div>
+    <div class="service-detail-content reveal reveal-delay-1">
+      <span class="section-label" data-text="full-design-label" data-text-description="全案設計小標">FULL DESIGN SERVICE</span>
+      <h2 class="service-detail-title" data-text="full-design-title" data-text-description="全案設計主標題">住宅全案設計</h2>
+      <p class="service-detail-subtitle" data-text="full-design-subtitle" data-text-description="全案設計副標題">從第一次丈量到交屋驗收，我們陪你走完整個過程</p>
+      <p class="service-detail-desc" data-text="full-design-desc" data-text-description="全案設計詳細說明">如果你想要一個完全符合生活習慣的家，而不是裝修公司的制式套餐，全案設計是最適合的選擇。我們從了解你的日常作息開始，設計每一個空間的功能與美感，然後負責監工到完工交屋。</p>
+      
+      <div class="service-detail-features">
+        <h4 class="service-detail-features-title" data-text="full-design-features-title" data-text-description="服務包含標題">服務包含</h4>
+        <ul class="service-detail-list">
+          <li data-text="full-design-feature-1" data-text-description="服務項目一">現場丈量與格局規劃</li>
+          <li data-text="full-design-feature-2" data-text-description="服務項目二">空間設計與材質選配</li>
+          <li data-text="full-design-feature-3" data-text-description="服務項目三">3D視覺化與施工圖繪製</li>
+          <li data-text="full-design-feature-4" data-text-description="服務項目四">工程發包與監工管理</li>
+          <li data-text="full-design-feature-5" data-text-description="服務項目五">完工驗收與保固服務</li>
+        </ul>
+      </div>
+      
+      <div class="service-detail-meta">
+        <div class="service-detail-meta-item">
+          <span class="service-detail-meta-label">適合對象</span>
+          <span class="service-detail-meta-value">新成屋｜預售屋｜個人風格需求</span>
+        </div>
+        <div class="service-detail-meta-item">
+          <span class="service-detail-meta-label">投資區間</span>
+          <span class="service-detail-meta-value">每坪 NT$ 6-12 萬</span>
+        </div>
+        <div class="service-detail-meta-item">
+          <span class="service-detail-meta-label">完成時間</span>
+          <span class="service-detail-meta-value">設計 6-8 週，施工 8-16 週</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECONDARY SERVICES -->
+<div class="service-secondary">
+  <div class="service-secondary-inner">
+    <!-- PRESALE CUSTOMIZATION -->
+    <section class="service-detail reverse" id="presale" data-section="presale" data-section-title="預售屋客變" data-section-purpose="說明預售屋專業服務，突出時機重要性">
+      <div class="service-detail-inner">
+        <div class="service-detail-img-wrap reveal">
+          <img class="service-detail-img" src="https://images.pexels.com/photos/9052461/pexels-photo-9052461.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=650&amp;w=940" style="object-fit:cover;width:100%;height:100%" data-img-query="architectural planning blueprint Taiwan apartment layout design" data-img-orientation="landscape" data-img-description="預售屋客變平面規劃圖，展示專業規劃能力">
+          <div class="service-detail-tag">
+            <div class="service-detail-tag-label">時機重要</div>
+          </div>
+        </div>
+        <div class="service-detail-content reveal reveal-delay-1">
+          <span class="section-label" data-text="presale-label" data-text-description="預售屋客變小標">PRESALE CUSTOMIZATION</span>
+          <h2 class="service-detail-title" data-text="presale-title" data-text-description="預售屋客變主標題">預售屋客變</h2>
+          <p class="service-detail-subtitle" data-text="presale-subtitle" data-text-description="預售屋客變副標題">在建商施工前就開始規劃，省錢省時間</p>
+          <p class="service-detail-desc" data-text="presale-desc" data-text-description="預售屋客變詳細說明">預售屋最大的優勢是可以在建商施工前就調整格局和管線配置。我們協助你在客變階段就規劃好最終設計，避免未來拆除重做的費用，也能讓空間配置更符合你的需求。</p>
+          
+          <div class="service-detail-features">
+            <h4 class="service-detail-features-title" data-text="presale-features-title" data-text-description="服務特色標題">服務特色</h4>
+            <ul class="service-detail-list">
+              <li data-text="presale-feature-1" data-text-description="預售屋服務特色一">客變期間的專業建議與圖面審核</li>
+              <li data-text="presale-feature-2" data-text-description="預售屋服務特色二">與建商協調溝通，確保客變可行性</li>
+              <li data-text="presale-feature-3" data-text-description="預售屋服務特色三">預先規劃完整設計，避免二次施工</li>
+              <li data-text="presale-feature-4" data-text-description="預售屋服務特色四">交屋後的裝修工程可無縫接軌</li>
+            </ul>
+          </div>
+          
+          <div class="service-detail-meta">
+            <div class="service-detail-meta-item">
+              <span class="service-detail-meta-label">最佳時機</span>
+              <span class="service-detail-meta-value">建商客變期截止前 2-3 個月</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+
+<!-- RENOVATION SERVICE -->
+<section class="service-detail" id="renovation" data-section="renovation" data-section-title="舊屋翻新" data-section-purpose="展示舊屋改造能力，強調專業評估">
+  <div class="service-detail-inner">
+    <div class="service-detail-img-wrap reveal">
+      <img class="service-detail-img" src="https://images.pexels.com/photos/4817843/pexels-photo-4817843.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=650&amp;w=940" style="object-fit:cover;width:100%;height:100%" data-img-query="Taiwan old house renovation before after interior transformation" data-img-orientation="landscape" data-img-description="舊屋翻新前後對比或施工照片，展現改造專業能力">
+      <div class="service-detail-tag">
+        <div class="service-detail-tag-label">專業評估</div>
+      </div>
+    </div>
+    <div class="service-detail-content reveal reveal-delay-1">
+      <span class="section-label" data-text="renovation-label" data-text-description="舊屋翻新小標">RENOVATION SERVICE</span>
+      <h2 class="service-detail-title" data-text="renovation-title" data-text-description="舊屋翻新主標題">舊屋翻新</h2>
+      <p class="service-detail-subtitle" data-text="renovation-subtitle" data-text-description="舊屋翻新副標題">老房子也能有新生活，關鍵在專業評估和預算掌控</p>
+      <p class="service-detail-desc" data-text="renovation-desc" data-text-description="舊屋翻新詳細說明">舊屋翻新最重要的是結構安全評估和預算控制。我們會先檢查水電管線、結構狀況，給你完整的改造建議和預算分析。不是每個地方都要拆，重點是讓有限預算發揮最大效果。</p>
+      
+      <div class="service-detail-features">
+        <h4 class="service-detail-features-title" data-text="renovation-features-title" data-text-description="翻新重點標題">翻新重點</h4>
+        <ul class="service-detail-list">
+          <li data-text="renovation-feature-1" data-text-description="翻新重點一">結構安全與水電管線檢測</li>
+          <li data-text="renovation-feature-2" data-text-description="翻新重點二">預算分配建議，分階段施工可能</li>
+          <li data-text="renovation-feature-3" data-text-description="翻新重點三">保留好的部分，重做真正需要的</li>
+          <li data-text="renovation-feature-4" data-text-description="翻新重點四">老屋特有問題解決方案</li>
+        </ul>
+      </div>
+      
+      <div class="service-detail-meta">
+        <div class="service-detail-meta-item">
+          <span class="service-detail-meta-label">投資評估</span>
+          <span class="service-detail-meta-value">視屋況而定，提供詳細效益分析</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONSULTATION SERVICE -->
+<div class="service-secondary">
+  <div class="service-secondary-inner">
+    <section class="service-detail reverse" id="consultation" data-section="consultation" data-section-title="格局規劃顧問" data-section-purpose="提供低門檻服務選項，建立初步信任">
+      <div class="service-detail-inner">
+        <div class="service-detail-img-wrap reveal">
+          <img class="service-detail-img" src="https://images.pexels.com/photos/7642124/pexels-photo-7642124.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=650&amp;w=940" style="object-fit:cover;width:100%;height:100%" data-img-query="interior designer consultation meeting Taiwan blueprint discussion" data-img-orientation="landscape" data-img-description="設計師諮詢過程，專業討論平面圖的場景">
+          <div class="service-detail-tag">
+            <div class="service-detail-tag-label">低門檻</div>
+          </div>
+        </div>
+        <div class="service-detail-content reveal reveal-delay-1">
+          <span class="section-label" data-text="consultation-label" data-text-description="格局規劃顧問小標">CONSULTATION SERVICE</span>
+          <h2 class="service-detail-title" data-text="consultation-title" data-text-description="格局規劃顧問主標題">格局規劃顧問</h2>
+          <p class="service-detail-subtitle" data-text="consultation-subtitle" data-text-description="格局規劃顧問副標題">不確定要不要裝修？先聊聊你的想法和可能性</p>
+          <p class="service-detail-desc" data-text="consultation-desc" data-text-description="格局規劃顧問詳細說明">純諮詢服務適合還在評估階段，或者預算有限想要分階段改造的屋主。我們提供專業建議和初步規劃方案，你可以決定要自己發包施工，或者未來再與我們合作全案設計。</p>
+          
+          <div class="service-detail-features">
+            <h4 class="service-detail-features-title" data-text="consultation-features-title" data-text-description="交付內容標題">交付內容</h4>
+            <ul class="service-detail-list">
+              <li data-text="consultation-feature-1" data-text-description="交付內容一">現場丈量與現況分析</li>
+              <li data-text="consultation-feature-2" data-text-description="交付內容二">格局改善建議與平面規劃</li>
+              <li data-text="consultation-feature-3" data-text-description="交付內容三">預算評估與施工重點建議</li>
+              <li data-text="consultation-feature-4" data-text-description="交付內容四">後續合作方案說明</li>
+            </ul>
+          </div>
+          
+          <div class="service-detail-meta">
+            <div class="service-detail-meta-item">
+              <span class="service-detail-meta-label">諮詢費用</span>
+              <span class="service-detail-meta-value">NT$ 5,000（可折抵未來合作）</span>
+            </div>
+            <div class="service-detail-meta-item">
+              <span class="service-detail-meta-label">適合族群</span>
+              <span class="service-detail-meta-value">預算評估中｜分階段改造</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+
+<!-- SERVICE COMPARISON -->
+<section class="service-comparison" data-section="service-comparison" data-section-title="服務流程對比" data-section-purpose="突出專業差異化，建立競爭優勢">
+  <div class="service-comparison-inner">
+    <div class="service-comparison-header reveal">
+      <span class="section-label" data-text="comparison-label" data-text-description="對比區塊小標">WHY CHOOSE US</span>
+      <h2 class="section-title" data-text="comparison-title" data-text-description="對比區塊主標題">為什麼選擇疊工作室？</h2>
+      <p class="section-desc" data-text="comparison-desc" data-text-description="對比區塊說明文">同樣是室內設計，我們的服務流程有什麼不一樣</p>
+    </div>
+    <div class="comparison-grid reveal reveal-delay-1">
+      <div class="comparison-side general">
+        <span class="comparison-label" data-text="comparison-general-label" data-text-description="一般裝修公司標籤">一般裝修公司</span>
+        <h3 class="comparison-title" data-text="comparison-general-title" data-text-description="一般裝修公司標題">憑經驗做事，<br>問題出現才解決</h3>
+        <ul class="comparison-list">
+          <li data-text="comparison-general-1" data-text-description="一般裝修公司流程問題一">簽約前：大概報價，細節之後再說</li>
+          <li data-text="comparison-general-2" data-text-description="一般裝修公司流程問題二">設計階段：套用既有風格，少量客製化</li>
+          <li data-text="comparison-general-3" data-text-description="一般裝修公司流程問題三">施工期間：分包給不同師傅，監工不一定到場</li>
+          <li data-text="comparison-general-4" data-text-description="一般裝修公司流程問題四">完工驗收：發現問題才處理，責任歸屬不清</li>
+        </ul>
+      </div>
+      <div class="comparison-side ours">
+        <span class="comparison-label" data-text="comparison-ours-label" data-text-description="疊工作室標籤">疊工作室的流程</span>
+        <h3 class="comparison-title" data-text="comparison-ours-title" data-text-description="疊工作室流程標題">每個環節透明可見，<br>問題預防在前端</h3>
+        <ul class="comparison-list">
+          <li data-text="comparison-ours-1" data-text-description="疊工作室流程優勢一">簽約前：詳細報價，每項費用都說明清楚</li>
+          <li data-text="comparison-ours-2" data-text-description="疊工作室流程優勢二">設計階段：從生活方式出發，完全客製化設計</li>
+          <li data-text="comparison-ours-3" data-text-description="疊工作室流程優勢三">施工期間：設計師親自監工，定期回報進度</li>
+          <li data-text="comparison-ours-4" data-text-description="疊工作室流程優勢四">完工驗收：逐項檢查，問題在交屋前全部解決</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" data-section="faq" data-section-title="常見問題" data-section-purpose="消除最後疑慮，降低諮詢門檻">
+  <div class="faq-header reveal">
+    <span class="section-label" data-text="faq-label" data-text-description="FAQ小標">FAQ</span>
+    <h2 class="section-title" data-text="faq-title" data-text-description="FAQ主標題">常見問題</h2>
+  </div>
+  <div class="faq-list">
+    <div class="faq-item reveal reveal-delay-1" data-section="faq-item-1" data-section-title="FAQ項目一" data-section-purpose="解答費用相關疑問">
+      <button class="faq-question">
+        <span data-text="faq-q1" data-text-description="FAQ問題一">設計費怎麼算？包含哪些服務？</span>
+        <svg class="faq-icon" width="20" height="20" viewBox="0 0 20 20" stroke="currentColor" fill="none" stroke-width="1.5">
+          <polyline points="6,8 10,12 14,8"></polyline>
+        </svg>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-content" data-text="faq-a1" data-text-description="FAQ回答一">設計費依坪數計算，包含平面規劃、立面設計、材質選配、3D圖面、施工圖繪製和監工服務。我們會在初次諮詢後提供詳細報價明細。</div>
+      </div>
+    </div>
+    
+    <div class="faq-item reveal reveal-delay-2" data-section="faq-item-2" data-section-title="FAQ項目二" data-section-purpose="解答時程相關疑問">
+      <button class="faq-question">
+        <span data-text="faq-q2" data-text-description="FAQ問題二">從設計到完工大概需要多久時間？</span>
+        <svg class="faq-icon" width="20" height="20" viewBox="0 0 20 20" stroke="currentColor" fill="none" stroke-width="1.5">
+          <polyline points="6,8 10,12 14,8"></polyline>
+        </svg>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-content" data-text="faq-a2" data-text-description="FAQ回答二">設計階段通常需要 6-8 週，施工期依坪數和工程複雜度，一般住宅約 8-16 週。我們會在設計確認後提供詳細時程表。</div>
+      </div>
+    </div>
+    
+    <div class="faq-item reveal reveal-delay-3" data-section="faq-item-3" data-section-title="FAQ項目三" data-section-purpose="解答變更設計疑問">
+      <button class="faq-question">
+        <span data-text="faq-q3" data-text-description="FAQ問題三">如果施工期間想要修改設計，可以嗎？</span>
+        <svg class="faq-icon" width="20" height="20" viewBox="0 0 20 20" stroke="currentColor" fill="none" stroke-width="1.5">
+          <polyline points="6,8 10,12 14,8"></polyline>
+        </svg>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-content" data-text="faq-a3" data-text-description="FAQ回答三">小幅度調整可以討論，但如果是大幅更動可能影響工期和預算。我們建議在設計階段就充分溝通，避免施工中的變更。</div>
+      </div>
+    </div>
+    
+    <div class="faq-item reveal reveal-delay-4" data-section="faq-item-4" data-section-title="FAQ項目四" data-section-purpose="解答工班品質疑問">
+      <button class="faq-question">
+        <span data-text="faq-q4" data-text-description="FAQ問題四">你們有配合的工班嗎？品質如何保證？</span>
+        <svg class="faq-icon" width="20" height="20" viewBox="0 0 20 20" stroke="currentColor" fill="none" stroke-width="1.5">
+          <polyline points="6,8 10,12 14,8"></polyline>
+        </svg>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-content" data-text="faq-a4" data-text-description="FAQ回答四">我們有長期配合的優質工班，每個工種都經過我們嚴格篩選。施工期間設計師會定期監工，確保品質符合設計要求。</div>
+      </div>
+    </div>
+    
+    <div class="faq-item reveal reveal-delay-1" data-section="faq-item-5" data-section-title="FAQ項目五" data-section-purpose="解答保固服務疑問">
+      <button class="faq-question">
+        <span data-text="faq-q5" data-text-description="FAQ問題五">完工後有保固服務嗎？</span>
+        <svg class="faq-icon" width="20" height="20" viewBox="0 0 20 20" stroke="currentColor" fill="none" stroke-width="1.5">
+          <polyline points="6,8 10,12 14,8"></polyline>
+        </svg>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-content" data-text="faq-a5" data-text-description="FAQ回答五">工程保固一年，期間有任何施工問題我們負責處理。設計相關的使用問題，我們也會持續提供諮詢服務。</div>
+      </div>
+    </div>
+    
+    <div class="faq-item reveal reveal-delay-2" data-section="faq-item-6" data-section-title="FAQ項目六" data-section-purpose="解答分階段施工疑問">
+      <button class="faq-question">
+        <span data-text="faq-q6" data-text-description="FAQ問題六">預算有限的話，可以分階段施工嗎？</span>
+        <svg class="faq-icon" width="20" height="20" viewBox="0 0 20 20" stroke="currentColor" fill="none" stroke-width="1.5">
+          <polyline points="6,8 10,12 14,8"></polyline>
+        </svg>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-content" data-text="faq-a6" data-text-description="FAQ回答六">可以，我們會協助你規劃施工優先順序，在預算範圍內先做最重要的部分，其他部分可以分階段完成。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" data-section="cta" data-section-title="行動召喚" data-section-purpose="引導訪客採取行動，提供多種聯繫方式">
+  <div class="cta-inner reveal">
+    <div class="cta-text">
+      <span class="section-label" data-text="cta-label" data-text-description="CTA 小標">START YOUR PROJECT</span>
+      <h2 class="cta-title" data-text="cta-title" data-text-description="CTA 主標題">準備開始你的<br>空間改造了嗎？</h2>
+      <p class="cta-desc" data-text="cta-desc" data-text-description="CTA 說明文">第一次諮詢不收費，我們先了解你的需求，再建議最適合的服務方案。不管是完整的全案設計，還是簡單的格局諮詢，每個案子都從一次談話開始。</p>
+    </div>
+    <div class="cta-right">
+      <a href="tel:+886422338899" class="cta-option">
+        <div class="cta-option-icon">
+          <svg width="20" height="20" viewBox="0 0 20 20" stroke-width="1.5"><path d="M3 3.5C3 3.5 3.5 8 7 11.5 10.5 15 15 15.5 15 15.5L17 13.5C17 13.5 15.5 12 14 12.5L12 14C12 14 9 13 7 11 5 9 4 6 4 6L6 4C6.5 2.5 5 1 5 1L3 3.5Z"></path></svg>
+        </div>
+        <div class="cta-option-text">
+          <div class="cta-option-label">電話預約諮詢</div>
+          <div class="cta-option-sub">04-2233-8899｜週一至週六 10:00–19:00</div>
+        </div>
+        <svg class="cta-option-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="2" y1="8" x2="14" y2="8"></line><polyline points="9,3 14,8 9,13"></polyline></svg>
+      </a>
+      <a href="https://instagram.com/ddie.studio" class="cta-option" target="_blank">
+        <div class="cta-option-icon">
+          <svg width="20" height="20" viewBox="0 0 20 20" stroke-width="1.5"><rect x="3" y="3" width="14" height="14" rx="4"></rect><circle cx="10" cy="10" r="3.5"></circle><circle cx="14.5" cy="5.5" r="0.8" fill="currentColor" stroke="none"></circle></svg>
+        </div>
+        <div class="cta-option-text">
+          <div class="cta-option-label">Instagram 留言詢問</div>
+          <div class="cta-option-sub">@ddie.studio｜查看更多完工作品</div>
+        </div>
+        <svg class="cta-option-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="2" y1="8" x2="14" y2="8"></line><polyline points="9,3 14,8 9,13"></polyline></svg>
+      </a>
+      <a href="mailto:hello@ddie-studio.com" class="cta-option">
+        <div class="cta-option-icon">
+          <svg width="20" height="20" viewBox="0 0 20 20" stroke-width="1.5"><rect x="2" y="4" width="16" height="12" rx="2"></rect><polyline points="2,4 10,11 18,4"></polyline></svg>
+        </div>
+        <div class="cta-option-text">
+          <div class="cta-option-label">Email 傳送需求說明</div>
+          <div class="cta-option-sub">hello@ddie-studio.com</div>
+        </div>
+        <svg class="cta-option-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="2" y1="8" x2="14" y2="8"></line><polyline points="9,3 14,8 9,13"></polyline></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          疊工作室
+          <span class="footer-logo-sub">DDIE STUDIO</span>
+        </div>
+        <p class="footer-tagline">讓空間說出你沒說出口的品味。<br>台中住宅室內設計，全案服務。</p>
+      </div>
+      <div>
+        <span class="footer-col-title">服務項目</span>
+        <ul class="footer-links">
+          <li><a href="services.html">住宅全案設計</a></li>
+          <li><a href="services.html">格局規劃顧問</a></li>
+          <li><a href="services.html">舊屋翻新</a></li>
+          <li><a href="services.html">預售屋客變</a></li>
+          <li><a href="services.html">小型商業空間</a></li>
+        </ul>
+      </div>
+      <div>
+        <span class="footer-col-title">聯絡資訊</span>
+        <div class="footer-contact-item">
+          <svg width="14" height="14" viewBox="0 0 14 14" stroke-width="1.3"><path d="M2 2.5C2 2.5 2.4 6.5 5.5 9.5 8.5 12.5 12.5 13 12.5 13L14 11.5C14 11.5 12.8 10.3 11.5 10.8L10 12C10 12 7.5 11.2 6 9.5 4.5 7.8 3.8 5.5 3.8 5.5L5 4C5.5 2.7 4.3 1.5 4.3 1.5L2 2.5Z"></path></svg>
+          04-2233-8899
+        </div>
+        <div class="footer-contact-item">
+          <svg width="14" height="14" viewBox="0 0 14 14" stroke-width="1.3"><rect x="1" y="2" width="12" height="10" rx="1.5"></rect><polyline points="1,2 7,8 13,2"></polyline></svg>
+          hello@ddie-studio.com
+        </div>
+        <div class="footer-contact-item">
+          <svg width="14" height="14" viewBox="0 0 14 14" stroke-width="1.3"><path d="M7 1.5 C4.5 1.5 2.5 3.5 2.5 6 C2.5 9.5 7 12.5 7 12.5 C7 12.5 11.5 9.5 11.5 6 C11.5 3.5 9.5 1.5 7 1.5Z"></path><circle cx="7" cy="6" r="1.8"></circle></svg>
+          台中市西區民生路 ○○ 號
+        </div>
+        <div class="footer-contact-item">
+          <svg width="14" height="14" viewBox="0 0 14 14" stroke-width="1.3"><circle cx="7" cy="7" r="5.5"></circle><polyline points="7,3.5 7,7 9.5,9"></polyline></svg>
+          週一至週六 10:00–19:00
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copyright">© 2024 疊工作室 DDIE Studio. All rights reserved.</p>
+      <a href="https://instagram.com/ddie.studio" class="footer-ig" target="_blank">IG @ddie.studio</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Scroll reveal
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.08, rootMargin: '0px 0px -24px 0px' });
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// Page header delayed trigger
+setTimeout(() => {
+  document.querySelectorAll('.page-header .reveal').forEach(el => {
+    el.classList.add('visible');
+  });
+}, 80);
+
+// FAQ accordion
+document.querySelectorAll('.faq-question').forEach(question => {
+  question.addEventListener('click', () => {
+    const item = question.parentElement;
+    const isActive = item.classList.contains('active');
+    
+    // Close all FAQs
+    document.querySelectorAll('.faq-item').forEach(faqItem => {
+      faqItem.classList.remove('active');
+    });
+    
+    // Open clicked FAQ if it wasn't active
+    if (!isActive) {
+      item.classList.add('active');
+    }
+  });
+});
+</script>
+
+
+</body></html>

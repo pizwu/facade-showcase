@@ -1,0 +1,1096 @@
+<!DOCTYPE html><html lang="zh-TW"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>來店資訊｜疊工作室 DDIE Studio｜室內設計 台中</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&amp;family=Noto+Sans+TC:wght@300;400;500&amp;family=Noto+Serif+TC:wght@300;400&amp;display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg-primary: #faf8f5;
+  --bg-secondary: #f3efe9;
+  --bg-deep: #2c2820;
+  --text-primary: #2c2820;
+  --text-muted: #7a7168;
+  --text-light: #b0a898;
+  --accent: #8a7560;
+  --accent-warm: #c4a882;
+  --green-mist: #d4ddd4;
+  --border: #e5dfd6;
+  --font-serif: 'Cormorant Garamond', 'Noto Serif TC', serif;
+  --font-sans: 'Noto Sans TC', sans-serif;
+  --section-gap: 120px;
+  --content-max: 1080px;
+  --side-pad: 48px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-sans);
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-weight: 300;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+/* ── NAV ── */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  background: rgba(250, 248, 245, 0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+.nav-inner {
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding: 0 var(--side-pad);
+  height: 68px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav-logo {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: var(--text-primary);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.nav-logo span {
+  font-size: 0.72rem;
+  font-family: var(--font-sans);
+  font-weight: 300;
+  letter-spacing: 0.12em;
+  color: var(--text-muted);
+  display: block;
+  margin-top: -2px;
+}
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+  list-style: none;
+}
+.nav-links a {
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.25s;
+}
+.nav-links a:hover { color: var(--text-primary); }
+.nav-cta {
+  background: var(--accent);
+  color: #fff !important;
+  padding: 10px 22px;
+  border-radius: 40px;
+  font-size: 0.78rem !important;
+  letter-spacing: 0.1em !important;
+  transition: background 0.25s !important;
+}
+.nav-cta:hover { background: var(--bg-deep) !important; color: #fff !important; }
+
+/* ── REVEAL ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.72s ease, transform 0.72s ease;
+}
+.reveal.visible { opacity: 1; transform: none; }
+.reveal-delay-1 { transition-delay: 0.08s; }
+.reveal-delay-2 { transition-delay: 0.16s; }
+.reveal-delay-3 { transition-delay: 0.24s; }
+.reveal-delay-4 { transition-delay: 0.32s; }
+
+/* ── UTILS ── */
+.section-label {
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
+  color: var(--accent);
+  font-weight: 400;
+  display: block;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+.section-title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.9rem, 3.6vw, 2.8rem);
+  font-weight: 300;
+  line-height: 1.35;
+  color: var(--text-primary);
+}
+.section-desc {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  margin-top: 20px;
+  line-height: 1.85;
+}
+.btn-primary {
+  background: var(--accent);
+  color: #fff;
+  padding: 16px 36px;
+  border-radius: 40px;
+  font-size: 0.88rem;
+  letter-spacing: 0.12em;
+  text-decoration: none;
+  transition: background 0.28s, transform 0.2s;
+  display: inline-block;
+}
+.btn-primary:hover { background: var(--bg-deep); transform: translateY(-2px); }
+
+/* ── VISIT HERO ── */
+.visit-hero {
+  padding: calc(68px + 80px) var(--side-pad) 80px;
+  max-width: var(--content-max);
+  margin: 0 auto;
+}
+.visit-hero-inner {
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 80px;
+  align-items: center;
+}
+.visit-hero-content {}
+.visit-hero-kicker {
+  font-size: 0.76rem;
+  letter-spacing: 0.2em;
+  color: var(--accent);
+  font-weight: 400;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.visit-hero-kicker::before {
+  content: '';
+  display: inline-block;
+  width: 32px;
+  height: 1px;
+  background: var(--accent);
+}
+.visit-hero-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2.2rem, 4vw, 3.2rem);
+  font-weight: 300;
+  line-height: 1.35;
+  color: var(--text-primary);
+  margin-bottom: 20px;
+  letter-spacing: 0.02em;
+}
+.visit-hero-desc {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.85;
+  margin-bottom: 36px;
+}
+.visit-hero-img {
+  width: 100%;
+  height: 480px;
+  object-fit: cover;
+  border-radius: 16px;
+  display: block;
+  background: linear-gradient(135deg, #f3efe9, #e5dfd6);
+}
+
+/* ── VISIT VALUES ── */
+.visit-values {
+  padding: var(--section-gap) 0;
+  background: var(--bg-secondary);
+}
+.visit-values-inner {
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding: 0 var(--side-pad);
+}
+.visit-values-header {
+  text-align: center;
+  margin-bottom: 64px;
+}
+.visit-values-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 36px;
+}
+.visit-value-card {
+  background: var(--bg-primary);
+  border-radius: 16px;
+  padding: 40px 32px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.visit-value-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 24px 60px rgba(44,40,32,0.1);
+}
+.visit-value-icon {
+  width: 56px;
+  height: 56px;
+  background: var(--bg-secondary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 24px;
+}
+.visit-value-icon svg { stroke: var(--accent); fill: none; }
+.visit-value-title {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  font-weight: 300;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+}
+.visit-value-desc {
+  font-size: 0.86rem;
+  color: var(--text-muted);
+  line-height: 1.75;
+}
+
+/* ── LOCATION ── */
+.location {
+  padding: var(--section-gap) 0;
+  background: var(--bg-deep);
+  position: relative;
+}
+.location-inner {
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding: 0 var(--side-pad);
+}
+.location-header {
+  text-align: center;
+  margin-bottom: 64px;
+}
+.location-header .section-label { color: var(--accent-warm); }
+.location-header .section-title { color: #f5f0e8; }
+.location-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+.location-info {}
+.location-item {
+  margin-bottom: 32px;
+}
+.location-item-label {
+  font-size: 0.78rem;
+  letter-spacing: 0.15em;
+  color: var(--accent-warm);
+  margin-bottom: 8px;
+  display: block;
+}
+.location-item-content {
+  color: rgba(255,255,255,0.8);
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+.location-address {
+  font-size: 1.05rem;
+  color: #f5f0e8;
+  font-weight: 400;
+  margin-bottom: 8px;
+}
+.location-transport {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.location-transport li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 0.86rem;
+  line-height: 1.6;
+  color: rgba(255,255,255,0.65);
+}
+.location-transport li::before {
+  content: '•';
+  color: var(--accent-warm);
+  font-weight: 400;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+.location-map {
+  width: 100%;
+  height: 360px;
+  border-radius: 16px;
+  display: block;
+  object-fit: cover;
+  background: linear-gradient(135deg, #8a7560, #c4a882);
+}
+
+/* ── STUDIO ENVIRONMENT ── */
+.studio-env {
+  padding: var(--section-gap) var(--side-pad);
+  max-width: var(--content-max);
+  margin: 0 auto;
+}
+.studio-env-header {
+  text-align: center;
+  margin-bottom: 64px;
+  max-width: 520px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.studio-env-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+.studio-env-img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  border-radius: 16px;
+  display: block;
+  transition: transform 0.4s ease;
+  background: linear-gradient(135deg, #f3efe9, #e5dfd6);
+}
+.studio-env-img:hover { transform: scale(1.04); }
+.studio-env-img:first-child {
+  grid-column: span 2;
+  height: 320px;
+}
+
+/* ── SCHEDULE PREP ── */
+.schedule-prep {
+  padding: var(--section-gap) 0;
+  background: var(--bg-secondary);
+}
+.schedule-prep-inner {
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding: 0 var(--side-pad);
+}
+.schedule-prep-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: flex-start;
+}
+.schedule-side {}
+.schedule-prep-title {
+  font-family: var(--font-serif);
+  font-size: 1.8rem;
+  font-weight: 300;
+  color: var(--text-primary);
+  margin-bottom: 32px;
+}
+.schedule-table {
+  background: var(--bg-primary);
+  border-radius: 16px;
+  padding: 32px;
+  border: 1px solid var(--border);
+}
+.schedule-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.88rem;
+}
+.schedule-row:last-child { border-bottom: none; }
+.schedule-day {
+  color: var(--text-primary);
+  font-weight: 400;
+}
+.schedule-time {
+  color: var(--text-muted);
+}
+.prep-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.prep-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+.prep-item-icon {
+  width: 36px;
+  height: 36px;
+  background: var(--bg-primary);
+  border-radius: 50%;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2px;
+}
+.prep-item-icon svg { stroke: var(--accent); fill: none; }
+.prep-item-text {}
+.prep-item-label {
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+.prep-item-desc {
+  font-size: 0.83rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+}
+
+/* ── FAQ ── */
+.faq {
+  padding: var(--section-gap) var(--side-pad);
+  max-width: var(--content-max);
+  margin: 0 auto;
+}
+.faq-header {
+  text-align: center;
+  margin-bottom: 64px;
+}
+.faq-list {
+  max-width: 720px;
+  margin: 0 auto;
+}
+.faq-item {
+  border-bottom: 1px solid var(--border);
+}
+.faq-question {
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 24px 0;
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  color: var(--text-primary);
+  font-weight: 400;
+  transition: color 0.25s;
+}
+.faq-question:hover { color: var(--accent); }
+.faq-icon {
+  flex-shrink: 0;
+  transition: transform 0.25s;
+}
+.faq-item.active .faq-icon { transform: rotate(45deg); }
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+}
+.faq-item.active .faq-answer {
+  max-height: 200px;
+  padding-bottom: 24px;
+}
+.faq-answer-content {
+  font-size: 0.86rem;
+  color: var(--text-muted);
+  line-height: 1.75;
+}
+
+/* ── CTA SECTION ── */
+.cta-section {
+  padding: var(--section-gap) var(--side-pad);
+  max-width: var(--content-max);
+  margin: 0 auto;
+}
+.cta-inner {
+  background: var(--bg-secondary);
+  border-radius: 24px;
+  padding: 88px 64px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+.cta-inner::before {
+  content: '';
+  position: absolute;
+  top: -60px;
+  right: -60px;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(196,168,130,0.15) 0%, transparent 70%);
+}
+.cta-text {}
+.cta-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 3.5vw, 2.8rem);
+  font-weight: 300;
+  line-height: 1.35;
+  color: var(--text-primary);
+  margin-top: 16px;
+  margin-bottom: 20px;
+}
+.cta-desc {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.85;
+}
+.cta-right {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.cta-option {
+  background: var(--bg-primary);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 28px 32px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  text-decoration: none;
+  transition: border-color 0.25s, box-shadow 0.25s, transform 0.2s;
+}
+.cta-option:hover {
+  border-color: var(--accent);
+  box-shadow: 0 8px 32px rgba(138,117,96,0.12);
+  transform: translateX(4px);
+}
+.cta-option-icon {
+  width: 48px;
+  height: 48px;
+  background: var(--bg-secondary);
+  border-radius: 50%;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cta-option-icon svg { stroke: var(--accent); fill: none; }
+.cta-option-text {}
+.cta-option-label {
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+.cta-option-sub {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+.cta-option-arrow {
+  margin-left: auto;
+  color: var(--text-light);
+  transition: transform 0.25s, color 0.25s;
+}
+.cta-option:hover .cta-option-arrow {
+  transform: translateX(4px);
+  color: var(--accent);
+}
+
+/* ── FOOTER ── */
+footer {
+  background: var(--bg-deep);
+  padding: 72px var(--side-pad) 40px;
+}
+.footer-inner {
+  max-width: var(--content-max);
+  margin: 0 auto;
+}
+.footer-top {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  gap: 64px;
+  padding-bottom: 56px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.footer-brand {}
+.footer-logo {
+  font-family: var(--font-serif);
+  font-size: 1.3rem;
+  color: #f5f0e8;
+  font-weight: 300;
+  letter-spacing: 0.04em;
+}
+.footer-logo-sub {
+  font-size: 0.68rem;
+  letter-spacing: 0.18em;
+  color: rgba(255,255,255,0.3);
+  margin-top: 4px;
+  display: block;
+}
+.footer-tagline {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.4);
+  line-height: 1.8;
+  margin-top: 20px;
+  max-width: 260px;
+}
+.footer-col-title {
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  color: var(--accent-warm);
+  margin-bottom: 20px;
+  display: block;
+}
+.footer-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.footer-links a {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.45);
+  text-decoration: none;
+  transition: color 0.25s;
+}
+.footer-links a:hover { color: rgba(255,255,255,0.8); }
+.footer-contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.83rem;
+  color: rgba(255,255,255,0.45);
+  margin-bottom: 12px;
+  line-height: 1.6;
+}
+.footer-contact-item svg { flex-shrink: 0; margin-top: 2px; stroke: rgba(255,255,255,0.25); fill: none; }
+.footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 32px;
+}
+.footer-copyright {
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.2);
+  letter-spacing: 0.05em;
+}
+.footer-ig {
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.3);
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  transition: color 0.25s;
+}
+.footer-ig:hover { color: rgba(255,255,255,0.65); }
+
+/* ── RWD ── */
+@media (max-width: 960px) {
+  :root { --side-pad: 32px; --section-gap: 88px; }
+  .visit-hero-inner { grid-template-columns: 1fr; gap: 48px; }
+  .visit-hero-img { height: 320px; }
+  .visit-values-grid { grid-template-columns: repeat(2, 1fr); }
+  .location-content { grid-template-columns: 1fr; gap: 48px; }
+  .location-map { height: 280px; }
+  .studio-env-grid { grid-template-columns: repeat(2, 1fr); }
+  .studio-env-img:first-child { grid-column: span 2; height: 240px; }
+  .schedule-prep-grid { grid-template-columns: 1fr; gap: 48px; }
+  .cta-inner { grid-template-columns: 1fr; padding: 56px 40px; }
+  .footer-top { grid-template-columns: 1fr 1fr; gap: 40px; }
+}
+@media (max-width: 700px) {
+  :root { --side-pad: 20px; --section-gap: 72px; }
+  .nav-links { display: none; }
+  .nav-cta { display: flex; }
+  .visit-hero { padding-top: calc(68px + 48px); }
+  .visit-values-grid { grid-template-columns: 1fr; }
+  .studio-env-grid { grid-template-columns: 1fr; }
+  .studio-env-img:first-child { grid-column: span 1; height: 240px; }
+  .cta-inner { padding: 48px 28px; }
+  .footer-top { grid-template-columns: 1fr; }
+  .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo" data-text="nav-logo" data-text-description="品牌名稱，導覽列左上角">
+      疊工作室
+      <span data-text="nav-logo-en" data-text-description="品牌英文名稱">DDIE STUDIO</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="portfolio.html">作品集</a></li>
+      <li><a href="services.html">服務項目</a></li>
+      <li><a href="about.html">關於我們</a></li>
+      <li><a href="blog.html">設計誌</a></li>
+      <li><a href="contact.html" class="nav-cta">預約諮詢</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- VISIT HERO -->
+<section class="visit-hero" data-section="visit-hero" data-section-title="來店邀請" data-section-purpose="建立來店是自然下一步的認知，消除拜訪的心理門檻">
+  <div class="visit-hero-inner">
+    <div class="visit-hero-content">
+      <div class="reveal">
+        <p class="visit-hero-kicker" data-text="visit-hero-kicker" data-text-description="來店邀請區塊上方小標">VISIT US  來店資訊</p>
+      </div>
+      <div class="reveal reveal-delay-1">
+        <h1 class="visit-hero-title" data-text="visit-hero-title" data-text-description="來店邀請主標題">歡迎來工作室聊聊</h1>
+        <p class="visit-hero-subtitle" data-text="visit-hero-subtitle" data-text-description="來店邀請副標題">最好的溝通方式，就是面對面坐下來談</p>
+      </div>
+      <div class="reveal reveal-delay-2">
+        <p class="visit-hero-desc" data-text="visit-hero-desc" data-text-description="來店邀請說明文字">
+          線上看作品是一回事，實際感受工作室的氛圍又是另一回事。在這裡，你可以翻閱材質樣本、看到更多完工照片，更重要的是——我們有足夠的時間，聽你說出心裡對家的想像。
+        </p>
+      </div>
+      <div class="reveal reveal-delay-3">
+        <a href="#cta" class="btn-primary">預約來店時間</a>
+      </div>
+    </div>
+    <div class="reveal reveal-delay-2">
+      <img class="visit-hero-img" src="https://images.pexels.com/photos/33051310/pexels-photo-33051310.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=650&amp;w=940" alt="疊工作室外觀" data-img-query="design studio exterior entrance Taiwan warm" data-img-orientation="landscape" data-img-description="工作室外觀或入口，建立地點真實感，展現溫暖自然光線">
+    </div>
+  </div>
+</section>
+
+<!-- VISIT VALUES -->
+<section class="visit-values" data-section="visit-values" data-section-title="來店價值" data-section-purpose="具體說明來店的收穫，讓跑一趟感覺值得">
+  <div class="visit-values-inner">
+    <div class="visit-values-header reveal">
+      <span class="section-label" data-text="visit-values-label" data-text-description="來店價值區塊小標">WHAT YOU'LL GET</span>
+      <h2 class="section-title" data-text="visit-values-title" data-text-description="來店價值主標題">來這裡，你可以</h2>
+    </div>
+    <div class="visit-values-grid">
+      <div class="visit-value-card reveal reveal-delay-1">
+        <div class="visit-value-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5"><rect x="2" y="4" width="20" height="16" rx="2"></rect><circle cx="8" cy="10" r="2"></circle><path d="m16 14-2-2-1 1"></path></svg>
+        </div>
+        <h3 class="visit-value-title" data-text="visit-value-1-title" data-text-description="來店價值一標題">親手觸摸材質樣本</h3>
+        <p class="visit-value-desc" data-text="visit-value-1-desc" data-text-description="來店價值一描述">地板、磁磚、油漆色卡，螢幕上看不到的質感細節，在這裡都能實際觸摸比較。</p>
+      </div>
+      <div class="visit-value-card reveal reveal-delay-2">
+        <div class="visit-value-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"></rect><circle cx="9" cy="9" r="2"></circle><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"></path></svg>
+        </div>
+        <h3 class="visit-value-title" data-text="visit-value-2-title" data-text-description="來店價值二標題">看更完整的作品集</h3>
+        <p class="visit-value-desc" data-text="visit-value-2-desc" data-text-description="來店價值二描述">除了 IG 上的精選照片，我們有完整的施工前後對比，和屋主的真實回饋分享。</p>
+      </div>
+      <div class="visit-value-card reveal reveal-delay-3">
+        <div class="visit-value-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9,22 9,12 15,12 15,22"></polyline></svg>
+        </div>
+        <h3 class="visit-value-title" data-text="visit-value-3-title" data-text-description="來店價值三標題">充分時間深度討論</h3>
+        <p class="visit-value-desc" data-text="visit-value-3-desc" data-text-description="來店價值三描述">不急著報價，我們先把你的需求、預算、時程都聊清楚，確認彼此適合再開始。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOCATION -->
+<section class="location" data-section="location" data-section-title="地址交通資訊" data-section-purpose="提供準確的到達資訊，消除找路的困擾">
+  <div class="location-inner">
+    <div class="location-header reveal">
+      <span class="section-label" data-text="location-label" data-text-description="地址交通區塊小標">LOCATION</span>
+      <h2 class="section-title" data-text="location-title" data-text-description="地址交通主標題">工作室位置</h2>
+    </div>
+    <div class="location-content">
+      <div class="location-info reveal reveal-delay-1">
+        <div class="location-item">
+          <span class="location-item-label" data-text="location-address-label" data-text-description="地址標籤">地址</span>
+          <div class="location-address" data-text="location-address" data-text-description="完整地址">台中市西區民生路120號3樓</div>
+          <div class="location-item-content" data-text="location-hours" data-text-description="營業時間">週一至週六 10:00-19:00（週日公休）</div>
+        </div>
+
+        <div class="location-item">
+          <span class="location-item-label" data-text="location-car-label" data-text-description="開車標籤">開車前來</span>
+          <ul class="location-transport">
+            <li data-text="location-car-1" data-text-description="開車路線一">鄰近台灣大道、五權路口，從台74線五權西出口約5分鐘車程</li>
+            <li data-text="location-car-2" data-text-description="開車停車資訊">工作室樓下有配合停車場，來店前請告知車牌號碼</li>
+          </ul>
+        </div>
+
+        <div class="location-item">
+          <span class="location-item-label" data-text="location-transit-label" data-text-description="大眾運輸標籤">大眾運輸</span>
+          <ul class="location-transport">
+            <li data-text="location-transit-1" data-text-description="火車站路線">台中火車站：搭乘300、323路公車至「五權民生路口」站，步行約3分鐘</li>
+            <li data-text="location-transit-2" data-text-description="高鐵站路線">台中高鐵站：搭乘160路公車至「台中車站」轉乘上述路線</li>
+          </ul>
+        </div>
+      </div>
+      <div class="reveal reveal-delay-2">
+        <img class="location-map" src="https://images.pexels.com/photos/11772614/pexels-photo-11772614.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=650&amp;w=940" alt="疊工作室地圖位置" data-img-query="Taiwan Taichung map location marker street view" data-img-orientation="landscape" data-img-description="地圖或周邊街景，標示工作室確切位置">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STUDIO ENVIRONMENT -->
+<section class="studio-env" data-section="studio-env" data-section-title="工作室環境展示" data-section-purpose="讓訪客對實地拜訪產生期待感，建立空間有質感的印象">
+  <div class="studio-env-header reveal">
+    <span class="section-label" data-text="studio-env-label" data-text-description="工作室環境區塊小標">STUDIO ENVIRONMENT</span>
+    <h2 class="section-title" data-text="studio-env-title" data-text-description="工作室環境主標題">工作室環境</h2>
+    <p class="section-desc" data-text="studio-env-desc" data-text-description="工作室環境說明文">這個空間反映著我們對設計的態度——簡潔、溫暖、重視細節。每一件家具、每一個角落的光線，都經過仔細安排。來到這裡，你就能感受到我們會如何對待你未來的家。</p>
+  </div>
+  <div class="studio-env-grid">
+    <img class="studio-env-img reveal reveal-delay-1" src="https://images.pexels.com/photos/6794963/pexels-photo-6794963.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=650&amp;w=940" alt="工作室主要工作區" data-img-query="interior design studio workspace Taiwan professional" data-img-orientation="landscape" data-img-description="工作室主要工作區域，展現專業與溫暖並重的工作環境">
+    <img class="studio-env-img reveal reveal-delay-2" src="https://images.pexels.com/photos/13045981/pexels-photo-13045981.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=650&amp;w=940" alt="會議討論區域" data-img-query="design office meeting room samples materials" data-img-orientation="square" data-img-description="會議討論區域，材料樣品展示，體現專業諮詢環境">
+    <img class="studio-env-img reveal reveal-delay-3" src="https://images.pexels.com/photos/8837715/pexels-photo-8837715.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=650&amp;w=940" alt="設計繪圖區域" data-img-query="architect studio drawing table natural light" data-img-orientation="square" data-img-description="設計繪圖區域，自然光照射的工作檯面，展現創作氛圍">
+    <img class="studio-env-img reveal reveal-delay-4" src="https://images.pexels.com/photos/32383826/pexels-photo-32383826.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=650&amp;w=940" alt="材質展示區域" data-img-query="design showroom furniture samples warm" data-img-orientation="square" data-img-description="材質展示區域，家具與材料樣品陳列，展現質感選擇">
+  </div>
+</section>
+
+<!-- SCHEDULE & PREPARATION -->
+<section class="schedule-prep" data-section="schedule-prep" data-section-title="營業時間與來店準備" data-section-purpose="提供實用資訊，避免白跑一趟，並設定合適期待">
+  <div class="schedule-prep-inner">
+    <div class="schedule-prep-grid">
+      <div class="schedule-side reveal">
+        <h3 class="schedule-prep-title" data-text="schedule-title" data-text-description="營業時間標題">營業時間</h3>
+        <div class="schedule-table">
+          <div class="schedule-row">
+            <span class="schedule-day">週一至週六</span>
+            <span class="schedule-time">10:00 - 19:00</span>
+          </div>
+          <div class="schedule-row">
+            <span class="schedule-day">週日</span>
+            <span class="schedule-time">公休</span>
+          </div>
+          <div class="schedule-row">
+            <span class="schedule-day">國定假日</span>
+            <span class="schedule-time">事先公告</span>
+          </div>
+        </div>
+      </div>
+      <div class="schedule-side reveal reveal-delay-1">
+        <h3 class="schedule-prep-title" data-text="prep-title" data-text-description="來店建議標題">來店建議</h3>
+        <ul class="prep-list">
+          <li class="prep-item">
+            <div class="prep-item-icon">
+              <svg width="18" height="18" viewBox="0 0 18 18" stroke-width="1.5"><circle cx="9" cy="9" r="7"></circle><polyline points="9,5 9,9 12,12"></polyline></svg>
+            </div>
+            <div class="prep-item-text">
+              <div class="prep-item-label">請事先預約</div>
+              <div class="prep-item-desc">確保有足夠時間為你服務</div>
+            </div>
+          </li>
+          <li class="prep-item">
+            <div class="prep-item-icon">
+              <svg width="18" height="18" viewBox="0 0 18 18" stroke-width="1.5"><path d="M2 2.5h14v13H2z"></path><line x1="6" y1="6" x2="12" y2="6"></line><line x1="6" y1="9" x2="12" y2="9"></line><line x1="6" y1="12" x2="8" y2="12"></line></svg>
+            </div>
+            <div class="prep-item-text">
+              <div class="prep-item-label">攜帶平面圖</div>
+              <div class="prep-item-desc">如果有的話（手繪草圖也可以）</div>
+            </div>
+          </li>
+          <li class="prep-item">
+            <div class="prep-item-icon">
+              <svg width="18" height="18" viewBox="0 0 18 18" stroke-width="1.5"><rect x="2" y="3" width="14" height="12" rx="2"></rect><circle cx="7" cy="8" r="2"></circle><path d="m14 13-2-2-1 1"></path></svg>
+            </div>
+            <div class="prep-item-text">
+              <div class="prep-item-label">準備靈感照片</div>
+              <div class="prep-item-desc">收集你喜歡的風格照片（手機相簿即可）</div>
+            </div>
+          </li>
+          <li class="prep-item">
+            <div class="prep-item-icon">
+              <svg width="18" height="18" viewBox="0 0 18 18" stroke-width="1.5"><circle cx="9" cy="9" r="7"></circle><polyline points="9,5 9,9 11,11"></polyline></svg>
+            </div>
+            <div class="prep-item-text">
+              <div class="prep-item-label">預留時間</div>
+              <div class="prep-item-desc">初次諮詢建議安排 60-90 分鐘</div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" data-section="faq" data-section-title="常見問題" data-section-purpose="消除來店前的最後疑慮，增加實際到訪率">
+  <div class="faq-header reveal">
+    <span class="section-label" data-text="faq-label" data-text-description="FAQ 區塊小標">Q&amp;A</span>
+    <h2 class="section-title" data-text="faq-title" data-text-description="FAQ 主標題">來店前的常見問題</h2>
+  </div>
+  <div class="faq-list">
+    <div class="faq-item reveal reveal-delay-1">
+      <button class="faq-question" data-text="faq-q1" data-text-description="FAQ 問題一">
+        第一次來店諮詢是免費的嗎？
+        <svg class="faq-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="8" y1="4" x2="8" y2="12"></line><line x1="4" y1="8" x2="12" y2="8"></line></svg>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-content" data-text="faq-a1" data-text-description="FAQ 回答一">是的，初次諮詢完全免費。我們會了解你的需求、預算、和期待，提供專業建議。</div>
+      </div>
+    </div>
+    <div class="faq-item reveal reveal-delay-2">
+      <button class="faq-question" data-text="faq-q2" data-text-description="FAQ 問題二">
+        需要攜帶什麼資料嗎？
+        <svg class="faq-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="8" y1="4" x2="8" y2="12"></line><line x1="4" y1="8" x2="12" y2="8"></line></svg>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-content" data-text="faq-a2" data-text-description="FAQ 回答二">如果有平面圖最好（不限格式），以及你收集的靈感照片。沒有也沒關係，我們可以現場一起討論。</div>
+      </div>
+    </div>
+    <div class="faq-item reveal reveal-delay-3">
+      <button class="faq-question" data-text="faq-q3" data-text-description="FAQ 問題三">
+        諮詢需要多長時間？
+        <svg class="faq-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="8" y1="4" x2="8" y2="12"></line><line x1="4" y1="8" x2="12" y2="8"></line></svg>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-content" data-text="faq-a3" data-text-description="FAQ 回答三">通常 60-90 分鐘。我們不會急著趕時間，會充分了解你的需求後再提供建議。</div>
+      </div>
+    </div>
+    <div class="faq-item reveal reveal-delay-4">
+      <button class="faq-question" data-text="faq-q4" data-text-description="FAQ 問題四">
+        可以帶家人一起來嗎？
+        <svg class="faq-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="8" y1="4" x2="8" y2="12"></line><line x1="4" y1="8" x2="12" y2="8"></line></svg>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-content" data-text="faq-a4" data-text-description="FAQ 回答四">當然可以，也建議這樣做。家是共同的決定，越多關鍵人員參與討論越好。</div>
+      </div>
+    </div>
+    <div class="faq-item reveal reveal-delay-5">
+      <button class="faq-question" data-text="faq-q5" data-text-description="FAQ 問題五">
+        來店後會馬上報價嗎？
+        <svg class="faq-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="8" y1="4" x2="8" y2="12"></line><line x1="4" y1="8" x2="12" y2="8"></line></svg>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-content" data-text="faq-a5" data-text-description="FAQ 回答五">不會。我們通常需要實地丈量後，才能提供準確的設計提案與報價。</div>
+      </div>
+    </div>
+    <div class="faq-item reveal reveal-delay-6">
+      <button class="faq-question" data-text="faq-q6" data-text-description="FAQ 問題六">
+        停車方便嗎？
+        <svg class="faq-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="8" y1="4" x2="8" y2="12"></line><line x1="4" y1="8" x2="12" y2="8"></line></svg>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-content" data-text="faq-a6" data-text-description="FAQ 回答六">工作室樓下有配合停車場，來店前請告知車牌號碼，我們會協助安排。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA SECTION -->
+<section class="cta-section" id="cta" data-section="cta" data-section-title="預約來店" data-section-purpose="將瀏覽轉化為預約行動，提供明確的下一步">
+  <div class="cta-inner reveal">
+    <div class="cta-text">
+      <span class="section-label" data-text="cta-label" data-text-description="CTA 小標">MAKE AN APPOINTMENT</span>
+      <h2 class="cta-title" data-text="cta-title" data-text-description="CTA 主標題">準備好來聊聊了嗎？</h2>
+      <p class="cta-desc" data-text="cta-desc" data-text-description="CTA 說明文">選擇最方便的方式聯絡我們，我們會幫你安排合適的時間。第一次來，不用有壓力，就當作是認識新朋友。</p>
+    </div>
+    <div class="cta-right">
+      <a href="tel:+886422338899" class="cta-option">
+        <div class="cta-option-icon">
+          <svg width="20" height="20" viewBox="0 0 20 20" stroke-width="1.5"><path d="M3 3.5C3 3.5 3.5 8 7 11.5 10.5 15 15 15.5 15 15.5L17 13.5C17 13.5 15.5 12 14 12.5L12 14C12 14 9 13 7 11 5 9 4 6 4 6L6 4C6.5 2.5 5 1 5 1L3 3.5Z"></path></svg>
+        </div>
+        <div class="cta-option-text">
+          <div class="cta-option-label">電話預約諮詢</div>
+          <div class="cta-option-sub">04-2233-8899｜週一至週六 10:00–19:00</div>
+        </div>
+        <svg class="cta-option-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="2" y1="8" x2="14" y2="8"></line><polyline points="9,3 14,8 9,13"></polyline></svg>
+      </a>
+      <a href="https://instagram.com/ddie.studio" class="cta-option" target="_blank">
+        <div class="cta-option-icon">
+          <svg width="20" height="20" viewBox="0 0 20 20" stroke-width="1.5"><rect x="3" y="3" width="14" height="14" rx="4"></rect><circle cx="10" cy="10" r="3.5"></circle><circle cx="14.5" cy="5.5" r="0.8" fill="currentColor" stroke="none"></circle></svg>
+        </div>
+        <div class="cta-option-text">
+          <div class="cta-option-label">Instagram 留言詢問</div>
+          <div class="cta-option-sub">@ddie.studio｜查看更多完工作品</div>
+        </div>
+        <svg class="cta-option-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="2" y1="8" x2="14" y2="8"></line><polyline points="9,3 14,8 9,13"></polyline></svg>
+      </a>
+      <a href="mailto:hello@ddie-studio.com" class="cta-option">
+        <div class="cta-option-icon">
+          <svg width="20" height="20" viewBox="0 0 20 20" stroke-width="1.5"><rect x="2" y="4" width="16" height="12" rx="2"></rect><polyline points="2,4 10,11 18,4"></polyline></svg>
+        </div>
+        <div class="cta-option-text">
+          <div class="cta-option-label">Email 傳送需求說明</div>
+          <div class="cta-option-sub">hello@ddie-studio.com</div>
+        </div>
+        <svg class="cta-option-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="2" y1="8" x2="14" y2="8"></line><polyline points="9,3 14,8 9,13"></polyline></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          疊工作室
+          <span class="footer-logo-sub">DDIE STUDIO</span>
+        </div>
+        <p class="footer-tagline">讓空間說出你沒說出口的品味。<br>台中住宅室內設計，全案服務。</p>
+      </div>
+      <div>
+        <span class="footer-col-title">服務項目</span>
+        <ul class="footer-links">
+          <li><a href="services.html">住宅全案設計</a></li>
+          <li><a href="services.html">格局規劃顧問</a></li>
+          <li><a href="services.html">舊屋翻新</a></li>
+          <li><a href="services.html">預售屋客變</a></li>
+          <li><a href="services.html">小型商業空間</a></li>
+        </ul>
+      </div>
+      <div>
+        <span class="footer-col-title">聯絡資訊</span>
+        <div class="footer-contact-item">
+          <svg width="14" height="14" viewBox="0 0 14 14" stroke-width="1.3"><path d="M2 2.5C2 2.5 2.4 6.5 5.5 9.5 8.5 12.5 12.5 13 12.5 13L14 11.5C14 11.5 12.8 10.3 11.5 10.8L10 12C10 12 7.5 11.2 6 9.5 4.5 7.8 3.8 5.5 3.8 5.5L5 4C5.5 2.7 4.3 1.5 4.3 1.5L2 2.5Z"></path></svg>
+          04-2233-8899
+        </div>
+        <div class="footer-contact-item">
+          <svg width="14" height="14" viewBox="0 0 14 14" stroke-width="1.3"><rect x="1" y="2" width="12" height="10" rx="1.5"></rect><polyline points="1,2 7,8 13,2"></polyline></svg>
+          hello@ddie-studio.com
+        </div>
+        <div class="footer-contact-item">
+          <svg width="14" height="14" viewBox="0 0 14 14" stroke-width="1.3"><path d="M7 1.5 C4.5 1.5 2.5 3.5 2.5 6 C2.5 9.5 7 12.5 7 12.5 C7 12.5 11.5 9.5 11.5 6 C11.5 3.5 9.5 1.5 7 1.5Z"></path><circle cx="7" cy="6" r="1.8"></circle></svg>
+          台中市西區民生路120號3樓
+        </div>
+        <div class="footer-contact-item">
+          <svg width="14" height="14" viewBox="0 0 14 14" stroke-width="1.3"><circle cx="7" cy="7" r="5.5"></circle><polyline points="7,3.5 7,7 9.5,9"></polyline></svg>
+          週一至週六 10:00–19:00
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copyright">© 2024 疊工作室 DDIE Studio. All rights reserved.</p>
+      <a href="https://instagram.com/ddie.studio" class="footer-ig" target="_blank">IG @ddie.studio</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Scroll reveal
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.08, rootMargin: '0px 0px -24px 0px' });
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// FAQ Accordion
+document.querySelectorAll('.faq-question').forEach(question => {
+  question.addEventListener('click', () => {
+    const item = question.parentNode;
+    const isActive = item.classList.contains('active');
+    
+    // Close all items
+    document.querySelectorAll('.faq-item').forEach(faqItem => {
+      faqItem.classList.remove('active');
+    });
+    
+    // Open current item if it wasn't active
+    if (!isActive) {
+      item.classList.add('active');
+    }
+  });
+});
+</script>
+
+
+</body></html>

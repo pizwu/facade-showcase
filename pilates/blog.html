@@ -1,0 +1,1051 @@
+<!DOCTYPE html><html lang="zh-Hant"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>專業分享｜身研所 Somatics Studio｜一對一皮拉提斯，姿勢矯正與術後動作恢復</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&amp;family=Noto+Sans+TC:wght@300;400;500&amp;family=Noto+Serif+TC:wght@300;400&amp;display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg-primary: #FAF8F5;
+  --bg-secondary: #F3EFE8;
+  --bg-deep: #2C2825;
+  --text-primary: #2C2825;
+  --text-muted: #7A6E66;
+  --text-light: #B5A99E;
+  --accent: #C8956C;
+  --accent-soft: #E8D5C4;
+  --border: #E2DAD0;
+  --font-serif: 'Cormorant Garamond', 'Noto Serif TC', serif;
+  --font-sans: 'Noto Sans TC', sans-serif;
+  --section-gap: 120px;
+  --content-max: 1080px;
+  --side-pad: 48px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-sans);
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Nav ── */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  background: rgba(250, 248, 245, 0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav-inner {
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding: 0 var(--side-pad);
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-logo {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+.nav-logo-zh {
+  font-family: var(--font-serif);
+  font-size: 17px;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  color: var(--text-primary);
+}
+.nav-logo-en {
+  font-size: 10px;
+  font-weight: 300;
+  letter-spacing: 0.18em;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+  list-style: none;
+}
+.nav-links a {
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.25s;
+}
+.nav-links a:hover { color: var(--text-primary); }
+
+.nav-cta {
+  background: var(--text-primary);
+  color: var(--bg-primary) !important;
+  padding: 9px 22px !important;
+  border-radius: 2px;
+  font-size: 13px !important;
+  font-weight: 400 !important;
+  letter-spacing: 0.1em;
+  transition: background 0.25s !important;
+}
+.nav-cta:hover { background: var(--accent) !important; color: #fff !important; }
+
+/* ── Section wrapper ── */
+.section-wrap {
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding: 0 var(--side-pad);
+}
+
+/* ── Section header ── */
+.section-header {
+  margin-bottom: 64px;
+}
+.section-tag {
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  color: var(--accent);
+  text-transform: uppercase;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.section-tag::before {
+  content: '';
+  width: 20px;
+  height: 1px;
+  background: var(--accent);
+}
+.section-title {
+  font-family: var(--font-serif);
+  font-size: clamp(26px, 3vw, 38px);
+  font-weight: 400;
+  letter-spacing: 0.03em;
+  line-height: 1.4;
+  color: var(--text-primary);
+  margin-bottom: 16px;
+}
+.section-desc {
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 1.9;
+  color: var(--text-muted);
+  max-width: 560px;
+}
+
+/* ── Blog Hero ── */
+.blog-hero {
+  padding: 140px 0 100px;
+  background: var(--bg-primary);
+  text-align: center;
+  position: relative;
+}
+
+.blog-hero::before {
+  content: '知';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: var(--font-serif);
+  font-size: 240px;
+  color: var(--border);
+  opacity: 0.3;
+  pointer-events: none;
+  line-height: 1;
+}
+
+.blog-hero-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 0 var(--side-pad);
+}
+
+.blog-hero-title {
+  font-family: var(--font-serif);
+  font-size: clamp(28px, 3.5vw, 44px);
+  font-weight: 400;
+  line-height: 1.35;
+  color: var(--text-primary);
+  margin-bottom: 20px;
+  letter-spacing: 0.03em;
+}
+
+.blog-hero-subtitle {
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 1.9;
+  color: var(--text-muted);
+  margin-bottom: 24px;
+}
+
+.blog-hero-desc {
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.8;
+  color: var(--text-light);
+  letter-spacing: 0.04em;
+}
+
+/* ── Featured Articles ── */
+.featured {
+  padding: var(--section-gap) 0;
+  background: var(--bg-primary);
+}
+
+.featured-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 32px;
+}
+
+.featured-card {
+  background: var(--bg-primary);
+  border: 1px solid var(--border);
+  overflow: hidden;
+  transition: transform 0.25s, border-color 0.25s;
+  position: relative;
+}
+.featured-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent);
+}
+
+.featured-card-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+.featured-card:hover .featured-card-img {
+  transform: scale(1.02);
+}
+
+.featured-card-content {
+  padding: 28px 24px 32px;
+}
+
+.featured-card-tag {
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  color: var(--accent);
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.featured-card-title {
+  font-family: var(--font-serif);
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--text-primary);
+  margin-bottom: 14px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+}
+
+.featured-card-excerpt {
+  font-size: 13px;
+  font-weight: 300;
+  line-height: 1.8;
+  color: var(--text-muted);
+}
+
+/* ── Category Navigation ── */
+.categories {
+  padding: 80px 0;
+  background: var(--bg-secondary);
+}
+
+.categories-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.categories-title {
+  font-family: var(--font-serif);
+  font-size: 24px;
+  font-weight: 400;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+  letter-spacing: 0.03em;
+}
+
+.categories-grid {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.category-tag {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 20px 24px;
+  background: var(--bg-primary);
+  border: 1px solid var(--border);
+  text-decoration: none;
+  transition: border-color 0.25s, background 0.25s;
+  min-width: 140px;
+}
+.category-tag:hover {
+  border-color: var(--accent);
+  background: rgba(200, 149, 108, 0.04);
+}
+
+.category-tag-icon {
+  width: 24px;
+  height: 24px;
+  stroke: var(--accent);
+  fill: none;
+}
+
+.category-tag-name {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-primary);
+  letter-spacing: 0.04em;
+}
+
+.category-tag-count {
+  font-size: 11px;
+  font-weight: 300;
+  color: var(--text-muted);
+  letter-spacing: 0.06em;
+}
+
+/* ── Article List ── */
+.article-list {
+  padding: var(--section-gap) 0;
+  background: var(--bg-primary);
+}
+
+.articles-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.article-item {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 32px;
+  padding: 32px 0;
+  border-bottom: 1px solid var(--border);
+  transition: background 0.25s;
+  align-items: start;
+}
+.article-item:hover {
+  background: rgba(200, 149, 108, 0.02);
+}
+
+.article-item:last-child {
+  border-bottom: none;
+}
+
+.article-thumb {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border: 1px solid var(--border);
+  transition: border-color 0.25s;
+}
+.article-item:hover .article-thumb {
+  border-color: var(--accent);
+}
+
+.article-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.article-meta {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 12px;
+}
+
+.article-date {
+  font-size: 11px;
+  font-weight: 300;
+  color: var(--text-light);
+  letter-spacing: 0.1em;
+}
+
+.article-category {
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  color: var(--accent);
+  text-transform: uppercase;
+}
+
+.article-title {
+  font-family: var(--font-serif);
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--text-primary);
+  margin-bottom: 14px;
+  line-height: 1.45;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  transition: color 0.25s;
+}
+.article-title:hover {
+  color: var(--accent);
+}
+
+.article-excerpt {
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.8;
+  color: var(--text-muted);
+}
+
+/* ── Subscribe CTA ── */
+.subscribe-cta {
+  padding: 100px 0;
+  background: var(--bg-primary);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.subscribe-cta::before {
+  content: '心';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: var(--font-serif);
+  font-size: 280px;
+  color: var(--border);
+  opacity: 0.3;
+  pointer-events: none;
+  line-height: 1;
+}
+
+.subscribe-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 0 var(--side-pad);
+}
+
+.subscribe-title {
+  font-family: var(--font-serif);
+  font-size: clamp(28px, 3.5vw, 38px);
+  font-weight: 400;
+  line-height: 1.35;
+  color: var(--text-primary);
+  margin-bottom: 20px;
+  letter-spacing: 0.03em;
+}
+
+.subscribe-desc {
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 1.9;
+  color: var(--text-muted);
+  margin-bottom: 48px;
+}
+
+.subscribe-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: #fff;
+  padding: 14px 32px;
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-decoration: none;
+  border-radius: 2px;
+  transition: background 0.25s, transform 0.2s;
+  display: inline-block;
+}
+.btn-primary:hover { background: #b5784f; transform: translateY(-1px); }
+
+.btn-outline {
+  border: 1px solid var(--text-muted);
+  color: var(--text-muted);
+  padding: 13px 28px;
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  border-radius: 2px;
+  transition: all 0.25s;
+  display: inline-block;
+}
+.btn-outline:hover { border-color: var(--text-primary); color: var(--text-primary); }
+
+/* ── Footer ── */
+footer {
+  background: var(--bg-deep);
+  padding: 64px 0 36px;
+  color: #9A8E86;
+}
+
+.footer-inner {
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding: 0 var(--side-pad);
+}
+
+.footer-top {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 48px;
+  padding-bottom: 48px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  margin-bottom: 32px;
+}
+
+.footer-logo-zh {
+  font-family: var(--font-serif);
+  font-size: 22px;
+  font-weight: 400;
+  color: #FAF8F5;
+  margin-bottom: 4px;
+  letter-spacing: 0.06em;
+}
+.footer-logo-en {
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  color: #7A6E66;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+.footer-tagline {
+  font-family: var(--font-serif);
+  font-size: 14px;
+  font-style: italic;
+  font-weight: 300;
+  color: #7A6E66;
+  line-height: 1.7;
+}
+
+.footer-col-title {
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  color: #FAF8F5;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.footer-col ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.footer-col a {
+  font-size: 13px;
+  font-weight: 300;
+  color: #7A6E66;
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  transition: color 0.2s;
+}
+.footer-col a:hover { color: #FAF8F5; }
+
+.footer-contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+.footer-contact-item svg {
+  width: 14px;
+  height: 14px;
+  stroke: var(--accent);
+  fill: none;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.footer-contact-item span {
+  font-size: 13px;
+  font-weight: 300;
+  color: #7A6E66;
+  line-height: 1.6;
+  letter-spacing: 0.04em;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.footer-copy {
+  font-size: 12px;
+  font-weight: 300;
+  letter-spacing: 0.06em;
+  color: #5A5550;
+}
+
+/* ── Scroll Reveal ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-delay-1 { transition-delay: 0.08s; }
+.reveal-delay-2 { transition-delay: 0.16s; }
+.reveal-delay-3 { transition-delay: 0.24s; }
+
+/* ── RWD ── */
+@media (max-width: 960px) {
+  :root { --side-pad: 32px; --section-gap: 80px; }
+
+  .featured-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+
+  .categories-grid {
+    gap: 16px;
+  }
+
+  .article-item {
+    grid-template-columns: 160px 1fr;
+    gap: 24px;
+  }
+
+  .footer-top { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 700px) {
+  :root { --side-pad: 20px; --section-gap: 64px; }
+
+  .nav-links { display: none; }
+  .nav-cta { display: inline-block !important; }
+
+  .blog-hero::before { font-size: 160px; }
+  .subscribe-cta::before { font-size: 180px; }
+
+  .featured-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .categories-grid {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .category-tag {
+    min-width: 240px;
+  }
+
+  .article-item {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .article-thumb {
+    height: 160px;
+  }
+
+  .footer-top { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- ── Navigation ── -->
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo" style="text-decoration:none;">
+      <span class="nav-logo-zh">身研所</span>
+      <span class="nav-logo-en">Somatics Studio</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="about.html">關於教練</a></li>
+      <li><a href="services.html">服務項目</a></li>
+      <li><a href="blog.html">專業分享</a></li>
+      <li><a href="visit.html">來店資訊</a></li>
+      <li><a href="contact.html" class="nav-cta">預約初次諮詢</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ── Blog Hero ── -->
+<section class="blog-hero" data-section="blog-hero" data-section-title="部落格介紹 Hero" data-section-purpose="說明為什麼提供這些內容，建立想幫助妳理解身體的溫暖動機，而非炫耀專業">
+  <div class="blog-hero-inner">
+    <h1 class="blog-hero-title reveal" data-text="blog-hero-title" data-text-description="部落格頁面主標題，強調分享動機而非展示專業">
+      在這裡，我們一起理解身體
+    </h1>
+    <p class="blog-hero-subtitle reveal reveal-delay-1" data-text="blog-hero-subtitle" data-text-description="副標題，說明內容特色：實用而非學術">
+      不是艱深的理論，是妳用得到的身體知識
+    </p>
+    <p class="blog-hero-desc reveal reveal-delay-2" data-text="blog-hero-desc" data-text-description="說明文字，解釋文章來源和目的">
+      每一篇文章都來自我在一對一課程中最常被問到的問題：為什麼會這樣？該怎麼改善？我想用簡單的語言，幫妳找到答案。
+    </p>
+  </div>
+</section>
+
+<!-- ── Featured Articles ── -->
+<section class="featured" data-section="featured" data-section-title="專業重點文章展示" data-section-purpose="展示最能體現復健專業能力的核心文章，建立權威感">
+  <div class="section-wrap">
+    <div class="section-header reveal">
+      <p class="section-tag">從這裡開始了解</p>
+      <h2 class="section-title" data-text="featured-title" data-text-description="精選文章區塊標題，表達分享重點內容的意圖">
+        這幾篇是我最想和妳分享的
+      </h2>
+    </div>
+
+    <div class="featured-grid">
+      <article class="featured-card reveal">
+        <img class="featured-card-img" src="https://images.pexels.com/photos/3790848/pexels-photo-3790848.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=650&amp;w=940" alt="辦公室姿勢問題改善" data-img-query="office desk posture problems woman stretching" data-img-orientation="landscape" data-img-description="辦公室久坐族姿勢問題的展示和改善方法">
+        <div class="featured-card-content">
+          <div class="featured-card-tag">姿勢問題</div>
+          <h3 class="featured-card-title" data-text="featured-article-1-title" data-text-description="第一篇精選文章標題">
+            為什麼改善姿勢這麼難？不是妳不努力，是方法不對
+          </h3>
+          <p class="featured-card-excerpt" data-text="featured-article-1-excerpt" data-text-description="第一篇精選文章摘要">
+            很多人以為把肩膀往後拉就是改善駝背，但這樣做反而會讓背更痛。真正的姿勢改善，要從理解身體的協調模式開始。
+          </p>
+        </div>
+      </article>
+
+      <article class="featured-card reveal reveal-delay-1">
+        <img class="featured-card-img" src="https://images.pexels.com/photos/25596679/pexels-photo-25596679.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=650&amp;w=940" alt="術後復健運動指導" data-img-query="post surgery rehabilitation pilates gentle movement" data-img-orientation="landscape" data-img-description="術後安全復健運動的溫和指導場景">
+        <div class="featured-card-content">
+          <div class="featured-card-tag">術後恢復</div>
+          <h3 class="featured-card-title" data-text="featured-article-2-title" data-text-description="第二篇精選文章標題">
+            手術後想運動，但不知道從哪開始？先問自己這三個問題
+          </h3>
+          <p class="featured-card-excerpt" data-text="featured-article-2-excerpt" data-text-description="第二篇精選文章摘要">
+            復健結束不代表可以直接回到受傷前的運動強度。在重新開始運動前，我們需要重新建立身體的信任感。
+          </p>
+        </div>
+      </article>
+
+      <article class="featured-card reveal reveal-delay-2">
+        <img class="featured-card-img" src="https://images.pexels.com/photos/33360224/pexels-photo-33360224.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=650&amp;w=940" alt="正確的核心訓練方法" data-img-query="pilates core training myths truth" data-img-orientation="landscape" data-img-description="破解核心訓練迷思的正確方法示範">
+        <div class="featured-card-content">
+          <div class="featured-card-tag">核心訓練</div>
+          <h3 class="featured-card-title" data-text="featured-article-3-title" data-text-description="第三篇精選文章標題">
+            破解核心訓練的三大迷思：不是越痛越有效
+          </h3>
+          <p class="featured-card-excerpt" data-text="featured-article-3-excerpt" data-text-description="第三篇精選文章摘要">
+            棒式撐到發抖、仰臥起坐做到肚子痛，這些都不是好的核心訓練。真正的核心力量，來自深層肌肉的正確啟動。
+          </p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ── Category Navigation ── -->
+<section class="categories" data-section="categories" data-section-title="內容分類快速導覽" data-section-purpose="協助訪客快速找到相關內容，提升使用體驗">
+  <div class="section-wrap">
+    <div class="categories-header reveal">
+      <h2 class="categories-title" data-text="categories-title" data-text-description="分類導覽區塊標題">
+        找找妳關心的主題
+      </h2>
+    </div>
+
+    <div class="categories-grid">
+      <a href="#" class="category-tag reveal">
+        <svg class="category-tag-icon" viewBox="0 0 24 24" stroke-width="1.5">
+          <path d="M12 2C8.13 2 5 5.13 5 9c0 4.17 4.42 9.92 6.24 12.11.41.48 1.13.48 1.54 0C14.58 18.92 19 13.17 19 9c0-3.87-3.13-7-7-7z"></path>
+        </svg>
+        <span class="category-tag-name" data-text="category-1-name" data-text-description="第一個分類名稱">姿勢問題</span>
+        <span class="category-tag-count" data-text="category-1-desc" data-text-description="第一個分類說明">久坐族的身體解方 (6 篇)</span>
+      </a>
+
+      <a href="#" class="category-tag reveal reveal-delay-1">
+        <svg class="category-tag-icon" viewBox="0 0 24 24" stroke-width="1.5">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+        </svg>
+        <span class="category-tag-name" data-text="category-2-name" data-text-description="第二個分類名稱">術後恢復</span>
+        <span class="category-tag-count" data-text="category-2-desc" data-text-description="第二個分類說明">安全重建身體信心 (4 篇)</span>
+      </a>
+
+      <a href="#" class="category-tag reveal reveal-delay-2">
+        <svg class="category-tag-icon" viewBox="0 0 24 24" stroke-width="1.5">
+          <circle cx="12" cy="12" r="10"></circle>
+          <circle cx="12" cy="12" r="4"></circle>
+        </svg>
+        <span class="category-tag-name" data-text="category-3-name" data-text-description="第三個分類名稱">核心訓練</span>
+        <span class="category-tag-count" data-text="category-3-desc" data-text-description="第三個分類說明">真正有效的深層力量 (5 篇)</span>
+      </a>
+
+      <a href="#" class="category-tag reveal">
+        <svg class="category-tag-icon" viewBox="0 0 24 24" stroke-width="1.5">
+          <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+        </svg>
+        <span class="category-tag-name" data-text="category-4-name" data-text-description="第四個分類名稱">動作技巧</span>
+        <span class="category-tag-count" data-text="category-4-desc" data-text-description="第四個分類說明">皮拉提斯基礎動作 (3 篇)</span>
+      </a>
+
+      <a href="#" class="category-tag reveal reveal-delay-1">
+        <svg class="category-tag-icon" viewBox="0 0 24 24" stroke-width="1.5">
+          <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"></path>
+          <path d="M12 15l8.5-8.5c.83-.83.83-2.17 0-3s-2.17-.83-3 0L9 12l3 3z"></path>
+        </svg>
+        <span class="category-tag-name" data-text="category-5-name" data-text-description="第五個分類名稱">身體保養</span>
+        <span class="category-tag-count" data-text="category-5-desc" data-text-description="第五個分類說明">日常生活的身體照護 (4 篇)</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ── Article List ── -->
+<section class="article-list" data-section="article-list" data-section-title="完整文章清單" data-section-purpose="提供完整的內容瀏覽體驗，展示內容豐富度">
+  <div class="section-wrap">
+    <div class="articles-grid">
+      <article class="article-item reveal">
+        <img class="article-thumb" src="https://images.pexels.com/photos/20860593/pexels-photo-20860593.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=650&amp;w=940" alt="腰部伸展動作示範" data-img-query="lower back stretching exercises office worker" data-img-orientation="landscape" data-img-description="辦公室腰部伸展動作的示範圖片">
+        <div class="article-content">
+          <div class="article-meta">
+            <span class="article-date">2024.01.15</span>
+            <span class="article-category">姿勢問題</span>
+          </div>
+          <a href="blog-post.html" class="article-title" data-text="article-1-title" data-text-description="第一篇文章標題">
+            坐了一天，這三個伸展動作拯救你的腰
+          </a>
+          <p class="article-excerpt" data-text="article-1-excerpt" data-text-description="第一篇文章摘要">
+            不用器材，在家就能做的腰部舒緩動作。重點不是伸展有多深，而是讓緊繃的肌肉真正放鬆。
+          </p>
+        </div>
+      </article>
+
+      <article class="article-item reveal">
+        <img class="article-thumb" src="https://images.pexels.com/photos/11509788/pexels-photo-11509788.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=650&amp;w=940" alt="下背痛原因分析" data-img-query="lower back pain causes hip joint movement" data-img-orientation="landscape" data-img-description="下背痛真正原因的解析圖示">
+        <div class="article-content">
+          <div class="article-meta">
+            <span class="article-date">2024.01.08</span>
+            <span class="article-category">姿勢問題</span>
+          </div>
+          <a href="blog-post.html" class="article-title" data-text="article-2-title" data-text-description="第二篇文章標題">
+            下背痛的真正原因：可能不在背部
+          </a>
+          <p class="article-excerpt" data-text="article-2-excerpt" data-text-description="第二篇文章摘要">
+            很多下背痛其實來自髋關節活動度不足，或是腹部核心無力。找到真正的原因，才能真正解決問題。
+          </p>
+        </div>
+      </article>
+
+      <article class="article-item reveal">
+        <img class="article-thumb" src="https://images.pexels.com/photos/30964506/pexels-photo-30964506.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=650&amp;w=940" alt="膝關節術後復健時機" data-img-query="knee surgery rehabilitation timeline patient care" data-img-orientation="landscape" data-img-description="膝關節術後恢復運動時機的指導說明">
+        <div class="article-content">
+          <div class="article-meta">
+            <span class="article-date">2024.01.03</span>
+            <span class="article-category">術後恢復</span>
+          </div>
+          <a href="blog-post.html" class="article-title" data-text="article-3-title" data-text-description="第三篇文章標題">
+            膝關節手術後的運動時機：不要急著證明自己
+          </a>
+          <p class="article-excerpt" data-text="article-3-excerpt" data-text-description="第三篇文章摘要">
+            很多人急著回到受傷前的運動水準，但身體需要時間重新學習動作模式。耐心比勇氣更重要。
+          </p>
+        </div>
+      </article>
+
+      <article class="article-item reveal">
+        <img class="article-thumb" src="https://images.pexels.com/photos/33360216/pexels-photo-33360216.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=650&amp;w=940" alt="呼吸核心訓練" data-img-query="breathing core training diaphragm pilates" data-img-orientation="landscape" data-img-description="正確呼吸進行核心訓練的示範">
+        <div class="article-content">
+          <div class="article-meta">
+            <span class="article-date">2023.12.28</span>
+            <span class="article-category">核心訓練</span>
+          </div>
+          <a href="blog-post.html" class="article-title" data-text="article-4-title" data-text-description="第四篇文章標題">
+            呼吸就是最好的核心訓練
+          </a>
+          <p class="article-excerpt" data-text="article-4-excerpt" data-text-description="第四篇文章摘要">
+            在學會各種複雜動作前，先學會正確呼吸。深層核心肌群會隨著呼吸自然啟動。
+          </p>
+        </div>
+      </article>
+
+      <article class="article-item reveal">
+        <img class="article-thumb" src="https://images.pexels.com/photos/5888086/pexels-photo-5888086.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=650&amp;w=940" alt="肩頸按摩正確方法" data-img-query="neck shoulder massage technique tension relief" data-img-orientation="landscape" data-img-description="正確的肩頸放鬆技巧示範">
+        <div class="article-content">
+          <div class="article-meta">
+            <span class="article-date">2023.12.20</span>
+            <span class="article-category">身體保養</span>
+          </div>
+          <a href="blog-post.html" class="article-title" data-text="article-5-title" data-text-description="第五篇文章標題">
+            肩頸痠痛：不是按摩越用力越好
+          </a>
+          <p class="article-excerpt" data-text="article-5-excerpt" data-text-description="第五篇文章摘要">
+            肌肉緊繃的原因通常是過度使用或姿勢不良，硬壓只會讓肌肉更緊張。正確的放鬆方式是什麼？
+          </p>
+        </div>
+      </article>
+
+      <article class="article-item reveal">
+        <img class="article-thumb" src="https://images.pexels.com/photos/25596682/pexels-photo-25596682.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=650&amp;w=940" alt="皮拉提斯 Roll Up 動作" data-img-query="pilates roll up technique spine movement" data-img-orientation="landscape" data-img-description="皮拉提斯 Roll Up 動作的正確技巧示範">
+        <div class="article-content">
+          <div class="article-meta">
+            <span class="article-date">2023.12.15</span>
+            <span class="article-category">動作技巧</span>
+          </div>
+          <a href="blog-post.html" class="article-title" data-text="article-6-title" data-text-description="第六篇文章標題">
+            皮拉提斯的 Roll Up 總是做不起來？先檢查這兩件事
+          </a>
+          <p class="article-excerpt" data-text="article-6-excerpt" data-text-description="第六篇文章摘要">
+            很多人以為 Roll Up 需要很強的腹肌，其實更需要的是脊椎的分節活動能力。
+          </p>
+        </div>
+      </article>
+
+      <article class="article-item reveal">
+        <img class="article-thumb" src="https://images.pexels.com/photos/6188113/pexels-photo-6188113.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=650&amp;w=940" alt="正確的拉筋方法" data-img-query="proper stretching technique muscle relaxation" data-img-orientation="landscape" data-img-description="正確拉筋技巧避免錯誤方式的示範">
+        <div class="article-content">
+          <div class="article-meta">
+            <span class="article-date">2023.12.08</span>
+            <span class="article-category">身體保養</span>
+          </div>
+          <a href="blog-post.html" class="article-title" data-text="article-7-title" data-text-description="第七篇文章標題">
+            為什麼每天拉筋還是很緊？可能是拉錯了
+          </a>
+          <p class="article-excerpt" data-text="article-7-excerpt" data-text-description="第七篇文章摘要">
+            拉筋不是越痛越有效，也不是時間越久越好。了解肌肉緊繃的原因，才能用對的方式放鬆。
+          </p>
+        </div>
+      </article>
+
+      <article class="article-item reveal">
+        <img class="article-thumb" src="https://images.pexels.com/photos/25596677/pexels-photo-25596677.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=650&amp;w=940" alt="一對一課程價值" data-img-query="one-on-one pilates personal training value" data-img-orientation="landscape" data-img-description="一對一皮拉提斯教學價值的專業觀點">
+        <div class="article-content">
+          <div class="article-meta">
+            <span class="article-date">2023.12.01</span>
+            <span class="article-category">專業觀點</span>
+          </div>
+          <a href="blog-post.html" class="article-title" data-text="article-8-title" data-text-description="第八篇文章標題">
+            一對一課程 vs 大班課：不只是人數的差別
+          </a>
+          <p class="article-excerpt" data-text="article-8-excerpt" data-text-description="第八篇文章摘要">
+            一對一的價值不在於老師專屬服務，而在於能根據你的身體狀況做即時調整。這是大班課無法提供的。
+          </p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ── Subscribe CTA ── -->
+<section class="subscribe-cta" data-section="subscribe-cta" data-section-title="持續關注邀請" data-section-purpose="從內容消費轉向社群追蹤，培養長期關係">
+  <div class="subscribe-inner">
+    <h2 class="subscribe-title reveal" data-text="subscribe-title" data-text-description="追蹤訂閱區塊標題，從學習的長期性角度邀請追蹤">
+      身體的學習，是一輩子的旅程
+    </h2>
+    <p class="subscribe-desc reveal reveal-delay-1" data-text="subscribe-desc" data-text-description="說明持續更新價值和追蹤邀請">
+      我會持續分享在一對一課程中觀察到的身體智慧，和實用的日常保養方法。歡迎追蹤我的 Instagram，一起學習照顧身體。
+    </p>
+    <div class="subscribe-actions reveal reveal-delay-2">
+      <a href="https://instagram.com/somatics.studio" class="btn-primary" target="_blank">
+        追蹤 @somatics.studio
+      </a>
+      <a href="booking.html" class="btn-outline">
+        預約個人化諮詢
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ── Footer ── -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="footer-logo-zh">身研所</div>
+        <div class="footer-logo-en">Somatics Studio</div>
+        <p class="footer-tagline">
+          身體記得怎麼動，<br>才是真的會動。
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <div class="footer-col-title">頁面</div>
+        <ul>
+          <li><a href="about.html">關於教練</a></li>
+          <li><a href="services.html">服務項目</a></li>
+          <li><a href="blog.html">專業分享</a></li>
+          <li><a href="visit.html">來店資訊</a></li>
+          <li><a href="contact.html">預約諮詢</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <div class="footer-col-title">聯絡</div>
+        <div class="footer-contact-item">
+          <svg viewBox="0 0 24 24" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+          <span>台北市大安區<br>捷運忠孝敦化步行 5 分鐘</span>
+        </div>
+        <div class="footer-contact-item">
+          <svg viewBox="0 0 24 24" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.62 3.38 2 2 0 0 1 3.58 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.5a16 16 0 0 0 6 6l.92-.92a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.72 16.92z"></path></svg>
+          <span>02-2345-6789</span>
+        </div>
+        <div class="footer-contact-item">
+          <svg viewBox="0 0 24 24" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+          <span>@somatics.studio</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2024 身研所 Somatics Studio · 台北市大安區</p>
+      <p class="footer-copy">一對一皮拉提斯 · 姿勢矯正 · 術後動作恢復</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // IntersectionObserver scroll reveal
+  const revealEls = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(el => {
+      if (el.isIntersecting) {
+        el.target.classList.add('visible');
+        observer.unobserve(el.target);
+      }
+    });
+  }, {
+    threshold: 0.08,
+    rootMargin: '0px 0px -24px 0px'
+  });
+
+  revealEls.forEach(el => {
+    observer.observe(el);
+  });
+</script>
+
+
+</body></html>

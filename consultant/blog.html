@@ -1,0 +1,927 @@
+<!DOCTYPE html><html lang="zh-TW"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>部落格｜余明道 企業教練｜8年實戰經驗分享</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&amp;family=Noto+Serif+TC:wght@400;600;700&amp;family=Cormorant+Garamond:wght@400;600;700&amp;display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-primary: #0D1F3C;
+      --bg-secondary: #152844;
+      --bg-deep: #091629;
+      --bg-card: #1A3255;
+      --bg-light: #F5F2ED;
+      --text-primary: #F0ECE4;
+      --text-muted: #A8B4C4;
+      --text-light: #6B7D93;
+      --text-dark: #1A2B3C;
+      --accent: #C9A96E;
+      --accent-light: #E2C99A;
+      --border: rgba(201, 169, 110, 0.2);
+      --border-subtle: rgba(255,255,255,0.08);
+      --font-serif: 'Cormorant Garamond', 'Noto Serif TC', serif;
+      --font-sans: 'Noto Sans TC', sans-serif;
+      --section-gap: 120px;
+      --content-max: 1080px;
+      --side-pad: 48px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-sans);
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(13, 31, 60, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .nav-inner {
+      max-width: var(--content-max);
+      margin: 0 auto;
+      padding: 0 var(--side-pad);
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-logo {
+      font-family: var(--font-serif);
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      text-decoration: none;
+      letter-spacing: 0.06em;
+    }
+    .nav-logo span {
+      color: var(--accent);
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.88rem;
+      letter-spacing: 0.04em;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--text-primary); }
+    .nav-links a.current { color: var(--text-primary); }
+    .nav-cta {
+      background: var(--accent);
+      color: var(--bg-deep) !important;
+      padding: 8px 20px;
+      border-radius: 3px;
+      font-weight: 700;
+      font-size: 0.85rem !important;
+      letter-spacing: 0.06em;
+      transition: background 0.2s !important;
+    }
+    .nav-cta:hover { background: var(--accent-light) !important; color: var(--bg-deep) !important; }
+
+    /* ── SECTION COMMON ── */
+    .section {
+      padding: var(--section-gap) var(--side-pad);
+    }
+    .section-inner {
+      max-width: var(--content-max);
+      margin: 0 auto;
+    }
+    .section-label {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    .section-label-line {
+      width: 24px;
+      height: 1px;
+      background: var(--accent);
+    }
+    .section-label-text {
+      font-size: 0.74rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 500;
+    }
+    .section-title {
+      font-family: var(--font-serif);
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      font-weight: 700;
+      line-height: 1.3;
+      color: var(--text-primary);
+      margin-bottom: 16px;
+      letter-spacing: -0.01em;
+    }
+    .section-desc {
+      font-size: 1rem;
+      color: var(--text-muted);
+      max-width: 540px;
+      line-height: 1.8;
+    }
+    .section-header {
+      margin-bottom: 64px;
+    }
+
+    /* ── BLOG HERO ── */
+    .blog-hero {
+      padding: 140px var(--side-pad) 100px;
+      background: linear-gradient(160deg, var(--bg-deep) 0%, var(--bg-primary) 60%, #0F2848 100%);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .blog-hero::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-image:
+        repeating-linear-gradient(0deg, transparent, transparent 79px, rgba(255,255,255,0.025) 80px),
+        repeating-linear-gradient(90deg, transparent, transparent 79px, rgba(255,255,255,0.025) 80px);
+      pointer-events: none;
+    }
+    .blog-hero-inner {
+      max-width: 720px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+    .blog-hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 24px;
+    }
+    .blog-hero-eyebrow-line {
+      width: 32px;
+      height: 1px;
+      background: var(--accent);
+    }
+    .blog-hero-eyebrow-text {
+      font-size: 0.78rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 500;
+    }
+    .blog-hero-title {
+      font-family: var(--font-serif);
+      font-size: clamp(2.2rem, 4vw, 3.2rem);
+      font-weight: 700;
+      line-height: 1.3;
+      color: var(--text-primary);
+      margin-bottom: 20px;
+      letter-spacing: -0.01em;
+    }
+    .blog-hero-desc {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      line-height: 1.8;
+      margin-bottom: 36px;
+    }
+    .blog-stats {
+      display: inline-flex;
+      align-items: center;
+      gap: 32px;
+      padding: 20px 32px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+    }
+    .blog-stat-item {
+      text-align: center;
+    }
+    .blog-stat-value {
+      font-family: var(--font-serif);
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--accent);
+      line-height: 1;
+    }
+    .blog-stat-label {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-top: 4px;
+      letter-spacing: 0.04em;
+    }
+    .blog-stat-divider {
+      width: 1px;
+      height: 32px;
+      background: var(--border);
+    }
+
+    /* ── FEATURED POSTS ── */
+    .featured-posts {
+      background: var(--bg-deep);
+      border-top: 1px solid var(--border-subtle);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .featured-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+    }
+    .featured-main {
+      grid-row: span 2;
+    }
+    .featured-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 6px;
+      overflow: hidden;
+      transition: border-color 0.25s, transform 0.25s;
+      cursor: pointer;
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+    .featured-card:hover {
+      border-color: var(--border);
+      transform: translateY(-3px);
+      text-decoration: none;
+      color: inherit;
+    }
+    .featured-card-img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      background: linear-gradient(135deg, var(--bg-secondary), var(--bg-primary));
+    }
+    .featured-main .featured-card-img {
+      height: 280px;
+    }
+    .featured-card-content {
+      padding: 32px;
+    }
+    .featured-tag {
+      display: inline-block;
+      background: rgba(201,169,110,0.12);
+      color: var(--accent);
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      padding: 4px 10px;
+      border-radius: 2px;
+      margin-bottom: 16px;
+      font-weight: 500;
+    }
+    .featured-title {
+      font-family: var(--font-serif);
+      font-size: 1.4rem;
+      font-weight: 700;
+      line-height: 1.35;
+      color: var(--text-primary);
+      margin-bottom: 12px;
+    }
+    .featured-main .featured-title {
+      font-size: 1.8rem;
+      margin-bottom: 16px;
+    }
+    .featured-excerpt {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    /* ── CATEGORIES ── */
+    .categories {
+      background: var(--bg-secondary);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .categories-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 24px;
+    }
+    .category-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 6px;
+      padding: 32px 24px;
+      text-align: center;
+      transition: border-color 0.25s;
+      cursor: pointer;
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+    .category-card:hover {
+      border-color: var(--border);
+      text-decoration: none;
+      color: inherit;
+    }
+    .category-icon {
+      width: 48px;
+      height: 48px;
+      margin: 0 auto 20px;
+      background: rgba(201,169,110,0.1);
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      object-fit: cover;
+    }
+    .category-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 8px;
+    }
+    .category-count {
+      font-size: 0.8rem;
+      color: var(--accent);
+      letter-spacing: 0.04em;
+    }
+
+    /* ── POSTS GRID ── */
+    .posts-grid-section {
+      background: var(--bg-primary);
+    }
+    .posts-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .post-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 6px;
+      overflow: hidden;
+      transition: border-color 0.25s, transform 0.25s;
+      cursor: pointer;
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+    .post-card:hover {
+      border-color: var(--border);
+      transform: translateY(-3px);
+      text-decoration: none;
+      color: inherit;
+    }
+    .post-img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      background: linear-gradient(135deg, var(--bg-secondary), var(--bg-primary));
+    }
+    .post-content {
+      padding: 24px;
+    }
+    .post-meta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+    .post-date {
+      font-size: 0.76rem;
+      color: var(--text-light);
+      letter-spacing: 0.04em;
+    }
+    .post-read-time {
+      font-size: 0.76rem;
+      color: var(--accent);
+      letter-spacing: 0.04em;
+    }
+    .post-title {
+      font-family: var(--font-serif);
+      font-size: 1.15rem;
+      font-weight: 700;
+      line-height: 1.4;
+      color: var(--text-primary);
+      margin-bottom: 10px;
+    }
+    .post-excerpt {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+      margin-bottom: 16px;
+    }
+    .post-tag {
+      display: inline-block;
+      background: rgba(201,169,110,0.08);
+      color: var(--accent);
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      padding: 3px 8px;
+      border-radius: 2px;
+      font-weight: 500;
+    }
+
+    /* ── NEWSLETTER CTA ── */
+    .newsletter-cta {
+      background: linear-gradient(135deg, var(--bg-secondary) 0%, #0F2848 100%);
+      border-top: 1px solid var(--border-subtle);
+      padding: 100px var(--side-pad);
+      text-align: center;
+    }
+    .newsletter-inner {
+      max-width: 640px;
+      margin: 0 auto;
+    }
+    .newsletter-title {
+      font-family: var(--font-serif);
+      font-size: clamp(1.8rem, 3vw, 2.4rem);
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 16px;
+      line-height: 1.3;
+    }
+    .newsletter-desc {
+      font-size: 1rem;
+      color: var(--text-muted);
+      line-height: 1.8;
+      margin-bottom: 40px;
+    }
+    .newsletter-form {
+      display: flex;
+      gap: 16px;
+      max-width: 440px;
+      margin: 0 auto 20px;
+    }
+    .newsletter-input {
+      flex: 1;
+      padding: 14px 18px;
+      border: 1px solid var(--border-subtle);
+      border-radius: 3px;
+      background: rgba(255,255,255,0.04);
+      color: var(--text-primary);
+      font-size: 0.9rem;
+      font-family: var(--font-sans);
+      transition: border-color 0.2s;
+    }
+    .newsletter-input:focus {
+      outline: none;
+      border-color: var(--border);
+    }
+    .newsletter-input::placeholder {
+      color: var(--text-light);
+    }
+    .newsletter-submit {
+      background: var(--accent);
+      color: var(--bg-deep);
+      padding: 14px 28px;
+      border: none;
+      border-radius: 3px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      letter-spacing: 0.06em;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s;
+      font-family: var(--font-sans);
+    }
+    .newsletter-submit:hover {
+      background: var(--accent-light);
+      transform: translateY(-1px);
+    }
+    .newsletter-note {
+      font-size: 0.8rem;
+      color: var(--text-light);
+      line-height: 1.6;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--bg-deep);
+      padding: 64px var(--side-pad) 40px;
+      border-top: 1px solid var(--border-subtle);
+    }
+    .footer-inner {
+      max-width: var(--content-max);
+      margin: 0 auto;
+    }
+    .footer-top {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr;
+      gap: 48px;
+      margin-bottom: 48px;
+    }
+    .footer-brand {
+      font-family: var(--font-serif);
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 12px;
+      letter-spacing: 0.04em;
+    }
+    .footer-brand span { color: var(--accent); }
+    .footer-tagline {
+      font-size: 0.84rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+    .footer-contact-item {
+      font-size: 0.84rem;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+    }
+    .footer-contact-item strong {
+      color: var(--text-primary);
+      font-size: 0.76rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 2px;
+    }
+    .footer-col-title {
+      font-size: 0.76rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 16px;
+      font-weight: 500;
+    }
+    .footer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .footer-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.88rem;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--text-primary); }
+    .footer-bottom {
+      border-top: 1px solid var(--border-subtle);
+      padding-top: 28px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .footer-copy {
+      font-size: 0.78rem;
+      color: var(--text-light);
+    }
+    .footer-linkedin {
+      font-size: 0.78rem;
+      color: var(--text-light);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-linkedin:hover { color: var(--accent); }
+
+    /* ── REVEAL ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .reveal-delay-1 { transition-delay: 0.08s; }
+    .reveal-delay-2 { transition-delay: 0.16s; }
+    .reveal-delay-3 { transition-delay: 0.24s; }
+    .reveal-delay-4 { transition-delay: 0.32s; }
+
+    /* ── RWD ── */
+    @media (max-width: 960px) {
+      :root { --side-pad: 32px; --section-gap: 80px; }
+      .nav-links li:not(:last-child) { display: none; }
+      .blog-stats { gap: 20px; padding: 16px 24px; }
+      .featured-grid { grid-template-columns: 1fr; }
+      .featured-main { grid-row: span 1; }
+      .featured-main .featured-card-img { height: 200px; }
+      .featured-main .featured-title { font-size: 1.4rem; }
+      .categories-grid { grid-template-columns: repeat(3, 1fr); }
+      .posts-grid { grid-template-columns: repeat(2, 1fr); }
+      .newsletter-form { flex-direction: column; }
+      .footer-top { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 700px) {
+      :root { --side-pad: 20px; --section-gap: 64px; }
+      .nav-links { display: none; }
+      .blog-hero { padding: 120px var(--side-pad) 80px; }
+      .blog-stats { flex-direction: column; gap: 16px; }
+      .blog-stat-divider { display: none; }
+      .categories-grid { grid-template-columns: repeat(2, 1fr); }
+      .posts-grid { grid-template-columns: 1fr; }
+      .footer-top { grid-template-columns: 1fr; gap: 32px; }
+      .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+    }
+    @media (max-width: 500px) {
+      .categories-grid { grid-template-columns: 1fr; }
+      .category-card { padding: 24px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══ NAV ══ -->
+<nav data-section="navigation" data-section-title="導覽選單" data-section-purpose="提供主要頁面連結，重點突出預約諮詢CTA按鈕">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo" data-text="nav-logo" data-text-description="導覽區品牌標誌文字">余明道<span>．</span>企業教練</a>
+    <ul class="nav-links">
+      <li><a href="about.html">關於我</a></li>
+      <li><a href="services.html">服務項目</a></li>
+      <li><a href="portfolio.html">成功案例</a></li>
+      <li><a href="blog.html">部落格</a></li>
+      <li><a href="contact.html" class="nav-cta">預約諮詢</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ══ BLOG HERO ══ -->
+<section class="blog-hero" data-section="blog-hero" data-section-title="部落格介紹" data-section-purpose="建立內容權威性，說明文章價值來源於實戰經驗">
+  <div class="blog-hero-inner">
+    <div class="blog-hero-eyebrow reveal">
+      <div class="blog-hero-eyebrow-line"></div>
+      <span class="blog-hero-eyebrow-text" data-text="blog-hero-eyebrow" data-text-description="部落格區塊標籤">Management Blog</span>
+    </div>
+    <h1 class="blog-hero-title reveal reveal-delay-1" data-text="blog-hero-title" data-text-description="部落格主標題，強調實戰經驗分享">
+      8年實戰經驗分享：<br>讓主管真正會帶人的管理洞察
+    </h1>
+    <p class="blog-hero-desc reveal reveal-delay-2" data-text="blog-hero-desc" data-text-description="部落格說明文字，強調內容來源的真實性">
+      每篇文章都來自真實企業案例。不談空洞理論，只分享在30多家企業實證有效的帶人方法。
+    </p>
+    <div class="blog-stats reveal reveal-delay-3">
+      <div class="blog-stat-item">
+        <div class="blog-stat-value" data-text="blog-stat-1" data-text-description="已發表文章數量">42</div>
+        <div class="blog-stat-label" data-text="blog-stat-1-label" data-text-description="文章數量說明">已發表文章</div>
+      </div>
+      <div class="blog-stat-divider"></div>
+      <div class="blog-stat-item">
+        <div class="blog-stat-value" data-text="blog-stat-2" data-text-description="累積閱讀次數">18K+</div>
+        <div class="blog-stat-label" data-text="blog-stat-2-label" data-text-description="閱讀量說明">累積閱讀次數</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FEATURED POSTS ══ -->
+<section class="section featured-posts" data-section="featured-posts" data-section-title="編輯推薦" data-section-purpose="展示最具代表性的文章，體現專業深度">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <div class="section-label">
+        <div class="section-label-line"></div>
+        <span class="section-label-text" data-text="featured-label" data-text-description="精選文章區塊標籤">Featured Articles</span>
+      </div>
+      <h2 class="section-title" data-text="featured-title" data-text-description="精選文章標題">編輯推薦</h2>
+    </div>
+    <div class="featured-grid">
+      <a href="blog-post.html" class="featured-card featured-main reveal">
+        <img src="https://images.pexels.com/photos/7648050/pexels-photo-7648050.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=650&amp;w=940" alt="Business leadership training" class="featured-card-img" data-img-query="business leadership training corporate meeting" data-img-orientation="landscape" data-img-description="企業主管領導力培訓現場">
+        <div class="featured-card-content">
+          <span class="featured-tag" data-text="featured-1-tag" data-text-description="精選文章1標籤">人才留任</span>
+          <h3 class="featured-title" data-text="featured-1-title" data-text-description="精選文章1標題">為什麼你的主管留不住好員工？3個關鍵盲點</h3>
+          <p class="featured-excerpt" data-text="featured-1-excerpt" data-text-description="精選文章1摘要">從5家企業的離職面談中，我發現主管最常犯的3個錯誤...</p>
+        </div>
+      </a>
+      <a href="blog-post.html" class="featured-card reveal reveal-delay-1">
+        <img src="https://images.pexels.com/photos/7691694/pexels-photo-7691694.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=650&amp;w=940" alt="Cross-department collaboration" class="featured-card-img" data-img-query="business teamwork collaboration meeting" data-img-orientation="landscape" data-img-description="跨部門協作會議">
+        <div class="featured-card-content">
+          <span class="featured-tag" data-text="featured-2-tag" data-text-description="精選文章2標籤">協作管理</span>
+          <h3 class="featured-title" data-text="featured-2-title" data-text-description="精選文章2標題">跨部門溝通卡住了？問題可能出在主管身上</h3>
+          <p class="featured-excerpt" data-text="featured-2-excerpt" data-text-description="精選文章2摘要">一家80人的科技公司，產品開發週期從21天縮短到12天的真實案例...</p>
+        </div>
+      </a>
+      <a href="blog-post.html" class="featured-card reveal reveal-delay-2">
+        <img src="https://images.pexels.com/photos/8761549/pexels-photo-8761549.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=650&amp;w=940" alt="New manager training" class="featured-card-img" data-img-query="new manager leadership training coaching" data-img-orientation="landscape" data-img-description="新主管培訓指導">
+        <div class="featured-card-content">
+          <span class="featured-tag" data-text="featured-3-tag" data-text-description="精選文章3標籤">領導力</span>
+          <h3 class="featured-title" data-text="featured-3-title" data-text-description="精選文章3標題">新主管上任100天：如何快速建立團隊信任？</h3>
+          <p class="featured-excerpt" data-text="featured-3-excerpt" data-text-description="精選文章3摘要">整理了20位新任主管的成功經驗，歸納出最有效的4個步驟...</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CATEGORIES ── -->
+<section class="section categories" data-section="categories" data-section-title="主題分類" data-section-purpose="展示內容的系統性和豐富度，方便目標讀者快速找到相關文章">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <div class="section-label">
+        <div class="section-label-line"></div>
+        <span class="section-label-text" data-text="categories-label" data-text-description="分類區塊標籤">Categories</span>
+      </div>
+      <h2 class="section-title" data-text="categories-title" data-text-description="分類區塊標題">依主題瀏覽</h2>
+    </div>
+    <div class="categories-grid">
+      <a href="#" class="category-card reveal">
+        <div class="category-icon">
+          <img src="https://images.pexels.com/photos/7640433/pexels-photo-7640433.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=650&amp;w=940" alt="Human resources" data-img-query="human resources retention icon" data-img-orientation="square" data-img-description="人才留任圖示">
+        </div>
+        <div class="category-title" data-text="category-1-title" data-text-description="分類1標題">人才留任策略</div>
+        <div class="category-count" data-text="category-1-count" data-text-description="分類1文章數量">12篇文章</div>
+      </a>
+      <a href="#" class="category-card reveal reveal-delay-1">
+        <div class="category-icon">
+          <img src="https://images.pexels.com/photos/9072250/pexels-photo-9072250.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=650&amp;w=940" alt="Team collaboration" data-img-query="team collaboration teamwork icon" data-img-orientation="square" data-img-description="跨部門協作圖示">
+        </div>
+        <div class="category-title" data-text="category-2-title" data-text-description="分類2標題">跨部門協作</div>
+        <div class="category-count" data-text="category-2-count" data-text-description="分類2文章數量">8篇文章</div>
+      </a>
+      <a href="#" class="category-card reveal reveal-delay-2">
+        <div class="category-icon">
+          <img src="https://images.pexels.com/photos/15023413/pexels-photo-15023413.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=650&amp;w=940" alt="New manager development" data-img-query="leadership development manager training icon" data-img-orientation="square" data-img-description="新主管培育圖示">
+        </div>
+        <div class="category-title" data-text="category-3-title" data-text-description="分類3標題">新主管培育</div>
+        <div class="category-count" data-text="category-3-count" data-text-description="分類3文章數量">10篇文章</div>
+      </a>
+      <a href="#" class="category-card reveal reveal-delay-3">
+        <div class="category-icon">
+          <img src="https://images.pexels.com/photos/8867475/pexels-photo-8867475.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=650&amp;w=940" alt="Communication skills" data-img-query="business communication skills icon" data-img-orientation="square" data-img-description="團隊溝通技巧圖示">
+        </div>
+        <div class="category-title" data-text="category-4-title" data-text-description="分類4標題">團隊溝通技巧</div>
+        <div class="category-count" data-text="category-4-count" data-text-description="分類4文章數量">7篇文章</div>
+      </a>
+      <a href="#" class="category-card reveal reveal-delay-4">
+        <div class="category-icon">
+          <img src="https://images.pexels.com/photos/7793173/pexels-photo-7793173.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=650&amp;w=940" alt="Performance management" data-img-query="performance management business metrics icon" data-img-orientation="square" data-img-description="績效管理實務圖示">
+        </div>
+        <div class="category-title" data-text="category-5-title" data-text-description="分類5標題">績效管理實務</div>
+        <div class="category-count" data-text="category-5-count" data-text-description="分類5文章數量">5篇文章</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ POSTS GRID ── -->
+<section class="section posts-grid-section" data-section="posts-grid" data-section-title="最新文章" data-section-purpose="展示文章更新頻率和內容豐富度，提供完整瀏覽體驗">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <div class="section-label">
+        <div class="section-label-line"></div>
+        <span class="section-label-text" data-text="posts-label" data-text-description="文章列表區塊標籤">Latest Articles</span>
+      </div>
+      <h2 class="section-title" data-text="posts-title" data-text-description="文章列表標題">最新文章</h2>
+    </div>
+    <div class="posts-grid">
+      <a href="blog-post.html" class="post-card reveal">
+        <img src="https://images.pexels.com/photos/935977/pexels-photo-935977.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=650&amp;w=940" alt="One-on-one meeting" class="post-img" data-img-query="business one on one meeting manager employee" data-img-orientation="landscape" data-img-description="一對一面談">
+        <div class="post-content">
+          <div class="post-meta">
+            <span class="post-date" data-text="post-1-date" data-text-description="文章1發布日期">2024年1月15日</span>
+            <span class="post-read-time" data-text="post-1-read-time" data-text-description="文章1閱讀時間">6分鐘閱讀</span>
+          </div>
+          <h3 class="post-title" data-text="post-1-title" data-text-description="文章1標題">主管一對一面談，到底要聊什麼？</h3>
+          <p class="post-excerpt" data-text="post-1-excerpt" data-text-description="文章1摘要">很多主管把一對一面談當成工作檢討，結果員工越聊越有距離感。其實一對一的核心是...</p>
+          <span class="post-tag" data-text="post-1-tag" data-text-description="文章1標籤">管理技巧</span>
+        </div>
+      </a>
+      <a href="blog-post.html" class="post-card reveal reveal-delay-1">
+        <img src="https://images.pexels.com/photos/7643731/pexels-photo-7643731.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=650&amp;w=940" alt="Remote team management" class="post-img" data-img-query="remote team management virtual meeting" data-img-orientation="landscape" data-img-description="遠端團隊管理">
+        <div class="post-content">
+          <div class="post-meta">
+            <span class="post-date" data-text="post-2-date" data-text-description="文章2發布日期">2024年1月8日</span>
+            <span class="post-read-time" data-text="post-2-read-time" data-text-description="文章2閱讀時間">8分鐘閱讀</span>
+          </div>
+          <h3 class="post-title" data-text="post-2-title" data-text-description="文章2標題">遠端工作時代，主管如何維持團隊凝聚力？</h3>
+          <p class="post-excerpt" data-text="post-2-excerpt" data-text-description="文章2摘要">疫情改變了工作模式，但很多主管還在用傳統方法帶遠端團隊。這3個策略證明有效...</p>
+          <span class="post-tag" data-text="post-2-tag" data-text-description="文章2標籤">遠端管理</span>
+        </div>
+      </a>
+      <a href="blog-post.html" class="post-card reveal reveal-delay-2">
+        <img src="https://images.pexels.com/photos/4347461/pexels-photo-4347461.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=650&amp;w=940" alt="Difficult conversation" class="post-img" data-img-query="difficult conversation business manager employee" data-img-orientation="landscape" data-img-description="困難對話">
+        <div class="post-content">
+          <div class="post-meta">
+            <span class="post-date" data-text="post-3-date" data-text-description="文章3發布日期">2024年1月2日</span>
+            <span class="post-read-time" data-text="post-3-read-time" data-text-description="文章3閱讀時間">7分鐘閱讀</span>
+          </div>
+          <h3 class="post-title" data-text="post-3-title" data-text-description="文章3標題">如何和表現不佳的員工進行困難對話？</h3>
+          <p class="post-excerpt" data-text="post-3-excerpt" data-text-description="文章3摘要">大多數主管都會避開這種對話，但拖延只會讓問題更嚴重。這個4步驟架構能幫你...</p>
+          <span class="post-tag" data-text="post-3-tag" data-text-description="文章3標籤">困難對話</span>
+        </div>
+      </a>
+      <a href="blog-post.html" class="post-card reveal reveal-delay-3">
+        <img src="https://images.pexels.com/photos/18512803/pexels-photo-18512803.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=650&amp;w=940" alt="Employee feedback" class="post-img" data-img-query="employee feedback performance review meeting" data-img-orientation="landscape" data-img-description="員工回饋">
+        <div class="post-content">
+          <div class="post-meta">
+            <span class="post-date" data-text="post-4-date" data-text-description="文章4發布日期">2023年12月28日</span>
+            <span class="post-read-time" data-text="post-4-read-time" data-text-description="文章4閱讀時間">5分鐘閱讀</span>
+          </div>
+          <h3 class="post-title" data-text="post-4-title" data-text-description="文章4標題">給回饋不是挑毛病：3個讓員工真正成長的方法</h3>
+          <p class="post-excerpt" data-text="post-4-excerpt" data-text-description="文章4摘要">很多主管以為給回饋就是指出問題，但這樣只會讓員工防衛。真正有效的回饋是...</p>
+          <span class="post-tag" data-text="post-4-tag" data-text-description="文章4標籤">回饋技巧</span>
+        </div>
+      </a>
+      <a href="blog-post.html" class="post-card reveal reveal-delay-4">
+        <img src="https://images.pexels.com/photos/7551438/pexels-photo-7551438.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=650&amp;w=940" alt="Team motivation" class="post-img" data-img-query="team motivation leadership inspiration meeting" data-img-orientation="landscape" data-img-description="團隊激勵">
+        <div class="post-content">
+          <div class="post-meta">
+            <span class="post-date" data-text="post-5-date" data-text-description="文章5發布日期">2023年12月21日</span>
+            <span class="post-read-time" data-text="post-5-read-time" data-text-description="文章5閱讀時間">9分鐘閱讀</span>
+          </div>
+          <h3 class="post-title" data-text="post-5-title" data-text-description="文章5標題">為什麼薪水加了，員工還是沒動力？</h3>
+          <p class="post-excerpt" data-text="post-5-excerpt" data-text-description="文章5摘要">金錢激勵的效果往往很短暫。從行為科學的角度看，真正持久的動力來自...</p>
+          <span class="post-tag" data-text="post-5-tag" data-text-description="文章5標籤">員工激勵</span>
+        </div>
+      </a>
+      <a href="blog-post.html" class="post-card reveal">
+        <img src="https://images.pexels.com/photos/7869305/pexels-photo-7869305.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=650&amp;w=940" alt="Delegation skills" class="post-img" data-img-query="delegation skills manager empowerment business" data-img-orientation="landscape" data-img-description="授權技巧">
+        <div class="post-content">
+          <div class="post-meta">
+            <span class="post-date" data-text="post-6-date" data-text-description="文章6發布日期">2023年12月14日</span>
+            <span class="post-read-time" data-text="post-6-read-time" data-text-description="文章6閱讀時間">6分鐘閱讀</span>
+          </div>
+          <h3 class="post-title" data-text="post-6-title" data-text-description="文章6標題">授權不是丟包：主管如何讓員工真正獨當一面？</h3>
+          <p class="post-excerpt" data-text="post-6-excerpt" data-text-description="文章6摘要">很多主管不敢授權，怕出錯；有些則是授權後就不管，結果問題更多。正確的授權是...</p>
+          <span class="post-tag" data-text="post-6-tag" data-text-description="文章6標籤">授權管理</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ NEWSLETTER CTA ── -->
+<section class="newsletter-cta" data-section="newsletter-cta" data-section-title="訂閱電子報" data-section-purpose="建立長期關係，將訪客轉化為持續關注者">
+  <div class="newsletter-inner">
+    <h2 class="newsletter-title reveal" data-text="newsletter-title" data-text-description="訂閱CTA標題">
+      持續獲得企業管理洞察
+    </h2>
+    <p class="newsletter-desc reveal reveal-delay-1" data-text="newsletter-desc" data-text-description="訂閱說明文字，強調價值和訂閱者規模">
+      每週一篇實戰文章，分享最新的主管培訓案例與管理技巧。2,100+ 位HR主管和企業決策者正在關注。
+    </p>
+    <form class="newsletter-form reveal reveal-delay-2">
+      <input type="email" class="newsletter-input" placeholder="您的電子信箱" required="" data-text="newsletter-placeholder" data-text-description="電子信箱輸入框提示文字">
+      <button type="submit" class="newsletter-submit" data-text="newsletter-submit" data-text-description="訂閱按鈕文字">免費訂閱</button>
+    </form>
+    <p class="newsletter-note reveal reveal-delay-3" data-text="newsletter-note" data-text-description="訂閱補充說明，降低疑慮">
+      每週發送｜隨時可以取消訂閱｜不會收到推銷信件
+    </p>
+  </div>
+</section>
+
+<!-- ══ FOOTER ── -->
+<footer data-section="footer" data-section-title="頁尾資訊" data-section-purpose="提供完整聯絡資訊與快速連結，建立專業信任感">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand" data-text="footer-brand" data-text-description="頁尾品牌名稱">余明道<span>．</span>企業教練</div>
+        <p class="footer-tagline" data-text="footer-tagline" data-text-description="頁尾品牌標語">讓主管真的會帶人，不只是會管人。<br>服務全台 50–500 人中型企業。</p>
+        <div class="footer-contact-item">
+          <strong data-text="footer-email-label" data-text-description="聯絡信箱標籤">聯絡信箱</strong>
+          <span data-text="footer-email" data-text-description="聯絡信箱地址">hello@mingdaoyu.com</span>
+        </div>
+        <div class="footer-contact-item">
+          <strong data-text="footer-address-label" data-text-description="辦公地址標籤">辦公地址</strong>
+          <span data-text="footer-address" data-text-description="辦公地址">台北市信義區松仁路○○號 ○ 樓</span>
+        </div>
+        <div class="footer-contact-item">
+          <strong data-text="footer-phone-label" data-text-description="服務電話標籤">服務電話</strong>
+          <span data-text="footer-phone" data-text-description="服務電話號碼">02-○○○○-○○○○</span>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title" data-text="footer-services-title" data-text-description="服務項目標題">服務</div>
+        <ul class="footer-links">
+          <li><a href="services.html">企業主管內訓課程</a></li>
+          <li><a href="services.html">組織文化轉型顧問</a></li>
+          <li><a href="services.html">主管個別教練輔導</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title" data-text="footer-more-title" data-text-description="了解更多標題">了解更多</div>
+        <ul class="footer-links">
+          <li><a href="about.html">關於我</a></li>
+          <li><a href="portfolio.html">成功案例</a></li>
+          <li><a href="blog.html">部落格</a></li>
+          <li><a href="contact.html">聯絡我們</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy" data-text="footer-copy" data-text-description="版權聲明">© 2024 余明道 企業教練｜mingdaoyu.com</span>
+      <a href="https://linkedin.com" target="_blank" class="footer-linkedin" data-text="footer-linkedin" data-text-description="LinkedIn連結">LinkedIn →</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Scroll reveal
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -24px 0px' });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+
+</body></html>

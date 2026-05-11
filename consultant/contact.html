@@ -1,0 +1,909 @@
+<!DOCTYPE html><html lang="zh-TW"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>聯絡我們｜余明道 企業教練</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&amp;family=Noto+Serif+TC:wght@400;600;700&amp;family=Cormorant+Garamond:wght@400;600;700&amp;display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-primary: #0D1F3C;
+      --bg-secondary: #152844;
+      --bg-deep: #091629;
+      --bg-card: #1A3255;
+      --bg-light: #F5F2ED;
+      --text-primary: #F0ECE4;
+      --text-muted: #A8B4C4;
+      --text-light: #6B7D93;
+      --text-dark: #1A2B3C;
+      --accent: #C9A96E;
+      --accent-light: #E2C99A;
+      --border: rgba(201, 169, 110, 0.2);
+      --border-subtle: rgba(255,255,255,0.08);
+      --font-serif: 'Cormorant Garamond', 'Noto Serif TC', serif;
+      --font-sans: 'Noto Sans TC', sans-serif;
+      --section-gap: 120px;
+      --content-max: 1080px;
+      --side-pad: 48px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-sans);
+      background: var(--bg-light);
+      color: var(--text-dark);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      padding-top: 64px;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(13, 31, 60, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .nav-inner {
+      max-width: var(--content-max);
+      margin: 0 auto;
+      padding: 0 var(--side-pad);
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-logo {
+      font-family: var(--font-serif);
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      text-decoration: none;
+      letter-spacing: 0.06em;
+    }
+    .nav-logo span {
+      color: var(--accent);
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.88rem;
+      letter-spacing: 0.04em;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--text-primary); }
+    .nav-cta {
+      background: var(--accent);
+      color: var(--bg-deep) !important;
+      padding: 8px 20px;
+      border-radius: 3px;
+      font-weight: 700;
+      font-size: 0.85rem !important;
+      letter-spacing: 0.06em;
+      transition: background 0.2s !important;
+    }
+    .nav-cta:hover { background: var(--accent-light) !important; color: var(--bg-deep) !important; }
+
+    /* ── SECTION COMMON ── */
+    .section {
+      padding: var(--section-gap) var(--side-pad);
+    }
+    .section-inner {
+      max-width: var(--content-max);
+      margin: 0 auto;
+    }
+    .section-label {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    .section-label-line {
+      width: 24px;
+      height: 1px;
+      background: var(--accent);
+    }
+    .section-label-text {
+      font-size: 0.74rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 500;
+    }
+    .section-title {
+      font-family: var(--font-serif);
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      font-weight: 700;
+      line-height: 1.3;
+      color: var(--text-dark);
+      margin-bottom: 16px;
+      letter-spacing: -0.01em;
+    }
+    .section-title-light {
+      color: var(--text-primary);
+    }
+    .section-desc {
+      font-size: 1rem;
+      color: var(--text-light);
+      max-width: 540px;
+      line-height: 1.8;
+    }
+    .section-desc-light {
+      color: var(--text-muted);
+    }
+    .section-header {
+      margin-bottom: 64px;
+    }
+
+    /* ── CONTACT HERO ── */
+    .contact-hero {
+      background: var(--bg-light);
+      padding: 100px var(--side-pad) 80px;
+      text-align: center;
+    }
+    .contact-hero-inner {
+      max-width: 640px;
+      margin: 0 auto;
+    }
+    .contact-hero-title {
+      font-family: var(--font-serif);
+      font-size: clamp(2.2rem, 4vw, 3.2rem);
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 20px;
+      line-height: 1.3;
+      letter-spacing: -0.01em;
+    }
+    .contact-hero-subtitle {
+      font-size: 1.1rem;
+      color: var(--text-light);
+      line-height: 1.8;
+      margin-bottom: 24px;
+    }
+    .contact-hero-note {
+      font-size: 0.88rem;
+      color: var(--accent);
+      letter-spacing: 0.04em;
+    }
+
+    /* ── CONTACT FORM ── */
+    .contact-form-section {
+      background: var(--bg-primary);
+      padding: var(--section-gap) var(--side-pad);
+    }
+    .form-container {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 64px;
+      align-items: start;
+    }
+    .form-left-title {
+      font-family: var(--font-serif);
+      font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 20px;
+      line-height: 1.3;
+    }
+    .form-left-desc {
+      font-size: 1rem;
+      color: var(--text-muted);
+      line-height: 1.8;
+    }
+    .contact-form {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 6px;
+      padding: 40px;
+    }
+    .form-row {
+      margin-bottom: 24px;
+    }
+    .form-row-half {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    .form-label {
+      display: block;
+      font-size: 0.9rem;
+      color: var(--text-primary);
+      margin-bottom: 8px;
+      font-weight: 500;
+    }
+    .form-label .required {
+      color: var(--accent);
+    }
+    .form-input, .form-select, .form-textarea {
+      width: 100%;
+      padding: 12px 16px;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-subtle);
+      border-radius: 3px;
+      color: var(--text-primary);
+      font-size: 0.9rem;
+      transition: border-color 0.2s, background-color 0.2s;
+    }
+    .form-input:focus, .form-select:focus, .form-textarea:focus {
+      outline: none;
+      border-color: var(--accent);
+      background: var(--bg-primary);
+    }
+    .form-input::placeholder, .form-textarea::placeholder {
+      color: var(--text-light);
+    }
+    .form-textarea {
+      min-height: 100px;
+      resize: vertical;
+    }
+    .form-submit {
+      background: var(--accent);
+      color: var(--bg-deep);
+      padding: 14px 32px;
+      border: none;
+      border-radius: 3px;
+      font-weight: 700;
+      font-size: 0.92rem;
+      letter-spacing: 0.06em;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s;
+      width: 100%;
+    }
+    .form-submit:hover {
+      background: var(--accent-light);
+      transform: translateY(-1px);
+    }
+    .form-note {
+      font-size: 0.8rem;
+      color: var(--text-light);
+      margin-top: 16px;
+      text-align: center;
+    }
+
+    /* ── DIRECT CONTACT ── */
+    .direct-contact {
+      background: var(--bg-light);
+      padding: var(--section-gap) var(--side-pad);
+    }
+    .contact-methods {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+    }
+    .contact-card {
+      background: white;
+      border: 1px solid rgba(201, 169, 110, 0.1);
+      border-radius: 6px;
+      padding: 36px 32px;
+      text-align: center;
+      transition: transform 0.25s, border-color 0.25s;
+    }
+    .contact-card:hover {
+      transform: translateY(-3px);
+      border-color: var(--border);
+    }
+    .contact-icon {
+      width: 48px;
+      height: 48px;
+      margin: 0 auto 20px;
+      background: var(--accent);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .contact-icon svg {
+      width: 24px;
+      height: 24px;
+      stroke: var(--bg-deep);
+      stroke-width: 2;
+    }
+    .contact-card-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 8px;
+    }
+    .contact-card-content {
+      font-size: 1rem;
+      color: var(--accent);
+      margin-bottom: 12px;
+      font-weight: 600;
+    }
+    .contact-card-desc {
+      font-size: 0.85rem;
+      color: var(--text-light);
+      line-height: 1.6;
+    }
+
+    /* ── OFFICE INFO ── */
+    .office-info {
+      background: var(--bg-secondary);
+      padding: var(--section-gap) var(--side-pad);
+    }
+    .office-container {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 64px;
+      align-items: start;
+    }
+    .office-details {
+      color: var(--text-primary);
+    }
+    .office-details-title {
+      font-family: var(--font-serif);
+      font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 32px;
+      line-height: 1.3;
+    }
+    .office-item {
+      margin-bottom: 28px;
+    }
+    .office-label {
+      font-size: 0.76rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 8px;
+      font-weight: 500;
+    }
+    .office-content {
+      font-size: 1rem;
+      color: var(--text-primary);
+      margin-bottom: 4px;
+    }
+    .office-note {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+    .map-placeholder {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 6px;
+      height: 320px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .map-placeholder img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* ── FAQ ── */
+    .faq-section {
+      background: var(--bg-light);
+      padding: var(--section-gap) var(--side-pad);
+    }
+    .faq-list {
+      max-width: 800px;
+    }
+    .faq-item {
+      border: 1px solid rgba(201, 169, 110, 0.1);
+      border-radius: 6px;
+      margin-bottom: 16px;
+      background: white;
+    }
+    .faq-question {
+      padding: 24px 28px;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-dark);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: color 0.2s;
+    }
+    .faq-question:hover {
+      color: var(--accent);
+    }
+    .faq-toggle {
+      width: 20px;
+      height: 20px;
+      transition: transform 0.2s;
+    }
+    .faq-answer {
+      padding: 0 28px 24px;
+      font-size: 0.92rem;
+      color: var(--text-light);
+      line-height: 1.7;
+      display: none;
+    }
+    .faq-item.active .faq-answer {
+      display: block;
+    }
+    .faq-item.active .faq-toggle {
+      transform: rotate(180deg);
+    }
+
+    /* ── FINAL CTA ── */
+    .final-cta {
+      background: linear-gradient(135deg, var(--bg-secondary) 0%, #0F2848 100%);
+      border-top: 1px solid var(--border-subtle);
+      padding: 100px var(--side-pad);
+      text-align: center;
+    }
+    .final-cta-inner {
+      max-width: 640px;
+      margin: 0 auto;
+    }
+    .final-cta-title {
+      font-family: var(--font-serif);
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 16px;
+      line-height: 1.3;
+    }
+    .final-cta-desc {
+      font-size: 1rem;
+      color: var(--text-muted);
+      line-height: 1.8;
+      margin-bottom: 40px;
+    }
+    .btn-primary {
+      background: var(--accent);
+      color: var(--bg-deep);
+      padding: 14px 32px;
+      border-radius: 3px;
+      font-weight: 700;
+      font-size: 0.92rem;
+      letter-spacing: 0.06em;
+      text-decoration: none;
+      display: inline-block;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .btn-primary:hover {
+      background: var(--accent-light);
+      transform: translateY(-1px);
+    }
+    .final-cta-note {
+      margin-top: 20px;
+      font-size: 0.8rem;
+      color: var(--text-light);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--bg-deep);
+      padding: 64px var(--side-pad) 40px;
+      border-top: 1px solid var(--border-subtle);
+    }
+    .footer-inner {
+      max-width: var(--content-max);
+      margin: 0 auto;
+    }
+    .footer-top {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr;
+      gap: 48px;
+      margin-bottom: 48px;
+    }
+    .footer-brand {
+      font-family: var(--font-serif);
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 12px;
+      letter-spacing: 0.04em;
+    }
+    .footer-brand span { color: var(--accent); }
+    .footer-tagline {
+      font-size: 0.84rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+    .footer-contact-item {
+      font-size: 0.84rem;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+    }
+    .footer-contact-item strong {
+      color: var(--text-primary);
+      font-size: 0.76rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 2px;
+    }
+    .footer-col-title {
+      font-size: 0.76rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 16px;
+      font-weight: 500;
+    }
+    .footer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .footer-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.88rem;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--text-primary); }
+    .footer-bottom {
+      border-top: 1px solid var(--border-subtle);
+      padding-top: 28px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .footer-copy {
+      font-size: 0.78rem;
+      color: var(--text-light);
+    }
+    .footer-linkedin {
+      font-size: 0.78rem;
+      color: var(--text-light);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-linkedin:hover { color: var(--accent); }
+
+    /* ── REVEAL ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .reveal-delay-1 { transition-delay: 0.08s; }
+    .reveal-delay-2 { transition-delay: 0.16s; }
+    .reveal-delay-3 { transition-delay: 0.24s; }
+    .reveal-delay-4 { transition-delay: 0.32s; }
+
+    /* ── RWD ── */
+    @media (max-width: 960px) {
+      :root { --side-pad: 32px; --section-gap: 80px; }
+      .nav-links li:not(:last-child) { display: none; }
+      .form-container { grid-template-columns: 1fr; gap: 48px; }
+      .form-row-half { grid-template-columns: 1fr; gap: 16px; }
+      .contact-methods { grid-template-columns: 1fr 1fr; }
+      .office-container { grid-template-columns: 1fr; gap: 48px; }
+      .footer-top { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 700px) {
+      :root { --side-pad: 20px; --section-gap: 64px; }
+      .nav-links { display: none; }
+      .contact-methods { grid-template-columns: 1fr; }
+      .contact-form { padding: 32px 24px; }
+      .map-placeholder { height: 240px; }
+      .footer-top { grid-template-columns: 1fr; gap: 32px; }
+      .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══ NAV ══ -->
+<nav data-section="navigation" data-section-title="導覽選單" data-section-purpose="提供主要頁面連結，重點突出預約諮詢CTA按鈕">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo" data-text="nav-logo" data-text-description="導覽區品牌標誌文字">余明道<span>．</span>企業教練</a>
+    <ul class="nav-links">
+      <li><a href="about.html">關於我</a></li>
+      <li><a href="services.html">服務項目</a></li>
+      <li><a href="portfolio.html">成功案例</a></li>
+      <li><a href="blog.html">部落格</a></li>
+      <li><a href="contact.html" class="nav-cta">預約諮詢</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ══ CONTACT HERO ══ -->
+<section class="contact-hero" data-section="contact-hero" data-section-title="聯絡引導" data-section-purpose="消除聯絡門檻，讓訪客感到被歡迎而非被推銷">
+  <div class="contact-hero-inner">
+    <h1 class="contact-hero-title reveal" data-text="contact-hero-title" data-text-description="聯絡頁面主標題，消除心理門檻">你的主管問題，我們很樂意跟你聊聊</h1>
+    <p class="contact-hero-subtitle reveal reveal-delay-1" data-text="contact-hero-subtitle" data-text-description="副標題說明聯絡後的流程">第一次通話完全免費，不需要準備資料，也不會有任何推銷。帶著你目前遇到的情況來就好，我們一起評估是否有合作的可能。</p>
+    <p class="contact-hero-note reveal reveal-delay-2" data-text="contact-hero-note" data-text-description="補充說明降低行動門檻">通常於1個工作天內回覆｜服務全台50-500人企業</p>
+  </div>
+</section>
+
+<!-- ══ CONTACT FORM ══ -->
+<section class="contact-form-section" data-section="contact-form" data-section-title="聯絡表單" data-section-purpose="提供主要轉換路徑，收集基本資訊以便後續跟進">
+  <div class="section-inner">
+    <div class="form-container">
+      <div class="reveal">
+        <h2 class="form-left-title" data-text="form-left-title" data-text-description="表單左側標題">告訴我們你的需求</h2>
+        <p class="form-left-desc" data-text="form-left-desc" data-text-description="表單左側說明">填寫下方表單，我們會在24小時內主動聯絡您，安排免費諮詢電話。您也可以直接寫信到 hello@mingdaoyu.com 或致電我們。</p>
+      </div>
+      <form class="contact-form reveal reveal-delay-1">
+        <div class="form-row-half">
+          <div class="form-row">
+            <label class="form-label" data-text="form-name-label" data-text-description="表單姓名標籤">您的姓名 <span class="required">*</span></label>
+            <input type="text" class="form-input" required="" data-text="form-name-placeholder" data-text-description="姓名欄位">
+          </div>
+          <div class="form-row">
+            <label class="form-label" data-text="form-company-label" data-text-description="表單公司標籤">公司名稱 <span class="required">*</span></label>
+            <input type="text" class="form-input" required="" data-text="form-company-placeholder" data-text-description="公司欄位">
+          </div>
+        </div>
+        <div class="form-row-half">
+          <div class="form-row">
+            <label class="form-label" data-text="form-phone-label" data-text-description="表單電話標籤">聯絡電話 <span class="required">*</span></label>
+            <input type="tel" class="form-input" required="" data-text="form-phone-placeholder" data-text-description="電話欄位">
+          </div>
+          <div class="form-row">
+            <label class="form-label" data-text="form-email-label" data-text-description="表單信箱標籤">電子信箱 <span class="required">*</span></label>
+            <input type="email" class="form-input" required="" data-text="form-email-placeholder" data-text-description="信箱欄位">
+          </div>
+        </div>
+        <div class="form-row">
+          <label class="form-label" data-text="form-size-label" data-text-description="公司規模標籤">公司規模</label>
+          <select class="form-select" data-text="form-size-options" data-text-description="公司規模選項">
+            <option>請選擇公司規模</option>
+            <option>20人以下</option>
+            <option>20-50人</option>
+            <option>50-100人</option>
+            <option>100-300人</option>
+            <option>300人以上</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label class="form-label" data-text="form-problem-label" data-text-description="問題描述標籤">目前遇到的主管問題</label>
+          <textarea class="form-textarea" placeholder="例如：主管留不住人、部門溝通效能差、新主管帶人技巧不足..." data-text="form-problem-placeholder" data-text-description="問題描述欄位"></textarea>
+        </div>
+        <button type="submit" class="form-submit" data-text="form-submit" data-text-description="表單提交按鈕">送出需求，預約免費諮詢</button>
+        <p class="form-note" data-text="form-note" data-text-description="表單隱私說明">我們重視您的隱私，您的資料僅用於聯絡與服務提供。</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ══ DIRECT CONTACT ══ -->
+<section class="direct-contact" data-section="direct-contact" data-section-title="直接聯絡方式" data-section-purpose="提供偏好直接聯絡的訪客其他選項">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <div class="section-label">
+        <div class="section-label-line"></div>
+        <span class="section-label-text" data-text="direct-contact-label" data-text-description="直接聯絡區塊標籤">Other Ways to Reach Us</span>
+      </div>
+      <h2 class="section-title" data-text="direct-contact-title" data-text-description="直接聯絡區塊標題">其他聯絡方式</h2>
+      <p class="section-desc" data-text="direct-contact-desc" data-text-description="直接聯絡區塊說明">選擇最適合您的聯絡方式，我們都會認真回應。</p>
+    </div>
+    <div class="contact-methods">
+      <div class="contact-card reveal">
+        <div class="contact-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+        </div>
+        <h3 class="contact-card-title" data-text="phone-card-title" data-text-description="電話卡片標題">電話聯絡</h3>
+        <div class="contact-card-content" data-text="phone-card-content" data-text-description="服務電話號碼">02-○○○○-○○○○</div>
+        <p class="contact-card-desc" data-text="phone-card-desc" data-text-description="電話聯絡說明">適合緊急需求或偏好直接對談</p>
+      </div>
+      <div class="contact-card reveal reveal-delay-1">
+        <div class="contact-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            <polyline points="22,6 12,13 2,6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></polyline>
+          </svg>
+        </div>
+        <h3 class="contact-card-title" data-text="email-card-title" data-text-description="信箱卡片標題">信件聯絡</h3>
+        <div class="contact-card-content" data-text="email-card-content" data-text-description="聯絡信箱地址">hello@mingdaoyu.com</div>
+        <p class="contact-card-desc" data-text="email-card-desc" data-text-description="信箱聯絡說明">適合詳細說明需求或非上班時間聯絡</p>
+      </div>
+      <div class="contact-card reveal reveal-delay-2">
+        <div class="contact-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            <rect x="2" y="9" width="4" height="12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></rect>
+            <circle cx="4" cy="4" r="2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></circle>
+          </svg>
+        </div>
+        <h3 class="contact-card-title" data-text="linkedin-card-title" data-text-description="LinkedIn卡片標題">LinkedIn 訊息</h3>
+        <div class="contact-card-content" data-text="linkedin-card-content" data-text-description="LinkedIn連結">余明道 企業教練</div>
+        <p class="contact-card-desc" data-text="linkedin-card-desc" data-text-description="LinkedIn聯絡說明">適合企業主管間的專業交流</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ OFFICE INFO ══ -->
+<section class="office-info" data-section="office-info" data-section-title="營業資訊與地圖" data-section-purpose="建立實體感和專業可信度，說明服務範圍">
+  <div class="section-inner">
+    <div class="office-container">
+      <div class="office-details reveal">
+        <h2 class="office-details-title" data-text="office-details-title" data-text-description="辦公地點區塊標題">辦公地點與服務範圍</h2>
+        <div class="office-item">
+          <div class="office-label" data-text="office-address-label" data-text-description="地址標籤">辦公地址</div>
+          <div class="office-content" data-text="office-address" data-text-description="辦公地址">台北市信義區松仁路○○號 ○ 樓</div>
+        </div>
+        <div class="office-item">
+          <div class="office-label" data-text="office-hours-label" data-text-description="營業時間標籤">服務時間</div>
+          <div class="office-content" data-text="office-hours" data-text-description="營業時間">週一至週五 09:00-18:00</div>
+          <div class="office-note" data-text="office-hours-note" data-text-description="營業時間說明">其他時間可預約，配合企業需求</div>
+        </div>
+        <div class="office-item">
+          <div class="office-label" data-text="service-area-label" data-text-description="服務範圍標籤">服務區域</div>
+          <div class="office-content" data-text="service-area" data-text-description="服務區域">服務全台企業</div>
+          <div class="office-note" data-text="service-area-note" data-text-description="服務範圍說明">可到府服務或線上進行，依課程需求安排</div>
+        </div>
+      </div>
+      <div class="map-placeholder reveal reveal-delay-1">
+        <img src="https://images.pexels.com/photos/35558254/pexels-photo-35558254.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=650&amp;w=940" alt="Office location map" data-img-query="Taipei Xinyi district office location map" data-img-orientation="landscape" data-img-description="辦公地址地圖位置示意">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FAQ ══ -->
+<section class="faq-section" data-section="faq" data-section-title="常見問題" data-section-purpose="解決聯絡前的最後疑慮">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <div class="section-label">
+        <div class="section-label-line"></div>
+        <span class="section-label-text" data-text="faq-label" data-text-description="FAQ區塊標籤">Frequently Asked</span>
+      </div>
+      <h2 class="section-title" data-text="faq-title" data-text-description="FAQ區塊標題">聯絡前，你可能想知道的</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item reveal">
+        <div class="faq-question" data-text="faq-1-question" data-text-description="第一個常見問題">
+          第一次諮詢真的免費嗎？
+          <svg class="faq-toggle" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+        </div>
+        <div class="faq-answer" data-text="faq-1-answer" data-text-description="第一個問題的答案">是的，第一次60分鐘諮詢完全免費。我們會了解您的組織狀況，評估是否適合合作，不會有任何費用或推銷。</div>
+      </div>
+      <div class="faq-item reveal reveal-delay-1">
+        <div class="faq-question" data-text="faq-2-question" data-text-description="第二個常見問題">
+          聯絡後多久會收到回覆？
+          <svg class="faq-toggle" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+        </div>
+        <div class="faq-answer" data-text="faq-2-answer" data-text-description="第二個問題的答案">我們承諾在1個工作天內回覆。如果是緊急需求，請直接致電，我們會盡快安排時間。</div>
+      </div>
+      <div class="faq-item reveal reveal-delay-2">
+        <div class="faq-question" data-text="faq-3-question" data-text-description="第三個常見問題">
+          諮詢內容會保密嗎？
+          <svg class="faq-toggle" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+        </div>
+        <div class="faq-answer" data-text="faq-3-answer" data-text-description="第三個問題的答案">絕對保密。我們會簽署保密協議，所有討論內容僅用於評估合作可能性，不會對外透露。</div>
+      </div>
+      <div class="faq-item reveal reveal-delay-3">
+        <div class="faq-question" data-text="faq-4-question" data-text-description="第四個常見問題">
+          你們服務哪些地區？
+          <svg class="faq-toggle" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+        </div>
+        <div class="faq-answer" data-text="faq-4-answer" data-text-description="第四個問題的答案">服務全台企業。台北市內可到府諮詢，其他縣市可安排線上會議或配合企業需求到府服務。</div>
+      </div>
+      <div class="faq-item reveal reveal-delay-4">
+        <div class="faq-question" data-text="faq-5-question" data-text-description="第五個常見問題">
+          什麼規模的企業適合？
+          <svg class="faq-toggle" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+        </div>
+        <div class="faq-answer" data-text="faq-5-answer" data-text-description="第五個問題的答案">我們專精服務50-500人的中型企業。太小的團隊可能不需要正式的主管培訓，太大的組織則建議內部設置專責HR團隊。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FINAL CTA ══ -->
+<section class="final-cta" data-section="final-cta" data-section-title="最終行動召喚" data-section-purpose="再次鼓勵行動，強化信心">
+  <div class="final-cta-inner">
+    <h2 class="final-cta-title reveal" data-text="final-cta-title" data-text-description="最終CTA標題">準備好改變了嗎？</h2>
+    <p class="final-cta-desc reveal reveal-delay-1" data-text="final-cta-desc" data-text-description="最終CTA說明">專業的主管培訓，從第一通電話開始。</p>
+    <a href="mailto:hello@mingdaoyu.com" class="btn-primary reveal reveal-delay-2" data-text="final-cta-button" data-text-description="最終CTA按鈕">立即預約免費諮詢</a>
+    <p class="final-cta-note reveal reveal-delay-3" data-text="final-cta-note" data-text-description="最終CTA補充說明">全台服務｜當天預約隔天回覆</p>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+<footer data-section="footer" data-section-title="頁尾資訊" data-section-purpose="提供完整聯絡資訊與快速連結，建立專業信任感">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand" data-text="footer-brand" data-text-description="頁尾品牌名稱">余明道<span>．</span>企業教練</div>
+        <p class="footer-tagline" data-text="footer-tagline" data-text-description="頁尾品牌標語">讓主管真的會帶人，不只是會管人。<br>服務全台 50–500 人中型企業。</p>
+        <div class="footer-contact-item">
+          <strong data-text="footer-email-label" data-text-description="聯絡信箱標籤">聯絡信箱</strong>
+          <span data-text="footer-email" data-text-description="聯絡信箱地址">hello@mingdaoyu.com</span>
+        </div>
+        <div class="footer-contact-item">
+          <strong data-text="footer-address-label" data-text-description="辦公地址標籤">辦公地址</strong>
+          <span data-text="footer-address" data-text-description="辦公地址">台北市信義區松仁路○○號 ○ 樓</span>
+        </div>
+        <div class="footer-contact-item">
+          <strong data-text="footer-phone-label" data-text-description="服務電話標籤">服務電話</strong>
+          <span data-text="footer-phone" data-text-description="服務電話號碼">02-○○○○-○○○○</span>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title" data-text="footer-services-title" data-text-description="服務項目標題">服務</div>
+        <ul class="footer-links">
+          <li><a href="services.html">企業主管內訓課程</a></li>
+          <li><a href="services.html">組織文化轉型顧問</a></li>
+          <li><a href="services.html">主管個別教練輔導</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title" data-text="footer-more-title" data-text-description="了解更多標題">了解更多</div>
+        <ul class="footer-links">
+          <li><a href="about.html">關於我</a></li>
+          <li><a href="portfolio.html">成功案例</a></li>
+          <li><a href="blog.html">部落格</a></li>
+          <li><a href="contact.html">聯絡我們</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy" data-text="footer-copy" data-text-description="版權聲明">© 2024 余明道 企業教練｜mingdaoyu.com</span>
+      <a href="https://linkedin.com" target="_blank" class="footer-linkedin" data-text="footer-linkedin" data-text-description="LinkedIn連結">LinkedIn →</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Scroll reveal
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -24px 0px' });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // FAQ accordion
+  document.querySelectorAll('.faq-question').forEach(question => {
+    question.addEventListener('click', () => {
+      const faqItem = question.parentNode;
+      const isActive = faqItem.classList.contains('active');
+      
+      // Close all FAQ items
+      document.querySelectorAll('.faq-item').forEach(item => {
+        item.classList.remove('active');
+      });
+      
+      // Open clicked item if it wasn't active
+      if (!isActive) {
+        faqItem.classList.add('active');
+      }
+    });
+  });
+
+  // Form submission (placeholder)
+  document.querySelector('.contact-form').addEventListener('submit', (e) => {
+    e.preventDefault();
+    alert('感謝您的訊息，我們會在 1 個工作天內與您聯絡！');
+  });
+</script>
+
+</body></html>

@@ -1,0 +1,1111 @@
+<!DOCTYPE html><html lang="zh-TW"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>作品集｜余明道 企業教練｜30+ 企業數位轉型實證</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&amp;family=Noto+Serif+TC:wght@400;600;700&amp;family=Cormorant+Garamond:wght@400;600;700&amp;display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-primary: #0D1F3C;
+      --bg-secondary: #152844;
+      --bg-deep: #091629;
+      --bg-card: #1A3255;
+      --bg-light: #F5F2ED;
+      --text-primary: #F0ECE4;
+      --text-muted: #A8B4C4;
+      --text-light: #6B7D93;
+      --text-dark: #1A2B3C;
+      --accent: #C9A96E;
+      --accent-light: #E2C99A;
+      --border: rgba(201, 169, 110, 0.2);
+      --border-subtle: rgba(255,255,255,0.08);
+      --font-serif: 'Cormorant Garamond', 'Noto Serif TC', serif;
+      --font-sans: 'Noto Sans TC', sans-serif;
+      --section-gap: 120px;
+      --content-max: 1080px;
+      --side-pad: 48px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-sans);
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(13, 31, 60, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .nav-inner {
+      max-width: var(--content-max);
+      margin: 0 auto;
+      padding: 0 var(--side-pad);
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-logo {
+      font-family: var(--font-serif);
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      text-decoration: none;
+      letter-spacing: 0.06em;
+    }
+    .nav-logo span {
+      color: var(--accent);
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.88rem;
+      letter-spacing: 0.04em;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--text-primary); }
+    .nav-cta {
+      background: var(--accent);
+      color: var(--bg-deep) !important;
+      padding: 8px 20px;
+      border-radius: 3px;
+      font-weight: 700;
+      font-size: 0.85rem !important;
+      letter-spacing: 0.06em;
+      transition: background 0.2s !important;
+    }
+    .nav-cta:hover { background: var(--accent-light) !important; color: var(--bg-deep) !important; }
+
+    /* ── PORTFOLIO HERO ── */
+    .portfolio-hero {
+      min-height: 80vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 120px var(--side-pad) 80px;
+      background:
+        radial-gradient(ellipse 50% 40% at 30% 60%, rgba(201,169,110,0.04) 0%, transparent 70%),
+        linear-gradient(170deg, var(--bg-deep) 0%, var(--bg-primary) 50%, #0F2848 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    .portfolio-hero::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-image:
+        repeating-linear-gradient(45deg, transparent, transparent 119px, rgba(255,255,255,0.02) 120px),
+        repeating-linear-gradient(-45deg, transparent, transparent 119px, rgba(255,255,255,0.02) 120px);
+      pointer-events: none;
+    }
+    .portfolio-hero-inner {
+      max-width: var(--content-max);
+      margin: 0 auto;
+      width: 100%;
+      position: relative;
+      z-index: 1;
+    }
+    .portfolio-hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 28px;
+    }
+    .portfolio-hero-eyebrow-line {
+      width: 32px;
+      height: 1px;
+      background: var(--accent);
+    }
+    .portfolio-hero-eyebrow-text {
+      font-size: 0.78rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 500;
+    }
+    .portfolio-hero-title {
+      font-family: var(--font-serif);
+      font-size: clamp(2.4rem, 5vw, 4rem);
+      font-weight: 700;
+      line-height: 1.2;
+      color: var(--text-primary);
+      margin-bottom: 12px;
+      letter-spacing: -0.01em;
+    }
+    .portfolio-hero-title-accent {
+      color: var(--accent);
+    }
+    .portfolio-hero-subtitle {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      max-width: 580px;
+      line-height: 1.8;
+      margin-bottom: 48px;
+    }
+    .portfolio-hero-stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 48px;
+      margin-bottom: 52px;
+      padding: 32px 40px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+    }
+    .portfolio-stat-item {
+      text-align: center;
+    }
+    .portfolio-stat-value {
+      font-family: var(--font-serif);
+      font-size: 2.8rem;
+      font-weight: 700;
+      color: var(--accent);
+      line-height: 1;
+      letter-spacing: -0.02em;
+    }
+    .portfolio-stat-unit {
+      font-size: 1rem;
+      color: var(--accent-light);
+    }
+    .portfolio-stat-label {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-top: 6px;
+      letter-spacing: 0.04em;
+    }
+
+    /* ── SECTION COMMON ── */
+    .section {
+      padding: var(--section-gap) var(--side-pad);
+    }
+    .section-inner {
+      max-width: var(--content-max);
+      margin: 0 auto;
+    }
+    .section-label {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    .section-label-line {
+      width: 24px;
+      height: 1px;
+      background: var(--accent);
+    }
+    .section-label-text {
+      font-size: 0.74rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 500;
+    }
+    .section-title {
+      font-family: var(--font-serif);
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      font-weight: 700;
+      line-height: 1.3;
+      color: var(--text-primary);
+      margin-bottom: 16px;
+      letter-spacing: -0.01em;
+    }
+    .section-desc {
+      font-size: 1rem;
+      color: var(--text-muted);
+      max-width: 540px;
+      line-height: 1.8;
+    }
+    .section-header {
+      margin-bottom: 64px;
+    }
+
+    /* ── PORTFOLIO FILTER ── */
+    .portfolio-filter {
+      background: var(--bg-secondary);
+      border-top: 1px solid var(--border-subtle);
+      border-bottom: 1px solid var(--border-subtle);
+      padding: 48px var(--side-pad);
+    }
+    .filter-groups {
+      max-width: var(--content-max);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+    }
+    .filter-group-title {
+      font-size: 0.8rem;
+      letter-spacing: 0.12em;
+      color: var(--accent);
+      margin-bottom: 16px;
+      font-weight: 500;
+    }
+    .filter-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .filter-tag {
+      padding: 6px 14px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid var(--border-subtle);
+      border-radius: 3px;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all 0.2s;
+      text-decoration: none;
+    }
+    .filter-tag:hover, .filter-tag.active {
+      background: rgba(201,169,110,0.12);
+      border-color: var(--border);
+      color: var(--accent);
+    }
+
+    /* ── FEATURED CASES ── */
+    .featured-cases {
+      background: var(--bg-primary);
+    }
+    .featured-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 48px;
+    }
+    .featured-case {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 48px;
+      align-items: start;
+      padding: 44px 40px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 6px;
+      transition: border-color 0.25s, transform 0.25s;
+    }
+    .featured-case:nth-child(even) {
+      grid-template-columns: 1.4fr 1fr;
+    }
+    .featured-case:nth-child(even) .case-content {
+      order: 2;
+    }
+    .featured-case:nth-child(even) .case-image {
+      order: 1;
+    }
+    .featured-case:hover {
+      border-color: var(--border);
+      transform: translateY(-2px);
+    }
+    .case-tag {
+      display: inline-block;
+      background: rgba(201,169,110,0.12);
+      color: var(--accent);
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      padding: 4px 10px;
+      border-radius: 2px;
+      margin-bottom: 16px;
+      font-weight: 500;
+    }
+    .case-company {
+      font-family: var(--font-serif);
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 8px;
+    }
+    .case-scale {
+      font-size: 0.8rem;
+      color: var(--text-light);
+      margin-bottom: 20px;
+    }
+    .case-problem {
+      margin-bottom: 20px;
+    }
+    .case-problem-title {
+      font-size: 0.8rem;
+      color: var(--accent);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .case-problem-text {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+    .case-results {
+      border-top: 1px solid var(--border-subtle);
+      padding-top: 20px;
+    }
+    .case-results-title {
+      font-size: 0.8rem;
+      color: var(--accent);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    .case-metrics {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+    .case-metric {
+      text-align: center;
+      padding: 12px 8px;
+      background: rgba(255,255,255,0.04);
+      border-radius: 3px;
+    }
+    .case-metric-value {
+      font-family: var(--font-serif);
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--accent);
+      display: block;
+    }
+    .case-metric-label {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+    .case-image {
+      position: relative;
+      aspect-ratio: 4/3;
+      border-radius: 6px;
+      overflow: hidden;
+      background: linear-gradient(135deg, var(--bg-deep), var(--bg-secondary));
+    }
+    .case-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* ── PORTFOLIO GRID ── */
+    .portfolio-grid-section {
+      background: var(--bg-deep);
+    }
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .portfolio-card {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-subtle);
+      border-radius: 6px;
+      padding: 28px 24px;
+      transition: border-color 0.25s, transform 0.25s;
+      cursor: default;
+    }
+    .portfolio-card:hover {
+      border-color: var(--border);
+      transform: translateY(-3px);
+    }
+    .portfolio-card-tag {
+      display: inline-block;
+      background: rgba(201,169,110,0.12);
+      color: var(--accent);
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      padding: 3px 8px;
+      border-radius: 2px;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .portfolio-card-title {
+      font-family: var(--font-serif);
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 6px;
+    }
+    .portfolio-card-scale {
+      font-size: 0.76rem;
+      color: var(--text-light);
+      margin-bottom: 16px;
+    }
+    .portfolio-card-result {
+      border-top: 1px solid var(--border-subtle);
+      padding-top: 16px;
+    }
+    .portfolio-card-highlight {
+      font-family: var(--font-serif);
+      font-size: 1.4rem;
+      color: var(--accent);
+      font-weight: 700;
+      display: block;
+      margin-bottom: 4px;
+    }
+    .portfolio-card-desc {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* ── RESULTS OVERVIEW ── */
+    .results-overview {
+      background: var(--bg-secondary);
+      border-top: 1px solid var(--border-subtle);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .results-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      overflow: hidden;
+    }
+    .result-item {
+      padding: 40px 36px;
+      border-right: 1px solid var(--border);
+      position: relative;
+    }
+    .result-item:last-child { border-right: none; }
+    .result-item::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: var(--accent);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .result-item:hover::before { opacity: 1; }
+    .result-num {
+      font-family: var(--font-serif);
+      font-size: 3.2rem;
+      font-weight: 700;
+      color: var(--accent);
+      line-height: 1;
+      letter-spacing: -0.02em;
+    }
+    .result-unit {
+      font-size: 1.1rem;
+      color: var(--accent-light);
+    }
+    .result-label {
+      font-size: 0.92rem;
+      color: var(--text-primary);
+      font-weight: 500;
+      margin-top: 10px;
+      margin-bottom: 6px;
+    }
+    .result-desc {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* ── CTA ── */
+    .portfolio-cta {
+      background: linear-gradient(135deg, var(--bg-secondary) 0%, #0F2848 100%);
+      border-top: 1px solid var(--border-subtle);
+      border-bottom: 1px solid var(--border-subtle);
+      padding: 100px var(--side-pad);
+      text-align: center;
+    }
+    .portfolio-cta-inner {
+      max-width: 640px;
+      margin: 0 auto;
+    }
+    .portfolio-cta-title {
+      font-family: var(--font-serif);
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 16px;
+      line-height: 1.3;
+    }
+    .portfolio-cta-desc {
+      font-size: 1rem;
+      color: var(--text-muted);
+      line-height: 1.8;
+      margin-bottom: 40px;
+    }
+    .btn-primary {
+      background: var(--accent);
+      color: var(--bg-deep);
+      padding: 14px 32px;
+      border-radius: 3px;
+      font-weight: 700;
+      font-size: 0.92rem;
+      letter-spacing: 0.06em;
+      text-decoration: none;
+      display: inline-block;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .btn-primary:hover { background: var(--accent-light); transform: translateY(-1px); }
+    .portfolio-cta-note {
+      margin-top: 20px;
+      font-size: 0.8rem;
+      color: var(--text-light);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--bg-deep);
+      padding: 64px var(--side-pad) 40px;
+      border-top: 1px solid var(--border-subtle);
+    }
+    .footer-inner {
+      max-width: var(--content-max);
+      margin: 0 auto;
+    }
+    .footer-top {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr;
+      gap: 48px;
+      margin-bottom: 48px;
+    }
+    .footer-brand {
+      font-family: var(--font-serif);
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 12px;
+      letter-spacing: 0.04em;
+    }
+    .footer-brand span { color: var(--accent); }
+    .footer-tagline {
+      font-size: 0.84rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+    .footer-contact-item {
+      font-size: 0.84rem;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+    }
+    .footer-contact-item strong {
+      color: var(--text-primary);
+      font-size: 0.76rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 2px;
+    }
+    .footer-col-title {
+      font-size: 0.76rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 16px;
+      font-weight: 500;
+    }
+    .footer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .footer-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.88rem;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--text-primary); }
+    .footer-bottom {
+      border-top: 1px solid var(--border-subtle);
+      padding-top: 28px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .footer-copy {
+      font-size: 0.78rem;
+      color: var(--text-light);
+    }
+    .footer-linkedin {
+      font-size: 0.78rem;
+      color: var(--text-light);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-linkedin:hover { color: var(--accent); }
+
+    /* ── REVEAL ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .reveal-delay-1 { transition-delay: 0.08s; }
+    .reveal-delay-2 { transition-delay: 0.16s; }
+    .reveal-delay-3 { transition-delay: 0.24s; }
+    .reveal-delay-4 { transition-delay: 0.32s; }
+
+    /* ── RWD ── */
+    @media (max-width: 960px) {
+      :root { --side-pad: 32px; --section-gap: 80px; }
+      .nav-links li:nth-child(-n+3) { display: none; }
+      .portfolio-hero-stats { grid-template-columns: repeat(2, 1fr); gap: 32px; }
+      .filter-groups { grid-template-columns: 1fr; gap: 24px; }
+      .featured-case { grid-template-columns: 1fr !important; }
+      .featured-case:nth-child(even) .case-content { order: 1; }
+      .featured-case:nth-child(even) .case-image { order: 2; }
+      .case-metrics { grid-template-columns: repeat(2, 1fr); }
+      .portfolio-grid { grid-template-columns: repeat(2, 1fr); }
+      .results-grid { grid-template-columns: repeat(2, 1fr); }
+      .result-item:nth-child(2) { border-right: none; }
+      .result-item:nth-child(3) { border-top: 1px solid var(--border); }
+      .result-item:nth-child(4) { border-right: none; border-top: 1px solid var(--border); }
+      .footer-top { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 700px) {
+      :root { --side-pad: 20px; --section-gap: 64px; }
+      .nav-links { display: none; }
+      .portfolio-hero-stats { grid-template-columns: 1fr; gap: 24px; }
+      .featured-case { padding: 32px 24px; }
+      .case-metrics { grid-template-columns: 1fr; }
+      .portfolio-grid { grid-template-columns: 1fr; }
+      .results-grid { grid-template-columns: 1fr; }
+      .result-item { border-right: none !important; border-top: 1px solid var(--border); }
+      .result-item:first-child { border-top: none; }
+      .footer-top { grid-template-columns: 1fr; gap: 32px; }
+      .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══ NAV ══ -->
+<nav data-section="navigation" data-section-title="導覽選單" data-section-purpose="提供主要頁面連結，重點突出預約諮詢CTA按鈕">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo" data-text="nav-logo" data-text-description="導覽區品牌標誌文字">余明道<span>．</span>企業教練</a>
+    <ul class="nav-links">
+      <li><a href="about.html">關於我</a></li>
+      <li><a href="services.html">服務項目</a></li>
+      <li><a href="portfolio.html">成功案例</a></li>
+      <li><a href="blog.html">部落格</a></li>
+      <li><a href="contact.html" class="nav-cta">預約諮詢</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ══ PORTFOLIO HERO ══ -->
+<section class="portfolio-hero" data-section="portfolio-hero" data-section-title="作品集主視覺" data-section-purpose="用整體服務數據快速建立可信度，展示服務規模與專業深度">
+  <div class="portfolio-hero-inner">
+    <div class="portfolio-hero-eyebrow reveal">
+      <div class="portfolio-hero-eyebrow-line"></div>
+      <span class="portfolio-hero-eyebrow-text" data-text="portfolio-hero-eyebrow" data-text-description="作品集頁面業務類別標籤">Portfolio Showcase</span>
+    </div>
+    <h1 class="portfolio-hero-title reveal reveal-delay-1" data-text="portfolio-hero-title" data-text-description="作品集頁面主標題，強調企業數量與實證成果">
+      <span class="portfolio-hero-title-accent">30+</span> 企業的數位轉型實證
+    </h1>
+    <p class="portfolio-hero-subtitle reveal reveal-delay-2" data-text="portfolio-hero-subtitle" data-text-description="作品集副標題，說明服務範圍與成果可衡量性">
+      從製造業到科技服務，每個案例都有具體可衡量的成果。看看和你類似的企業，如何解決主管留才與溝通效能問題。
+    </p>
+    <div class="portfolio-hero-stats reveal reveal-delay-3" data-section="portfolio-hero-stats" data-section-title="作品集數據總覽" data-section-purpose="以量化數字快速建立信任感與服務規模印象">
+      <div class="portfolio-stat-item">
+        <div class="portfolio-stat-value" data-text="portfolio-stat-1" data-text-description="合作企業總數">30<span class="portfolio-stat-unit">+</span></div>
+        <div class="portfolio-stat-label" data-text="portfolio-stat-1-label" data-text-description="數字說明">合作企業</div>
+      </div>
+      <div class="portfolio-stat-item">
+        <div class="portfolio-stat-value" data-text="portfolio-stat-2" data-text-description="培訓主管總數">600<span class="portfolio-stat-unit">+</span></div>
+        <div class="portfolio-stat-label" data-text="portfolio-stat-2-label" data-text-description="數字說明">培訓主管人次</div>
+      </div>
+      <div class="portfolio-stat-item">
+        <div class="portfolio-stat-value" data-text="portfolio-stat-3" data-text-description="服務年數">8<span class="portfolio-stat-unit">年</span></div>
+        <div class="portfolio-stat-label" data-text="portfolio-stat-3-label" data-text-description="數字說明">深耕企業培訓</div>
+      </div>
+      <div class="portfolio-stat-item">
+        <div class="portfolio-stat-value" data-text="portfolio-stat-4" data-text-description="客戶回頭合作率">78<span class="portfolio-stat-unit">%</span></div>
+        <div class="portfolio-stat-label" data-text="portfolio-stat-4-label" data-text-description="數字說明">客戶二次合作</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ PORTFOLIO FILTER ── -->
+<section class="portfolio-filter" data-section="portfolio-filter" data-section-title="案例篩選" data-section-purpose="幫助訪客快速找到與自己企業類似的案例類型">
+  <div class="filter-groups">
+    <div class="filter-group reveal">
+      <div class="filter-group-title" data-text="filter-industry-title" data-text-description="產業類型篩選標題">產業類型</div>
+      <div class="filter-tags">
+        <span class="filter-tag active" data-text="filter-all" data-text-description="篩選：全部">全部</span>
+        <span class="filter-tag" data-text="filter-manufacturing" data-text-description="篩選：製造業">製造業</span>
+        <span class="filter-tag" data-text="filter-technology" data-text-description="篩選：科技業">科技業</span>
+        <span class="filter-tag" data-text="filter-service" data-text-description="篩選：服務業">服務業</span>
+        <span class="filter-tag" data-text="filter-retail" data-text-description="篩選：零售業">零售業</span>
+      </div>
+    </div>
+    <div class="filter-group reveal reveal-delay-1">
+      <div class="filter-group-title" data-text="filter-scale-title" data-text-description="企業規模篩選標題">企業規模</div>
+      <div class="filter-tags">
+        <span class="filter-tag active" data-text="filter-scale-all" data-text-description="篩選：全部規模">全部</span>
+        <span class="filter-tag" data-text="filter-scale-small" data-text-description="篩選：50-100人">50-100人</span>
+        <span class="filter-tag" data-text="filter-scale-medium" data-text-description="篩選：100-200人">100-200人</span>
+        <span class="filter-tag" data-text="filter-scale-large" data-text-description="篩選：200-500人">200-500人</span>
+      </div>
+    </div>
+    <div class="filter-group reveal reveal-delay-2">
+      <div class="filter-group-title" data-text="filter-problem-title" data-text-description="問題類型篩選標題">問題類型</div>
+      <div class="filter-tags">
+        <span class="filter-tag active" data-text="filter-problem-all" data-text-description="篩選：全部問題">全部</span>
+        <span class="filter-tag" data-text="filter-problem-retention" data-text-description="篩選：主管留才">主管留才</span>
+        <span class="filter-tag" data-text="filter-problem-communication" data-text-description="篩選：跨部門溝通">跨部門溝通</span>
+        <span class="filter-tag" data-text="filter-problem-leadership" data-text-description="篩選：領導力提升">領導力提升</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FEATURED CASES ── -->
+<section class="section featured-cases" data-section="featured-cases" data-section-title="重點案例詳情" data-section-purpose="展示最具代表性的成功案例，建立專業能力的具體印象">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <div class="section-label">
+        <div class="section-label-line"></div>
+        <span class="section-label-text" data-text="featured-cases-label" data-text-description="重點案例區塊英文標籤">Featured Success Stories</span>
+      </div>
+      <h2 class="section-title" data-text="featured-cases-title" data-text-description="重點案例區塊標題">最具代表性的轉型成果</h2>
+      <p class="section-desc" data-text="featured-cases-desc" data-text-description="重點案例說明">每個案例都包含完整的企業背景、問題診斷、解決方案與具體成果，幫助你評估適合性。</p>
+    </div>
+    <div class="featured-grid">
+      <div class="featured-case reveal" data-section="featured-case-1" data-section-title="製造業轉型案例" data-section-purpose="展示製造業主管留才問題的解決方案與成果">
+        <div class="case-content">
+          <span class="case-tag" data-text="case-1-tag" data-text-description="案例產業標籤">精密製造業</span>
+          <div class="case-company" data-text="case-1-company" data-text-description="案例企業名稱">中部精密零件製造商</div>
+          <div class="case-scale" data-text="case-1-scale" data-text-description="企業規模資訊">企業規模：120人，主管層14位</div>
+          <div class="case-problem">
+            <div class="case-problem-title" data-text="case-1-problem-title" data-text-description="問題描述標題">挑戰描述</div>
+            <div class="case-problem-text" data-text="case-1-problem-text" data-text-description="具體問題說明">生產主管流動率高達35%，新手主管不知如何帶領資深師傅，造成生產效率低落與工安事件頻發。</div>
+          </div>
+          <div class="case-results">
+            <div class="case-results-title" data-text="case-1-results-title" data-text-description="成果標題">培訓成果</div>
+            <div class="case-metrics">
+              <div class="case-metric">
+                <span class="case-metric-value" data-text="case-1-metric-1" data-text-description="第一項成果數字">↓52%</span>
+                <div class="case-metric-label" data-text="case-1-metric-1-label" data-text-description="第一項成果說明">主管離職率</div>
+              </div>
+              <div class="case-metric">
+                <span class="case-metric-value" data-text="case-1-metric-2" data-text-description="第二項成果數字">↑18%</span>
+                <div class="case-metric-label" data-text="case-1-metric-2-label" data-text-description="第二項成果說明">生產效率</div>
+              </div>
+              <div class="case-metric">
+                <span class="case-metric-value" data-text="case-1-metric-3" data-text-description="第三項成果數字">↓31%</span>
+                <div class="case-metric-label" data-text="case-1-metric-3-label" data-text-description="第三項成果說明">工安事件</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="case-image">
+          <img src="https://images.pexels.com/photos/34718930/pexels-photo-34718930.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=650&amp;w=940" alt="Manufacturing facility workplace" data-img-query="manufacturing facility workplace industrial environment" data-img-orientation="landscape" data-img-description="製造業工廠環境示意圖">
+        </div>
+      </div>
+
+      <div class="featured-case reveal reveal-delay-1" data-section="featured-case-2" data-section-title="科技業協作案例" data-section-purpose="展示科技業跨部門協作問題的解決方案">
+        <div class="case-content">
+          <span class="case-tag" data-text="case-2-tag" data-text-description="案例產業標籤">SaaS軟體開發</span>
+          <div class="case-company" data-text="case-2-company" data-text-description="案例企業名稱">北部 SaaS 軟體公司</div>
+          <div class="case-scale" data-text="case-2-scale" data-text-description="企業規模資訊">企業規模：80人，主管層9位</div>
+          <div class="case-problem">
+            <div class="case-problem-title" data-text="case-2-problem-title" data-text-description="問題描述標題">挑戰描述</div>
+            <div class="case-problem-text" data-text="case-2-problem-text" data-text-description="具體問題說明">跨功能團隊協作困難，產品開發週期冗長，技術與業務主管經常衝突，影響產品迭代速度。</div>
+          </div>
+          <div class="case-results">
+            <div class="case-results-title" data-text="case-2-results-title" data-text-description="成果標題">培訓成果</div>
+            <div class="case-metrics">
+              <div class="case-metric">
+                <span class="case-metric-value" data-text="case-2-metric-1" data-text-description="第一項成果數字">↓47%</span>
+                <div class="case-metric-label" data-text="case-2-metric-1-label" data-text-description="第一項成果說明">產品迭代週期</div>
+              </div>
+              <div class="case-metric">
+                <span class="case-metric-value" data-text="case-2-metric-2" data-text-description="第二項成果數字">↑3.5x</span>
+                <div class="case-metric-label" data-text="case-2-metric-2-label" data-text-description="第二項成果說明">協作頻率</div>
+              </div>
+              <div class="case-metric">
+                <span class="case-metric-value" data-text="case-2-metric-3" data-text-description="第三項成果數字">0</span>
+                <div class="case-metric-label" data-text="case-2-metric-3-label" data-text-description="第三項成果說明">主管衝突事件</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="case-image">
+          <img src="https://images.pexels.com/photos/8204363/pexels-photo-8204363.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=650&amp;w=940" alt="Technology office workspace collaboration" data-img-query="technology office workspace collaboration team meeting" data-img-orientation="landscape" data-img-description="科技公司辦公環境協作空間">
+        </div>
+      </div>
+
+      <div class="featured-case reveal reveal-delay-2" data-section="featured-case-3" data-section-title="服務業團隊案例" data-section-purpose="展示服務業主管帶人技巧提升的解決方案">
+        <div class="case-content">
+          <span class="case-tag" data-text="case-3-tag" data-text-description="案例產業標籤">連鎖醫美服務</span>
+          <div class="case-company" data-text="case-3-company" data-text-description="案例企業名稱">全台連鎖醫美診所集團</div>
+          <div class="case-scale" data-text="case-3-scale" data-text-description="企業規模資訊">企業規模：350人，主管層28位</div>
+          <div class="case-problem">
+            <div class="case-problem-title" data-text="case-3-problem-title" data-text-description="問題描述標題">挑戰描述</div>
+            <div class="case-problem-text" data-text="case-3-problem-text" data-text-description="具體問題說明">門市主管缺乏帶人技巧，員工滿意度低，服務品質不穩定，影響整體品牌形象與營收。</div>
+          </div>
+          <div class="case-results">
+            <div class="case-results-title" data-text="case-3-results-title" data-text-description="成果標題">培訓成果</div>
+            <div class="case-metrics">
+              <div class="case-metric">
+                <span class="case-metric-value" data-text="case-3-metric-1" data-text-description="第一項成果數字">↑34%</span>
+                <div class="case-metric-label" data-text="case-3-metric-1-label" data-text-description="第一項成果說明">員工滿意度</div>
+              </div>
+              <div class="case-metric">
+                <span class="case-metric-value" data-text="case-3-metric-2" data-text-description="第二項成果數字">↓48%</span>
+                <div class="case-metric-label" data-text="case-3-metric-2-label" data-text-description="第二項成果說明">服務投訴率</div>
+              </div>
+              <div class="case-metric">
+                <span class="case-metric-value" data-text="case-3-metric-3" data-text-description="第三項成果數字">↑12%</span>
+                <div class="case-metric-label" data-text="case-3-metric-3-label" data-text-description="第三項成果說明">營業額成長</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="case-image">
+          <img src="https://images.pexels.com/photos/3801422/pexels-photo-3801422.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=650&amp;w=940" alt="Service industry retail environment customer service" data-img-query="service industry retail environment customer service professional" data-img-orientation="landscape" data-img-description="服務業零售環境客戶服務場景">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ PORTFOLIO GRID ── -->
+<section class="section portfolio-grid-section" data-section="portfolio-grid" data-section-title="完整案例列表" data-section-purpose="展示服務廣度，讓訪客看到完整的合作企業類型與規模">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <div class="section-label">
+        <div class="section-label-line"></div>
+        <span class="section-label-text" data-text="portfolio-grid-label" data-text-description="完整案例區塊英文標籤">All Portfolio Cases</span>
+      </div>
+      <h2 class="section-title" data-text="portfolio-grid-title" data-text-description="完整案例區塊標題">更多合作企業案例</h2>
+      <p class="section-desc" data-text="portfolio-grid-desc" data-text-description="完整案例說明">橫跨不同產業與規模的企業，每個都有具體的培訓成果。</p>
+    </div>
+    <div class="portfolio-grid">
+      <div class="portfolio-card reveal">
+        <span class="portfolio-card-tag" data-text="portfolio-card-1-tag" data-text-description="案例卡片產業標籤">電子製造</span>
+        <div class="portfolio-card-title" data-text="portfolio-card-1-title" data-text-description="案例卡片企業名稱">北部電子製造</div>
+        <div class="portfolio-card-scale" data-text="portfolio-card-1-scale" data-text-description="案例卡片企業規模">180人｜主管層 16 位</div>
+        <div class="portfolio-card-result">
+          <span class="portfolio-card-highlight" data-text="portfolio-card-1-highlight" data-text-description="案例卡片主要成果">離職率 ↓45%</span>
+          <div class="portfolio-card-desc" data-text="portfolio-card-1-desc" data-text-description="案例卡片成果說明">主管培訓後顯著降低技術人員流動率</div>
+        </div>
+      </div>
+      <div class="portfolio-card reveal reveal-delay-1">
+        <span class="portfolio-card-tag" data-text="portfolio-card-2-tag" data-text-description="案例卡片產業標籤">食品工業</span>
+        <div class="portfolio-card-title" data-text="portfolio-card-2-title" data-text-description="案例卡片企業名稱">中部食品工廠</div>
+        <div class="portfolio-card-scale" data-text="portfolio-card-2-scale" data-text-description="案例卡片企業規模">95人｜主管層 11 位</div>
+        <div class="portfolio-card-result">
+          <span class="portfolio-card-highlight" data-text="portfolio-card-2-highlight" data-text-description="案例卡片主要成果">效率 ↑28%</span>
+          <div class="portfolio-card-desc" data-text="portfolio-card-2-desc" data-text-description="案例卡片成果說明">生產線管理效率與品質控制大幅改善</div>
+        </div>
+      </div>
+      <div class="portfolio-card reveal reveal-delay-2">
+        <span class="portfolio-card-tag" data-text="portfolio-card-3-tag" data-text-description="案例卡片產業標籤">物流服務</span>
+        <div class="portfolio-card-title" data-text="portfolio-card-3-title" data-text-description="案例卡片企業名稱">南部物流公司</div>
+        <div class="portfolio-card-scale" data-text="portfolio-card-3-scale" data-text-description="案例卡片企業規模">220人｜主管層 18 位</div>
+        <div class="portfolio-card-result">
+          <span class="portfolio-card-highlight" data-text="portfolio-card-3-highlight" data-text-description="案例卡片主要成果">滿意度 ↑40%</span>
+          <div class="portfolio-card-desc" data-text="portfolio-card-3-desc" data-text-description="案例卡片成果說明">倉儲主管領導力提升，員工工作滿意度顯著改善</div>
+        </div>
+      </div>
+      <div class="portfolio-card reveal">
+        <span class="portfolio-card-tag" data-text="portfolio-card-4-tag" data-text-description="案例卡片產業標籤">軟體開發</span>
+        <div class="portfolio-card-title" data-text="portfolio-card-4-title" data-text-description="案例卡片企業名稱">台北軟體公司</div>
+        <div class="portfolio-card-scale" data-text="portfolio-card-4-scale" data-text-description="案例卡片企業規模">65人｜主管層 8 位</div>
+        <div class="portfolio-card-result">
+          <span class="portfolio-card-highlight" data-text="portfolio-card-4-highlight" data-text-description="案例卡片主要成果">協作 ↑300%</span>
+          <div class="portfolio-card-desc" data-text="portfolio-card-4-desc" data-text-description="案例卡片成果說明">敏捷開發流程優化，跨功能協作效率大幅提升</div>
+        </div>
+      </div>
+      <div class="portfolio-card reveal reveal-delay-1">
+        <span class="portfolio-card-tag" data-text="portfolio-card-5-tag" data-text-description="案例卡片產業標籤">機械製造</span>
+        <div class="portfolio-card-title" data-text="portfolio-card-5-title" data-text-description="案例卡片企業名稱">桃園機械製造</div>
+        <div class="portfolio-card-scale" data-text="portfolio-card-5-scale" data-text-description="案例卡片企業規模">140人｜主管層 13 位</div>
+        <div class="portfolio-card-result">
+          <span class="portfolio-card-highlight" data-text="portfolio-card-5-highlight" data-text-description="案例卡片主要成果">安全 ↑25%</span>
+          <div class="portfolio-card-desc" data-text="portfolio-card-5-desc" data-text-description="案例卡片成果說明">工安管理培訓，職場安全指標顯著提升</div>
+        </div>
+      </div>
+      <div class="portfolio-card reveal reveal-delay-2">
+        <span class="portfolio-card-tag" data-text="portfolio-card-6-tag" data-text-description="案例卡片產業標籤">科技業</span>
+        <div class="portfolio-card-title" data-text="portfolio-card-6-title" data-text-description="案例卡片企業名稱">新竹科技業</div>
+        <div class="portfolio-card-scale" data-text="portfolio-card-6-scale" data-text-description="案例卡片企業規模">110人｜主管層 12 位</div>
+        <div class="portfolio-card-result">
+          <span class="portfolio-card-highlight" data-text="portfolio-card-6-highlight" data-text-description="案例卡片主要成果">創新 ↑60%</span>
+          <div class="portfolio-card-desc" data-text="portfolio-card-6-desc" data-text-description="案例卡片成果說明">研發主管培訓，團隊創新產出與專案成功率提升</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ RESULTS OVERVIEW ── -->
+<section class="section results-overview" data-section="results-overview" data-section-title="整體成果統計" data-section-purpose="用整體統計數據做最終說服，展示量化成果">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <div class="section-label">
+        <div class="section-label-line"></div>
+        <span class="section-label-text" data-text="results-overview-label" data-text-description="整體成果區塊英文標籤">Overall Results</span>
+      </div>
+      <h2 class="section-title" data-text="results-overview-title" data-text-description="整體成果區塊標題">橫跨所有合作案例的整體成果</h2>
+      <p class="section-desc" data-text="results-overview-desc" data-text-description="整體成果說明">這些數字來自與 30+ 企業的實際合作成果，培訓完成後 6 個月的追蹤調查。</p>
+    </div>
+    <div class="results-grid">
+      <div class="result-item reveal">
+        <div class="result-num" data-text="result-1-num" data-text-description="第一項整體成果數字">↑ 41<span class="result-unit">%</span></div>
+        <div class="result-label" data-text="result-1-label" data-text-description="整體成果項目名稱">主管留才率平均提升</div>
+        <div class="result-desc" data-text="result-1-desc" data-text-description="整體成果說明">培訓完成 6 個月後，主管層自願離職率平均下降 41%，顯著降低 HR 遞補成本。</div>
+      </div>
+      <div class="result-item reveal reveal-delay-1">
+        <div class="result-num" data-text="result-2-num" data-text-description="第二項整體成果數字">↑ 3.2<span class="result-unit">倍</span></div>
+        <div class="result-label" data-text="result-2-label" data-text-description="整體成果項目名稱">跨部門協作頻率增長</div>
+        <div class="result-desc" data-text="result-2-desc" data-text-description="整體成果說明">主管主動發起協作的次數平均成長 3.2 倍，部門壁壘明顯降低。</div>
+      </div>
+      <div class="result-item reveal reveal-delay-2">
+        <div class="result-num" data-text="result-3-num" data-text-description="第三項整體成果數字">91<span class="result-unit">%</span></div>
+        <div class="result-label" data-text="result-3-label" data-text-description="整體成果項目名稱">課後滿意度評分</div>
+        <div class="result-desc" data-text="result-3-desc" data-text-description="整體成果說明">歷屆培訓結束後的學員滿意度回饋，91% 認為「真的對工作有幫助」。</div>
+      </div>
+      <div class="result-item reveal reveal-delay-3">
+        <div class="result-num" data-text="result-4-num" data-text-description="第四項整體成果數字">↓ 38<span class="result-unit">%</span></div>
+        <div class="result-label" data-text="result-4-label" data-text-description="整體成果項目名稱">管理衝突事件減少</div>
+        <div class="result-desc" data-text="result-4-desc" data-text-description="整體成果說明">HR 通報的主管衝突事件於培訓後 3 個月內平均減少 38%，管理氣候明顯改善。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ PORTFOLIO CTA ── -->
+<section class="portfolio-cta" data-section="portfolio-cta" data-section-title="作品集行動召喚" data-section-purpose="引導已建立信任的訪客進行下一步諮詢">
+  <div class="portfolio-cta-inner">
+    <h2 class="portfolio-cta-title reveal" data-text="portfolio-cta-title" data-text-description="作品集CTA標題，邀請成為案例">
+      你的企業案例，<br>也值得被記錄
+    </h2>
+    <p class="portfolio-cta-desc reveal reveal-delay-1" data-text="portfolio-cta-desc" data-text-description="作品集CTA說明文字，消除行動顧慮">
+      每個成功案例的背後，都是從一次認真的對話開始。和我聊聊你目前遇到的主管問題，讓我們一起評估解決方案。
+    </p>
+    <a href="mailto:hello@mingdaoyu.com" class="btn-primary reveal reveal-delay-2" data-text="portfolio-cta-button" data-text-description="作品集CTA主要按鈕文字">預約免費諮詢</a>
+    <p class="portfolio-cta-note reveal reveal-delay-3" data-text="portfolio-cta-note" data-text-description="作品集CTA補充說明，降低預約門檻">
+      60分鐘深度討論｜完全免費｜通常1個工作天內回覆
+    </p>
+  </div>
+</section>
+
+<!-- ══ FOOTER ── -->
+<footer data-section="footer" data-section-title="頁尾資訊" data-section-purpose="提供完整聯絡資訊與快速連結，建立專業信任感">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand" data-text="footer-brand" data-text-description="頁尾品牌名稱">余明道<span>．</span>企業教練</div>
+        <p class="footer-tagline" data-text="footer-tagline" data-text-description="頁尾品牌標語">讓主管真的會帶人，不只是會管人。<br>服務全台 50–500 人中型企業。</p>
+        <div class="footer-contact-item">
+          <strong data-text="footer-email-label" data-text-description="聯絡信箱標籤">聯絡信箱</strong>
+          <span data-text="footer-email" data-text-description="聯絡信箱地址">hello@mingdaoyu.com</span>
+        </div>
+        <div class="footer-contact-item">
+          <strong data-text="footer-address-label" data-text-description="辦公地址標籤">辦公地址</strong>
+          <span data-text="footer-address" data-text-description="辦公地址">台北市信義區松仁路○○號 ○ 樓</span>
+        </div>
+        <div class="footer-contact-item">
+          <strong data-text="footer-phone-label" data-text-description="服務電話標籤">服務電話</strong>
+          <span data-text="footer-phone" data-text-description="服務電話號碼">02-○○○○-○○○○</span>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title" data-text="footer-services-title" data-text-description="服務項目標題">服務</div>
+        <ul class="footer-links">
+          <li><a href="services.html">企業主管內訓課程</a></li>
+          <li><a href="services.html">組織文化轉型顧問</a></li>
+          <li><a href="services.html">主管個別教練輔導</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title" data-text="footer-more-title" data-text-description="了解更多標題">了解更多</div>
+        <ul class="footer-links">
+          <li><a href="about.html">關於我</a></li>
+          <li><a href="portfolio.html">成功案例</a></li>
+          <li><a href="blog.html">部落格</a></li>
+          <li><a href="contact.html">聯絡我們</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy" data-text="footer-copy" data-text-description="版權聲明">© 2024 余明道 企業教練｜mingdaoyu.com</span>
+      <a href="https://linkedin.com" target="_blank" class="footer-linkedin" data-text="footer-linkedin" data-text-description="LinkedIn連結">LinkedIn →</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Scroll reveal
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -24px 0px' });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // Filter functionality
+  document.querySelectorAll('.filter-tag').forEach(tag => {
+    tag.addEventListener('click', function() {
+      // Remove active from siblings
+      this.parentNode.querySelectorAll('.filter-tag').forEach(t => t.classList.remove('active'));
+      // Add active to clicked
+      this.classList.add('active');
+    });
+  });
+
+  // Number counter animation
+  function animateCounter(el) {
+    const text = el.textContent;
+    const match = text.match(/[\d.]+/);
+    if (!match) return;
+    const target = parseFloat(match[0]);
+    const isDecimal = text.includes('.');
+    const duration = 1200;
+    const start = performance.now();
+    function update(now) {
+      const progress = Math.min((now - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      const current = eased * target;
+      el.textContent = text.replace(/[\d.]+/, isDecimal ? current.toFixed(1) : Math.floor(current));
+      if (progress < 1) requestAnimationFrame(update);
+    }
+    requestAnimationFrame(update);
+  }
+
+  const numObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const nums = entry.target.querySelectorAll('.portfolio-stat-value, .result-num');
+        nums.forEach(animateCounter);
+        numObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.3 });
+
+  document.querySelectorAll('.portfolio-hero-stats, .results-grid').forEach(el => numObserver.observe(el));
+</script>
+
+</body></html>

@@ -1,0 +1,1269 @@
+<!DOCTYPE html><html lang="zh-Hant"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>來店資訊｜身研所 Somatics Studio｜台北大安區一對一皮拉提斯工作室</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&amp;family=Noto+Sans+TC:wght@300;400;500&amp;family=Noto+Serif+TC:wght@300;400&amp;display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg-primary: #FAF8F5;
+  --bg-secondary: #F3EFE8;
+  --bg-deep: #2C2825;
+  --text-primary: #2C2825;
+  --text-muted: #7A6E66;
+  --text-light: #B5A99E;
+  --accent: #C8956C;
+  --accent-soft: #E8D5C4;
+  --border: #E2DAD0;
+  --font-serif: 'Cormorant Garamond', 'Noto Serif TC', serif;
+  --font-sans: 'Noto Sans TC', sans-serif;
+  --section-gap: 120px;
+  --content-max: 1080px;
+  --side-pad: 48px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-sans);
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Nav ── */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  background: rgba(250, 248, 245, 0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav-inner {
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding: 0 var(--side-pad);
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-logo {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+.nav-logo-zh {
+  font-family: var(--font-serif);
+  font-size: 17px;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  color: var(--text-primary);
+}
+.nav-logo-en {
+  font-size: 10px;
+  font-weight: 300;
+  letter-spacing: 0.18em;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+  list-style: none;
+}
+.nav-links a {
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.25s;
+}
+.nav-links a:hover { color: var(--text-primary); }
+
+.nav-cta {
+  background: var(--text-primary);
+  color: var(--bg-primary) !important;
+  padding: 9px 22px !important;
+  border-radius: 2px;
+  font-size: 13px !important;
+  font-weight: 400 !important;
+  letter-spacing: 0.1em;
+  transition: background 0.25s !important;
+}
+.nav-cta:hover { background: var(--accent) !important; color: #fff !important; }
+
+/* ── Section wrapper ── */
+.section-wrap {
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding: 0 var(--side-pad);
+}
+
+/* ── Common Elements ── */
+.section-tag {
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  color: var(--accent);
+  text-transform: uppercase;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.section-tag::before {
+  content: '';
+  width: 20px;
+  height: 1px;
+  background: var(--accent);
+}
+
+.section-title {
+  font-family: var(--font-serif);
+  font-size: clamp(26px, 3vw, 38px);
+  font-weight: 400;
+  letter-spacing: 0.03em;
+  line-height: 1.4;
+  color: var(--text-primary);
+  margin-bottom: 16px;
+}
+
+.section-desc {
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 1.9;
+  color: var(--text-muted);
+  max-width: 560px;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: #fff;
+  padding: 14px 32px;
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-decoration: none;
+  border-radius: 2px;
+  transition: background 0.25s, transform 0.2s;
+  display: inline-block;
+}
+.btn-primary:hover { background: #b5784f; transform: translateY(-1px); }
+
+.btn-ghost {
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: color 0.25s;
+  display: inline-flex;
+}
+.btn-ghost:hover { color: var(--text-primary); }
+.btn-ghost::after { content: '→'; transition: transform 0.2s; }
+.btn-ghost:hover::after { transform: translateX(3px); }
+
+/* ── Hero ── */
+.visit-hero {
+  padding-top: 64px;
+  padding-bottom: var(--section-gap);
+  background: var(--bg-secondary);
+}
+
+.hero-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+  min-height: 480px;
+}
+
+.hero-content {
+  padding: 48px 0;
+}
+
+.hero-title {
+  font-family: var(--font-serif);
+  font-size: clamp(34px, 4.2vw, 46px);
+  font-weight: 400;
+  line-height: 1.3;
+  color: var(--text-primary);
+  margin-bottom: 20px;
+  letter-spacing: 0.03em;
+}
+
+.hero-subtitle {
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 1.9;
+  color: var(--text-muted);
+  margin-bottom: 32px;
+}
+
+.hero-text {
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.9;
+  color: var(--text-muted);
+  margin-bottom: 36px;
+}
+
+.hero-visual {
+  position: relative;
+  height: 420px;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ── 交通指引 ── */
+.directions {
+  padding: var(--section-gap) 0;
+  background: var(--bg-primary);
+}
+
+.directions-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.address-card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  padding: 36px;
+  margin-bottom: 32px;
+}
+
+.address-main {
+  font-family: var(--font-serif);
+  font-size: 19px;
+  font-weight: 400;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+  letter-spacing: 0.03em;
+}
+
+.address-sub {
+  font-size: 13px;
+  font-weight: 300;
+  color: var(--text-muted);
+  letter-spacing: 0.06em;
+}
+
+.transport-options {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.transport-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 20px 24px;
+  background: var(--bg-secondary);
+  border-left: 3px solid var(--accent);
+}
+
+.transport-icon {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--accent-soft);
+  border-radius: 2px;
+}
+
+.transport-icon svg {
+  width: 16px;
+  height: 16px;
+  stroke: var(--accent);
+  fill: none;
+}
+
+.transport-info strong {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+  letter-spacing: 0.04em;
+}
+
+.transport-info span {
+  font-size: 13px;
+  font-weight: 300;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+.map-placeholder {
+  height: 360px;
+  background: linear-gradient(135deg, var(--accent-soft) 0%, var(--accent) 100%);
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 12px;
+  position: relative;
+  overflow: hidden;
+}
+
+.map-placeholder::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 120px;
+  height: 120px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 50%;
+}
+
+.map-placeholder svg {
+  width: 48px;
+  height: 48px;
+  stroke: #fff;
+  fill: none;
+  position: relative;
+  z-index: 1;
+}
+
+.map-placeholder span {
+  font-size: 13px;
+  font-weight: 400;
+  color: #fff;
+  letter-spacing: 0.1em;
+  position: relative;
+  z-index: 1;
+}
+
+/* ── 工作室環境 ── */
+.studio-environment {
+  padding: var(--section-gap) 0;
+  background: var(--bg-deep);
+  position: relative;
+  overflow: hidden;
+}
+
+.environment-bg {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><defs><linearGradient id="bg1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:%23C8956C;stop-opacity:0.1"/><stop offset="100%" style="stop-color:%23E8D5C4;stop-opacity:0.05"/></linearGradient></defs><rect width="1200" height="800" fill="url(%23bg1)"/></svg>');
+  object-fit: cover;
+  opacity: 0.3;
+}
+
+.environment-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 80px var(--side-pad);
+}
+
+.environment-content .section-tag,
+.environment-content .section-tag::before { color: var(--accent); background: var(--accent); }
+
+.environment-content .section-title {
+  color: #FAF8F5;
+  margin-bottom: 24px;
+}
+
+.environment-content .section-desc {
+  color: #B5A99E;
+  font-size: 16px;
+  line-height: 2;
+  max-width: 100%;
+}
+
+.environment-img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 2px;
+  margin-top: 48px;
+}
+
+/* ── 營業時間 ── */
+.hours-info {
+  padding: var(--section-gap) 0;
+  background: var(--bg-secondary);
+}
+
+.hours-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.hours-table {
+  background: var(--bg-primary);
+  border: 1px solid var(--border);
+  padding: 36px;
+}
+
+.hours-table h3 {
+  font-family: var(--font-serif);
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--text-primary);
+  margin-bottom: 24px;
+  letter-spacing: 0.03em;
+}
+
+.hours-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.hours-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.hours-item:last-child { border-bottom: none; }
+
+.hours-day {
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--text-primary);
+  letter-spacing: 0.04em;
+}
+
+.hours-time {
+  font-size: 13px;
+  font-weight: 300;
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
+}
+
+.visit-notes {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.visit-notes h3 {
+  font-family: var(--font-serif);
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--text-primary);
+  margin-bottom: 24px;
+  letter-spacing: 0.03em;
+}
+
+.note-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 16px 20px;
+  background: var(--bg-primary);
+  border-left: 2px solid var(--accent);
+  margin-bottom: 8px;
+}
+
+.note-item:last-child { margin-bottom: 0; }
+
+.note-icon {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.note-icon svg {
+  width: 16px;
+  height: 16px;
+  stroke: var(--accent);
+  fill: none;
+}
+
+.note-text {
+  font-size: 13px;
+  font-weight: 300;
+  color: var(--text-muted);
+  line-height: 1.7;
+  letter-spacing: 0.04em;
+}
+
+/* ── FAQ ── */
+.faq {
+  padding: var(--section-gap) 0;
+  background: var(--bg-primary);
+}
+
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  background: var(--border);
+  margin-top: 48px;
+}
+
+.faq-item {
+  background: var(--bg-primary);
+}
+
+.faq-question {
+  width: 100%;
+  padding: 24px 28px;
+  background: none;
+  border: none;
+  text-align: left;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-primary);
+  letter-spacing: 0.04em;
+  line-height: 1.6;
+  cursor: pointer;
+  position: relative;
+  transition: background 0.25s;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.faq-question:hover { background: var(--bg-secondary); }
+
+.faq-question::after {
+  content: '+';
+  font-size: 18px;
+  font-weight: 300;
+  color: var(--accent);
+  transition: transform 0.3s;
+}
+
+.faq-question.active::after {
+  transform: rotate(45deg);
+}
+
+.faq-answer {
+  padding: 0 28px 24px;
+  font-size: 13px;
+  font-weight: 300;
+  color: var(--text-muted);
+  line-height: 1.8;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+}
+
+.faq-answer.active {
+  max-height: 200px;
+  padding: 0 28px 28px;
+}
+
+/* ── CTA ── */
+.cta-section {
+  padding: 100px 0;
+  background: var(--bg-primary);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-section::before {
+  content: '來';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: var(--font-serif);
+  font-size: 380px;
+  color: var(--border);
+  opacity: 0.3;
+  pointer-events: none;
+  line-height: 1;
+}
+
+.cta-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 0 var(--side-pad);
+}
+
+.cta-eyebrow {
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  color: var(--accent);
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+
+.cta-title {
+  font-family: var(--font-serif);
+  font-size: clamp(28px, 3.5vw, 44px);
+  font-weight: 400;
+  line-height: 1.35;
+  color: var(--text-primary);
+  margin-bottom: 20px;
+  letter-spacing: 0.03em;
+}
+
+.cta-subtitle {
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 1.9;
+  color: var(--text-muted);
+  margin-bottom: 48px;
+}
+
+.cta-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.cta-note {
+  margin-top: 24px;
+  font-size: 12px;
+  font-weight: 300;
+  color: var(--text-light);
+  letter-spacing: 0.06em;
+}
+
+.btn-outline {
+  border: 1px solid var(--text-muted);
+  color: var(--text-muted);
+  padding: 13px 28px;
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  border-radius: 2px;
+  transition: all 0.25s;
+  display: inline-block;
+}
+.btn-outline:hover { border-color: var(--text-primary); color: var(--text-primary); }
+
+/* ── Footer ── */
+footer {
+  background: var(--bg-deep);
+  padding: 64px 0 36px;
+  color: #9A8E86;
+}
+
+.footer-inner {
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding: 0 var(--side-pad);
+}
+
+.footer-top {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 48px;
+  padding-bottom: 48px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  margin-bottom: 32px;
+}
+
+.footer-logo-zh {
+  font-family: var(--font-serif);
+  font-size: 22px;
+  font-weight: 400;
+  color: #FAF8F5;
+  margin-bottom: 4px;
+  letter-spacing: 0.06em;
+}
+.footer-logo-en {
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  color: #7A6E66;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+.footer-tagline {
+  font-family: var(--font-serif);
+  font-size: 14px;
+  font-style: italic;
+  font-weight: 300;
+  color: #7A6E66;
+  line-height: 1.7;
+}
+
+.footer-col-title {
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  color: #FAF8F5;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.footer-col ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.footer-col a {
+  font-size: 13px;
+  font-weight: 300;
+  color: #7A6E66;
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  transition: color 0.2s;
+}
+.footer-col a:hover { color: #FAF8F5; }
+
+.footer-contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+.footer-contact-item svg {
+  width: 14px;
+  height: 14px;
+  stroke: var(--accent);
+  fill: none;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.footer-contact-item span {
+  font-size: 13px;
+  font-weight: 300;
+  color: #7A6E66;
+  line-height: 1.6;
+  letter-spacing: 0.04em;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.footer-copy {
+  font-size: 12px;
+  font-weight: 300;
+  letter-spacing: 0.06em;
+  color: #5A5550;
+}
+
+/* ── Scroll Reveal ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-delay-1 { transition-delay: 0.08s; }
+.reveal-delay-2 { transition-delay: 0.16s; }
+.reveal-delay-3 { transition-delay: 0.24s; }
+.reveal-delay-4 { transition-delay: 0.32s; }
+
+/* ── RWD ── */
+@media (max-width: 960px) {
+  :root { --side-pad: 32px; --section-gap: 80px; }
+
+  .hero-layout,
+  .directions-layout,
+  .hours-layout {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .hero-visual { height: 320px; }
+  .map-placeholder { height: 280px; }
+
+  .footer-top { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 700px) {
+  :root { --side-pad: 20px; --section-gap: 64px; }
+
+  .nav-links { display: none; }
+  .nav-cta { display: inline-block !important; }
+
+  .address-card,
+  .hours-table { padding: 24px; }
+
+  .transport-item,
+  .note-item { padding: 12px 16px; }
+
+  .faq-question,
+  .faq-answer { padding-left: 20px; padding-right: 20px; }
+
+  .footer-top { grid-template-columns: 1fr; }
+  
+  .cta-section::before { font-size: 220px; }
+  .cta-actions { flex-direction: column; align-items: stretch; }
+  .btn-primary, .btn-outline { text-align: center; }
+}
+</style>
+</head>
+<body>
+
+<!-- ── Navigation ── -->
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo" style="text-decoration:none;">
+      <span class="nav-logo-zh">身研所</span>
+      <span class="nav-logo-en">Somatics Studio</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="about.html">關於教練</a></li>
+      <li><a href="services.html">服務項目</a></li>
+      <li><a href="blog.html">專業分享</a></li>
+      <li><a href="visit.html">來店資訊</a></li>
+      <li><a href="contact.html" class="nav-cta">預約初次諮詢</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ── 來店資訊 Hero ── -->
+<section class="visit-hero" data-section="visit-hero" data-section-title="來店資訊 Hero" data-section-purpose="用親切歡迎語氣讓初次來訪者感受到被期待，而非只是冷冰冰的地址資訊">
+  <div class="section-wrap">
+    <div class="hero-layout">
+      <div class="hero-content">
+        <div class="section-tag reveal">來店資訊</div>
+        <h1 class="hero-title reveal reveal-delay-1" data-text="visit-hero-title" data-text-description="來店資訊頁面主標題，用溫暖歡迎語氣取代冰冷地址頁">
+          歡迎來到身研所
+        </h1>
+        <p class="hero-subtitle reveal reveal-delay-2" data-text="visit-hero-subtitle" data-text-description="副標題說明工作室位置與空間特質">
+          台北大安區的溫暖空間，專為一對一皮拉提斯而設計
+        </p>
+        <p class="hero-text reveal reveal-delay-3" data-text="visit-hero-text" data-text-description="詳細說明工作室環境特色，消除初訪緊張感">
+          第一次來訪可能會有點緊張，這很正常。這裡是一個安靜舒適的私人空間，沒有健身房的嘈雜，只有我們兩個人一起專注在妳的身體上。以下資訊讓妳輕鬆找到我們。
+        </p>
+        <div class="reveal reveal-delay-4">
+          <a href="#directions" class="btn-ghost">查看詳細交通方式</a>
+        </div>
+      </div>
+
+      <div class="hero-visual reveal reveal-delay-2">
+        <img class="hero-img" src="https://images.pexels.com/photos/709767/pexels-photo-709767.png?auto=compress&amp;cs=tinysrgb&amp;h=650&amp;w=940" alt="身研所工作室外觀入口" data-img-query="pilates studio entrance taipei modern clean" data-img-orientation="square" data-img-description="工作室外觀或入口照片，展現專業整潔的第一印象" data-img-size="medium" data-img-ratio="1:1">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── 交通指引 ── -->
+<section class="directions" id="directions" data-section="directions" data-section-title="地址與交通指引" data-section-purpose="提供清楚的到達方式，消除路線不明的焦慮">
+  <div class="section-wrap">
+    <div class="section-header reveal">
+      <p class="section-tag">交通指引</p>
+      <h2 class="section-title" data-text="directions-title" data-text-description="交通指引區塊主標題">
+        如何到達身研所
+      </h2>
+      <p class="section-desc" data-text="directions-desc" data-text-description="說明交通便利性，降低交通焦慮">
+        捷運忠孝敦化站步行5分鐘，多種交通方式都很方便
+      </p>
+    </div>
+
+    <div class="directions-layout">
+      <div class="reveal">
+        <div class="address-card">
+          <div class="address-main" data-text="address-main" data-text-description="完整工作室地址">
+            台北市大安區仁愛路四段150號3樓
+          </div>
+          <div class="address-sub" data-text="address-sub" data-text-description="捷運站資訊與步行時間">
+            最近捷運：忠孝敦化站（板南線／文湖線）2號出口 · 步行約5分鐘
+          </div>
+        </div>
+
+        <div class="transport-options">
+          <div class="transport-item reveal">
+            <div class="transport-icon">
+              <svg viewBox="0 0 24 24" stroke-width="1.5">
+                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                <circle cx="9" cy="9" r="2"></circle>
+                <path d="M21 15l-3.086-3.086a2 2 0 0 0-2.828 0L6 21"></path>
+              </svg>
+            </div>
+            <div class="transport-info">
+              <strong data-text="transport-mrt-title" data-text-description="捷運交通方式標題">捷運</strong>
+              <span data-text="transport-mrt-desc" data-text-description="詳細捷運路線指引">
+                忠孝敦化站2號出口，沿敦化南路往仁愛路方向步行
+              </span>
+            </div>
+          </div>
+
+          <div class="transport-item reveal reveal-delay-1">
+            <div class="transport-icon">
+              <svg viewBox="0 0 24 24" stroke-width="1.5">
+                <path d="M7 17m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"></path>
+                <path d="M17 17m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"></path>
+                <path d="M5 17h-2v-6l2-5h9l4 5h1a2 2 0 0 1 2 2v4h-2"></path>
+              </svg>
+            </div>
+            <div class="transport-info">
+              <strong data-text="transport-bus-title" data-text-description="公車交通方式標題">公車</strong>
+              <span data-text="transport-bus-desc" data-text-description="公車站點資訊">
+                忠孝敦化站、敦化仁愛路口站皆可到達
+              </span>
+            </div>
+          </div>
+
+          <div class="transport-item reveal reveal-delay-2">
+            <div class="transport-icon">
+              <svg viewBox="0 0 24 24" stroke-width="1.5">
+                <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0"></path>
+                <path d="M8 12h8"></path>
+                <path d="M12 8v8"></path>
+              </svg>
+            </div>
+            <div class="transport-info">
+              <strong data-text="transport-car-title" data-text-description="開車交通方式標題">開車</strong>
+              <span data-text="transport-car-desc" data-text-description="停車建議">
+                附近有多個收費停車格，建議提早10分鐘到達找車位
+              </span>
+            </div>
+          </div>
+
+          <div class="transport-item reveal reveal-delay-3">
+            <div class="transport-icon">
+              <svg viewBox="0 0 24 24" stroke-width="1.5">
+                <path d="M5 18h14l-1.5 -6h-11z"></path>
+                <path d="M2 6h4l3 8h7l3 -8h5l-1 4"></path>
+                <circle cx="9" cy="19" r="1"></circle>
+                <circle cx="16" cy="19" r="1"></circle>
+              </svg>
+            </div>
+            <div class="transport-info">
+              <strong data-text="transport-scooter-title" data-text-description="機車交通方式標題">機車</strong>
+              <span data-text="transport-scooter-desc" data-text-description="機車停車資訊">
+                工作室樓下有機車停車空間
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="map-placeholder reveal reveal-delay-1">
+        <svg viewBox="0 0 24 24" stroke-width="1.5">
+          <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+          <circle cx="12" cy="10" r="3"></circle>
+        </svg>
+        <span>Google 地圖位置</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── 工作室環境 ── -->
+<section class="studio-environment" data-section="studio-environment" data-section-title="工作室環境" data-section-purpose="讓訪客預見一對一課程的空間感受，建立對環境品質的信任">
+  <div class="environment-bg"></div>
+  <div class="section-wrap">
+    <div class="environment-content">
+      <div class="section-tag reveal">工作室環境</div>
+      <h2 class="section-title reveal reveal-delay-1" data-text="environment-title" data-text-description="工作室環境區塊標題">
+        寧靜舒適的專屬空間
+      </h2>
+      <p class="section-desc reveal reveal-delay-2" data-text="environment-desc" data-text-description="詳細描述工作室環境特色與設備">
+        明亮的白色基調，搭配充足自然光線，這裡沒有鏡子牆的壓迫感，也沒有多人課程的干擾。我們有完整的皮拉提斯器材：Reformer、Cadillac、以及各種輔具，一切都為了讓妳能專心感受身體的每個細微變化。
+      </p>
+      <img class="environment-img reveal reveal-delay-3" src="https://images.pexels.com/photos/25599829/pexels-photo-25599829.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=650&amp;w=940" alt="身研所工作室內部環境" data-img-query="pilates studio interior bright white clean equipment" data-img-orientation="landscape" data-img-description="工作室內部照片，展現器材設備與明亮整潔的空間感" data-img-size="medium" data-img-ratio="21:9">
+    </div>
+  </div>
+</section>
+
+<!-- ── 營業時間 ── -->
+<section class="hours-info" data-section="hours-info" data-section-title="營業時間與預約須知" data-section-purpose="提供實用的時間資訊與第一次來訪的貼心提醒">
+  <div class="section-wrap">
+    <div class="section-header reveal">
+      <p class="section-tag">營業資訊</p>
+      <h2 class="section-title" data-text="hours-title" data-text-description="營業時間區塊標題">
+        營業時間與預約須知
+      </h2>
+    </div>
+
+    <div class="hours-layout">
+      <div class="hours-table reveal">
+        <h3 data-text="hours-table-title" data-text-description="營業時間表格標題">營業時間</h3>
+        <div class="hours-list">
+          <div class="hours-item">
+            <span class="hours-day" data-text="hours-mon-fri" data-text-description="週一至週五營業時間標示">週一至週五</span>
+            <span class="hours-time" data-text="hours-weekday-time" data-text-description="平日營業時間">上午9:00 - 下午8:00</span>
+          </div>
+          <div class="hours-item">
+            <span class="hours-day" data-text="hours-sat" data-text-description="週六營業時間標示">週六</span>
+            <span class="hours-time" data-text="hours-saturday-time" data-text-description="週六營業時間">上午9:00 - 下午6:00</span>
+          </div>
+          <div class="hours-item">
+            <span class="hours-day" data-text="hours-sun" data-text-description="週日營業時間標示">週日</span>
+            <span class="hours-time" data-text="hours-sunday-time" data-text-description="週日營業安排">休息</span>
+          </div>
+          <div class="hours-item">
+            <span class="hours-day" data-text="hours-holiday" data-text-description="國定假日營業安排">國定假日</span>
+            <span class="hours-time" data-text="hours-holiday-time" data-text-description="假日彈性安排說明">彈性調整，請提前確認</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="visit-notes reveal reveal-delay-1">
+        <h3 data-text="visit-notes-title" data-text-description="初次來訪須知標題">第一次來訪須知</h3>
+        
+        <div class="note-item">
+          <div class="note-icon">
+            <svg viewBox="0 0 24 24" stroke-width="1.5">
+              <circle cx="12" cy="12" r="10"></circle>
+              <path d="M12 8v4l3 3"></path>
+            </svg>
+          </div>
+          <span class="note-text" data-text="note-arrive-early" data-text-description="提早到達的建議">
+            請提前10分鐘到達，留時間找位置和稍作準備
+          </span>
+        </div>
+
+        <div class="note-item">
+          <div class="note-icon">
+            <svg viewBox="0 0 24 24" stroke-width="1.5">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+            </svg>
+          </div>
+          <span class="note-text" data-text="note-attire" data-text-description="服裝準備建議">
+            建議穿著合身但不緊繃的運動服，準備止滑襪
+          </span>
+        </div>
+
+        <div class="note-item">
+          <div class="note-icon">
+            <svg viewBox="0 0 24 24" stroke-width="1.5">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+            </svg>
+          </div>
+          <span class="note-text" data-text="note-preparation" data-text-description="課程開始前的準備提醒">
+            課程開始前請先上廁所，一對一課程中較不方便中斷
+          </span>
+        </div>
+
+        <div class="note-item">
+          <div class="note-icon">
+            <svg viewBox="0 0 24 24" stroke-width="1.5">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.62 3.38A2 2 0 0 1 3.58 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.5a16 16 0 0 0 6 6l.92-.92a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.72 16.92z"></path>
+            </svg>
+          </div>
+          <span class="note-text" data-text="note-cancellation" data-text-description="取消預約的通知規則">
+            如需臨時取消，請至少提前24小時通知
+          </span>
+        </div>
+
+        <div class="note-item">
+          <div class="note-icon">
+            <svg viewBox="0 0 24 24" stroke-width="1.5">
+              <path d="M8 3H5a2 2 0 0 0-2 2v3m18-5v5a2 2 0 0 1-2 2h-3m0 8h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path>
+            </svg>
+          </div>
+          <span class="note-text" data-text="note-facilities" data-text-description="工作室提供的設備與服務">
+            工作室備有飲水，無需自備水瓶
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── 常見問題 ── -->
+<section class="faq" data-section="faq" data-section-title="常見問題" data-section-purpose="解決第一次來訪的實務疑慮，增加行動信心">
+  <div class="section-wrap">
+    <div class="section-header reveal">
+      <p class="section-tag">常見疑問</p>
+      <h2 class="section-title" data-text="faq-title" data-text-description="FAQ 區塊標題">
+        第一次來訪常見疑問
+      </h2>
+    </div>
+
+    <div class="faq-list">
+      <div class="faq-item reveal">
+        <button class="faq-question" data-text="faq-q1" data-text-description="第一個常見問題：工作室是否好找">
+          工作室好找嗎？
+        </button>
+        <div class="faq-answer" data-text="faq-a1" data-text-description="回答工作室位置與找路方式">
+          從捷運站出來後沿路都有明顯地標，大樓入口在主要道路旁很好辨識。如果找不到，歡迎直接打電話，我可以出來接妳。
+        </div>
+      </div>
+
+      <div class="faq-item reveal reveal-delay-1">
+        <button class="faq-question" data-text="faq-q2" data-text-description="第二個常見問題：是否需要自帶器材">
+          需要自己帶瑜珈墊嗎？
+        </button>
+        <div class="faq-answer" data-text="faq-a2" data-text-description="說明工作室提供的器材設備">
+          不需要。工作室備有專業皮拉提斯器材與所有輔具，妳只需要帶水瓶和毛巾就好。
+        </div>
+      </div>
+
+      <div class="faq-item reveal reveal-delay-2">
+        <button class="faq-question" data-text="faq-q3" data-text-description="第三個常見問題：第一堂課的強度擔憂">
+          第一次上課會很累嗎？
+        </button>
+        <div class="faq-answer" data-text="faq-a3" data-text-description="說明初次課程的溫和性質">
+          完全不會。第一堂課主要是評估和輕度體驗，強度會根據妳的狀況調整，絕對不會讓妳有挫折感。
+        </div>
+      </div>
+
+      <div class="faq-item reveal reveal-delay-3">
+        <button class="faq-question" data-text="faq-q4" data-text-description="第四個常見問題：更衣與置物空間">
+          有地方放包包和換衣服嗎？
+        </button>
+        <div class="faq-answer" data-text="faq-a4" data-text-description="說明更衣室與置物設施">
+          有獨立的更衣空間和置物區域，環境整潔私密。
+        </div>
+      </div>
+
+      <div class="faq-item reveal reveal-delay-4">
+        <button class="faq-question" data-text="faq-q5" data-text-description="第五個常見問題：停車便利性">
+          停車方便嗎？
+        </button>
+        <div class="faq-answer" data-text="faq-a5" data-text-description="說明附近停車狀況與建議">
+          附近有路邊停車格和收費停車場，建議提早10分鐘到達。機車停車相對容易。
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA ── -->
+<section class="cta-section" data-section="cta" data-section-title="預約CTA" data-section-purpose="引導完成最終預約行動，強調諮詢的低門檻">
+  <div class="cta-inner">
+    <p class="cta-eyebrow reveal">預約來訪</p>
+    <h2 class="cta-title reveal reveal-delay-1" data-text="cta-title" data-text-description="CTA 主標題，用溫暖邀請語氣降低行動門檻">
+      準備好來看看了嗎？
+    </h2>
+    <p class="cta-subtitle reveal reveal-delay-2" data-text="cta-subtitle" data-text-description="強調免費諮詢的低壓力特質">
+      第一次30分鐘諮詢完全免費，我們先聊聊妳的身體狀況和期待
+    </p>
+    <div class="cta-actions reveal reveal-delay-3">
+      <a href="https://instagram.com/somatics.studio" class="btn-primary" target="_blank">
+        立即私訊預約
+      </a>
+      <a href="tel:+886-2-2345-6789" class="btn-outline">
+        撥打電話諮詢
+      </a>
+    </div>
+    <p class="cta-note reveal reveal-delay-4">歡迎先來工作室看看環境，沒有任何壓力</p>
+  </div>
+</section>
+
+<!-- ── Footer ── -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="footer-logo-zh">身研所</div>
+        <div class="footer-logo-en">Somatics Studio</div>
+        <p class="footer-tagline">
+          身體記得怎麼動，<br>才是真的會動。
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <div class="footer-col-title">頁面</div>
+        <ul>
+          <li><a href="about.html">關於教練</a></li>
+          <li><a href="services.html">服務項目</a></li>
+          <li><a href="blog.html">專業分享</a></li>
+          <li><a href="visit.html">來店資訊</a></li>
+          <li><a href="contact.html">預約諮詢</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <div class="footer-col-title">聯絡</div>
+        <div class="footer-contact-item">
+          <svg viewBox="0 0 24 24" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+          <span>台北市大安區仁愛路四段150號3樓<br>捷運忠孝敦化步行 5 分鐘</span>
+        </div>
+        <div class="footer-contact-item">
+          <svg viewBox="0 0 24 24" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.62 3.38A2 2 0 0 1 3.58 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.5a16 16 0 0 0 6 6l.92-.92a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.72 16.92z"></path></svg>
+          <span>02-2345-6789</span>
+        </div>
+        <div class="footer-contact-item">
+          <svg viewBox="0 0 24 24" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+          <span>@somatics.studio</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2024 身研所 Somatics Studio · 台北市大安區</p>
+      <p class="footer-copy">一對一皮拉提斯 · 姿勢矯正 · 術後動作恢復</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // IntersectionObserver scroll reveal
+  const revealEls = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(el => {
+      if (el.isIntersecting) {
+        el.target.classList.add('visible');
+        observer.unobserve(el.target);
+      }
+    });
+  }, {
+    threshold: 0.08,
+    rootMargin: '0px 0px -24px 0px'
+  });
+
+  revealEls.forEach(el => {
+    observer.observe(el);
+  });
+
+  // FAQ accordion
+  const faqQuestions = document.querySelectorAll('.faq-question');
+  faqQuestions.forEach(question => {
+    question.addEventListener('click', () => {
+      const answer = question.nextElementSibling;
+      const isActive = question.classList.contains('active');
+      
+      // Close all other FAQs
+      faqQuestions.forEach(q => {
+        q.classList.remove('active');
+        q.nextElementSibling.classList.remove('active');
+      });
+      
+      // Toggle current FAQ
+      if (!isActive) {
+        question.classList.add('active');
+        answer.classList.add('active');
+      }
+    });
+  });
+</script>
+
+
+</body></html>

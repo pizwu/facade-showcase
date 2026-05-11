@@ -1,0 +1,1295 @@
+<!DOCTYPE html><html lang="zh-TW"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>疊工作室 DDIE Studio｜室內設計 台中</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&amp;family=Noto+Sans+TC:wght@300;400;500&amp;family=Noto+Serif+TC:wght@300;400&amp;display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg-primary: #faf8f5;
+  --bg-secondary: #f3efe9;
+  --bg-deep: #2c2820;
+  --text-primary: #2c2820;
+  --text-muted: #7a7168;
+  --text-light: #b0a898;
+  --accent: #8a7560;
+  --accent-warm: #c4a882;
+  --green-mist: #d4ddd4;
+  --border: #e5dfd6;
+  --font-serif: 'Cormorant Garamond', 'Noto Serif TC', serif;
+  --font-sans: 'Noto Sans TC', sans-serif;
+  --section-gap: 120px;
+  --content-max: 1080px;
+  --side-pad: 48px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-sans);
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-weight: 300;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+/* ── NAV ── */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  background: rgba(250, 248, 245, 0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+.nav-inner {
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding: 0 var(--side-pad);
+  height: 68px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav-logo {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: var(--text-primary);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.nav-logo span {
+  font-size: 0.72rem;
+  font-family: var(--font-sans);
+  font-weight: 300;
+  letter-spacing: 0.12em;
+  color: var(--text-muted);
+  display: block;
+  margin-top: -2px;
+}
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+  list-style: none;
+}
+.nav-links a {
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.25s;
+}
+.nav-links a:hover { color: var(--text-primary); }
+.nav-cta {
+  background: var(--accent);
+  color: #fff !important;
+  padding: 10px 22px;
+  border-radius: 40px;
+  font-size: 0.78rem !important;
+  letter-spacing: 0.1em !important;
+  transition: background 0.25s !important;
+}
+.nav-cta:hover { background: var(--bg-deep) !important; color: #fff !important; }
+
+/* ── REVEAL ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.72s ease, transform 0.72s ease;
+}
+.reveal.visible { opacity: 1; transform: none; }
+.reveal-delay-1 { transition-delay: 0.08s; }
+.reveal-delay-2 { transition-delay: 0.16s; }
+.reveal-delay-3 { transition-delay: 0.24s; }
+.reveal-delay-4 { transition-delay: 0.32s; }
+
+/* ── HERO ── */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding-top: 68px;
+  position: relative;
+  overflow: hidden;
+}
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+.hero-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(250,248,245,0.82) 0%,
+    rgba(244,240,234,0.65) 50%,
+    rgba(212,190,165,0.2) 100%
+  );
+}
+.hero-inner {
+  position: relative;
+  z-index: 1;
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding: 0 var(--side-pad);
+  width: 100%;
+}
+.hero-kicker {
+  font-size: 0.76rem;
+  letter-spacing: 0.2em;
+  color: var(--accent);
+  font-weight: 400;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.hero-kicker::before {
+  content: '';
+  display: inline-block;
+  width: 32px;
+  height: 1px;
+  background: var(--accent);
+}
+.hero-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2.8rem, 6vw, 4.8rem);
+  font-weight: 300;
+  line-height: 1.25;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+  letter-spacing: 0.02em;
+}
+.hero-title em {
+  font-style: italic;
+  color: var(--accent);
+}
+.hero-subtitle-wrap {
+  margin-top: 28px;
+  margin-bottom: 48px;
+  max-width: 480px;
+}
+.hero-subtitle {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  font-weight: 300;
+  line-height: 1.8;
+}
+.hero-cta-group {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.btn-primary {
+  background: var(--accent);
+  color: #fff;
+  padding: 16px 36px;
+  border-radius: 40px;
+  font-size: 0.88rem;
+  letter-spacing: 0.12em;
+  text-decoration: none;
+  transition: background 0.28s, transform 0.2s;
+  display: inline-block;
+}
+.btn-primary:hover { background: var(--bg-deep); transform: translateY(-2px); }
+.btn-ghost {
+  color: var(--text-muted);
+  font-size: 0.84rem;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: color 0.25s;
+}
+.btn-ghost:hover { color: var(--text-primary); }
+.btn-ghost svg { transition: transform 0.25s; }
+.btn-ghost:hover svg { transform: translateX(4px); }
+.hero-scroll {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+.hero-scroll-line {
+  width: 1px;
+  height: 48px;
+  background: linear-gradient(to bottom, var(--accent), transparent);
+  animation: scrollLine 2s ease-in-out infinite;
+}
+@keyframes scrollLine {
+  0%, 100% { opacity: 0.4; transform: scaleY(0.6) translateY(-4px); }
+  50% { opacity: 1; transform: scaleY(1) translateY(0); }
+}
+
+/* ── CONTRAST (現況對比) ── */
+.contrast {
+  padding: var(--section-gap) var(--side-pad);
+  max-width: var(--content-max);
+  margin: 0 auto;
+}
+.contrast-header {
+  text-align: center;
+  margin-bottom: 72px;
+}
+.section-label {
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
+  color: var(--accent);
+  font-weight: 400;
+  display: block;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+.section-title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.9rem, 3.6vw, 2.8rem);
+  font-weight: 300;
+  line-height: 1.35;
+  color: var(--text-primary);
+}
+.section-desc {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  margin-top: 20px;
+  max-width: 480px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.85;
+}
+.contrast-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px;
+  border-radius: 16px;
+  overflow: hidden;
+}
+.contrast-side {
+  padding: 52px 48px;
+  position: relative;
+}
+.contrast-side.before {
+  background: var(--bg-secondary);
+}
+.contrast-side.after {
+  background: var(--bg-deep);
+  color: #fff;
+}
+.contrast-label {
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  font-weight: 400;
+  margin-bottom: 28px;
+  display: block;
+}
+.contrast-side.before .contrast-label { color: var(--text-light); }
+.contrast-side.after .contrast-label { color: var(--accent-warm); }
+.contrast-title {
+  font-family: var(--font-serif);
+  font-size: 1.6rem;
+  font-weight: 300;
+  line-height: 1.45;
+  margin-bottom: 24px;
+}
+.contrast-side.after .contrast-title { color: #f5f0e8; }
+.contrast-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.contrast-list li {
+  font-size: 0.9rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  line-height: 1.6;
+}
+.contrast-side.before .contrast-list li { color: var(--text-muted); }
+.contrast-side.after .contrast-list li { color: rgba(255,255,255,0.7); }
+.contrast-list li::before {
+  content: '';
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.contrast-side.before .contrast-list li::before {
+  background: var(--border);
+  border: 1px solid var(--text-light);
+}
+.contrast-side.after .contrast-list li::before {
+  background: var(--accent-warm);
+}
+
+/* ── VISION (生活場景) ── */
+.vision {
+  padding: var(--section-gap) 0;
+  background: var(--bg-secondary);
+}
+.vision-inner {
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding: 0 var(--side-pad);
+}
+.vision-header {
+  text-align: center;
+  margin-bottom: 72px;
+}
+.vision-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+.vision-card {
+  background: var(--bg-primary);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.vision-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 24px 60px rgba(44,40,32,0.1);
+}
+.vision-card-img {
+  height: 240px;
+  display: block;
+  width: 100%;
+  object-fit: cover;
+}
+.vision-card-body {
+  padding: 28px;
+}
+.vision-card-scene {
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  color: var(--accent);
+  font-weight: 400;
+  display: block;
+  margin-bottom: 12px;
+}
+.vision-card-title {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 300;
+  color: var(--text-primary);
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+.vision-card-desc {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.8;
+}
+.vision-quote {
+  margin-top: 72px;
+  text-align: center;
+  position: relative;
+  padding: 0 80px;
+}
+.vision-quote blockquote {
+  font-family: var(--font-serif);
+  font-size: clamp(1.4rem, 2.8vw, 2rem);
+  font-weight: 300;
+  font-style: italic;
+  color: var(--text-primary);
+  line-height: 1.6;
+}
+.vision-quote cite {
+  display: block;
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  color: var(--text-light);
+  margin-top: 20px;
+  font-style: normal;
+}
+
+/* ── ABOUT (設計師介紹) ── */
+.about {
+  padding: var(--section-gap) var(--side-pad);
+  max-width: var(--content-max);
+  margin: 0 auto;
+}
+.about-inner {
+  display: grid;
+  grid-template-columns: 420px 1fr;
+  gap: 80px;
+  align-items: center;
+}
+.about-img-wrap {
+  position: relative;
+}
+.about-img {
+  width: 100%;
+  height: 520px;
+  object-fit: cover;
+  border-radius: 16px;
+  display: block;
+}
+.about-img-tag {
+  position: absolute;
+  bottom: 28px;
+  right: -24px;
+  background: var(--bg-primary);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 18px 24px;
+  box-shadow: 0 8px 32px rgba(44,40,32,0.08);
+}
+.about-img-tag-num {
+  font-family: var(--font-serif);
+  font-size: 2.2rem;
+  color: var(--accent);
+  font-weight: 300;
+  line-height: 1;
+}
+.about-img-tag-label {
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+.about-content {}
+.about-name {
+  font-family: var(--font-serif);
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-weight: 300;
+  color: var(--text-primary);
+  margin-top: 20px;
+  margin-bottom: 8px;
+}
+.about-role {
+  font-size: 0.8rem;
+  letter-spacing: 0.15em;
+  color: var(--accent);
+}
+.about-divider {
+  width: 40px;
+  height: 1px;
+  background: var(--border);
+  margin: 28px 0;
+}
+.about-bio {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.95;
+  margin-bottom: 20px;
+}
+.about-values {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 36px;
+}
+.about-value {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+.about-value-icon {
+  width: 36px;
+  height: 36px;
+  background: var(--bg-secondary);
+  border-radius: 50%;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2px;
+}
+.about-value-icon svg { width: 16px; height: 16px; stroke: var(--accent); fill: none; }
+.about-value-text {}
+.about-value-label {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-bottom: 3px;
+}
+.about-value-desc {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+}
+
+/* ── PROCESS (合作流程) ── */
+.process {
+  padding: var(--section-gap) 0;
+  background: var(--bg-deep);
+  position: relative;
+  overflow: hidden;
+}
+.process::before {
+  content: '設計';
+  font-family: var(--font-serif);
+  font-size: 18rem;
+  color: rgba(255,255,255,0.02);
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  line-height: 1;
+  user-select: none;
+  pointer-events: none;
+}
+.process-inner {
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding: 0 var(--side-pad);
+}
+.process-header {
+  text-align: center;
+  margin-bottom: 72px;
+}
+.process-header .section-label { color: var(--accent-warm); }
+.process-header .section-title { color: #f5f0e8; }
+.process-header .section-desc { color: rgba(255,255,255,0.45); }
+.process-steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2px;
+  position: relative;
+}
+.process-step {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.07);
+  padding: 40px 32px;
+  border-radius: 12px;
+  position: relative;
+  transition: background 0.3s;
+}
+.process-step:hover { background: rgba(255,255,255,0.07); }
+.process-num {
+  font-family: var(--font-serif);
+  font-size: 3.2rem;
+  color: rgba(255,255,255,0.08);
+  font-weight: 300;
+  line-height: 1;
+  margin-bottom: 24px;
+}
+.process-step-title {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  color: #f5f0e8;
+  font-weight: 300;
+  margin-bottom: 14px;
+}
+.process-step-desc {
+  font-size: 0.83rem;
+  color: rgba(255,255,255,0.45);
+  line-height: 1.8;
+}
+.process-step-time {
+  margin-top: 20px;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  color: var(--accent-warm);
+}
+.process-note {
+  text-align: center;
+  margin-top: 52px;
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.3);
+  letter-spacing: 0.06em;
+}
+
+/* ── WORKS (作品集) ── */
+.works {
+  padding: var(--section-gap) var(--side-pad);
+  max-width: var(--content-max);
+  margin: 0 auto;
+}
+.works-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 56px;
+}
+.works-header-left {}
+.works-see-all {
+  font-size: 0.82rem;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: color 0.25s;
+  padding-bottom: 4px;
+}
+.works-see-all:hover { color: var(--accent); }
+.works-grid {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 20px;
+}
+.work-card {
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+}
+.work-card-img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.55s ease;
+}
+.work-card.featured .work-card-img { height: 440px; }
+.work-card:not(.featured) .work-card-img { height: 220px; }
+.work-card:hover .work-card-img { transform: scale(1.04); }
+.work-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(44,40,32,0.75) 0%, transparent 50%);
+  opacity: 0;
+  transition: opacity 0.35s;
+}
+.work-card:hover .work-card-overlay { opacity: 1; }
+.work-card-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 28px;
+  transform: translateY(8px);
+  opacity: 0;
+  transition: all 0.35s;
+}
+.work-card:hover .work-card-info { transform: none; opacity: 1; }
+.work-card-name {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  color: #fff;
+  font-weight: 300;
+}
+.work-card-tag {
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  color: rgba(255,255,255,0.6);
+  margin-top: 4px;
+}
+.work-card.span-rows { grid-row: span 2; }
+
+/* ── CTA ── */
+.cta-section {
+  padding: var(--section-gap) var(--side-pad);
+  max-width: var(--content-max);
+  margin: 0 auto;
+}
+.cta-inner {
+  background: var(--bg-secondary);
+  border-radius: 24px;
+  padding: 88px 64px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+.cta-inner::before {
+  content: '';
+  position: absolute;
+  top: -60px;
+  right: -60px;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(196,168,130,0.15) 0%, transparent 70%);
+}
+.cta-text {}
+.cta-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 3.5vw, 2.8rem);
+  font-weight: 300;
+  line-height: 1.35;
+  color: var(--text-primary);
+  margin-top: 16px;
+  margin-bottom: 20px;
+}
+.cta-desc {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.85;
+}
+.cta-right {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.cta-option {
+  background: var(--bg-primary);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 28px 32px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  text-decoration: none;
+  transition: border-color 0.25s, box-shadow 0.25s, transform 0.2s;
+}
+.cta-option:hover {
+  border-color: var(--accent);
+  box-shadow: 0 8px 32px rgba(138,117,96,0.12);
+  transform: translateX(4px);
+}
+.cta-option-icon {
+  width: 48px;
+  height: 48px;
+  background: var(--bg-secondary);
+  border-radius: 50%;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cta-option-icon svg { stroke: var(--accent); fill: none; }
+.cta-option-text {}
+.cta-option-label {
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+.cta-option-sub {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+.cta-option-arrow {
+  margin-left: auto;
+  color: var(--text-light);
+  transition: transform 0.25s, color 0.25s;
+}
+.cta-option:hover .cta-option-arrow {
+  transform: translateX(4px);
+  color: var(--accent);
+}
+
+/* ── FOOTER ── */
+footer {
+  background: var(--bg-deep);
+  padding: 72px var(--side-pad) 40px;
+}
+.footer-inner {
+  max-width: var(--content-max);
+  margin: 0 auto;
+}
+.footer-top {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  gap: 64px;
+  padding-bottom: 56px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.footer-brand {}
+.footer-logo {
+  font-family: var(--font-serif);
+  font-size: 1.3rem;
+  color: #f5f0e8;
+  font-weight: 300;
+  letter-spacing: 0.04em;
+}
+.footer-logo-sub {
+  font-size: 0.68rem;
+  letter-spacing: 0.18em;
+  color: rgba(255,255,255,0.3);
+  margin-top: 4px;
+  display: block;
+}
+.footer-tagline {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.4);
+  line-height: 1.8;
+  margin-top: 20px;
+  max-width: 260px;
+}
+.footer-col-title {
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  color: var(--accent-warm);
+  margin-bottom: 20px;
+  display: block;
+}
+.footer-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.footer-links a {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.45);
+  text-decoration: none;
+  transition: color 0.25s;
+}
+.footer-links a:hover { color: rgba(255,255,255,0.8); }
+.footer-contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.83rem;
+  color: rgba(255,255,255,0.45);
+  margin-bottom: 12px;
+  line-height: 1.6;
+}
+.footer-contact-item svg { flex-shrink: 0; margin-top: 2px; stroke: rgba(255,255,255,0.25); fill: none; }
+.footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 32px;
+}
+.footer-copyright {
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.2);
+  letter-spacing: 0.05em;
+}
+.footer-ig {
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.3);
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  transition: color 0.25s;
+}
+.footer-ig:hover { color: rgba(255,255,255,0.65); }
+
+/* ── RWD ── */
+@media (max-width: 960px) {
+  :root { --side-pad: 32px; --section-gap: 88px; }
+  .contrast-grid { grid-template-columns: 1fr; }
+  .vision-grid { grid-template-columns: repeat(2, 1fr); }
+  .vision-grid .vision-card:last-child { display: none; }
+  .about-inner { grid-template-columns: 1fr; gap: 48px; }
+  .about-img { height: 380px; }
+  .about-img-tag { right: 16px; }
+  .process-steps { grid-template-columns: repeat(2, 1fr); }
+  .works-grid { grid-template-columns: 1fr; }
+  .work-card.span-rows { grid-row: auto; }
+  .work-card.featured .work-card-img { height: 340px; }
+  .cta-inner { grid-template-columns: 1fr; padding: 56px 40px; }
+  .footer-top { grid-template-columns: 1fr 1fr; gap: 40px; }
+}
+@media (max-width: 700px) {
+  :root { --side-pad: 20px; --section-gap: 72px; }
+  .nav-links { display: none; }
+  .nav-cta { display: flex; }
+  .hero-title { font-size: 2.4rem; }
+  .vision-grid { grid-template-columns: 1fr; }
+  .vision-grid .vision-card:last-child { display: flex; }
+  .vision-quote { padding: 0 20px; }
+  .process-steps { grid-template-columns: 1fr; }
+  .works-header { flex-direction: column; align-items: flex-start; gap: 16px; }
+  .cta-inner { padding: 48px 28px; }
+  .footer-top { grid-template-columns: 1fr; }
+  .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+  .contrast-side { padding: 36px 28px; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="nav-logo" data-text="nav-logo" data-text-description="品牌名稱，導覽列左上角">
+      疊工作室
+      <span data-text="nav-logo-en" data-text-description="品牌英文名稱">DDIE STUDIO</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#vision">設計理念</a></li>
+      <li><a href="#works">作品集</a></li>
+      <li><a href="#process">合作流程</a></li>
+      <li><a href="#about">關於我們</a></li>
+      <li><a href="#contact" class="nav-cta">預約諮詢</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" data-section="hero" data-section-title="首頁主視覺" data-section-purpose="點燃訪客對理想生活的渴望，讓對空間不滿足的屋主感覺這說的是我，從旁觀轉為想深入了解">
+  <div class="hero-bg">
+    <img src="https://images.pexels.com/photos/276625/pexels-photo-276625.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=650&amp;w=940" alt="" data-img-query="interior design living room natural light warm" data-img-orientation="landscape" data-img-size="large" data-img-description="Hero 全版背景圖，展現溫暖自然光照入的住宅空間，營造生活渴望感">
+  </div>
+  <div class="hero-overlay"></div>
+  <div class="hero-inner">
+    <div class="reveal" style="transition-delay:0.08s">
+      <p class="hero-kicker" data-text="hero-kicker" data-text-description="Hero 區域上方小標，品牌定位說明，12字以內">DDIE STUDIO 台中室內設計</p>
+    </div>
+    <div class="reveal reveal-delay-1">
+      <h1 class="hero-title" data-text="hero-title" data-text-description="Hero 主標題，從核心落差出發引發共鳴，15字以內">
+        你心裡一直有<br>
+        一個<em>家的樣子</em>
+      </h1>
+    </div>
+    <div class="reveal reveal-delay-2">
+      <div class="hero-subtitle-wrap">
+        <p class="hero-subtitle" data-text="hero-subtitle" data-text-description="Hero 副標題，品牌一句話主張，30字以內">
+          那個說不清楚、卻真實存在的渴望——<br>
+          讓空間說出你沒說出口的品味。
+        </p>
+      </div>
+    </div>
+    <div class="reveal reveal-delay-3">
+      <div class="hero-cta-group">
+        <a href="#contact" class="btn-primary">預約免費諮詢</a>
+        <a href="#works" class="btn-ghost">
+          看看案例作品
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="2" y1="8" x2="14" y2="8"></line><polyline points="9,3 14,8 9,13"></polyline></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <div class="hero-scroll-line"></div>
+  </div>
+</section>
+
+<!-- CONTRAST 現況對比 -->
+<section id="contrast" style="padding: var(--section-gap) 0; background: var(--bg-primary);" data-section="contrast" data-section-title="現況對比" data-section-purpose="引發屋主對現況的不滿足感，讓他們意識到改變是有意義的，從湊合著用轉為想要更好的生活">
+  <div class="contrast" style="padding: 0 var(--side-pad);">
+    <div class="contrast-header reveal">
+      <span class="section-label" data-text="contrast-label" data-text-description="對比區塊上方小標，10字以內">為什麼你還不滿意現在的家</span>
+      <h2 class="section-title" data-text="contrast-title" data-text-description="對比區塊主標題，點出現實與理想的落差，15字以內">你的生活，<br>值得比現在更好一點</h2>
+      <p class="section-desc" data-text="contrast-desc" data-text-description="對比區塊說明文，引起情感共鳴，40字以內">很多人在這個空間裡湊合著，其實心裡一直有個畫面，只是還沒有人幫你說出來。</p>
+    </div>
+    <div class="contrast-grid reveal reveal-delay-1">
+      <div class="contrast-side before">
+        <span class="contrast-label" data-text="contrast-before-label" data-text-description="現況欄位標籤">NOW  現況</span>
+        <h3 class="contrast-title" data-text="contrast-before-title" data-text-description="現況描述標題，引起共鳴，12字以內">湊合著住，<br>偶爾覺得哪裡怪怪的</h3>
+        <ul class="contrast-list">
+          <li data-text="contrast-before-item-1" data-text-description="現況痛點描述一">空間有在用，但從來沒有那種「回到家好幸福」的感覺</li>
+          <li data-text="contrast-before-item-2" data-text-description="現況痛點描述二">裝潢沒有什麼問題，就是不喜歡，說不出哪裡不對</li>
+          <li data-text="contrast-before-item-3" data-text-description="現況痛點描述三">IG 上看到別人的家，心裡會停一下，但又覺得這種品質好像不是自己能擁有的</li>
+          <li data-text="contrast-before-item-4" data-text-description="現況痛點描述四">找設計師很不知道從哪裡開始，怕被坑、怕溝通不良</li>
+        </ul>
+      </div>
+      <div class="contrast-side after">
+        <span class="contrast-label" data-text="contrast-after-label" data-text-description="改變後欄位標籤">AFTER  改變之後</span>
+        <h3 class="contrast-title" data-text="contrast-after-title" data-text-description="改變後理想狀態標題，12字以內">這個家有你的樣子，<br>住起來就是對的</h3>
+        <ul class="contrast-list">
+          <li data-text="contrast-after-item-1" data-text-description="改變後願景描述一">早晨在廚房泡咖啡，陽光打進來的角度讓你捨不得出門</li>
+          <li data-text="contrast-after-item-2" data-text-description="改變後願景描述二">客人來訪，他們說「這個空間好有你的風格」</li>
+          <li data-text="contrast-after-item-3" data-text-description="改變後願景描述三">不需要解釋，空間本身就說清楚你是什麼樣的人</li>
+          <li data-text="contrast-after-item-4" data-text-description="改變後願景描述四">整個過程透明可見，每一步都知道接下來發生什麼</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VISION 生活場景展示 -->
+<section class="vision" id="vision" data-section="vision" data-section-title="生活場景展示" data-section-purpose="用具體的生活畫面描繪理想居住狀態，讓訪客看到自己想要的日常，從抽象憧憬轉為具體渴望">
+  <div class="vision-inner">
+    <div class="vision-header reveal">
+      <span class="section-label" data-text="vision-label" data-text-description="生活場景區塊小標">LIFE SCENE 生活場景</span>
+      <h2 class="section-title" data-text="vision-title" data-text-description="生活場景主標題，用問句引導訪客想像">你想要的，<br>是哪一種日常？</h2>
+      <p class="section-desc" data-text="vision-desc" data-text-description="生活場景說明文，30字以內">每個理想的家背後，都有一種具體的生活方式在等待實現。</p>
+    </div>
+    <div class="vision-grid">
+      <div class="vision-card reveal reveal-delay-1">
+        <img class="vision-card-img" src="https://images.pexels.com/photos/8571661/pexels-photo-8571661.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=650&amp;w=940" alt="廚房生活場景" data-img-query="open kitchen morning light warm minimal Taiwan" data-img-orientation="landscape" data-img-size="medium" data-img-description="廚房場景圖，展現開放式廚房在早晨自然光下的溫暖氛圍">
+        <div class="vision-card-body">
+          <span class="vision-card-scene" data-text="vision-card-1-scene" data-text-description="場景標籤">KITCHEN  廚房日常</span>
+          <h3 class="vision-card-title" data-text="vision-card-1-title" data-text-description="廚房場景標題，12字以內">早晨不趕時間，<br>這裡讓你想多待一會兒</h3>
+          <p class="vision-card-desc" data-text="vision-card-1-desc" data-text-description="廚房場景描述，40字以內">開放式廚房讓光線自由流動，中島成為全家的生活重心，食物的香氣混合著陽光，這是你一直想要的早晨節奏。</p>
+        </div>
+      </div>
+      <div class="vision-card reveal reveal-delay-2">
+        <img class="vision-card-img" src="https://images.pexels.com/photos/27817983/pexels-photo-27817983.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=650&amp;w=940" alt="書房靜謐空間" data-img-query="cozy reading nook bookshelf window natural light" data-img-orientation="landscape" data-img-size="medium" data-img-description="書房或閱讀角落，展現安靜個人空間的療癒感">
+        <div class="vision-card-body">
+          <span class="vision-card-scene" data-text="vision-card-2-scene" data-text-description="場景標籤">STUDY  靜謐角落</span>
+          <h3 class="vision-card-title" data-text="vision-card-2-title" data-text-description="書房場景標題，12字以內">終於有一個只屬於你自己的角落</h3>
+          <p class="vision-card-desc" data-text="vision-card-2-desc" data-text-description="書房場景描述，40字以內">書架、窗邊、一盞燈。不需要很大，但這個空間讓你感覺自己是完整的，思緒在這裡特別清晰。</p>
+        </div>
+      </div>
+      <div class="vision-card reveal reveal-delay-3">
+        <img class="vision-card-img" src="https://images.pexels.com/photos/8275699/pexels-photo-8275699.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=650&amp;w=940" alt="客廳聚會場景" data-img-query="living room gathering friends warm comfortable interior" data-img-orientation="landscape" data-img-size="medium" data-img-description="客廳場景，展現讓人放鬆聚會的溫馨氛圍">
+        <div class="vision-card-body">
+          <span class="vision-card-scene" data-text="vision-card-3-scene" data-text-description="場景標籤">LIVING  家的核心</span>
+          <h3 class="vision-card-title" data-text="vision-card-3-title" data-text-description="客廳場景標題，12字以內">客人坐下來，<br>總是說「你家好舒服」</h3>
+          <p class="vision-card-desc" data-text="vision-card-3-desc" data-text-description="客廳場景描述，40字以內">客廳不是展示間，是真正讓人放鬆的地方。材質、比例、光線，這些細節決定了待在這裡的感受是否安心。</p>
+        </div>
+      </div>
+    </div>
+    <div class="vision-quote reveal reveal-delay-2">
+      <blockquote data-text="vision-quote" data-text-description="品牌設計理念引言，一句話點出核心哲學">「好的空間設計不是讓你印象深刻，<br>而是讓你住進去就不想離開。」</blockquote>
+      <cite data-text="vision-quote-source" data-text-description="引言來源署名">— 疊工作室 設計理念</cite>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT 設計師介紹 -->
+<section class="about" id="about" data-section="about" data-section-title="關於疊工作室" data-section-purpose="建立設計師專業信任感，讓屋主從猶豫是否找設計師，轉變為相信這個工作室理解自己的需求">
+  <div class="about-inner">
+    <div class="about-img-wrap reveal">
+      <img class="about-img" src="https://images.pexels.com/photos/9618108/pexels-photo-9618108.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=650&amp;w=940" alt="DDIE Studio 設計師" data-img-query="interior designer working studio Taiwan portrait" data-img-orientation="portrait" data-img-size="large" data-img-description="設計師工作照或工作室環境照，傳達專業且親切的品牌形象">
+      <div class="about-img-tag">
+        <div class="about-img-tag-num">48+</div>
+        <div class="about-img-tag-label">完工住宅案例</div>
+      </div>
+    </div>
+    <div class="about-content reveal reveal-delay-1">
+      <span class="section-label" data-text="about-label" data-text-description="關於區塊小標">ABOUT THE STUDIO</span>
+      <h2 class="about-name" data-text="about-name" data-text-description="工作室名稱，主標題">疊工作室<br>DDIE Studio</h2>
+      <span class="about-role" data-text="about-role" data-text-description="工作室所在地與服務描述">台中市西區｜住宅室內設計</span>
+      <div class="about-divider"></div>
+      <p class="about-bio" data-text="about-bio-1" data-text-description="工作室介紹第一段，說明核心理念與背景，60字以內">
+        我們相信，每個屋主心裡都有一個「家的樣子」，只是還沒有人幫你說清楚。疊工作室成立於台中西區，專注住宅全案設計超過七年，累積 48 個完工案例。我們不做制式裝潢，每一個空間都從屋主的生活方式與個人品味出發，找到那個「對的感覺」。
+      </p>
+      <p class="about-bio" data-text="about-bio-2" data-text-description="工作室介紹第二段，強調陪伴式服務體驗，40字以內">
+        從 IG 上的完工作品，到每個在現場做決定的當下——我們陪你走完整個過程，而不是在你簽約後消失。
+      </p>
+      <div class="about-values">
+        <div class="about-value">
+          <div class="about-value-icon">
+            <svg width="16" height="16" viewBox="0 0 16 16" stroke-width="1.5"><circle cx="8" cy="8" r="6"></circle><polyline points="5,8 7,10 11,6"></polyline></svg>
+          </div>
+          <div class="about-value-text">
+            <div class="about-value-label">流程全程透明</div>
+            <div class="about-value-desc">從報價到完工，每個階段的費用與時程都在合約內說清楚，沒有隱藏費用。</div>
+          </div>
+        </div>
+        <div class="about-value">
+          <div class="about-value-icon">
+            <svg width="16" height="16" viewBox="0 0 16 16" stroke-width="1.5"><rect x="2" y="2" width="12" height="12" rx="2"></rect><line x1="5" y1="8" x2="11" y2="8"></line><line x1="8" y1="5" x2="8" y2="11"></line></svg>
+          </div>
+          <div class="about-value-text">
+            <div class="about-value-label">全案設計一手包辦</div>
+            <div class="about-value-desc">格局規劃、材質選配到監工管理，你不需要同時面對多個承包商。</div>
+          </div>
+        </div>
+        <div class="about-value">
+          <div class="about-value-icon">
+            <svg width="16" height="16" viewBox="0 0 16 16" stroke-width="1.5"><path d="M8 2 L14 6 L14 14 L2 14 L2 6 Z"></path><rect x="5" y="10" width="6" height="4"></rect></svg>
+          </div>
+          <div class="about-value-text">
+            <div class="about-value-label">真正客製，不套模板</div>
+            <div class="about-value-desc">我們不持有固定風格，每個案子的風格從屋主的生活習慣與個性長出來。</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS 合作流程 -->
+<section class="process" id="process" data-section="process" data-section-title="合作流程" data-section-purpose="消除屋主對設計流程不透明的疑慮，讓不知道怎麼開始的人清楚看到整個路徑，降低第一步的心理門檻">
+  <div class="process-inner">
+    <div class="process-header reveal">
+      <span class="section-label" data-text="process-label" data-text-description="流程區塊小標">HOW WE WORK</span>
+      <h2 class="section-title" data-text="process-title" data-text-description="流程區塊主標題，降低心理門檻">不確定怎麼開始？<br>從第一次談話開始就好</h2>
+      <p class="section-desc" data-text="process-desc" data-text-description="流程說明文，30字以內">整個流程清楚、可預期，你在每個階段都知道接下來發生什麼事。</p>
+    </div>
+    <div class="process-steps">
+      <div class="process-step reveal reveal-delay-1">
+        <div class="process-num">01</div>
+        <h3 class="process-step-title" data-text="process-step-1-title" data-text-description="第一步驟標題，10字以內">初次諮詢<br>了解你的家與生活</h3>
+        <p class="process-step-desc" data-text="process-step-1-desc" data-text-description="第一步驟說明，50字以內">免費的第一次談話，我們不急著報價，而是先理解你想要什麼樣的生活。你的習慣、審美偏好、對空間的期待——這些才是設計的起點。</p>
+        <div class="process-step-time" data-text="process-step-1-time" data-text-description="第一步驟時程參考">約 60–90 分鐘</div>
+      </div>
+      <div class="process-step reveal reveal-delay-2">
+        <div class="process-num">02</div>
+        <h3 class="process-step-title" data-text="process-step-2-title" data-text-description="第二步驟標題，10字以內">空間丈量<br>提案與報價確認</h3>
+        <p class="process-step-desc" data-text="process-step-2-desc" data-text-description="第二步驟說明，50字以內">現場丈量後，我們提出初步設計概念與方向，並給予完整報價。你可以在這個階段充分討論，直到確定合作才進入下一步。</p>
+        <div class="process-step-time" data-text="process-step-2-time" data-text-description="第二步驟時程參考">約 1–2 週</div>
+      </div>
+      <div class="process-step reveal reveal-delay-3">
+        <div class="process-num">03</div>
+        <h3 class="process-step-title" data-text="process-step-3-title" data-text-description="第三步驟標題，10字以內">設計深化<br>材質選配與確認</h3>
+        <p class="process-step-desc" data-text="process-step-3-desc" data-text-description="第三步驟說明，50字以內">平面配置、立面設計、材質板與色彩計畫，每一個細節都和你一起確認。我們提供 3D 視覺化，讓你在施工前就能看到成果。</p>
+        <div class="process-step-time" data-text="process-step-3-time" data-text-description="第三步驟時程參考">約 4–6 週</div>
+      </div>
+      <div class="process-step reveal reveal-delay-4">
+        <div class="process-num">04</div>
+        <h3 class="process-step-title" data-text="process-step-4-title" data-text-description="第四步驟標題，10字以內">施工監管<br>交屋到你滿意</h3>
+        <p class="process-step-desc" data-text="process-step-4-desc" data-text-description="第四步驟說明，50字以內">全程監工，定期回報施工進度，你可以隨時詢問。交屋時，我們陪你逐項驗收，確認每一個細節都和設計圖一致。</p>
+        <div class="process-step-time" data-text="process-step-4-time" data-text-description="第四步驟時程參考">依工程規模 6–14 週</div>
+      </div>
+    </div>
+    <p class="process-note reveal">＊ 以上時程為一般住宅全案設計的參考區間，實際依坪數與需求調整</p>
+  </div>
+</section>
+
+<!-- WORKS 作品集 -->
+<section class="works" id="works" data-section="works" data-section-title="精選作品集" data-section-purpose="用真實完工案例建立視覺信任感，讓訪客看到疊工作室的實際設計品質，確認風格與自己的期待相符">
+  <div class="works-header reveal">
+    <div class="works-header-left">
+      <span class="section-label" data-text="works-label" data-text-description="作品集小標">SELECTED WORKS</span>
+      <h2 class="section-title" data-text="works-title" data-text-description="作品集主標題">讓作品說話</h2>
+    </div>
+    <a href="#contact" class="works-see-all">
+      查看更多案例
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="2" y1="8" x2="14" y2="8"></line><polyline points="9,3 14,8 9,13"></polyline></svg>
+    </a>
+  </div>
+  <div class="works-grid">
+    <div class="work-card featured span-rows reveal reveal-delay-1">
+      <img class="work-card-img" src="https://images.pexels.com/photos/33471648/pexels-photo-33471648.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=650&amp;w=940" alt="台中住宅案例" data-img-query="Taiwan residential interior design modern warm completed" data-img-orientation="landscape" data-img-size="large" data-img-description="主要特色案例，36坪台中西區私宅，溫暖現代風格全案設計完工照">
+      <div class="work-card-overlay"></div>
+      <div class="work-card-info">
+        <div class="work-card-name" data-text="work-1-name" data-text-description="案例名稱，坪數與地點">西區私宅 / 36 坪</div>
+        <div class="work-card-tag" data-text="work-1-tag" data-text-description="案例風格標籤">溫暖現代風｜全案設計</div>
+      </div>
+    </div>
+    <div class="work-card reveal reveal-delay-2">
+      <img class="work-card-img" src="https://images.pexels.com/photos/7402630/pexels-photo-7402630.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=650&amp;w=940" alt="北屯住宅案例" data-img-query="wabi-sabi Japanese minimal interior bedroom Taiwan" data-img-orientation="landscape" data-img-size="medium" data-img-description="北屯私宅案例，28坪，日式侘寂風格格局翻新完工照">
+      <div class="work-card-overlay"></div>
+      <div class="work-card-info">
+        <div class="work-card-name" data-text="work-2-name" data-text-description="案例名稱">北屯私宅 / 28 坪</div>
+        <div class="work-card-tag" data-text="work-2-tag" data-text-description="案例風格標籤">日式侘寂風｜格局翻新</div>
+      </div>
+    </div>
+    <div class="work-card reveal reveal-delay-3">
+      <img class="work-card-img" src="https://images.pexels.com/photos/34992766/pexels-photo-34992766.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=650&amp;w=940" alt="南屯住宅案例" data-img-query="Scandinavian luxury apartment living room Taiwan interior" data-img-orientation="landscape" data-img-size="medium" data-img-description="南屯私宅案例，42坪，輕奢北歐風預售屋全案完工照">
+      <div class="work-card-overlay"></div>
+      <div class="work-card-info">
+        <div class="work-card-name" data-text="work-3-name" data-text-description="案例名稱">南屯私宅 / 42 坪</div>
+        <div class="work-card-tag" data-text="work-3-tag" data-text-description="案例風格標籤">輕奢北歐風｜預售屋全案</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" id="contact" data-section="cta" data-section-title="行動召喚" data-section-purpose="將訪客從想像轉化為實際行動，提供三種低門檻的接觸方式，讓第一步感覺輕鬆可行">
+  <div class="cta-inner reveal">
+    <div class="cta-text">
+      <span class="section-label" data-text="cta-label" data-text-description="CTA 小標">START HERE  從這裡開始</span>
+      <h2 class="cta-title" data-text="cta-title" data-text-description="CTA 主標題，推動訪客行動，10字以內">那個畫面<br>可以真實發生</h2>
+      <p class="cta-desc" data-text="cta-desc" data-text-description="CTA 說明文，消除行動前的疑慮，50字以內">第一次諮詢是免費的。不需要準備很多，告訴我們你現在的空間狀況，和你心裡對「家」的期待，我們來幫你找到方向。</p>
+    </div>
+    <div class="cta-right">
+      <a href="tel:+886422338899" class="cta-option">
+        <div class="cta-option-icon">
+          <svg width="20" height="20" viewBox="0 0 20 20" stroke-width="1.5"><path d="M3 3.5C3 3.5 3.5 8 7 11.5 10.5 15 15 15.5 15 15.5L17 13.5C17 13.5 15.5 12 14 12.5L12 14C12 14 9 13 7 11 5 9 4 6 4 6L6 4C6.5 2.5 5 1 5 1L3 3.5Z"></path></svg>
+        </div>
+        <div class="cta-option-text">
+          <div class="cta-option-label">電話預約諮詢</div>
+          <div class="cta-option-sub">04-2233-8899｜週一至週六 10:00–19:00</div>
+        </div>
+        <svg class="cta-option-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="2" y1="8" x2="14" y2="8"></line><polyline points="9,3 14,8 9,13"></polyline></svg>
+      </a>
+      <a href="https://instagram.com/ddie.studio" class="cta-option" target="_blank">
+        <div class="cta-option-icon">
+          <svg width="20" height="20" viewBox="0 0 20 20" stroke-width="1.5"><rect x="3" y="3" width="14" height="14" rx="4"></rect><circle cx="10" cy="10" r="3.5"></circle><circle cx="14.5" cy="5.5" r="0.8" fill="currentColor" stroke="none"></circle></svg>
+        </div>
+        <div class="cta-option-text">
+          <div class="cta-option-label">Instagram 留言詢問</div>
+          <div class="cta-option-sub">@ddie.studio｜查看更多完工作品</div>
+        </div>
+        <svg class="cta-option-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="2" y1="8" x2="14" y2="8"></line><polyline points="9,3 14,8 9,13"></polyline></svg>
+      </a>
+      <a href="mailto:hello@ddie-studio.com" class="cta-option">
+        <div class="cta-option-icon">
+          <svg width="20" height="20" viewBox="0 0 20 20" stroke-width="1.5"><rect x="2" y="4" width="16" height="12" rx="2"></rect><polyline points="2,4 10,11 18,4"></polyline></svg>
+        </div>
+        <div class="cta-option-text">
+          <div class="cta-option-label">Email 傳送需求說明</div>
+          <div class="cta-option-sub">hello@ddie-studio.com</div>
+        </div>
+        <svg class="cta-option-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="2" y1="8" x2="14" y2="8"></line><polyline points="9,3 14,8 9,13"></polyline></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          疊工作室
+          <span class="footer-logo-sub">DDIE STUDIO</span>
+        </div>
+        <p class="footer-tagline">讓空間說出你沒說出口的品味。<br>台中住宅室內設計，全案服務。</p>
+      </div>
+      <div>
+        <span class="footer-col-title">服務項目</span>
+        <ul class="footer-links">
+          <li><a href="services.html">住宅全案設計</a></li>
+          <li><a href="services.html">格局規劃顧問</a></li>
+          <li><a href="services.html">舊屋翻新</a></li>
+          <li><a href="services.html">預售屋客變</a></li>
+          <li><a href="services.html">小型商業空間</a></li>
+        </ul>
+      </div>
+      <div>
+        <span class="footer-col-title">頁面</span>
+        <ul class="footer-links">
+          <li><a href="portfolio.html">作品集</a></li>
+          <li><a href="about.html">關於我們</a></li>
+          <li><a href="blog.html">設計誌</a></li>
+          <li><a href="contact.html">聯絡我們</a></li>
+        </ul>
+      </div>
+      <div>
+        <span class="footer-col-title">聯絡資訊</span>
+        <div class="footer-contact-item">
+          <svg width="14" height="14" viewBox="0 0 14 14" stroke-width="1.3"><path d="M2 2.5C2 2.5 2.4 6.5 5.5 9.5 8.5 12.5 12.5 13 12.5 13L14 11.5C14 11.5 12.8 10.3 11.5 10.8L10 12C10 12 7.5 11.2 6 9.5 4.5 7.8 3.8 5.5 3.8 5.5L5 4C5.5 2.7 4.3 1.5 4.3 1.5L2 2.5Z"></path></svg>
+          04-2233-8899
+        </div>
+        <div class="footer-contact-item">
+          <svg width="14" height="14" viewBox="0 0 14 14" stroke-width="1.3"><rect x="1" y="2" width="12" height="10" rx="1.5"></rect><polyline points="1,2 7,8 13,2"></polyline></svg>
+          hello@ddie-studio.com
+        </div>
+        <div class="footer-contact-item">
+          <svg width="14" height="14" viewBox="0 0 14 14" stroke-width="1.3"><path d="M7 1.5 C4.5 1.5 2.5 3.5 2.5 6 C2.5 9.5 7 12.5 7 12.5 C7 12.5 11.5 9.5 11.5 6 C11.5 3.5 9.5 1.5 7 1.5Z"></path><circle cx="7" cy="6" r="1.8"></circle></svg>
+          台中市西區民生路 ○○ 號
+        </div>
+        <div class="footer-contact-item">
+          <svg width="14" height="14" viewBox="0 0 14 14" stroke-width="1.3"><circle cx="7" cy="7" r="5.5"></circle><polyline points="7,3.5 7,7 9.5,9"></polyline></svg>
+          週一至週六 10:00–19:00
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copyright">© 2024 疊工作室 DDIE Studio. All rights reserved.</p>
+      <a href="https://instagram.com/ddie.studio" class="footer-ig" target="_blank">IG @ddie.studio</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Scroll reveal
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.08, rootMargin: '0px 0px -24px 0px' });
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// Hero delayed trigger
+setTimeout(() => {
+  document.querySelectorAll('.hero .reveal').forEach(el => {
+    el.classList.add('visible');
+  });
+}, 80);
+</script>
+
+
+</body></html>

@@ -1,0 +1,1319 @@
+<!DOCTYPE html><html lang="zh-TW"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>服務項目｜余明道 企業教練｜讓主管真的會帶人，不只會管人</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&amp;family=Noto+Serif+TC:wght@400;600;700&amp;family=Cormorant+Garamond:wght@400;600;700&amp;display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-primary: #0D1F3C;
+      --bg-secondary: #152844;
+      --bg-deep: #091629;
+      --bg-card: #1A3255;
+      --bg-light: #F5F2ED;
+      --text-primary: #F0ECE4;
+      --text-muted: #A8B4C4;
+      --text-light: #6B7D93;
+      --text-dark: #1A2B3C;
+      --accent: #C9A96E;
+      --accent-light: #E2C99A;
+      --border: rgba(201, 169, 110, 0.2);
+      --border-subtle: rgba(255,255,255,0.08);
+      --font-serif: 'Cormorant Garamond', 'Noto Serif TC', serif;
+      --font-sans: 'Noto Sans TC', sans-serif;
+      --section-gap: 120px;
+      --content-max: 1080px;
+      --side-pad: 48px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-sans);
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(13, 31, 60, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .nav-inner {
+      max-width: var(--content-max);
+      margin: 0 auto;
+      padding: 0 var(--side-pad);
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-logo {
+      font-family: var(--font-serif);
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      text-decoration: none;
+      letter-spacing: 0.06em;
+    }
+    .nav-logo span {
+      color: var(--accent);
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.88rem;
+      letter-spacing: 0.04em;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover, .nav-links a.active { color: var(--text-primary); }
+    .nav-cta {
+      background: var(--accent);
+      color: var(--bg-deep) !important;
+      padding: 8px 20px;
+      border-radius: 3px;
+      font-weight: 700;
+      font-size: 0.85rem !important;
+      letter-spacing: 0.06em;
+      transition: background 0.2s !important;
+    }
+    .nav-cta:hover { background: var(--accent-light) !important; color: var(--bg-deep) !important; }
+
+    /* ── HERO PAGE ── */
+    .page-hero {
+      padding: 120px var(--side-pad) 80px;
+      background:
+        linear-gradient(160deg, var(--bg-deep) 0%, var(--bg-primary) 60%, #0F2848 100%);
+      text-align: center;
+    }
+    .page-hero-inner {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .page-hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+    .page-hero-eyebrow-line {
+      width: 32px;
+      height: 1px;
+      background: var(--accent);
+    }
+    .page-hero-eyebrow-text {
+      font-size: 0.78rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 500;
+    }
+    .page-hero-title {
+      font-family: var(--font-serif);
+      font-size: clamp(2.2rem, 4vw, 3.2rem);
+      font-weight: 700;
+      line-height: 1.3;
+      color: var(--text-primary);
+      margin-bottom: 16px;
+      letter-spacing: -0.01em;
+    }
+    .page-hero-desc {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      line-height: 1.8;
+      margin-bottom: 32px;
+    }
+
+    /* ── SECTION COMMON ── */
+    .section {
+      padding: var(--section-gap) var(--side-pad);
+    }
+    .section-inner {
+      max-width: var(--content-max);
+      margin: 0 auto;
+    }
+    .section-label {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    .section-label-line {
+      width: 24px;
+      height: 1px;
+      background: var(--accent);
+    }
+    .section-label-text {
+      font-size: 0.74rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 500;
+    }
+    .section-title {
+      font-family: var(--font-serif);
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      font-weight: 700;
+      line-height: 1.3;
+      color: var(--text-primary);
+      margin-bottom: 16px;
+      letter-spacing: -0.01em;
+    }
+    .section-desc {
+      font-size: 1rem;
+      color: var(--text-muted);
+      max-width: 540px;
+      line-height: 1.8;
+    }
+    .section-header {
+      margin-bottom: 64px;
+    }
+
+    /* ── SERVICE PHILOSOPHY ── */
+    .philosophy { background: var(--bg-light); color: var(--text-dark); }
+    .philosophy .section-title { color: var(--text-dark); }
+    .philosophy .section-desc { color: #5A6B7D; }
+    .philosophy .section-label-text { color: #8B7355; }
+    .philosophy-content {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 64px;
+      align-items: center;
+    }
+    .philosophy-text {
+      font-size: 1.1rem;
+      color: #4A5568;
+      line-height: 1.8;
+      margin-bottom: 32px;
+    }
+    .philosophy-stats {
+      display: flex;
+      gap: 32px;
+    }
+    .philosophy-stat {
+      text-align: center;
+    }
+    .philosophy-stat-num {
+      font-family: var(--font-serif);
+      font-size: 2.4rem;
+      font-weight: 700;
+      color: #8B7355;
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .philosophy-stat-unit {
+      font-size: 1rem;
+      color: #A68B5B;
+    }
+    .philosophy-stat-label {
+      font-size: 0.8rem;
+      color: #6A7C89;
+      margin-top: 4px;
+    }
+    .philosophy-highlights {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+    .philosophy-highlight {
+      background: white;
+      padding: 28px 32px;
+      border-radius: 6px;
+      border-left: 4px solid #8B7355;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+    .philosophy-highlight-num {
+      font-family: var(--font-serif);
+      font-size: 2rem;
+      font-weight: 700;
+      color: #8B7355;
+      margin-bottom: 8px;
+    }
+    .philosophy-highlight-text {
+      font-size: 0.9rem;
+      color: #4A5568;
+      font-weight: 500;
+    }
+
+    /* ── SERVICES OVERVIEW ── */
+    .services-overview { background: var(--bg-secondary); }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+    }
+    .service-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 6px;
+      padding: 40px 32px;
+      transition: border-color 0.25s, transform 0.25s;
+      cursor: default;
+    }
+    .service-card:hover {
+      border-color: var(--border);
+      transform: translateY(-3px);
+    }
+    .service-icon {
+      width: 48px;
+      height: 48px;
+      margin-bottom: 24px;
+      stroke: var(--accent);
+      fill: none;
+      stroke-width: 1.5;
+    }
+    .service-title {
+      font-family: var(--font-serif);
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 12px;
+    }
+    .service-desc {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+    .service-suitable {
+      font-size: 0.8rem;
+      color: var(--accent);
+      border-top: 1px solid var(--border-subtle);
+      padding-top: 16px;
+    }
+
+    /* ── SERVICE DETAILS ── */
+    .service-details { background: var(--bg-primary); }
+    .service-detail-cards {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+    .service-detail-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 6px;
+      overflow: hidden;
+      transition: border-color 0.3s;
+    }
+    .service-detail-card.active {
+      border-color: var(--border);
+    }
+    .service-detail-header {
+      padding: 32px 40px;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: background 0.2s;
+    }
+    .service-detail-header:hover {
+      background: rgba(255,255,255,0.02);
+    }
+    .service-detail-title {
+      font-family: var(--font-serif);
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 8px;
+    }
+    .service-detail-subtitle {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+    .service-detail-toggle {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s;
+      flex-shrink: 0;
+    }
+    .service-detail-toggle svg {
+      width: 12px;
+      height: 12px;
+      stroke: var(--accent);
+      transition: transform 0.3s;
+    }
+    .service-detail-card.active .service-detail-toggle {
+      background: var(--accent);
+    }
+    .service-detail-card.active .service-detail-toggle svg {
+      stroke: var(--bg-deep);
+      transform: rotate(45deg);
+    }
+    .service-detail-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, padding 0.4s ease;
+    }
+    .service-detail-card.active .service-detail-content {
+      max-height: 800px;
+      padding: 0 40px 40px;
+    }
+    .service-detail-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      margin-bottom: 32px;
+    }
+    .service-detail-info h4 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 12px;
+      letter-spacing: 0.04em;
+    }
+    .service-detail-info p, .service-detail-info ul {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+    .service-detail-info ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    .service-detail-info li {
+      margin-bottom: 6px;
+      position: relative;
+      padding-left: 16px;
+    }
+    .service-detail-info li::before {
+      content: '•';
+      color: var(--accent);
+      position: absolute;
+      left: 0;
+    }
+    .service-detail-highlight {
+      background: rgba(201,169,110,0.08);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 24px;
+      margin-top: 24px;
+    }
+    .service-detail-highlight-title {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .service-detail-highlight-text {
+      font-size: 0.9rem;
+      color: var(--text-primary);
+      line-height: 1.6;
+    }
+
+    /* ── SERVICE GUIDE ── */
+    .service-guide { background: var(--bg-light); color: var(--text-dark); }
+    .service-guide .section-title { color: var(--text-dark); }
+    .service-guide .section-desc { color: #5A6B7D; }
+    .service-guide .section-label-text { color: #8B7355; }
+    .guide-section {
+      margin-bottom: 48px;
+    }
+    .guide-section:last-child { margin-bottom: 0; }
+    .guide-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 20px;
+    }
+    .guide-table {
+      background: white;
+      border-radius: 6px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+    .guide-table-row {
+      display: grid;
+      grid-template-columns: 1fr 2fr 1.5fr;
+      border-bottom: 1px solid #E5E7EB;
+      transition: background 0.2s;
+    }
+    .guide-table-row:last-child { border-bottom: none; }
+    .guide-table-row:hover { background: #F8F9FA; }
+    .guide-table-header {
+      background: #F3F4F6;
+      font-weight: 700;
+      font-size: 0.85rem;
+      color: #4B5563;
+    }
+    .guide-table-cell {
+      padding: 16px 20px;
+      font-size: 0.9rem;
+      color: #4A5568;
+      line-height: 1.6;
+    }
+    .guide-table-header .guide-table-cell {
+      color: #1F2937;
+      font-weight: 700;
+    }
+    .guide-flowchart {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 32px;
+    }
+    .guide-flow-item {
+      background: white;
+      padding: 24px 20px;
+      border-radius: 6px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      position: relative;
+    }
+    .guide-flow-item::after {
+      content: '→';
+      position: absolute;
+      right: -12px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 1.2rem;
+      color: #8B7355;
+    }
+    .guide-flow-item:last-child::after { display: none; }
+    .guide-flow-title {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #8B7355;
+      margin-bottom: 8px;
+    }
+    .guide-flow-text {
+      font-size: 0.8rem;
+      color: #6A7C89;
+      line-height: 1.5;
+    }
+
+    /* ── FAQ ── */
+    .faq { background: var(--bg-secondary); }
+    .faq-items {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .faq-item {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 6px;
+      overflow: hidden;
+    }
+    .faq-question {
+      padding: 24px 32px;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: background 0.2s;
+    }
+    .faq-question:hover {
+      background: rgba(255,255,255,0.02);
+    }
+    .faq-question-text {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+    .faq-toggle {
+      width: 20px;
+      height: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .faq-toggle svg {
+      width: 16px;
+      height: 16px;
+      stroke: var(--accent);
+      transition: transform 0.3s;
+    }
+    .faq-item.active .faq-toggle svg {
+      transform: rotate(45deg);
+    }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease, padding 0.3s ease;
+    }
+    .faq-item.active .faq-answer {
+      max-height: 200px;
+      padding: 0 32px 24px;
+    }
+    .faq-answer-text {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    /* ── CTA ── */
+    .cta-section {
+      background: linear-gradient(135deg, var(--bg-secondary) 0%, #0F2848 100%);
+      border-top: 1px solid var(--border-subtle);
+      border-bottom: 1px solid var(--border-subtle);
+      padding: 100px var(--side-pad);
+      text-align: center;
+    }
+    .cta-inner {
+      max-width: 640px;
+      margin: 0 auto;
+    }
+    .cta-title {
+      font-family: var(--font-serif);
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 16px;
+      line-height: 1.3;
+    }
+    .cta-desc {
+      font-size: 1rem;
+      color: var(--text-muted);
+      line-height: 1.8;
+      margin-bottom: 40px;
+    }
+    .cta-note {
+      margin-top: 20px;
+      font-size: 0.8rem;
+      color: var(--text-light);
+    }
+    .btn-primary {
+      background: var(--accent);
+      color: var(--bg-deep);
+      padding: 14px 32px;
+      border-radius: 3px;
+      font-weight: 700;
+      font-size: 0.92rem;
+      letter-spacing: 0.06em;
+      text-decoration: none;
+      display: inline-block;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .btn-primary:hover { background: var(--accent-light); transform: translateY(-1px); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--bg-deep);
+      padding: 64px var(--side-pad) 40px;
+      border-top: 1px solid var(--border-subtle);
+    }
+    .footer-inner {
+      max-width: var(--content-max);
+      margin: 0 auto;
+    }
+    .footer-top {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr;
+      gap: 48px;
+      margin-bottom: 48px;
+    }
+    .footer-brand {
+      font-family: var(--font-serif);
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 12px;
+      letter-spacing: 0.04em;
+    }
+    .footer-brand span { color: var(--accent); }
+    .footer-tagline {
+      font-size: 0.84rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+    .footer-contact-item {
+      font-size: 0.84rem;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+    }
+    .footer-contact-item strong {
+      color: var(--text-primary);
+      font-size: 0.76rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 2px;
+    }
+    .footer-col-title {
+      font-size: 0.76rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 16px;
+      font-weight: 500;
+    }
+    .footer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .footer-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.88rem;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--text-primary); }
+    .footer-bottom {
+      border-top: 1px solid var(--border-subtle);
+      padding-top: 28px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .footer-copy {
+      font-size: 0.78rem;
+      color: var(--text-light);
+    }
+    .footer-linkedin {
+      font-size: 0.78rem;
+      color: var(--text-light);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-linkedin:hover { color: var(--accent); }
+
+    /* ── REVEAL ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .reveal-delay-1 { transition-delay: 0.08s; }
+    .reveal-delay-2 { transition-delay: 0.16s; }
+    .reveal-delay-3 { transition-delay: 0.24s; }
+    .reveal-delay-4 { transition-delay: 0.32s; }
+
+    /* ── RWD ── */
+    @media (max-width: 960px) {
+      :root { --side-pad: 32px; --section-gap: 80px; }
+      .nav-links li:not(:last-child) { display: none; }
+      .philosophy-content { grid-template-columns: 1fr; gap: 40px; }
+      .philosophy-stats { justify-content: center; }
+      .services-grid { grid-template-columns: 1fr 1fr; }
+      .service-detail-grid { grid-template-columns: 1fr; }
+      .guide-table-row { grid-template-columns: 1fr; }
+      .guide-table-cell { border-bottom: 1px solid #E5E7EB; }
+      .guide-table-cell:last-child { border-bottom: none; }
+      .guide-flowchart { grid-template-columns: 1fr; }
+      .guide-flow-item::after { 
+        content: '↓'; 
+        bottom: -12px; 
+        right: 50%; 
+        top: auto; 
+        transform: translateX(50%); 
+      }
+      .footer-top { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 700px) {
+      :root { --side-pad: 20px; --section-gap: 64px; }
+      .nav-links { display: none; }
+      .philosophy-stats { flex-direction: column; gap: 20px; text-align: center; }
+      .philosophy-highlights { gap: 16px; }
+      .philosophy-highlight { padding: 20px 24px; }
+      .services-grid { grid-template-columns: 1fr; }
+      .service-detail-header { padding: 24px 24px; }
+      .service-detail-card.active .service-detail-content { padding: 0 24px 24px; }
+      .service-detail-grid { gap: 24px; }
+      .footer-top { grid-template-columns: 1fr; gap: 32px; }
+      .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══ NAV ══ -->
+<nav data-section="navigation" data-section-title="導覽選單" data-section-purpose="提供主要頁面連結，重點突出預約諮詢CTA按鈕">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo" data-text="nav-logo" data-text-description="導覽區品牌標誌文字">余明道<span>．</span>企業教練</a>
+    <ul class="nav-links">
+      <li><a href="about.html">關於我</a></li>
+      <li><a href="services.html">服務項目</a></li>
+      <li><a href="portfolio.html">成功案例</a></li>
+      <li><a href="blog.html">部落格</a></li>
+      <li><a href="contact.html" class="nav-cta">預約諮詢</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ══ PAGE HERO ══ -->
+<section class="page-hero" data-section="page-hero" data-section-title="服務頁主視覺" data-section-purpose="快速說明服務定位，引導訪客瀏覽具體服務內容">
+  <div class="page-hero-inner">
+    <div class="page-hero-eyebrow reveal">
+      <div class="page-hero-eyebrow-line"></div>
+      <span class="page-hero-eyebrow-text" data-text="hero-eyebrow" data-text-description="服務頁標籤">專業服務</span>
+    </div>
+    <h1 class="page-hero-title reveal reveal-delay-1" data-text="hero-title" data-text-description="服務頁主標題">不只是企業訓練，而是讓主管真的會帶人</h1>
+    <p class="page-hero-desc reveal reveal-delay-2" data-text="hero-desc" data-text-description="服務頁副標題">每一次合作都從「你的問題是什麼」開始，不用通用教材</p>
+  </div>
+</section>
+
+<!-- ══ SERVICE PHILOSOPHY ══ -->
+<section class="section philosophy" data-section="philosophy" data-section-title="服務理念" data-section-purpose="建立差異化定位，說明為什麼選擇余明道而非其他顧問">
+  <div class="section-inner">
+    <div class="philosophy-content">
+      <div class="reveal">
+        <div class="section-label">
+          <div class="section-label-line"></div>
+          <span class="section-label-text" data-text="philosophy-label" data-text-description="服務理念區塊標籤">Service Philosophy</span>
+        </div>
+        <h2 class="section-title" data-text="philosophy-title" data-text-description="服務理念標題">與眾不同的顧問哲學</h2>
+        <p class="philosophy-text" data-text="philosophy-text" data-text-description="服務理念說明">大多數企業訓練結束後，主管說「很有收穫」，回到工作崗位卻什麼都沒改變。我的做法不同：每個企業的培訓內容都是客製化設計，針對你的組織問題提供具體解決方案。過去 8 年，30+ 家企業見證了這種做法的實際效果。</p>
+        <div class="philosophy-stats">
+          <div class="philosophy-stat">
+            <div class="philosophy-stat-num" data-text="philosophy-stat-1" data-text-description="服務理念關鍵數字1">78<span class="philosophy-stat-unit">%</span></div>
+            <div class="philosophy-stat-label" data-text="philosophy-stat-1-label" data-text-description="關鍵數字1說明">客戶二次合作率</div>
+          </div>
+          <div class="philosophy-stat">
+            <div class="philosophy-stat-num" data-text="philosophy-stat-2" data-text-description="服務理念關鍵數字2">91<span class="philosophy-stat-unit">%</span></div>
+            <div class="philosophy-stat-label" data-text="philosophy-stat-2-label" data-text-description="關鍵數字2說明">課後滿意度</div>
+          </div>
+          <div class="philosophy-stat">
+            <div class="philosophy-stat-num" data-text="philosophy-stat-3" data-text-description="服務理念關鍵數字3">6<span class="philosophy-stat-unit">個月</span></div>
+            <div class="philosophy-stat-label" data-text="philosophy-stat-3-label" data-text-description="關鍵數字3說明">成果追蹤</div>
+          </div>
+        </div>
+      </div>
+      <div class="philosophy-highlights reveal reveal-delay-1">
+        <div class="philosophy-highlight">
+          <div class="philosophy-highlight-num" data-text="highlight-1-num" data-text-description="差異化重點1數字">30+</div>
+          <div class="philosophy-highlight-text" data-text="highlight-1-text" data-text-description="差異化重點1說明">家企業實證成果</div>
+        </div>
+        <div class="philosophy-highlight">
+          <div class="philosophy-highlight-num" data-text="highlight-2-num" data-text-description="差異化重點2數字">100%</div>
+          <div class="philosophy-highlight-text" data-text="highlight-2-text" data-text-description="差異化重點2說明">客製化課程設計</div>
+        </div>
+        <div class="philosophy-highlight">
+          <div class="philosophy-highlight-num" data-text="highlight-3-num" data-text-description="差異化重點3數字">長期</div>
+          <div class="philosophy-highlight-text" data-text="highlight-3-text" data-text-description="差異化重點3說明">成果追蹤與輔導</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SERVICES OVERVIEW ══ -->
+<section class="section services-overview" data-section="services-overview" data-section-title="三大核心服務" data-section-purpose="快速概覽所有服務，讓訪客選擇深入了解的項目">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <div class="section-label">
+        <div class="section-label-line"></div>
+        <span class="section-label-text" data-text="overview-label" data-text-description="服務總覽區塊標籤">Core Services</span>
+      </div>
+      <h2 class="section-title" data-text="overview-title" data-text-description="服務總覽標題">三大核心服務，解決不同層面的管理問題</h2>
+      <p class="section-desc" data-text="overview-desc" data-text-description="服務總覽說明">從單次培訓到長期轉型，依據您的需求選擇合作方式</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card reveal">
+        <svg class="service-icon" viewBox="0 0 24 24" data-img-description="企業內訓圖示">
+          <path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"></path>
+        </svg>
+        <h3 class="service-title" data-text="service-1-title" data-text-description="服務一標題">企業主管內訓課程</h3>
+        <p class="service-desc" data-text="service-1-desc" data-text-description="服務一描述">針對中階主管的領導技能培訓，解決帶人留人的實際問題。每次培訓都是客製化設計，確保主管回到工作崗位真的有改變。</p>
+        <div class="service-suitable" data-text="service-1-suitable" data-text-description="服務一適用對象">適用：50-300 人企業，主管層有明確技能缺口</div>
+      </div>
+      <div class="service-card reveal reveal-delay-1">
+        <svg class="service-icon" viewBox="0 0 24 24" data-img-description="組織轉型圖示">
+          <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+          <path d="M2 17l10 5 10-5"></path>
+          <path d="M2 12l10 5 10-5"></path>
+        </svg>
+        <h3 class="service-title" data-text="service-2-title" data-text-description="服務二標題">組織文化轉型顧問</h3>
+        <p class="service-desc" data-text="service-2-desc" data-text-description="服務二描述">長期陪伴式顧問服務，協助建立健康的管理文化。從組織診斷到變革執行，全程專業輔導。</p>
+        <div class="service-suitable" data-text="service-2-suitable" data-text-description="服務二適用對象">適用：100-500 人企業，需要系統性組織改善</div>
+      </div>
+      <div class="service-card reveal reveal-delay-2">
+        <svg class="service-icon" viewBox="0 0 24 24" data-img-description="個人教練圖示">
+          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+          <circle cx="12" cy="7" r="4"></circle>
+        </svg>
+        <h3 class="service-title" data-text="service-3-title" data-text-description="服務三標題">主管個別教練輔導</h3>
+        <p class="service-desc" data-text="service-3-desc" data-text-description="服務三描述">針對關鍵主管的一對一教練，解決特定管理挑戰。高度個人化的輔導方式，快速提升領導效能。</p>
+        <div class="service-suitable" data-text="service-3-suitable" data-text-description="服務三適用對象">適用：任何規模企業，有高潛力主管需要深度培養</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SERVICE DETAILS ══ -->
+<section class="section service-details" data-section="service-details" data-section-title="服務深度解析" data-section-purpose="詳細說明每個服務的內容、流程、成果，建立專業信任感">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <div class="section-label">
+        <div class="section-label-line"></div>
+        <span class="section-label-text" data-text="details-label" data-text-description="服務詳解區塊標籤">Detailed Information</span>
+      </div>
+      <h2 class="section-title" data-text="details-title" data-text-description="服務詳解標題">深入了解每項服務的具體內容</h2>
+      <p class="section-desc" data-text="details-desc" data-text-description="服務詳解說明">點擊展開查看詳細的服務內容、適用企業、典型成果與投資說明</p>
+    </div>
+    
+    <div class="service-detail-cards reveal">
+      <!-- Service Detail 1 -->
+      <div class="service-detail-card" data-section="service-detail-1" data-section-title="企業主管內訓詳解" data-section-purpose="詳細說明內訓服務的所有細節，建立專業信任感">
+        <div class="service-detail-header" onclick="toggleDetail(this)">
+          <div>
+            <h3 class="service-detail-title" data-text="detail-1-title" data-text-description="服務詳解1標題">企業主管內訓課程</h3>
+            <p class="service-detail-subtitle" data-text="detail-1-subtitle" data-text-description="服務詳解1副標題">客製化主管領導技能培訓</p>
+          </div>
+          <div class="service-detail-toggle">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path d="M12 5v14M5 12h14"></path>
+            </svg>
+          </div>
+        </div>
+        <div class="service-detail-content">
+          <div class="service-detail-grid">
+            <div class="service-detail-info">
+              <h4 data-text="detail-1-content-title" data-text-description="服務內容小標題">服務內容</h4>
+              <ul>
+                <li data-text="detail-1-content-1" data-text-description="服務內容項目1">客製化課程設計</li>
+                <li data-text="detail-1-content-2" data-text-description="服務內容項目2">3-8 次培訓執行</li>
+                <li data-text="detail-1-content-3" data-text-description="服務內容項目3">課後作業與追蹤</li>
+                <li data-text="detail-1-content-4" data-text-description="服務內容項目4">成果報告與建議</li>
+              </ul>
+            </div>
+            <div class="service-detail-info">
+              <h4 data-text="detail-1-topics-title" data-text-description="典型主題小標題">典型主題</h4>
+              <ul>
+                <li data-text="detail-1-topic-1" data-text-description="培訓主題1">新手主管帶人技術</li>
+                <li data-text="detail-1-topic-2" data-text-description="培訓主題2">跨部門溝通協作</li>
+                <li data-text="detail-1-topic-3" data-text-description="培訓主題3">績效管理實務</li>
+                <li data-text="detail-1-topic-4" data-text-description="培訓主題4">衝突處理技巧</li>
+              </ul>
+            </div>
+          </div>
+          <div class="service-detail-grid">
+            <div class="service-detail-info">
+              <h4 data-text="detail-1-timeline-title" data-text-description="服務週期小標題">服務週期</h4>
+              <p data-text="detail-1-timeline" data-text-description="服務週期說明">設計期 2 週 + 培訓期 1-3 個月 + 追蹤期 6 個月</p>
+            </div>
+            <div class="service-detail-info">
+              <h4 data-text="detail-1-suitable-title" data-text-description="適用企業小標題">適用企業</h4>
+              <p data-text="detail-1-suitable" data-text-description="適用企業說明">員工 50-300 人，有 8-25 位中階主管</p>
+            </div>
+          </div>
+          <div class="service-detail-highlight">
+            <div class="service-detail-highlight-title" data-text="detail-1-result-title" data-text-description="典型成果標籤">典型成果與投資</div>
+            <div class="service-detail-highlight-text" data-text="detail-1-result" data-text-description="典型成果與投資說明">主管留任率提升 30-50%、跨部門協作頻率增加 2-3 倍。投資區間：依據參訓人數與客製化程度，每次專案 15-45 萬元。</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Service Detail 2 -->
+      <div class="service-detail-card" data-section="service-detail-2" data-section-title="組織轉型顧問詳解" data-section-purpose="詳細說明組織顧問服務的所有細節">
+        <div class="service-detail-header" onclick="toggleDetail(this)">
+          <div>
+            <h3 class="service-detail-title" data-text="detail-2-title" data-text-description="服務詳解2標題">組織文化轉型顧問</h3>
+            <p class="service-detail-subtitle" data-text="detail-2-subtitle" data-text-description="服務詳解2副標題">長期陪伴式組織變革服務</p>
+          </div>
+          <div class="service-detail-toggle">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path d="M12 5v14M5 12h14"></path>
+            </svg>
+          </div>
+        </div>
+        <div class="service-detail-content">
+          <div class="service-detail-grid">
+            <div class="service-detail-info">
+              <h4 data-text="detail-2-content-title" data-text-description="服務內容小標題">服務內容</h4>
+              <ul>
+                <li data-text="detail-2-content-1" data-text-description="服務內容項目1">組織診斷與評估</li>
+                <li data-text="detail-2-content-2" data-text-description="服務內容項目2">文化藍圖設計</li>
+                <li data-text="detail-2-content-3" data-text-description="服務內容項目3">管理制度重整</li>
+                <li data-text="detail-2-content-4" data-text-description="服務內容項目4">變革執行陪伴</li>
+              </ul>
+            </div>
+            <div class="service-detail-info">
+              <h4 data-text="detail-2-projects-title" data-text-description="典型項目小標題">典型項目</h4>
+              <ul>
+                <li data-text="detail-2-project-1" data-text-description="顧問項目1">管理階層重組</li>
+                <li data-text="detail-2-project-2" data-text-description="顧問項目2">內部溝通體系建立</li>
+                <li data-text="detail-2-project-3" data-text-description="顧問項目3">人才發展體系設計</li>
+                <li data-text="detail-2-project-4" data-text-description="顧問項目4">績效制度優化</li>
+              </ul>
+            </div>
+          </div>
+          <div class="service-detail-grid">
+            <div class="service-detail-info">
+              <h4 data-text="detail-2-timeline-title" data-text-description="服務週期小標題">服務週期</h4>
+              <p data-text="detail-2-timeline" data-text-description="服務週期說明">診斷期 1 個月 + 設計期 2 個月 + 執行期 6-12 個月</p>
+            </div>
+            <div class="service-detail-info">
+              <h4 data-text="detail-2-suitable-title" data-text-description="適用企業小標題">適用企業</h4>
+              <p data-text="detail-2-suitable" data-text-description="適用企業說明">員工 100-500 人，正在經歷快速成長或轉型</p>
+            </div>
+          </div>
+          <div class="service-detail-highlight">
+            <div class="service-detail-highlight-title" data-text="detail-2-result-title" data-text-description="典型成果標籤">典型成果與投資</div>
+            <div class="service-detail-highlight-text" data-text="detail-2-result" data-text-description="典型成果與投資說明">組織效能提升 40-60%、管理衝突事件減少 50%+。投資區間：依據企業規模與轉型複雜度，每次專案 50-150 萬元。</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Service Detail 3 -->
+      <div class="service-detail-card" data-section="service-detail-3" data-section-title="個人教練輔導詳解" data-section-purpose="詳細說明個人教練服務的所有細節">
+        <div class="service-detail-header" onclick="toggleDetail(this)">
+          <div>
+            <h3 class="service-detail-title" data-text="detail-3-title" data-text-description="服務詳解3標題">主管個別教練輔導</h3>
+            <p class="service-detail-subtitle" data-text="detail-3-subtitle" data-text-description="服務詳解3副標題">一對一高強度領導力提升</p>
+          </div>
+          <div class="service-detail-toggle">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path d="M12 5v14M5 12h14"></path>
+            </svg>
+          </div>
+        </div>
+        <div class="service-detail-content">
+          <div class="service-detail-grid">
+            <div class="service-detail-info">
+              <h4 data-text="detail-3-content-title" data-text-description="服務內容小標題">服務內容</h4>
+              <ul>
+                <li data-text="detail-3-content-1" data-text-description="服務內容項目1">一對一教練會談</li>
+                <li data-text="detail-3-content-2" data-text-description="服務內容項目2">個人發展計畫</li>
+                <li data-text="detail-3-content-3" data-text-description="服務內容項目3">實際情境輔導</li>
+                <li data-text="detail-3-content-4" data-text-description="服務內容項目4">成長追蹤與調整</li>
+              </ul>
+            </div>
+            <div class="service-detail-info">
+              <h4 data-text="detail-3-topics-title" data-text-description="典型主題小標題">典型主題</h4>
+              <ul>
+                <li data-text="detail-3-topic-1" data-text-description="教練主題1">新任主管適應</li>
+                <li data-text="detail-3-topic-2" data-text-description="教練主題2">高潛力人才培養</li>
+                <li data-text="detail-3-topic-3" data-text-description="教練主題3">特殊管理挑戰</li>
+                <li data-text="detail-3-topic-4" data-text-description="教練主題4">領導風格調整</li>
+              </ul>
+            </div>
+          </div>
+          <div class="service-detail-grid">
+            <div class="service-detail-info">
+              <h4 data-text="detail-3-timeline-title" data-text-description="服務週期小標題">服務週期</h4>
+              <p data-text="detail-3-timeline" data-text-description="服務週期說明">每月 2-4 次會談，持續 3-6 個月</p>
+            </div>
+            <div class="service-detail-info">
+              <h4 data-text="detail-3-suitable-title" data-text-description="適用對象小標題">適用對象</h4>
+              <p data-text="detail-3-suitable" data-text-description="適用對象說明">新任主管、高潛力人才、遇到特定挑戰的現任主管</p>
+            </div>
+          </div>
+          <div class="service-detail-highlight">
+            <div class="service-detail-highlight-title" data-text="detail-3-result-title" data-text-description="典型成果標籤">典型成果與投資</div>
+            <div class="service-detail-highlight-text" data-text="detail-3-result" data-text-description="典型成果與投資說明">個人領導效能提升 50-80%、團隊滿意度改善顯著。投資區間：每月 2-4 萬元，依據會談頻率與客製化需求調整。</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SERVICE GUIDE ══ -->
+<section class="section service-guide" data-section="service-guide" data-section-title="如何選擇適合的服務" data-section-purpose="幫助訪客依據企業規模和問題類型選擇服務，降低決策難度">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <div class="section-label">
+        <div class="section-label-line"></div>
+        <span class="section-label-text" data-text="guide-label" data-text-description="服務選擇指南區塊標籤">Selection Guide</span>
+      </div>
+      <h2 class="section-title" data-text="guide-title" data-text-description="服務選擇指南標題">不確定選哪個服務？三個問題幫你決定</h2>
+      <p class="section-desc" data-text="guide-desc" data-text-description="服務選擇指南說明">根據企業規模、問題急迫性、預算考量選擇最適合的合作方式</p>
+    </div>
+
+    <div class="guide-section reveal">
+      <h3 class="guide-title" data-text="guide-size-title" data-text-description="企業規模對照標題">企業規模對照</h3>
+      <div class="guide-table">
+        <div class="guide-table-row guide-table-header">
+          <div class="guide-table-cell" data-text="guide-size-header-1" data-text-description="表格標題1">企業規模</div>
+          <div class="guide-table-cell" data-text="guide-size-header-2" data-text-description="表格標題2">建議服務</div>
+          <div class="guide-table-cell" data-text="guide-size-header-3" data-text-description="表格標題3">說明</div>
+        </div>
+        <div class="guide-table-row">
+          <div class="guide-table-cell" data-text="guide-size-row-1-1" data-text-description="規模1">50-100 人</div>
+          <div class="guide-table-cell" data-text="guide-size-row-1-2" data-text-description="規模1建議">內訓課程或個別教練</div>
+          <div class="guide-table-cell" data-text="guide-size-row-1-3" data-text-description="規模1說明">適合針對性技能提升或關鍵主管培養</div>
+        </div>
+        <div class="guide-table-row">
+          <div class="guide-table-cell" data-text="guide-size-row-2-1" data-text-description="規模2">100-300 人</div>
+          <div class="guide-table-cell" data-text="guide-size-row-2-2" data-text-description="規模2建議">內訓課程，可搭配組織顧問</div>
+          <div class="guide-table-cell" data-text="guide-size-row-2-3" data-text-description="規模2說明">管理層培訓為主，視需求加入制度調整</div>
+        </div>
+        <div class="guide-table-row">
+          <div class="guide-table-cell" data-text="guide-size-row-3-1" data-text-description="規模3">300+ 人</div>
+          <div class="guide-table-cell" data-text="guide-size-row-3-2" data-text-description="規模3建議">組織轉型顧問，搭配關鍵主管教練</div>
+          <div class="guide-table-cell" data-text="guide-size-row-3-3" data-text-description="規模3說明">需要系統性組織改善與高層培養</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="guide-section reveal reveal-delay-1">
+      <h3 class="guide-title" data-text="guide-problem-title" data-text-description="問題類型判斷標題">問題類型判斷</h3>
+      <div class="guide-flowchart">
+        <div class="guide-flow-item">
+          <div class="guide-flow-title" data-text="guide-flow-1-title" data-text-description="問題類型1">技能型問題</div>
+          <div class="guide-flow-text" data-text="guide-flow-1-text" data-text-description="問題類型1說明">主管不會帶人 → 內訓課程</div>
+        </div>
+        <div class="guide-flow-item">
+          <div class="guide-flow-title" data-text="guide-flow-2-title" data-text-description="問題類型2">系統型問題</div>
+          <div class="guide-flow-text" data-text="guide-flow-2-text" data-text-description="問題類型2說明">制度流程有缺陷 → 組織顧問</div>
+        </div>
+        <div class="guide-flow-item">
+          <div class="guide-flow-title" data-text="guide-flow-3-title" data-text-description="問題類型3">個人型問題</div>
+          <div class="guide-flow-text" data-text="guide-flow-3-text" data-text-description="問題類型3說明">特定主管需要成長 → 個別教練</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FAQ ══ -->
+<section class="section faq" data-section="faq" data-section-title="常見問題解答" data-section-purpose="解決合作前的常見疑慮，降低行動門檻">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <div class="section-label">
+        <div class="section-label-line"></div>
+        <span class="section-label-text" data-text="faq-label" data-text-description="FAQ區塊標籤">Frequently Asked</span>
+      </div>
+      <h2 class="section-title" data-text="faq-title" data-text-description="FAQ標題">常見問題解答</h2>
+      <p class="section-desc" data-text="faq-desc" data-text-description="FAQ說明">解決您對服務內容、費用、效果等方面的疑問</p>
+    </div>
+
+    <div class="faq-items reveal">
+      <div class="faq-item" data-section="faq-1" data-section-title="FAQ項目1" data-section-purpose="解決費用相關疑慮">
+        <div class="faq-question" onclick="toggleFAQ(this)">
+          <span class="faq-question-text" data-text="faq-1-question" data-text-description="FAQ問題1">培訓費用包含哪些項目？</span>
+          <div class="faq-toggle">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path d="M12 5v14M5 12h14"></path>
+            </svg>
+          </div>
+        </div>
+        <div class="faq-answer">
+          <p class="faq-answer-text" data-text="faq-1-answer" data-text-description="FAQ答案1">包含前期診斷、課程設計、培訓執行、教材提供、課後追蹤。不會有額外隱藏費用，報價就是全部成本。</p>
+        </div>
+      </div>
+
+      <div class="faq-item" data-section="faq-2" data-section-title="FAQ項目2" data-section-purpose="解決效果保證疑慮">
+        <div class="faq-question" onclick="toggleFAQ(this)">
+          <span class="faq-question-text" data-text="faq-2-question" data-text-description="FAQ問題2">如果培訓效果不如預期怎麼辦？</span>
+          <div class="faq-toggle">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path d="M12 5v14M5 12h14"></path>
+            </svg>
+          </div>
+        </div>
+        <div class="faq-answer">
+          <p class="faq-answer-text" data-text="faq-2-answer" data-text-description="FAQ答案2">每次合作都會設定具體的成果指標，並在 6 個月內進行追蹤。如果成果未達預期，會免費提供補強方案。</p>
+        </div>
+      </div>
+
+      <div class="faq-item" data-section="faq-3" data-section-title="FAQ項目3" data-section-purpose="解決自主執行疑慮">
+        <div class="faq-question" onclick="toggleFAQ(this)">
+          <span class="faq-question-text" data-text="faq-3-question" data-text-description="FAQ問題3">可以只買課程內容，自己內部執行嗎？</span>
+          <div class="faq-toggle">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path d="M12 5v14M5 12h14"></path>
+            </svg>
+          </div>
+        </div>
+        <div class="faq-answer">
+          <p class="faq-answer-text" data-text="faq-3-answer" data-text-description="FAQ答案3">不行。我的服務重點在於針對您的組織問題客製化設計，而非販售通用課程包。每個企業的狀況都不同，需要現場調整。</p>
+        </div>
+      </div>
+
+      <div class="faq-item" data-section="faq-4" data-section-title="FAQ項目4" data-section-purpose="解決地域服務疑慮">
+        <div class="faq-question" onclick="toggleFAQ(this)">
+          <span class="faq-question-text" data-text="faq-4-question" data-text-description="FAQ問題4">北部以外的企業可以服務嗎？</span>
+          <div class="faq-toggle">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path d="M12 5v14M5 12h14"></path>
+            </svg>
+          </div>
+        </div>
+        <div class="faq-answer">
+          <p class="faq-answer-text" data-text="faq-4-answer" data-text-description="FAQ答案4">可以。目前服務全台企業，會依據地點調整服務方式，部分項目可採用混合式進行。</p>
+        </div>
+      </div>
+
+      <div class="faq-item" data-section="faq-5" data-section-title="FAQ項目5" data-section-purpose="解決時間安排疑慮">
+        <div class="faq-question" onclick="toggleFAQ(this)">
+          <span class="faq-question-text" data-text="faq-5-question" data-text-description="FAQ問題5">培訓通常需要多長時間？</span>
+          <div class="faq-toggle">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path d="M12 5v14M5 12h14"></path>
+            </svg>
+          </div>
+        </div>
+        <div class="faq-answer">
+          <p class="faq-answer-text" data-text="faq-5-answer" data-text-description="FAQ答案5">依據需求設計，從單次 4 小時工作坊到 3 個月系列課程都有。會在第一次諮詢時根據您的問題給出具體時程建議。</p>
+        </div>
+      </div>
+
+      <div class="faq-item" data-section="faq-6" data-section-title="FAQ項目6" data-section-purpose="解決試聽相關疑慮">
+        <div class="faq-question" onclick="toggleFAQ(this)">
+          <span class="faq-question-text" data-text="faq-6-question" data-text-description="FAQ問題6">可以先試聽一堂課嗎？</span>
+          <div class="faq-toggle">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path d="M12 5v14M5 12h14"></path>
+            </svg>
+          </div>
+        </div>
+        <div class="faq-answer">
+          <p class="faq-answer-text" data-text="faq-6-answer" data-text-description="FAQ答案6">不提供試聽，但提供免費的問題診斷諮詢。在這 60 分鐘裡會深入了解您的狀況，評估是否適合合作。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CTA ══ -->
+<section class="cta-section" data-section="cta" data-section-title="開始合作" data-section-purpose="引導已建立信任的訪客採取下一步行動">
+  <div class="cta-inner">
+    <h2 class="cta-title reveal" data-text="cta-title" data-text-description="CTA標題">每個成功的改變，都從一次誠實的對話開始</h2>
+    <p class="cta-desc reveal reveal-delay-1" data-text="cta-desc" data-text-description="CTA說明">第一次諮詢 60 分鐘完全免費，不推銷任何方案。只要帶著您目前遇到的管理問題來，我們一起評估什麼方式最有效。</p>
+    <a href="mailto:hello@mingdaoyu.com" class="btn-primary reveal reveal-delay-2" data-text="cta-button" data-text-description="CTA按鈕">預約免費問題診斷</a>
+    <p class="cta-note reveal reveal-delay-3" data-text="cta-note" data-text-description="CTA補充說明">通常於 1 個工作天內回覆｜可選擇視訊或面談</p>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+<footer data-section="footer" data-section-title="頁尾資訊" data-section-purpose="提供完整聯絡資訊與快速連結，建立專業信任感">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand" data-text="footer-brand" data-text-description="頁尾品牌名稱">余明道<span>．</span>企業教練</div>
+        <p class="footer-tagline" data-text="footer-tagline" data-text-description="頁尾品牌標語">讓主管真的會帶人，不只是會管人。<br>服務全台 50–500 人中型企業。</p>
+        <div class="footer-contact-item">
+          <strong data-text="footer-email-label" data-text-description="聯絡信箱標籤">聯絡信箱</strong>
+          <span data-text="footer-email" data-text-description="聯絡信箱地址">hello@mingdaoyu.com</span>
+        </div>
+        <div class="footer-contact-item">
+          <strong data-text="footer-address-label" data-text-description="辦公地址標籤">辦公地址</strong>
+          <span data-text="footer-address" data-text-description="辦公地址">台北市信義區松仁路○○號 ○ 樓</span>
+        </div>
+        <div class="footer-contact-item">
+          <strong data-text="footer-phone-label" data-text-description="服務電話標籤">服務電話</strong>
+          <span data-text="footer-phone" data-text-description="服務電話號碼">02-○○○○-○○○○</span>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title" data-text="footer-services-title" data-text-description="服務項目標題">服務</div>
+        <ul class="footer-links">
+          <li><a href="services.html">企業主管內訓課程</a></li>
+          <li><a href="services.html">組織文化轉型顧問</a></li>
+          <li><a href="services.html">主管個別教練輔導</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title" data-text="footer-more-title" data-text-description="了解更多標題">了解更多</div>
+        <ul class="footer-links">
+          <li><a href="about.html">關於我</a></li>
+          <li><a href="portfolio.html">成功案例</a></li>
+          <li><a href="blog.html">部落格</a></li>
+          <li><a href="contact.html">聯絡我們</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy" data-text="footer-copy" data-text-description="版權聲明">© 2024 余明道 企業教練｜mingdaoyu.com</span>
+      <a href="https://linkedin.com" target="_blank" class="footer-linkedin" data-text="footer-linkedin" data-text-description="LinkedIn連結">LinkedIn →</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Scroll reveal
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -24px 0px' });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // Service detail accordion
+  function toggleDetail(header) {
+    const card = header.parentElement;
+    const isActive = card.classList.contains('active');
+    
+    // Close all other cards
+    document.querySelectorAll('.service-detail-card.active').forEach(c => {
+      if (c !== card) c.classList.remove('active');
+    });
+    
+    // Toggle current card
+    card.classList.toggle('active', !isActive);
+  }
+
+  // FAQ accordion
+  function toggleFAQ(question) {
+    const item = question.parentElement;
+    const isActive = item.classList.contains('active');
+    
+    // Close all other items
+    document.querySelectorAll('.faq-item.active').forEach(i => {
+      if (i !== item) i.classList.remove('active');
+    });
+    
+    // Toggle current item
+    item.classList.toggle('active', !isActive);
+  }
+
+  // Number counter animation
+  function animateCounter(el) {
+    const text = el.textContent;
+    const match = text.match(/[\d.]+/);
+    if (!match) return;
+    const target = parseFloat(match[0]);
+    const isDecimal = text.includes('.');
+    const duration = 1200;
+    const start = performance.now();
+    function update(now) {
+      const progress = Math.min((now - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      const current = eased * target;
+      el.textContent = text.replace(/[\d.]+/, isDecimal ? current.toFixed(1) : Math.floor(current));
+      if (progress < 1) requestAnimationFrame(update);
+    }
+    requestAnimationFrame(update);
+  }
+
+  const numObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const nums = entry.target.querySelectorAll('.philosophy-stat-num');
+        nums.forEach(animateCounter);
+        numObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.3 });
+
+  document.querySelectorAll('.philosophy-stats').forEach(el => numObserver.observe(el));
+</script>
+
+</body></html>

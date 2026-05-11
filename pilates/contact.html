@@ -1,0 +1,1308 @@
+<!DOCTYPE html><html lang="zh-Hant"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>聯絡我們｜身研所 Somatics Studio｜一對一皮拉提斯</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&amp;family=Noto+Sans+TC:wght@300;400;500&amp;family=Noto+Serif+TC:wght@300;400&amp;display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg-primary: #FAF8F5;
+  --bg-secondary: #F3EFE8;
+  --bg-deep: #2C2825;
+  --text-primary: #2C2825;
+  --text-muted: #7A6E66;
+  --text-light: #B5A99E;
+  --accent: #C8956C;
+  --accent-soft: #E8D5C4;
+  --border: #E2DAD0;
+  --font-serif: 'Cormorant Garamond', 'Noto Serif TC', serif;
+  --font-sans: 'Noto Sans TC', sans-serif;
+  --section-gap: 120px;
+  --content-max: 1080px;
+  --side-pad: 48px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-sans);
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Nav ── */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  background: rgba(250, 248, 245, 0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav-inner {
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding: 0 var(--side-pad);
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-logo {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+.nav-logo-zh {
+  font-family: var(--font-serif);
+  font-size: 17px;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  color: var(--text-primary);
+}
+.nav-logo-en {
+  font-size: 10px;
+  font-weight: 300;
+  letter-spacing: 0.18em;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+  list-style: none;
+}
+.nav-links a {
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.25s;
+}
+.nav-links a:hover { color: var(--text-primary); }
+
+.nav-cta {
+  background: var(--text-primary);
+  color: var(--bg-primary) !important;
+  padding: 9px 22px !important;
+  border-radius: 2px;
+  font-size: 13px !important;
+  font-weight: 400 !important;
+  letter-spacing: 0.1em;
+  transition: background 0.25s !important;
+}
+.nav-cta:hover { background: var(--accent) !important; color: #fff !important; }
+
+/* ── Section wrapper ── */
+.section-wrap {
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding: 0 var(--side-pad);
+}
+
+/* ── Common Elements ── */
+.section-header {
+  margin-bottom: 64px;
+}
+.section-tag {
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  color: var(--accent);
+  text-transform: uppercase;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.section-tag::before {
+  content: '';
+  width: 20px;
+  height: 1px;
+  background: var(--accent);
+}
+.section-title {
+  font-family: var(--font-serif);
+  font-size: clamp(26px, 3vw, 38px);
+  font-weight: 400;
+  letter-spacing: 0.03em;
+  line-height: 1.4;
+  color: var(--text-primary);
+  margin-bottom: 16px;
+}
+.section-desc {
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 1.9;
+  color: var(--text-muted);
+  max-width: 560px;
+}
+
+/* ── Buttons ── */
+.btn-primary {
+  background: var(--accent);
+  color: #fff;
+  padding: 14px 32px;
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-decoration: none;
+  border-radius: 2px;
+  transition: background 0.25s, transform 0.2s;
+  display: inline-block;
+  border: none;
+  cursor: pointer;
+}
+.btn-primary:hover { background: #b5784f; transform: translateY(-1px); }
+
+.btn-ghost {
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: color 0.25s;
+}
+.btn-ghost:hover { color: var(--text-primary); }
+.btn-ghost::after { content: '→'; transition: transform 0.2s; }
+.btn-ghost:hover::after { transform: translateX(3px); }
+
+/* ── Hero ── */
+.hero {
+  padding: 140px 0 100px;
+  background: var(--bg-primary);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '聯';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: var(--font-serif);
+  font-size: 380px;
+  color: var(--border);
+  opacity: 0.2;
+  pointer-events: none;
+  line-height: 1;
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 var(--side-pad);
+}
+
+.hero-eyebrow {
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  color: var(--accent);
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+
+.hero-title {
+  font-family: var(--font-serif);
+  font-size: clamp(34px, 4.2vw, 52px);
+  font-weight: 400;
+  line-height: 1.3;
+  color: var(--text-primary);
+  margin-bottom: 20px;
+  letter-spacing: 0.03em;
+}
+
+.hero-subtitle {
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 1.9;
+  color: var(--text-muted);
+  margin-bottom: 48px;
+}
+
+.hero-guide {
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--accent);
+  letter-spacing: 0.08em;
+}
+
+/* ── Contact Methods ── */
+.contact-methods {
+  padding: var(--section-gap) 0;
+  background: var(--bg-primary);
+}
+
+.methods-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+}
+
+.method-card {
+  background: var(--bg-primary);
+  padding: 44px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  transition: background 0.25s;
+}
+.method-card:hover { background: var(--bg-secondary); }
+
+.method-icon {
+  width: 48px;
+  height: 48px;
+  background: var(--accent-soft);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.method-icon svg {
+  width: 22px;
+  height: 22px;
+  stroke: var(--accent);
+  fill: none;
+}
+
+.method-title {
+  font-family: var(--font-serif);
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--text-primary);
+  letter-spacing: 0.03em;
+}
+
+.method-desc {
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.8;
+  color: var(--text-muted);
+  margin-bottom: 20px;
+}
+
+.method-link {
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--accent);
+  text-decoration: none;
+  letter-spacing: 0.08em;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: color 0.25s;
+}
+.method-link:hover { color: var(--text-primary); }
+.method-link::after { content: '→'; transition: transform 0.2s; }
+.method-link:hover::after { transform: translateX(2px); }
+
+.method-badge {
+  display: inline-block;
+  background: var(--accent);
+  color: #fff;
+  padding: 3px 8px;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  border-radius: 2px;
+  margin-left: 8px;
+}
+
+/* ── Consultation Info ── */
+.consultation {
+  padding: var(--section-gap) 0;
+  background: var(--bg-secondary);
+}
+
+.consultation-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.consultation-quote {
+  position: relative;
+  padding: 40px;
+  background: var(--bg-primary);
+  border-left: 3px solid var(--accent);
+}
+
+.consultation-quote-text {
+  font-family: var(--font-serif);
+  font-size: 20px;
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1.7;
+  color: var(--text-primary);
+  margin-bottom: 16px;
+}
+
+.consultation-quote-author {
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+}
+
+.consultation-visual {
+  position: relative;
+}
+
+.consultation-img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  display: block;
+}
+
+.consultation-details {
+  margin-top: 40px;
+}
+
+.consultation-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--border);
+}
+.consultation-item:last-child { border-bottom: none; }
+
+.consultation-item-icon {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.consultation-item-icon svg {
+  width: 16px;
+  height: 16px;
+  stroke: var(--accent);
+  fill: none;
+}
+
+.consultation-item-content strong {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+  letter-spacing: 0.04em;
+}
+.consultation-item-content span {
+  font-size: 13px;
+  font-weight: 300;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* ── Studio Info ── */
+.studio {
+  padding: var(--section-gap) 0;
+  background: var(--bg-primary);
+}
+
+.studio-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.studio-info-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  margin-top: 32px;
+}
+
+.studio-info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 20px 24px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+}
+
+.studio-info-icon {
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.studio-info-icon svg {
+  width: 18px;
+  height: 18px;
+  stroke: var(--accent);
+  fill: none;
+}
+
+.studio-info-text strong {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+  letter-spacing: 0.04em;
+}
+.studio-info-text span {
+  font-size: 13px;
+  font-weight: 300;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.studio-note {
+  margin-top: 24px;
+  padding: 20px 24px;
+  background: var(--accent-soft);
+  border-radius: 2px;
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--text-primary);
+  letter-spacing: 0.04em;
+}
+
+.studio-visual {
+  position: relative;
+}
+
+.studio-img {
+  width: 100%;
+  aspect-ratio: 3/4;
+  object-fit: cover;
+  display: block;
+}
+
+.studio-map {
+  margin-top: 24px;
+  width: 100%;
+  height: 200px;
+  background: linear-gradient(135deg, var(--accent-soft) 0%, var(--bg-secondary) 100%);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  font-size: 13px;
+  letter-spacing: 0.06em;
+}
+
+/* ── Contact Form ── */
+.contact-form {
+  padding: var(--section-gap) 0;
+  background: var(--bg-primary);
+}
+
+.form-inner {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 0 var(--side-pad);
+  text-align: center;
+}
+
+.form-header {
+  margin-bottom: 48px;
+}
+
+.form-header .section-title {
+  text-align: center;
+  max-width: none;
+}
+
+.form-header .section-desc {
+  text-align: center;
+  margin: 0 auto;
+}
+
+.contact-form-fields {
+  display: grid;
+  gap: 24px;
+  text-align: left;
+  margin-bottom: 40px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-label {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-primary);
+  letter-spacing: 0.06em;
+}
+
+.form-input,
+.form-select,
+.form-textarea {
+  padding: 14px 16px;
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--text-primary);
+  background: var(--bg-primary);
+  transition: border-color 0.25s;
+}
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 120px;
+  line-height: 1.7;
+}
+
+.form-checkbox-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.form-checkbox-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.form-checkbox {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--accent);
+}
+
+.form-checkbox-label {
+  font-size: 13px;
+  font-weight: 300;
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
+}
+
+.form-submit {
+  text-align: center;
+}
+
+.form-note {
+  margin-top: 16px;
+  font-size: 12px;
+  font-weight: 300;
+  color: var(--text-light);
+  letter-spacing: 0.06em;
+}
+
+/* ── Final Invitation ── */
+.final-invitation {
+  padding: var(--section-gap) 0;
+  background: var(--bg-deep);
+  text-align: center;
+}
+
+.invitation-inner {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 var(--side-pad);
+}
+
+.invitation-quote {
+  font-family: var(--font-serif);
+  font-size: 24px;
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1.7;
+  color: #D6CEC7;
+  margin-bottom: 32px;
+}
+
+.invitation-author {
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--accent);
+  letter-spacing: 0.1em;
+}
+
+/* ── Footer ── */
+footer {
+  background: var(--bg-deep);
+  padding: 64px 0 36px;
+  color: #9A8E86;
+}
+
+.footer-inner {
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding: 0 var(--side-pad);
+}
+
+.footer-top {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 48px;
+  padding-bottom: 48px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  margin-bottom: 32px;
+}
+
+.footer-logo-zh {
+  font-family: var(--font-serif);
+  font-size: 22px;
+  font-weight: 400;
+  color: #FAF8F5;
+  margin-bottom: 4px;
+  letter-spacing: 0.06em;
+}
+.footer-logo-en {
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  color: #7A6E66;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+.footer-tagline {
+  font-family: var(--font-serif);
+  font-size: 14px;
+  font-style: italic;
+  font-weight: 300;
+  color: #7A6E66;
+  line-height: 1.7;
+}
+
+.footer-col-title {
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  color: #FAF8F5;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.footer-col ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.footer-col a {
+  font-size: 13px;
+  font-weight: 300;
+  color: #7A6E66;
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  transition: color 0.2s;
+}
+.footer-col a:hover { color: #FAF8F5; }
+
+.footer-contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+.footer-contact-item svg {
+  width: 14px;
+  height: 14px;
+  stroke: var(--accent);
+  fill: none;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.footer-contact-item span {
+  font-size: 13px;
+  font-weight: 300;
+  color: #7A6E66;
+  line-height: 1.6;
+  letter-spacing: 0.04em;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.footer-copy {
+  font-size: 12px;
+  font-weight: 300;
+  letter-spacing: 0.06em;
+  color: #5A5550;
+}
+
+/* ── Scroll Reveal ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-delay-1 { transition-delay: 0.08s; }
+.reveal-delay-2 { transition-delay: 0.16s; }
+.reveal-delay-3 { transition-delay: 0.24s; }
+.reveal-delay-4 { transition-delay: 0.32s; }
+
+/* ── RWD ── */
+@media (max-width: 960px) {
+  :root { --side-pad: 32px; --section-gap: 80px; }
+  
+  .methods-grid { grid-template-columns: 1fr; }
+  .form-row { grid-template-columns: 1fr; }
+  
+  .consultation-layout,
+  .studio-layout {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+  
+  .footer-top { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 700px) {
+  :root { --side-pad: 20px; --section-gap: 64px; }
+  
+  .nav-links { display: none; }
+  .nav-cta { display: inline-block !important; }
+  
+  .hero::before { font-size: 220px; }
+  .method-card { padding: 32px 24px; }
+  .consultation-quote { padding: 24px; }
+  .studio-info-item { padding: 16px 20px; }
+  
+  .footer-top { grid-template-columns: 1fr; }
+  
+  .form-checkbox-group { flex-direction: column; align-items: flex-start; }
+}
+</style>
+</head>
+<body>
+
+<!-- ── Navigation ── -->
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo" style="text-decoration:none;">
+      <span class="nav-logo-zh">身研所</span>
+      <span class="nav-logo-en">Somatics Studio</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="about.html">關於教練</a></li>
+      <li><a href="services.html">服務項目</a></li>
+      <li><a href="blog.html">專業分享</a></li>
+      <li><a href="visit.html">來店資訊</a></li>
+      <li><a href="contact.html" class="nav-cta">預約初次諮詢</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ── Hero ── -->
+<section class="hero" data-section="hero" data-section-title="聯絡歡迎" data-section-purpose="消除聯絡門檻，讓訪客感受到被歡迎而非打擾">
+  <div class="hero-inner">
+    <p class="hero-eyebrow reveal" data-text="hero-eyebrow" data-text-description="頁面引導標籤">開始對話</p>
+    <h1 class="hero-title reveal reveal-delay-1" data-text="hero-title" data-text-description="聯絡頁面主標題，消除聯絡門檻的溫暖邀請">
+      隨時都可以聊聊
+    </h1>
+    <p class="hero-subtitle reveal reveal-delay-2" data-text="hero-subtitle" data-text-description="副標題說明聯絡的輕鬆無壓力特質">
+      不用想清楚才能聯絡我，妳有任何疑問或只是想了解更多，我都很樂意和妳聊聊。
+      第一次對話完全沒有壓力，就像和朋友聊天一樣輕鬆。
+    </p>
+    <p class="hero-guide reveal reveal-delay-3" data-text="hero-guide" data-text-description="引導訪客選擇聯絡方式">
+      選擇最適合妳的方式開始對話
+    </p>
+  </div>
+</section>
+
+<!-- ── Contact Methods ── -->
+<section class="contact-methods" data-section="contact-methods" data-section-title="多種方式聯絡" data-section-purpose="提供選擇彈性，降低聯絡門檻">
+  <div class="section-wrap">
+    <div class="section-header reveal">
+      <p class="section-tag">聯絡方式</p>
+      <h2 class="section-title" data-text="contact-methods-title" data-text-description="聯絡方式區塊標題">
+        選擇妳最習慣的方式
+      </h2>
+      <p class="section-desc" data-text="contact-methods-desc" data-text-description="說明多種聯絡方式的便利性">
+        每種方式都很歡迎，我會盡快回覆。選擇妳覺得最自在的開始就好。
+      </p>
+    </div>
+
+    <div class="methods-grid">
+      <div class="method-card reveal">
+        <div class="method-icon">
+          <svg viewBox="0 0 24 24" stroke-width="1.5">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+          </svg>
+        </div>
+        <h3 class="method-title" data-text="method-1-title" data-text-description="IG私訊聯絡方式標題">
+          Instagram 私訊<span class="method-badge">推薦</span>
+        </h3>
+        <p class="method-desc" data-text="method-1-desc" data-text-description="IG私訊聯絡方式說明">
+          最快回覆！平常妳也可以先看看我的教學分享，了解我的上課風格
+        </p>
+        <a href="https://instagram.com/somatics.studio" class="method-link" target="_blank" data-text="method-1-link" data-text-description="IG私訊連結文字">
+          @somatics.studio
+        </a>
+      </div>
+
+      <div class="method-card reveal reveal-delay-1">
+        <div class="method-icon">
+          <svg viewBox="0 0 24 24" stroke-width="1.5">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.62 3.38A2 2 0 0 1 3.58 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.5a16 16 0 0 0 6 6l.92-.92a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.72 16.92z"></path>
+          </svg>
+        </div>
+        <h3 class="method-title" data-text="method-2-title" data-text-description="電話聯絡方式標題">
+          直接通話
+        </h3>
+        <p class="method-desc" data-text="method-2-desc" data-text-description="電話聯絡方式說明">
+          想立即聊聊的話，歡迎直接打給我。週一至週六 9:00-18:00 都可以
+        </p>
+        <a href="tel:+886-2-2345-6789" class="method-link" data-text="method-2-link" data-text-description="電話號碼">
+          02-2345-6789
+        </a>
+      </div>
+
+      <div class="method-card reveal reveal-delay-2">
+        <div class="method-icon">
+          <svg viewBox="0 0 24 24" stroke-width="1.5">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+            <polyline points="22,6 12,13 2,6"></polyline>
+          </svg>
+        </div>
+        <h3 class="method-title" data-text="method-3-title" data-text-description="Email聯絡方式標題">
+          Email 預約
+        </h3>
+        <p class="method-desc" data-text="method-3-desc" data-text-description="Email聯絡方式說明">
+          喜歡用文字詳細說明自己狀況的話，寫信給我是最好的方式
+        </p>
+        <a href="mailto:hello@somaticsstudio.com" class="method-link" data-text="method-3-link" data-text-description="Email地址">
+          hello@somaticsstudio.com
+        </a>
+      </div>
+
+      <div class="method-card reveal reveal-delay-3">
+        <div class="method-icon">
+          <svg viewBox="0 0 24 24" stroke-width="1.5">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+          </svg>
+        </div>
+        <h3 class="method-title" data-text="method-4-title" data-text-description="Line聯絡方式標題">
+          Line 聊天
+        </h3>
+        <p class="method-desc" data-text="method-4-desc" data-text-description="Line聯絡方式說明">
+          習慣用Line的話也沒問題，我們可以先聊聊再約時間視訊
+        </p>
+        <a href="https://line.me/ti/p/~somaticsstudio" class="method-link" target="_blank" data-text="method-4-link" data-text-description="Line ID">
+          @somaticsstudio
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Consultation Info ── -->
+<section class="consultation" data-section="consultation" data-section-title="第一次聊聊什麼" data-section-purpose="明確期待管理，消除不知道會問什麼的疑慮">
+  <div class="section-wrap">
+    <div class="consultation-layout">
+      <div class="consultation-quote reveal">
+        <p class="consultation-quote-text" data-text="consultation-quote" data-text-description="教練對初次諮詢的溫暖說明引言">
+          「不是評估測試，就是一次輕鬆的對話。我想了解妳的身體狀況和期待，妳也可以問問我是不是適合的教練。」
+        </p>
+        <cite class="consultation-quote-author">— Chen Yaling，身研所教練</cite>
+      </div>
+
+      <div class="consultation-visual">
+        <img class="consultation-img" src="https://images.pexels.com/photos/7516348/pexels-photo-7516348.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=650&amp;w=940" alt="溫暖的視訊諮詢場景" data-img-query="consultation video call laptop warm home office natural light" data-img-orientation="landscape" data-img-description="教練透過視訊進行溫暖諮詢的場景，展現輕鬆無壓力的對話氛圍">
+      </div>
+    </div>
+
+    <div class="consultation-details reveal reveal-delay-1">
+      <div class="section-header">
+        <p class="section-tag">初次諮詢</p>
+        <h2 class="section-title" data-text="consultation-title" data-text-description="初次諮詢區塊主標題">
+          第一次我們會聊什麼？
+        </h2>
+        <p class="section-desc" data-text="consultation-desc" data-text-description="初次諮詢區塊副說明">
+          完全沒有考試的感覺，就是一次認識彼此的輕鬆對話
+        </p>
+      </div>
+
+      <div class="consultation-item">
+        <div class="consultation-item-icon">
+          <svg viewBox="0 0 24 24" stroke-width="1.5">
+            <circle cx="12" cy="12" r="10"></circle>
+            <path d="M12 8v4l3 3"></path>
+          </svg>
+        </div>
+        <div class="consultation-item-content">
+          <strong data-text="consultation-item-1-title" data-text-description="諮詢項目1標題">時間長度</strong>
+          <span data-text="consultation-item-1-desc" data-text-description="諮詢項目1說明">約30分鐘，妳可以彈性安排</span>
+        </div>
+      </div>
+
+      <div class="consultation-item">
+        <div class="consultation-item-icon">
+          <svg viewBox="0 0 24 24" stroke-width="1.5">
+            <path d="M15 10l4.553-2.276A1 1 0 0 1 21 8.618v6.764a1 1 0 0 1-1.447.894L15 14M5 18h8a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2z"></path>
+          </svg>
+        </div>
+        <div class="consultation-item-content">
+          <strong data-text="consultation-item-2-title" data-text-description="諮詢項目2標題">進行方式</strong>
+          <span data-text="consultation-item-2-desc" data-text-description="諮詢項目2說明">視訊通話或電話，看妳比較習慣哪種</span>
+        </div>
+      </div>
+
+      <div class="consultation-item">
+        <div class="consultation-item-icon">
+          <svg viewBox="0 0 24 24" stroke-width="1.5">
+            <path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z"></path>
+            <line x1="16" y1="8" x2="2" y2="22"></line>
+          </svg>
+        </div>
+        <div class="consultation-item-content">
+          <strong data-text="consultation-item-3-title" data-text-description="諮詢項目3標題">聊天內容</strong>
+          <span data-text="consultation-item-3-desc" data-text-description="諮詢項目3說明">妳的身體困擾、過去運動經驗、期待改善的地方</span>
+        </div>
+      </div>
+
+      <div class="consultation-item">
+        <div class="consultation-item-icon">
+          <svg viewBox="0 0 24 24" stroke-width="1.5">
+            <circle cx="12" cy="12" r="3"></circle>
+            <path d="M12 1v6m0 6v6m11-7h-6m-6 0H1"></path>
+          </svg>
+        </div>
+        <div class="consultation-item-content">
+          <strong data-text="consultation-item-4-title" data-text-description="諮詢項目4標題">我會說明</strong>
+          <span data-text="consultation-item-4-desc" data-text-description="諮詢項目4說明">我的教學方式、上課環境、合作流程</span>
+        </div>
+      </div>
+
+      <div class="consultation-item">
+        <div class="consultation-item-icon">
+          <svg viewBox="0 0 24 24" stroke-width="1.5">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+          </svg>
+        </div>
+        <div class="consultation-item-content">
+          <strong data-text="consultation-item-5-title" data-text-description="諮詢項目5標題">費用</strong>
+          <span data-text="consultation-item-5-desc" data-text-description="諮詢項目5說明">完全免費，無任何義務</span>
+        </div>
+      </div>
+
+      <div class="consultation-item">
+        <div class="consultation-item-icon">
+          <svg viewBox="0 0 24 24" stroke-width="1.5">
+            <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+          </svg>
+        </div>
+        <div class="consultation-item-content">
+          <strong data-text="consultation-item-6-title" data-text-description="諮詢項目6標題">結束後</strong>
+          <span data-text="consultation-item-6-desc" data-text-description="諮詢項目6說明">妳可以慢慢考慮，不會有任何推銷壓力</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Studio Info ── -->
+<section class="studio" data-section="studio" data-section-title="工作室位置" data-section-purpose="提供實用來店資訊，確認便利性">
+  <div class="section-wrap">
+    <div class="studio-layout">
+      <div>
+        <div class="section-header reveal">
+          <p class="section-tag">來店資訊</p>
+          <h2 class="section-title" data-text="studio-title" data-text-description="工作室資訊區塊標題">
+            工作室在這裡
+          </h2>
+          <p class="section-desc" data-text="studio-desc" data-text-description="工作室位置描述">
+            位在大安區的安靜角落，一個讓妳放心專注的空間
+          </p>
+        </div>
+
+        <div class="studio-info-grid">
+          <div class="studio-info-item reveal">
+            <div class="studio-info-icon">
+              <svg viewBox="0 0 24 24" stroke-width="1.5">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+            </div>
+            <div class="studio-info-text">
+              <strong data-text="studio-address-title" data-text-description="工作室地址標題">地址</strong>
+              <span data-text="studio-address-desc" data-text-description="工作室詳細地址資訊">台北市大安區仁愛路四段151巷36號3樓</span>
+            </div>
+          </div>
+
+          <div class="studio-info-item reveal reveal-delay-1">
+            <div class="studio-info-icon">
+              <svg viewBox="0 0 24 24" stroke-width="1.5">
+                <path d="M8 2v4m8-4v4M3 10h18M5 4h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"></path>
+              </svg>
+            </div>
+            <div class="studio-info-text">
+              <strong data-text="studio-hours-title" data-text-description="營業時間標題">營業時間</strong>
+              <span data-text="studio-hours-desc" data-text-description="營業時間詳細資訊">週一至週六 9:00-20:00，週日休息</span>
+            </div>
+          </div>
+
+          <div class="studio-info-item reveal reveal-delay-2">
+            <div class="studio-info-icon">
+              <svg viewBox="0 0 24 24" stroke-width="1.5">
+                <path d="M9 17H7A5 5 0 0 1 7 7h2m8 0h2a5 5 0 0 1 0 10h-2m-8-5h8"></path>
+              </svg>
+            </div>
+            <div class="studio-info-text">
+              <strong data-text="studio-transport-title" data-text-description="交通方式標題">交通</strong>
+              <span data-text="studio-transport-desc" data-text-description="交通便利性說明">捷運忠孝敦化站步行5分鐘</span>
+            </div>
+          </div>
+
+          <div class="studio-info-item reveal reveal-delay-3">
+            <div class="studio-info-icon">
+              <svg viewBox="0 0 24 24" stroke-width="1.5">
+                <path d="M3 7v10a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2z"></path>
+                <path d="M8 15v-2a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+              </svg>
+            </div>
+            <div class="studio-info-text">
+              <strong data-text="studio-parking-title" data-text-description="停車資訊標題">停車</strong>
+              <span data-text="studio-parking-desc" data-text-description="停車資訊詳細說明">附近有多個付費停車場</span>
+            </div>
+          </div>
+
+          <div class="studio-info-item reveal reveal-delay-4">
+            <div class="studio-info-icon">
+              <svg viewBox="0 0 24 24" stroke-width="1.5">
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                <polyline points="9,22 9,12 15,12 15,22"></polyline>
+              </svg>
+            </div>
+            <div class="studio-info-text">
+              <strong data-text="studio-environment-title" data-text-description="環境說明標題">環境</strong>
+              <span data-text="studio-environment-desc" data-text-description="工作室環境特色說明">明亮乾淨的白色空間，一次只服務一位學員</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="studio-note reveal reveal-delay-5">
+          <strong data-text="studio-note" data-text-description="來店溫馨提醒">溫馨提醒：</strong>
+          第一次來不需要帶任何東西，穿著舒適即可
+        </div>
+      </div>
+
+      <div class="studio-visual">
+        <img class="studio-img reveal" src="https://images.pexels.com/photos/36833353/pexels-photo-36833353.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=650&amp;w=940" alt="身研所工作室外觀" data-img-query="pilates studio entrance bright clean minimalist taipei" data-img-orientation="portrait" data-img-description="身研所工作室的外觀或入口，展現明亮乾淨的空間感">
+
+        <div class="studio-map reveal reveal-delay-1">
+          <span>台北市大安區位置示意圖</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Contact Form ── -->
+<section class="contact-form" data-section="contact-form" data-section-title="線上預約諮詢" data-section-purpose="提供正式預約管道，收集基本資訊">
+  <div class="form-inner">
+    <div class="form-header reveal">
+      <p class="section-tag">預約諮詢</p>
+      <h2 class="section-title" data-text="form-title" data-text-description="聯絡表單區塊標題">
+        線上預約諮詢
+      </h2>
+      <p class="section-desc" data-text="form-desc" data-text-description="表單說明，承諾快速回覆">
+        填寫以下資訊，我會在24小時內回覆安排諮詢時間
+      </p>
+    </div>
+
+    <form class="contact-form-fields reveal reveal-delay-1">
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label" for="name" data-text="form-name-label" data-text-description="姓名欄位標籤">妳的姓名 *</label>
+          <input type="text" id="name" name="name" class="form-input" required="">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="phone" data-text="form-phone-label" data-text-description="電話欄位標籤">聯絡電話 *</label>
+          <input type="tel" id="phone" name="phone" class="form-input" required="">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="email" data-text="form-email-label" data-text-description="Email欄位標籤">Email</label>
+        <input type="email" id="email" name="email" class="form-input">
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="topic" data-text="form-topic-label" data-text-description="諮詢主題標籤">諮詢主題</label>
+        <select id="topic" name="topic" class="form-select">
+          <option value="initial">初次諮詢</option>
+          <option value="course">課程詢問</option>
+          <option value="other">其他問題</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" data-text="form-time-label" data-text-description="方便聯絡時間標籤">方便聯絡時間</label>
+        <div class="form-checkbox-group">
+          <div class="form-checkbox-item">
+            <input type="checkbox" id="time-morning" name="time[]" value="morning" class="form-checkbox">
+            <label for="time-morning" class="form-checkbox-label" data-text="form-time-morning" data-text-description="平日上午選項">平日上午</label>
+          </div>
+          <div class="form-checkbox-item">
+            <input type="checkbox" id="time-afternoon" name="time[]" value="afternoon" class="form-checkbox">
+            <label for="time-afternoon" class="form-checkbox-label" data-text="form-time-afternoon" data-text-description="平日下午選項">平日下午</label>
+          </div>
+          <div class="form-checkbox-item">
+            <input type="checkbox" id="time-evening" name="time[]" value="evening" class="form-checkbox">
+            <label for="time-evening" class="form-checkbox-label" data-text="form-time-evening" data-text-description="平日晚上選項">平日晚上</label>
+          </div>
+          <div class="form-checkbox-item">
+            <input type="checkbox" id="time-weekend" name="time[]" value="weekend" class="form-checkbox">
+            <label for="time-weekend" class="form-checkbox-label" data-text="form-time-weekend" data-text-description="假日選項">假日</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="message" data-text="form-message-label" data-text-description="留言欄位標籤">想和我分享的</label>
+        <textarea id="message" name="message" class="form-textarea" placeholder="例如身體狀況、期待改善的地方、或任何想說的話" data-text="form-message-placeholder" data-text-description="留言欄位提示文字"></textarea>
+      </div>
+
+      <div class="form-submit">
+        <button type="submit" class="btn-primary" data-text="form-submit" data-text-description="表單送出按鈕">送出預約申請</button>
+        <p class="form-note" data-text="form-note" data-text-description="表單提交後的說明">
+          我會優先透過妳留下的電話聯絡，安排最適合的諮詢時間
+        </p>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- ── Final Invitation ── -->
+<section class="final-invitation" data-section="final-invitation" data-section-title="教練個人邀請" data-section-purpose="用個人溫度再次邀請，讓表單填寫感覺更自然">
+  <div class="invitation-inner">
+    <p class="invitation-quote reveal" data-text="invitation-quote" data-text-description="教練個人溫暖邀請語">
+      「每一次對話的開始，都是一個改變的可能。不管妳現在有什麼疑問或顧慮，我都很期待和妳聊聊。」
+    </p>
+    <cite class="invitation-author reveal reveal-delay-1" data-text="invitation-author" data-text-description="教練簽名">
+      — Chen Yaling，身研所 Somatics Studio
+    </cite>
+  </div>
+</section>
+
+<!-- ── Footer ── -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="footer-logo-zh">身研所</div>
+        <div class="footer-logo-en">Somatics Studio</div>
+        <p class="footer-tagline">
+          身體記得怎麼動，<br>才是真的會動。
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <div class="footer-col-title">頁面</div>
+        <ul>
+          <li><a href="about.html">關於教練</a></li>
+          <li><a href="services.html">服務項目</a></li>
+          <li><a href="blog.html">專業分享</a></li>
+          <li><a href="visit.html">來店資訊</a></li>
+          <li><a href="contact.html">預約諮詢</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <div class="footer-col-title">聯絡</div>
+        <div class="footer-contact-item">
+          <svg viewBox="0 0 24 24" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+          <span>台北市大安區仁愛路四段<br>捷運忠孝敦化步行 5 分鐘</span>
+        </div>
+        <div class="footer-contact-item">
+          <svg viewBox="0 0 24 24" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.62 3.38A2 2 0 0 1 3.58 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.5a16 16 0 0 0 6 6l.92-.92a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.72 16.92z"></path></svg>
+          <span>02-2345-6789</span>
+        </div>
+        <div class="footer-contact-item">
+          <svg viewBox="0 0 24 24" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+          <span>@somatics.studio</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2024 身研所 Somatics Studio · 台北市大安區</p>
+      <p class="footer-copy">一對一皮拉提斯 · 姿勢矯正 · 術後動作恢復</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // IntersectionObserver scroll reveal
+  const revealEls = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(el => {
+      if (el.isIntersecting) {
+        el.target.classList.add('visible');
+        observer.unobserve(el.target);
+      }
+    });
+  }, {
+    threshold: 0.08,
+    rootMargin: '0px 0px -24px 0px'
+  });
+
+  revealEls.forEach(el => {
+    observer.observe(el);
+  });
+
+  // Form handling
+  const contactForm = document.querySelector('.contact-form-fields');
+  if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      // Here you would typically send the form data to a server
+      alert('謝謝妳的預約申請！我會在24小時內與妳聯繫。');
+    });
+  }
+</script>
+
+
+</body></html>

@@ -1,0 +1,896 @@
+<!DOCTYPE html><html lang="zh-TW"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>關於我們 - 疊工作室 DDIE Studio｜室內設計 台中</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&amp;family=Noto+Sans+TC:wght@300;400;500&amp;family=Noto+Serif+TC:wght@300;400&amp;display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg-primary: #faf8f5;
+  --bg-secondary: #f3efe9;
+  --bg-deep: #2c2820;
+  --text-primary: #2c2820;
+  --text-muted: #7a7168;
+  --text-light: #b0a898;
+  --accent: #8a7560;
+  --accent-warm: #c4a882;
+  --green-mist: #d4ddd4;
+  --border: #e5dfd6;
+  --font-serif: 'Cormorant Garamond', 'Noto Serif TC', serif;
+  --font-sans: 'Noto Sans TC', sans-serif;
+  --section-gap: 120px;
+  --content-max: 1080px;
+  --side-pad: 48px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-sans);
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-weight: 300;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+/* ── NAV ── */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  background: rgba(250, 248, 245, 0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+.nav-inner {
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding: 0 var(--side-pad);
+  height: 68px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav-logo {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: var(--text-primary);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.nav-logo span {
+  font-size: 0.72rem;
+  font-family: var(--font-sans);
+  font-weight: 300;
+  letter-spacing: 0.12em;
+  color: var(--text-muted);
+  display: block;
+  margin-top: -2px;
+}
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+  list-style: none;
+}
+.nav-links a {
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.25s;
+}
+.nav-links a:hover { color: var(--text-primary); }
+.nav-cta {
+  background: var(--accent);
+  color: #fff !important;
+  padding: 10px 22px;
+  border-radius: 40px;
+  font-size: 0.78rem !important;
+  letter-spacing: 0.1em !important;
+  transition: background 0.25s !important;
+}
+.nav-cta:hover { background: var(--bg-deep) !important; color: #fff !important; }
+
+/* ── REVEAL ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.72s ease, transform 0.72s ease;
+}
+.reveal.visible { opacity: 1; transform: none; }
+.reveal-delay-1 { transition-delay: 0.08s; }
+.reveal-delay-2 { transition-delay: 0.16s; }
+.reveal-delay-3 { transition-delay: 0.24s; }
+.reveal-delay-4 { transition-delay: 0.32s; }
+
+/* ── ABOUT HERO ── */
+.about-hero {
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+  padding-top: 68px;
+  position: relative;
+  overflow: hidden;
+  background: var(--bg-secondary);
+}
+.about-hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+.about-hero-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.about-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(250,248,245,0.88) 0%,
+    rgba(244,240,234,0.72) 50%,
+    rgba(212,190,165,0.3) 100%
+  );
+}
+.about-hero-inner {
+  position: relative;
+  z-index: 1;
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding: 0 var(--side-pad);
+  width: 100%;
+  text-align: center;
+}
+.about-hero-kicker {
+  font-size: 0.76rem;
+  letter-spacing: 0.2em;
+  color: var(--accent);
+  font-weight: 400;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+.about-hero-kicker::before {
+  content: '';
+  display: inline-block;
+  width: 32px;
+  height: 1px;
+  background: var(--accent);
+}
+.about-hero-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2.4rem, 5.5vw, 4.2rem);
+  font-weight: 300;
+  line-height: 1.25;
+  color: var(--text-primary);
+  margin-bottom: 28px;
+  letter-spacing: 0.02em;
+}
+.about-hero-subtitle {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  font-weight: 300;
+  line-height: 1.8;
+  max-width: 640px;
+  margin: 0 auto 48px;
+}
+.btn-primary {
+  background: var(--accent);
+  color: #fff;
+  padding: 16px 36px;
+  border-radius: 40px;
+  font-size: 0.88rem;
+  letter-spacing: 0.12em;
+  text-decoration: none;
+  transition: background 0.28s, transform 0.2s;
+  display: inline-block;
+}
+.btn-primary:hover { background: var(--bg-deep); transform: translateY(-2px); }
+
+/* ── STORY ── */
+.story {
+  padding: var(--section-gap) var(--side-pad);
+  max-width: var(--content-max);
+  margin: 0 auto;
+}
+.story-inner {
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 80px;
+  align-items: center;
+}
+.story-content {}
+.section-label {
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
+  color: var(--accent);
+  font-weight: 400;
+  display: block;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+.section-title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.9rem, 3.6vw, 2.8rem);
+  font-weight: 300;
+  line-height: 1.35;
+  color: var(--text-primary);
+  margin-bottom: 28px;
+}
+.story-text {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.9;
+  margin-bottom: 24px;
+}
+.story-img-wrap {
+  position: relative;
+}
+.story-img {
+  width: 100%;
+  height: 520px;
+  object-fit: cover;
+  border-radius: 16px;
+  display: block;
+}
+
+/* ── PHILOSOPHY (視覺高點) ── */
+.philosophy {
+  padding: var(--section-gap) 0;
+  background: var(--bg-deep);
+  position: relative;
+  overflow: hidden;
+}
+.philosophy::before {
+  content: '設計';
+  font-family: var(--font-serif);
+  font-size: 16rem;
+  color: rgba(255,255,255,0.025);
+  position: absolute;
+  top: -20px;
+  right: -40px;
+  line-height: 1;
+  user-select: none;
+  pointer-events: none;
+}
+.philosophy-inner {
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding: 0 var(--side-pad);
+}
+.philosophy-header {
+  text-align: center;
+  margin-bottom: 72px;
+}
+.philosophy-header .section-label { color: var(--accent-warm); }
+.philosophy-header .section-title { color: #f5f0e8; }
+.philosophy-desc {
+  font-size: 1.05rem;
+  color: rgba(255,255,255,0.5);
+  margin-top: 20px;
+  max-width: 520px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.8;
+}
+.philosophy-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+.philosophy-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px;
+  padding: 40px 32px;
+  transition: background 0.3s, transform 0.3s;
+}
+.philosophy-card:hover {
+  background: rgba(255,255,255,0.08);
+  transform: translateY(-8px);
+}
+.philosophy-card-icon {
+  width: 56px;
+  height: 56px;
+  background: rgba(196,168,130,0.15);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 28px;
+}
+.philosophy-card-icon svg {
+  width: 24px;
+  height: 24px;
+  stroke: var(--accent-warm);
+  fill: none;
+}
+.philosophy-card-title {
+  font-family: var(--font-serif);
+  font-size: 1.3rem;
+  color: #f5f0e8;
+  font-weight: 300;
+  margin-bottom: 16px;
+  line-height: 1.4;
+}
+.philosophy-card-desc {
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.5);
+  line-height: 1.8;
+}
+
+/* ── CREDENTIALS ── */
+.credentials {
+  padding: var(--section-gap) var(--side-pad);
+  max-width: var(--content-max);
+  margin: 0 auto;
+}
+.credentials-header {
+  text-align: center;
+  margin-bottom: 72px;
+}
+.credentials-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 36px;
+}
+.credential-card {
+  text-align: center;
+  background: var(--bg-secondary);
+  border-radius: 16px;
+  padding: 48px 28px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.credential-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 24px 60px rgba(44,40,32,0.1);
+}
+.credential-number {
+  font-family: var(--font-serif);
+  font-size: 3.2rem;
+  color: var(--accent);
+  font-weight: 300;
+  line-height: 1;
+  margin-bottom: 12px;
+}
+.credential-label {
+  font-size: 0.88rem;
+  color: var(--text-primary);
+  font-weight: 400;
+  margin-bottom: 8px;
+}
+.credential-desc {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* ── TEAM ── */
+.team {
+  padding: var(--section-gap) 0;
+  background: var(--bg-secondary);
+}
+.team-inner {
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding: 0 var(--side-pad);
+}
+.team-content {
+  display: grid;
+  grid-template-columns: 400px 1fr;
+  gap: 80px;
+  align-items: center;
+}
+.team-img-wrap {
+  position: relative;
+}
+.team-img {
+  width: 100%;
+  height: 480px;
+  object-fit: cover;
+  border-radius: 16px;
+  display: block;
+}
+.team-text {}
+.team-name {
+  font-family: var(--font-serif);
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  font-weight: 300;
+  color: var(--text-primary);
+  margin-top: 20px;
+  margin-bottom: 8px;
+}
+.team-role {
+  font-size: 0.8rem;
+  letter-spacing: 0.15em;
+  color: var(--accent);
+  margin-bottom: 28px;
+}
+.team-bio {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.9;
+  margin-bottom: 24px;
+}
+.team-expertise {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 32px;
+}
+.team-expertise li {
+  font-size: 0.88rem;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+.team-expertise li::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  background: var(--accent);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* ── CTA ── */
+.about-cta-section {
+  padding: var(--section-gap) var(--side-pad);
+  max-width: var(--content-max);
+  margin: 0 auto;
+}
+.about-cta-inner {
+  background: var(--bg-secondary);
+  border-radius: 24px;
+  padding: 88px 64px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.about-cta-inner::before {
+  content: '';
+  position: absolute;
+  top: -60px;
+  left: -60px;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(196,168,130,0.12) 0%, transparent 70%);
+}
+.about-cta-content {
+  position: relative;
+  z-index: 1;
+}
+.about-cta-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 3.5vw, 2.8rem);
+  font-weight: 300;
+  line-height: 1.35;
+  color: var(--text-primary);
+  margin-top: 16px;
+  margin-bottom: 20px;
+}
+.about-cta-desc {
+  font-size: 1rem;
+  color: var(--text-muted);
+  line-height: 1.85;
+  max-width: 480px;
+  margin: 0 auto 40px;
+}
+.about-cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.btn-ghost {
+  color: var(--text-muted);
+  font-size: 0.84rem;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: color 0.25s;
+}
+.btn-ghost:hover { color: var(--text-primary); }
+.btn-ghost svg { transition: transform 0.25s; }
+.btn-ghost:hover svg { transform: translateX(4px); }
+
+/* ── FOOTER ── */
+footer {
+  background: var(--bg-deep);
+  padding: 72px var(--side-pad) 40px;
+}
+.footer-inner {
+  max-width: var(--content-max);
+  margin: 0 auto;
+}
+.footer-top {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  gap: 64px;
+  padding-bottom: 56px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.footer-brand {}
+.footer-logo {
+  font-family: var(--font-serif);
+  font-size: 1.3rem;
+  color: #f5f0e8;
+  font-weight: 300;
+  letter-spacing: 0.04em;
+}
+.footer-logo-sub {
+  font-size: 0.68rem;
+  letter-spacing: 0.18em;
+  color: rgba(255,255,255,0.3);
+  margin-top: 4px;
+  display: block;
+}
+.footer-tagline {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.4);
+  line-height: 1.8;
+  margin-top: 20px;
+  max-width: 260px;
+}
+.footer-col-title {
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  color: var(--accent-warm);
+  margin-bottom: 20px;
+  display: block;
+}
+.footer-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.footer-links a {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.45);
+  text-decoration: none;
+  transition: color 0.25s;
+}
+.footer-links a:hover { color: rgba(255,255,255,0.8); }
+.footer-contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.83rem;
+  color: rgba(255,255,255,0.45);
+  margin-bottom: 12px;
+  line-height: 1.6;
+}
+.footer-contact-item svg { flex-shrink: 0; margin-top: 2px; stroke: rgba(255,255,255,0.25); fill: none; }
+.footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 32px;
+}
+.footer-copyright {
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.2);
+  letter-spacing: 0.05em;
+}
+.footer-ig {
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.3);
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  transition: color 0.25s;
+}
+.footer-ig:hover { color: rgba(255,255,255,0.65); }
+
+/* ── RWD ── */
+@media (max-width: 960px) {
+  :root { --side-pad: 32px; --section-gap: 88px; }
+  .story-inner { grid-template-columns: 1fr; gap: 48px; }
+  .story-img { height: 380px; }
+  .philosophy-grid { grid-template-columns: 1fr; gap: 24px; }
+  .credentials-grid { grid-template-columns: repeat(2, 1fr); }
+  .team-content { grid-template-columns: 1fr; gap: 48px; }
+  .team-img { height: 420px; }
+  .about-cta-inner { padding: 56px 40px; }
+  .footer-top { grid-template-columns: 1fr 1fr; gap: 40px; }
+}
+@media (max-width: 700px) {
+  :root { --side-pad: 20px; --section-gap: 72px; }
+  .nav-links { display: none; }
+  .nav-cta { display: flex; }
+  .about-hero { min-height: 75vh; }
+  .about-hero-title { font-size: 2.2rem; }
+  .story-inner { gap: 36px; }
+  .story-img { height: 320px; }
+  .philosophy-grid { gap: 20px; }
+  .philosophy-card { padding: 32px 24px; }
+  .credentials-grid { grid-template-columns: 1fr; gap: 24px; }
+  .team-img { height: 360px; }
+  .about-cta-inner { padding: 48px 28px; }
+  .about-cta-buttons { flex-direction: column; align-items: center; }
+  .footer-top { grid-template-columns: 1fr; }
+  .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo" data-text="nav-logo" data-text-description="品牌名稱，導覽列左上角">
+      疊工作室
+      <span data-text="nav-logo-en" data-text-description="品牌英文名稱">DDIE STUDIO</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="portfolio.html">作品集</a></li>
+      <li><a href="services.html">服務項目</a></li>
+      <li><a href="about.html">關於我們</a></li>
+      <li><a href="blog.html">設計誌</a></li>
+      <li><a href="contact.html" class="nav-cta">預約諮詢</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ABOUT HERO -->
+<section class="about-hero" data-section="about-hero" data-section-title="關於我們主視覺" data-section-purpose="用屋主視角建立情感連結，點出核心理念">
+  <div class="about-hero-bg">
+    <img src="https://images.pexels.com/photos/6614763/pexels-photo-6614763.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=650&amp;w=940" alt="" data-img-query="interior designer working studio Taiwan professional" data-img-orientation="landscape" data-img-description="設計師工作中的照片或工作室環境，背景主視覺">
+  </div>
+  <div class="about-hero-overlay"></div>
+  <div class="about-hero-inner">
+    <div class="reveal">
+      <p class="about-hero-kicker" data-text="about-hero-kicker" data-text-description="About頁面上方小標，品牌定位">ABOUT DDIE STUDIO</p>
+    </div>
+    <div class="reveal reveal-delay-1">
+      <h1 class="about-hero-title" data-text="about-hero-title" data-text-description="About主標題，從屋主視角建立連結">
+        每個人心裡<br>都有一個家的樣子
+      </h1>
+    </div>
+    <div class="reveal reveal-delay-2">
+      <p class="about-hero-subtitle" data-text="about-hero-subtitle" data-text-description="About副標題，說明工作室使命">
+        我們的工作，就是幫你把那個說不清楚的渴望，變成真實可見的空間。<br>
+        七年來，我們在台中陪伴 48 個家庭找到了屬於他們的樣子。
+      </p>
+    </div>
+    <div class="reveal reveal-delay-3">
+      <a href="#story" class="btn-primary">了解我們的故事</a>
+    </div>
+  </div>
+</section>
+
+<!-- STORY -->
+<section class="story" id="story" data-section="story" data-section-title="工作室故事" data-section-purpose="建立情感連結，說明創立初衷與價值觀">
+  <div class="story-inner">
+    <div class="story-content reveal">
+      <span class="section-label" data-text="story-label" data-text-description="故事段落小標">OUR STORY</span>
+      <h2 class="section-title" data-text="story-title" data-text-description="故事段落主標題">為什麼我們做室內設計</h2>
+      <p class="story-text" data-text="story-text-1" data-text-description="工作室故事第一段">
+        疊工作室成立的第一天，我們就決定不做「裝潢公司」。
+      </p>
+      <p class="story-text" data-text="story-text-2" data-text-description="工作室故事第二段">
+        我們看過太多美麗的空間，住起來卻不對勁。也見過太多屋主，明明花了很多錢裝修，卻在自己家裡感覺像客人。問題不在錢多錢少，而在於有沒有人真正理解你想要什麼樣的日常。
+      </p>
+      <p class="story-text" data-text="story-text-3" data-text-description="工作室故事第三段">
+        每個人對「家」的想像都不一樣。有人喜歡早晨在廚房慢慢泡咖啡，有人需要一個安靜的角落看書，有人希望客廳可以容納三五好友聚會。這些生活的細節，才是空間設計的起點。
+      </p>
+      <p class="story-text" data-text="story-text-4" data-text-description="工作室故事第四段">
+        七年來，我們專注在住宅全案設計，不是因為商業空間做不來，而是我們相信：讓一個人在自己家裡感到真正舒適，是這個世界上最有意義的事。
+      </p>
+    </div>
+    <div class="story-img-wrap reveal reveal-delay-1">
+      <img class="story-img" src="https://images.pexels.com/photos/36809500/pexels-photo-36809500.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=650&amp;w=940" alt="" data-img-query="design studio workspace Taiwan interior design process" data-img-orientation="portrait" data-img-description="工作室環境或設計過程照片">
+    </div>
+  </div>
+</section>
+
+<!-- PHILOSOPHY (視覺高點) -->
+<section class="philosophy" data-section="philosophy" data-section-title="設計哲學" data-section-purpose="展現專業深度與設計思維，建立專業信任感">
+  <div class="philosophy-inner">
+    <div class="philosophy-header reveal">
+      <span class="section-label" data-text="philosophy-label" data-text-description="設計哲學小標">DESIGN PHILOSOPHY</span>
+      <h2 class="section-title" data-text="philosophy-title" data-text-description="設計哲學主標題">我們如何思考空間設計</h2>
+      <p class="philosophy-desc" data-text="philosophy-desc" data-text-description="設計哲學說明文">好的設計不是風格的展示，而是生活方式的實現</p>
+    </div>
+    <div class="philosophy-grid">
+      <div class="philosophy-card reveal reveal-delay-1">
+        <div class="philosophy-card-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5">
+            <path d="M12 2 L20 7 L20 17 L4 17 L4 7 Z"></path>
+            <polyline points="8,12 12,8 16,12"></polyline>
+          </svg>
+        </div>
+        <h3 class="philosophy-card-title" data-text="philosophy-card-1-title" data-text-description="設計原則一標題">從生活出發<br>不從風格出發</h3>
+        <p class="philosophy-card-desc" data-text="philosophy-card-1-desc" data-text-description="設計原則一說明">我們不問你喜歡什麼風格，我們問你每天怎麼生活。風格是結果，不是起點。</p>
+      </div>
+      <div class="philosophy-card reveal reveal-delay-2">
+        <div class="philosophy-card-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5">
+            <circle cx="12" cy="12" r="9"></circle>
+            <path d="M8 12 L11 15 L16 9"></path>
+          </svg>
+        </div>
+        <h3 class="philosophy-card-title" data-text="philosophy-card-2-title" data-text-description="設計原則二標題">解決問題<br>而不只是美化空間</h3>
+        <p class="philosophy-card-desc" data-text="philosophy-card-2-desc" data-text-description="設計原則二說明">每個空間都有它的挑戰——光線不足、格局不佳、收納不夠。我們先解決問題，再談美感。</p>
+      </div>
+      <div class="philosophy-card reveal reveal-delay-3">
+        <div class="philosophy-card-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5">
+            <path d="M17 21V7A2 2 0 0 0 15 5H9A2 2 0 0 0 7 7V21"></path>
+            <path d="M7 3A2 2 0 0 1 9 1H15A2 2 0 0 1 17 3"></path>
+            <polyline points="9,9 9,13"></polyline>
+            <polyline points="15,9 15,13"></polyline>
+          </svg>
+        </div>
+        <h3 class="philosophy-card-title" data-text="philosophy-card-3-title" data-text-description="設計原則三標題">陪伴決策<br>而不是代替決策</h3>
+        <p class="philosophy-card-desc" data-text="philosophy-card-3-desc" data-text-description="設計原則三說明">這是你的家，不是我們的作品集。每個選擇都和你一起做，確保最後的結果真的是你想要的。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CREDENTIALS -->
+<section class="credentials" data-section="credentials" data-section-title="專業實力" data-section-purpose="提供具體證據建立信任感">
+  <div class="credentials-header reveal">
+    <span class="section-label" data-text="credentials-label" data-text-description="專業實力小標">CREDENTIALS</span>
+    <h2 class="section-title" data-text="credentials-title" data-text-description="專業實力主標題">用成果說話</h2>
+  </div>
+  <div class="credentials-grid">
+    <div class="credential-card reveal reveal-delay-1">
+      <div class="credential-number">48+</div>
+      <div class="credential-label" data-text="credential-1-label" data-text-description="數據一標籤">完工案例</div>
+      <div class="credential-desc" data-text="credential-1-desc" data-text-description="數據一說明">七年來完成的住宅全案設計項目</div>
+    </div>
+    <div class="credential-card reveal reveal-delay-2">
+      <div class="credential-number">100%</div>
+      <div class="credential-label" data-text="credential-2-label" data-text-description="數據二標籤">透明報價</div>
+      <div class="credential-desc" data-text="credential-2-desc" data-text-description="數據二說明">所有費用在設計確認前就清楚列出</div>
+    </div>
+    <div class="credential-card reveal reveal-delay-3">
+      <div class="credential-number">7</div>
+      <div class="credential-label" data-text="credential-3-label" data-text-description="數據三標籤">台中在地深耕</div>
+      <div class="credential-desc" data-text="credential-3-desc" data-text-description="數據三說明">深度了解在地生活方式與空間需求</div>
+    </div>
+    <div class="credential-card reveal reveal-delay-4">
+      <div class="credential-number">全程</div>
+      <div class="credential-label" data-text="credential-4-label" data-text-description="數據四標籤">陪伴服務</div>
+      <div class="credential-desc" data-text="credential-4-desc" data-text-description="數據四說明">從第一次談話到交屋驗收，同一組人員服務到底</div>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section class="team" data-section="team" data-section-title="團隊介紹" data-section-purpose="人格化品牌，建立個人信任感">
+  <div class="team-inner">
+    <div class="team-content">
+      <div class="team-img-wrap reveal">
+        <img class="team-img" src="https://images.pexels.com/photos/34952213/pexels-photo-34952213.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=650&amp;w=940" alt="" data-img-query="interior designer portrait professional Taiwan studio" data-img-orientation="square" data-img-description="主理人專業形象照">
+      </div>
+      <div class="team-text reveal reveal-delay-1">
+        <span class="section-label" data-text="team-label" data-text-description="團隊介紹小標">TEAM</span>
+        <h2 class="team-name" data-text="team-name" data-text-description="主理人姓名">主理人</h2>
+        <span class="team-role" data-text="team-role" data-text-description="主理人職稱">疊工作室 創辦人｜主設計師</span>
+        
+        <p class="team-bio" data-text="team-bio-1" data-text-description="主理人介紹第一段">
+          在成為室內設計師之前，我花了很多時間觀察人們在空間裡的行為。為什麼有些地方讓人想待久一點？為什麼有些房子明明很美，住起來卻不舒服？
+        </p>
+        <p class="team-bio" data-text="team-bio-2" data-text-description="主理人介紹第二段">
+          這些觀察後來成為我設計的基礎。我不相信一套風格可以適用所有人，也不相信昂貴的材料就等於好的設計。每個案子，我都從屋主的生活習慣開始，一點一點找到屬於這個家的樣子。
+        </p>
+        
+        <ul class="team-expertise">
+          <li data-text="team-expertise-1" data-text-description="專業背景一">室內設計相關科系畢業</li>
+          <li data-text="team-expertise-2" data-text-description="專業背景二">七年住宅設計經驗</li>
+          <li data-text="team-expertise-3" data-text-description="專業背景三">擅長空間規劃與材質搭配</li>
+          <li data-text="team-expertise-4" data-text-description="專業背景四">熟悉台中在地工班與材料商</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="about-cta-section" data-section="about-cta" data-section-title="開始合作" data-section-purpose="引導行動，降低第一步門檻">
+  <div class="about-cta-inner reveal">
+    <div class="about-cta-content">
+      <span class="section-label" data-text="about-cta-label" data-text-description="CTA小標">START HERE</span>
+      <h2 class="about-cta-title" data-text="about-cta-title" data-text-description="CTA主標題">開始我們的合作</h2>
+      <p class="about-cta-desc" data-text="about-cta-desc" data-text-description="CTA說明文">第一次諮詢是免費的。不需要準備很多，就把你對家的想像告訴我們。</p>
+      <div class="about-cta-buttons">
+        <a href="contact.html" class="btn-primary">預約免費諮詢</a>
+        <a href="portfolio.html" class="btn-ghost">
+          看看作品案例
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="2" y1="8" x2="14" y2="8"></line><polyline points="9,3 14,8 9,13"></polyline></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          疊工作室
+          <span class="footer-logo-sub">DDIE STUDIO</span>
+        </div>
+        <p class="footer-tagline">讓空間說出你沒說出口的品味。<br>台中住宅室內設計，全案服務。</p>
+      </div>
+      <div>
+        <span class="footer-col-title">服務項目</span>
+        <ul class="footer-links">
+          <li><a href="services.html">住宅全案設計</a></li>
+          <li><a href="services.html">格局規劃顧問</a></li>
+          <li><a href="services.html">舊屋翻新</a></li>
+          <li><a href="services.html">預售屋客變</a></li>
+          <li><a href="services.html">小型商業空間</a></li>
+        </ul>
+      </div>
+      <div>
+        <span class="footer-col-title">聯絡資訊</span>
+        <div class="footer-contact-item">
+          <svg width="14" height="14" viewBox="0 0 14 14" stroke-width="1.3"><path d="M2 2.5C2 2.5 2.4 6.5 5.5 9.5 8.5 12.5 12.5 13 12.5 13L14 11.5C14 11.5 12.8 10.3 11.5 10.8L10 12C10 12 7.5 11.2 6 9.5 4.5 7.8 3.8 5.5 3.8 5.5L5 4C5.5 2.7 4.3 1.5 4.3 1.5L2 2.5Z"></path></svg>
+          04-2233-8899
+        </div>
+        <div class="footer-contact-item">
+          <svg width="14" height="14" viewBox="0 0 14 14" stroke-width="1.3"><rect x="1" y="2" width="12" height="10" rx="1.5"></rect><polyline points="1,2 7,8 13,2"></polyline></svg>
+          hello@ddie-studio.com
+        </div>
+        <div class="footer-contact-item">
+          <svg width="14" height="14" viewBox="0 0 14 14" stroke-width="1.3"><path d="M7 1.5 C4.5 1.5 2.5 3.5 2.5 6 C2.5 9.5 7 12.5 7 12.5 C7 12.5 11.5 9.5 11.5 6 C11.5 3.5 9.5 1.5 7 1.5Z"></path><circle cx="7" cy="6" r="1.8"></circle></svg>
+          台中市西區民生路 ○○ 號
+        </div>
+        <div class="footer-contact-item">
+          <svg width="14" height="14" viewBox="0 0 14 14" stroke-width="1.3"><circle cx="7" cy="7" r="5.5"></circle><polyline points="7,3.5 7,7 9.5,9"></polyline></svg>
+          週一至週六 10:00–19:00
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copyright">© 2024 疊工作室 DDIE Studio. All rights reserved.</p>
+      <a href="https://instagram.com/ddie.studio" class="footer-ig" target="_blank">IG @ddie.studio</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Scroll reveal
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.08, rootMargin: '0px 0px -24px 0px' });
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// Hero delayed trigger
+setTimeout(() => {
+  document.querySelectorAll('.about-hero .reveal').forEach(el => {
+    el.classList.add('visible');
+  });
+}, 80);
+</script>
+
+
+</body></html>

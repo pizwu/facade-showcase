@@ -1,0 +1,852 @@
+<!DOCTYPE html><html lang="zh-TW"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>設計誌｜疊工作室 DDIE Studio｜室內設計 台中</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&amp;family=Noto+Sans+TC:wght@300;400;500&amp;family=Noto+Serif+TC:wght@300;400&amp;display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg-primary: #faf8f5;
+  --bg-secondary: #f3efe9;
+  --bg-deep: #2c2820;
+  --text-primary: #2c2820;
+  --text-muted: #7a7168;
+  --text-light: #b0a898;
+  --accent: #8a7560;
+  --accent-warm: #c4a882;
+  --green-mist: #d4ddd4;
+  --border: #e5dfd6;
+  --font-serif: 'Cormorant Garamond', 'Noto Serif TC', serif;
+  --font-sans: 'Noto Sans TC', sans-serif;
+  --section-gap: 120px;
+  --content-max: 1080px;
+  --side-pad: 48px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-sans);
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-weight: 300;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+/* ── NAV ── */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  background: rgba(250, 248, 245, 0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+.nav-inner {
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding: 0 var(--side-pad);
+  height: 68px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav-logo {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: var(--text-primary);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.nav-logo span {
+  font-size: 0.72rem;
+  font-family: var(--font-sans);
+  font-weight: 300;
+  letter-spacing: 0.12em;
+  color: var(--text-muted);
+  display: block;
+  margin-top: -2px;
+}
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+  list-style: none;
+}
+.nav-links a {
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.25s;
+}
+.nav-links a:hover { color: var(--text-primary); }
+.nav-links a.active { color: var(--text-primary); }
+.nav-cta {
+  background: var(--accent);
+  color: #fff !important;
+  padding: 10px 22px;
+  border-radius: 40px;
+  font-size: 0.78rem !important;
+  letter-spacing: 0.1em !important;
+  transition: background 0.25s !important;
+}
+.nav-cta:hover { background: var(--bg-deep) !important; color: #fff !important; }
+
+/* ── REVEAL ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.72s ease, transform 0.72s ease;
+}
+.reveal.visible { opacity: 1; transform: none; }
+.reveal-delay-1 { transition-delay: 0.08s; }
+.reveal-delay-2 { transition-delay: 0.16s; }
+.reveal-delay-3 { transition-delay: 0.24s; }
+.reveal-delay-4 { transition-delay: 0.32s; }
+
+/* ── BLOG HERO ── */
+.blog-hero {
+  padding: calc(68px + var(--section-gap)) var(--side-pad) var(--section-gap);
+  max-width: var(--content-max);
+  margin: 0 auto;
+}
+.blog-hero-inner {
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 80px;
+  align-items: center;
+}
+.blog-hero-content {}
+.section-label {
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
+  color: var(--accent);
+  font-weight: 400;
+  display: block;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+.section-title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.9rem, 3.6vw, 2.8rem);
+  font-weight: 300;
+  line-height: 1.35;
+  color: var(--text-primary);
+  margin-bottom: 16px;
+}
+.blog-hero-subtitle {
+  font-size: 0.8rem;
+  letter-spacing: 0.15em;
+  color: var(--accent);
+  margin-bottom: 28px;
+}
+.blog-hero-desc {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.85;
+}
+.blog-hero-img-wrap {
+  position: relative;
+}
+.blog-hero-img {
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+  border-radius: 16px;
+  display: block;
+}
+
+/* ── FEATURED POSTS ── */
+.featured-posts {
+  padding: var(--section-gap) 0;
+  background: var(--bg-deep);
+  position: relative;
+  overflow: hidden;
+}
+.featured-posts::before {
+  content: '誌';
+  font-family: var(--font-serif);
+  font-size: 18rem;
+  color: rgba(255,255,255,0.02);
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  line-height: 1;
+  user-select: none;
+  pointer-events: none;
+}
+.featured-posts-inner {
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding: 0 var(--side-pad);
+}
+.featured-posts-header {
+  text-align: center;
+  margin-bottom: 72px;
+}
+.featured-posts-header .section-label { color: var(--accent-warm); }
+.featured-posts-header .section-title { color: #f5f0e8; }
+.featured-posts-header .section-desc { 
+  color: rgba(255,255,255,0.45); 
+  font-size: 0.95rem;
+  margin-top: 20px;
+  max-width: 480px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.85;
+}
+.featured-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+.featured-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+.featured-card:hover {
+  transform: translateY(-8px);
+  background: rgba(255,255,255,0.07);
+}
+.featured-card-img {
+  height: 240px;
+  display: block;
+  width: 100%;
+  object-fit: cover;
+}
+.featured-card-body {
+  padding: 28px;
+}
+.featured-card-title {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  font-weight: 300;
+  color: #f5f0e8;
+  margin-bottom: 12px;
+  line-height: 1.4;
+}
+.featured-card-desc {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.45);
+  line-height: 1.8;
+}
+
+/* ── CATEGORIES ── */
+.categories {
+  padding: var(--section-gap) var(--side-pad);
+  max-width: var(--content-max);
+  margin: 0 auto;
+}
+.categories-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+.categories-grid {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.category-btn {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  padding: 14px 28px;
+  border-radius: 40px;
+  font-size: 0.82rem;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  transition: all 0.25s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.category-btn:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+  transform: translateY(-2px);
+}
+.category-btn svg {
+  width: 16px;
+  height: 16px;
+  stroke: currentColor;
+  fill: none;
+}
+
+/* ── RECENT POSTS ── */
+.recent-posts {
+  padding: var(--section-gap) var(--side-pad);
+  background: var(--bg-secondary);
+}
+.recent-posts-inner {
+  max-width: var(--content-max);
+  margin: 0 auto;
+}
+.recent-posts-header {
+  margin-bottom: 64px;
+}
+.recent-posts-header .section-desc {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  margin-top: 20px;
+  max-width: 480px;
+  line-height: 1.85;
+}
+.posts-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+}
+.post-card {
+  background: var(--bg-primary);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+.post-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 24px 60px rgba(44,40,32,0.1);
+}
+.post-card-img {
+  height: 220px;
+  display: block;
+  width: 100%;
+  object-fit: cover;
+}
+.post-card-body {
+  padding: 28px;
+}
+.post-card-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+.post-card-category {
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  color: var(--accent);
+  background: var(--bg-secondary);
+  padding: 4px 12px;
+  border-radius: 12px;
+}
+.post-card-date {
+  font-size: 0.72rem;
+  color: var(--text-light);
+  letter-spacing: 0.05em;
+}
+.post-card-title {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  font-weight: 300;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+  line-height: 1.4;
+}
+.post-card-desc {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+/* ── NEWSLETTER ── */
+.newsletter {
+  padding: var(--section-gap) var(--side-pad);
+  max-width: var(--content-max);
+  margin: 0 auto;
+}
+.newsletter-inner {
+  background: var(--bg-secondary);
+  border-radius: 24px;
+  padding: 72px 64px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.newsletter-inner::before {
+  content: '';
+  position: absolute;
+  top: -60px;
+  left: -60px;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(196,168,130,0.15) 0%, transparent 70%);
+}
+.newsletter-content {
+  position: relative;
+  z-index: 1;
+}
+.newsletter-title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  font-weight: 300;
+  line-height: 1.35;
+  color: var(--text-primary);
+  margin-top: 16px;
+  margin-bottom: 20px;
+}
+.newsletter-desc {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.85;
+  margin-bottom: 40px;
+  max-width: 520px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.newsletter-form {
+  display: flex;
+  gap: 12px;
+  max-width: 400px;
+  margin: 0 auto;
+}
+.newsletter-input {
+  flex: 1;
+  padding: 16px 20px;
+  border: 1px solid var(--border);
+  border-radius: 40px;
+  font-size: 0.85rem;
+  background: var(--bg-primary);
+  transition: border-color 0.25s;
+  outline: none;
+}
+.newsletter-input:focus { border-color: var(--accent); }
+.newsletter-btn {
+  background: var(--accent);
+  color: #fff;
+  padding: 16px 28px;
+  border: none;
+  border-radius: 40px;
+  font-size: 0.82rem;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  transition: background 0.25s, transform 0.2s;
+  white-space: nowrap;
+}
+.newsletter-btn:hover { 
+  background: var(--bg-deep); 
+  transform: translateY(-2px); 
+}
+
+/* ── FOOTER ── */
+footer {
+  background: var(--bg-deep);
+  padding: 72px var(--side-pad) 40px;
+}
+.footer-inner {
+  max-width: var(--content-max);
+  margin: 0 auto;
+}
+.footer-top {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  gap: 64px;
+  padding-bottom: 56px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.footer-brand {}
+.footer-logo {
+  font-family: var(--font-serif);
+  font-size: 1.3rem;
+  color: #f5f0e8;
+  font-weight: 300;
+  letter-spacing: 0.04em;
+}
+.footer-logo-sub {
+  font-size: 0.68rem;
+  letter-spacing: 0.18em;
+  color: rgba(255,255,255,0.3);
+  margin-top: 4px;
+  display: block;
+}
+.footer-tagline {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.4);
+  line-height: 1.8;
+  margin-top: 20px;
+  max-width: 260px;
+}
+.footer-col-title {
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  color: var(--accent-warm);
+  margin-bottom: 20px;
+  display: block;
+}
+.footer-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.footer-links a {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.45);
+  text-decoration: none;
+  transition: color 0.25s;
+}
+.footer-links a:hover { color: rgba(255,255,255,0.8); }
+.footer-contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.83rem;
+  color: rgba(255,255,255,0.45);
+  margin-bottom: 12px;
+  line-height: 1.6;
+}
+.footer-contact-item svg { flex-shrink: 0; margin-top: 2px; stroke: rgba(255,255,255,0.25); fill: none; }
+.footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 32px;
+}
+.footer-copyright {
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.2);
+  letter-spacing: 0.05em;
+}
+.footer-ig {
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.3);
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  transition: color 0.25s;
+}
+.footer-ig:hover { color: rgba(255,255,255,0.65); }
+
+/* ── RWD ── */
+@media (max-width: 960px) {
+  :root { --side-pad: 32px; --section-gap: 88px; }
+  .blog-hero-inner { grid-template-columns: 1fr; gap: 48px; }
+  .blog-hero-img { height: 320px; }
+  .featured-grid { grid-template-columns: repeat(2, 1fr); }
+  .featured-grid .featured-card:last-child { display: none; }
+  .posts-grid { grid-template-columns: 1fr; }
+  .newsletter-inner { padding: 56px 40px; }
+  .newsletter-form { flex-direction: column; max-width: 320px; }
+  .footer-top { grid-template-columns: 1fr 1fr; gap: 40px; }
+}
+@media (max-width: 700px) {
+  :root { --side-pad: 20px; --section-gap: 72px; }
+  .nav-links { display: none; }
+  .nav-cta { display: flex; }
+  .blog-hero { padding: calc(68px + 72px) 20px 72px; }
+  .featured-grid { grid-template-columns: 1fr; }
+  .featured-grid .featured-card:last-child { display: block; }
+  .categories-grid { gap: 12px; }
+  .category-btn { padding: 12px 20px; font-size: 0.78rem; }
+  .newsletter-inner { padding: 48px 28px; }
+  .footer-top { grid-template-columns: 1fr; }
+  .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo" data-text="nav-logo" data-text-description="品牌名稱，導覽列左上角">
+      疊工作室
+      <span data-text="nav-logo-en" data-text-description="品牌英文名稱">DDIE STUDIO</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="portfolio.html">作品集</a></li>
+      <li><a href="services.html">服務項目</a></li>
+      <li><a href="about.html">關於我們</a></li>
+      <li><a href="blog.html">設計誌</a></li>
+      <li><a href="contact.html" class="nav-cta">預約諮詢</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- BLOG HERO -->
+<section class="blog-hero" data-section="blog-hero" data-section-title="部落格主視覺" data-section-purpose="建立內容價值認知，讓訪客理解這裡不只是案例展示，而是真正有幫助的設計知識分享">
+  <div class="blog-hero-inner">
+    <div class="blog-hero-content reveal">
+      <span class="section-label" data-text="blog-label" data-text-description="部落格區塊小標">DESIGN JOURNAL</span>
+      <h1 class="section-title" data-text="blog-title" data-text-description="部落格主標題">關於家的那些事</h1>
+      <p class="blog-hero-subtitle" data-text="blog-subtitle" data-text-description="部落格副標題">設計思考｜生活美學｜居住指南</p>
+      <p class="blog-hero-desc" data-text="blog-desc" data-text-description="部落格說明段落">
+        有些關於空間的想法，我們想和你分享。從材質選配到生活習慣，從格局考量到美感培養——這裡記錄著每一個案子背後的設計思考，和那些讓「房子」變成「家」的細節洞察。
+      </p>
+    </div>
+    <div class="blog-hero-img-wrap reveal reveal-delay-1">
+      <img class="blog-hero-img" src="https://images.pexels.com/photos/6580001/pexels-photo-6580001.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=650&amp;w=940" alt="設計師工作情境" data-img-query="interior designer working studio samples Taiwan warm natural light" data-img-orientation="landscape" data-img-description="設計師在工作室翻閱材質樣本或與客戶討論的溫馨情境">
+    </div>
+  </div>
+</section>
+
+<!-- FEATURED POSTS -->
+<section class="featured-posts" data-section="featured-posts" data-section-title="精選內容展示" data-section-purpose="展示最優質的內容，建立專業印象，引導深度閱讀">
+  <div class="featured-posts-inner">
+    <div class="featured-posts-header reveal">
+      <span class="section-label" data-text="featured-label" data-text-description="精選文章區塊小標">EDITOR'S PICK</span>
+      <h2 class="section-title" data-text="featured-title" data-text-description="精選文章主標題">編輯精選</h2>
+      <p class="section-desc" data-text="featured-desc" data-text-description="精選文章說明文">從這些文章開始，理解好設計的思考邏輯</p>
+    </div>
+    <div class="featured-grid">
+      <article class="featured-card reveal reveal-delay-1">
+        <img class="featured-card-img" src="https://images.pexels.com/photos/34549302/pexels-photo-34549302.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=650&amp;w=940" alt="空間設計案例分析" data-img-query="modern living room design process before after Taiwan" data-img-orientation="landscape" data-img-description="精選文章配圖，展現空間設計前後對比或設計過程">
+        <div class="featured-card-body">
+          <h3 class="featured-card-title" data-text="featured-1-title" data-text-description="精選文章1標題">為什麼「看起來很美」的空間，住起來卻不舒服？</h3>
+          <p class="featured-card-desc" data-text="featured-1-desc" data-text-description="精選文章1摘要">設計師解析三個常見的視覺陷阱，以及如何在美感與機能之間找到平衡點。</p>
+        </div>
+      </article>
+      <article class="featured-card reveal reveal-delay-2">
+        <img class="featured-card-img" src="https://images.pexels.com/photos/6580565/pexels-photo-6580565.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=650&amp;w=940" alt="材質選配樣本" data-img-query="material selection wood stone ceramic samples interior design" data-img-orientation="landscape" data-img-description="材質樣本配圖，展現木質、石材、磁磚等不同材質的質感對比">
+        <div class="featured-card-body">
+          <h3 class="featured-card-title" data-text="featured-2-title" data-text-description="精選文章2標題">木質、石材、磁磚──材質選配背後的性格密碼</h3>
+          <p class="featured-card-desc" data-text="featured-2-desc" data-text-description="精選文章2摘要">每一種材質都有它的個性，了解它們的特質，就能找到最符合你生活方式的組合。</p>
+        </div>
+      </article>
+      <article class="featured-card reveal reveal-delay-3">
+        <img class="featured-card-img" src="https://images.pexels.com/photos/33784616/pexels-photo-33784616.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=650&amp;w=940" alt="小坪數空間規劃" data-img-query="home organization storage solution beautiful functional Taiwan" data-img-orientation="landscape" data-img-description="小坪數住宅空間配圖，展現聰明的格局規劃與收納解決方案">
+        <div class="featured-card-body">
+          <h3 class="featured-card-title" data-text="featured-3-title" data-text-description="精選文章3標題">30坪的家，如何住出50坪的感受？</h3>
+          <p class="featured-card-desc" data-text="featured-3-desc" data-text-description="精選文章3摘要">空間感不只來自坪數大小，更來自格局規劃的巧思。分享五個讓小坪數放大的設計手法。</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- CATEGORIES -->
+<section class="categories" data-section="categories" data-section-title="主題分類" data-section-purpose="提供功能性導覽，幫助訪客快速找到感興趣的內容類型">
+  <div class="categories-header reveal">
+    <h2 class="section-title" data-text="categories-title" data-text-description="分類導覽主標題">瀏覽主題</h2>
+  </div>
+  <div class="categories-grid reveal reveal-delay-1">
+    <a href="#" class="category-btn">
+      <svg viewBox="0 0 16 16" stroke-width="1.5">
+        <path d="M8 2 L14 6 L14 14 L2 14 L2 6 Z"></path>
+        <rect x="5" y="10" width="6" height="4"></rect>
+      </svg>
+      設計思考
+    </a>
+    <a href="#" class="category-btn">
+      <svg viewBox="0 0 16 16" stroke-width="1.5">
+        <rect x="2" y="2" width="12" height="12" rx="2"></rect>
+        <line x1="5" y1="8" x2="11" y2="8"></line>
+        <line x1="8" y1="5" x2="8" y2="11"></line>
+      </svg>
+      空間規劃
+    </a>
+    <a href="#" class="category-btn">
+      <svg viewBox="0 0 16 16" stroke-width="1.5">
+        <circle cx="8" cy="8" r="6"></circle>
+        <circle cx="8" cy="8" r="3"></circle>
+      </svg>
+      材質選配
+    </a>
+    <a href="#" class="category-btn">
+      <svg viewBox="0 0 16 16" stroke-width="1.5">
+        <path d="M2 3 L8 8 L14 3"></path>
+        <path d="M2 8 L8 13 L14 8"></path>
+      </svg>
+      生活美學
+    </a>
+    <a href="#" class="category-btn">
+      <svg viewBox="0 0 16 16" stroke-width="1.5">
+        <rect x="3" y="3" width="10" height="10" rx="2"></rect>
+        <circle cx="8" cy="8" r="2"></circle>
+      </svg>
+      案例解析
+    </a>
+    <a href="#" class="category-btn">
+      <svg viewBox="0 0 16 16" stroke-width="1.5">
+        <path d="M3 12 L13 12 L13 4 L3 4 Z"></path>
+        <path d="M6 8 L10 8"></path>
+        <path d="M6 10 L10 10"></path>
+      </svg>
+      居住指南
+    </a>
+  </div>
+</section>
+
+<!-- RECENT POSTS -->
+<section class="recent-posts" data-section="recent-posts" data-section-title="文章列表" data-section-purpose="提供豐富的內容選擇，展示更新頻率與內容廣度">
+  <div class="recent-posts-inner">
+    <div class="recent-posts-header reveal">
+      <h2 class="section-title" data-text="recent-title" data-text-description="最新文章主標題">最新文章</h2>
+      <p class="section-desc" data-text="recent-desc" data-text-description="最新文章說明文">定期更新，和你分享更多關於家的思考</p>
+    </div>
+    <div class="posts-grid">
+      <article class="post-card reveal reveal-delay-1">
+        <img class="post-card-img" src="https://images.pexels.com/photos/10153053/pexels-photo-10153053.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=650&amp;w=940" alt="廚房中島設計" data-img-query="kitchen island design Taiwan modern warm lighting" data-img-orientation="landscape" data-img-description="廚房中島設計案例，展現現代溫暖的廚房空間規劃">
+        <div class="post-card-body">
+          <div class="post-card-meta">
+            <span class="post-card-category" data-text="post-1-category" data-text-description="文章分類標籤">設計思考</span>
+            <span class="post-card-date" data-text="post-1-date" data-text-description="文章發布日期">2024.01.15</span>
+          </div>
+          <h3 class="post-card-title" data-text="post-1-title" data-text-description="文章標題">中島廚房不是裝飾品──三個讓它真正好用的設計細節</h3>
+          <p class="post-card-desc" data-text="post-1-desc" data-text-description="文章摘要">開放式廚房很美，但中島真的實用嗎？從檯面高度到收納配置，分享讓中島發揮最大效用的關鍵考量。</p>
+        </div>
+      </article>
+      
+      <article class="post-card reveal reveal-delay-2">
+        <img class="post-card-img" src="https://images.pexels.com/photos/21038582/pexels-photo-21038582.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=650&amp;w=940" alt="臥室配色方案" data-img-query="bedroom color scheme neutral calm peaceful Taiwan" data-img-orientation="landscape" data-img-description="臥室配色案例，展現中性寧靜的睡眠空間色彩規劃">
+        <div class="post-card-body">
+          <div class="post-card-meta">
+            <span class="post-card-category" data-text="post-2-category" data-text-description="文章分類標籤">生活美學</span>
+            <span class="post-card-date" data-text="post-2-date" data-text-description="文章發布日期">2024.01.12</span>
+          </div>
+          <h3 class="post-card-title" data-text="post-2-title" data-text-description="文章標題">臥室配色心理學：為什麼有些顏色讓你睡得更好？</h3>
+          <p class="post-card-desc" data-text="post-2-desc" data-text-description="文章摘要">色彩如何影響睡眠品質？從心理學角度解析臥室用色，讓你的休息空間真正具備療癒功能。</p>
+        </div>
+      </article>
+      
+      <article class="post-card reveal reveal-delay-1">
+        <img class="post-card-img" src="https://images.pexels.com/photos/34549301/pexels-photo-34549301.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=650&amp;w=940" alt="客廳空間規劃" data-img-query="living room furniture layout spacious comfortable Taiwan" data-img-orientation="landscape" data-img-description="客廳空間規劃案例，展現寬敞舒適的家庭聚會區域設計">
+        <div class="post-card-body">
+          <div class="post-card-meta">
+            <span class="post-card-category" data-text="post-3-category" data-text-description="文章分類標籤">空間規劃</span>
+            <span class="post-card-date" data-text="post-3-date" data-text-description="文章發布日期">2024.01.10</span>
+          </div>
+          <h3 class="post-card-title" data-text="post-3-title" data-text-description="文章標題">客廳不只是客廳──重新定義家的核心空間</h3>
+          <p class="post-card-desc" data-text="post-3-desc" data-text-description="文章摘要">現代家庭的客廳承擔著比以往更多的功能需求，如何在有限空間裡創造最大的生活可能性？</p>
+        </div>
+      </article>
+      
+      <article class="post-card reveal reveal-delay-2">
+        <img class="post-card-img" src="https://images.pexels.com/photos/35189677/pexels-photo-35189677.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=650&amp;w=940" alt="浴室翻新設計" data-img-query="bathroom renovation modern minimalist Taiwan residential" data-img-orientation="landscape" data-img-description="浴室翻新案例，展現現代簡約的台灣住宅衛浴空間設計">
+        <div class="post-card-body">
+          <div class="post-card-meta">
+            <span class="post-card-category" data-text="post-4-category" data-text-description="文章分類標籤">居住指南</span>
+            <span class="post-card-date" data-text="post-4-date" data-text-description="文章發布日期">2024.01.08</span>
+          </div>
+          <h3 class="post-card-title" data-text="post-4-title" data-text-description="文章標題">浴室翻新指南：在有限預算內創造最大改變</h3>
+          <p class="post-card-desc" data-text="post-4-desc" data-text-description="文章摘要">浴室翻新不一定要大動工程，掌握重點項目的優先順序，小預算也能帶來顯著的生活品質提升。</p>
+        </div>
+      </article>
+      
+      <article class="post-card reveal reveal-delay-1">
+        <img class="post-card-img" src="https://images.pexels.com/photos/6782348/pexels-photo-6782348.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=650&amp;w=940" alt="收納整理方案" data-img-query="storage closet organization solution Taiwan apartment" data-img-orientation="landscape" data-img-description="收納整理案例，展現台灣住宅的聰明收納解決方案與空間利用">
+        <div class="post-card-body">
+          <div class="post-card-meta">
+            <span class="post-card-category" data-text="post-5-category" data-text-description="文章分類標籤">生活美學</span>
+            <span class="post-card-date" data-text="post-5-date" data-text-description="文章發布日期">2024.01.05</span>
+          </div>
+          <h3 class="post-card-title" data-text="post-5-title" data-text-description="文章標題">收納不是塞東西──讓物品有家可歸的整理哲學</h3>
+          <p class="post-card-desc" data-text="post-5-desc" data-text-description="文章摘要">真正的收納設計不是增加櫃子，而是重新思考物品與空間的關係，讓每樣東西都有最適合的位置。</p>
+        </div>
+      </article>
+      
+      <article class="post-card reveal reveal-delay-2">
+        <img class="post-card-img" src="https://images.pexels.com/photos/13490214/pexels-photo-13490214.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=650&amp;w=940" alt="餐廳空間設計" data-img-query="dining room family gathering Taiwan warm interior" data-img-orientation="landscape" data-img-description="餐廳空間設計案例，展現適合家庭聚會的溫馨用餐環境">
+        <div class="post-card-body">
+          <div class="post-card-meta">
+            <span class="post-card-category" data-text="post-6-category" data-text-description="文章分類標籤">設計思考</span>
+            <span class="post-card-date" data-text="post-6-date" data-text-description="文章發布日期">2024.01.03</span>
+          </div>
+          <h3 class="post-card-title" data-text="post-6-title" data-text-description="文章標題">餐廳設計的溫度──如何營造家人聚會的儀式感</h3>
+          <p class="post-card-desc" data-text="post-6-desc" data-text-description="文章摘要">餐桌不只是吃飯的地方，更是家庭情感交流的核心。從燈光到座椅配置，打造凝聚家人的用餐時光。</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- NEWSLETTER CTA -->
+<section class="newsletter" data-section="newsletter" data-section-title="訂閱邀請" data-section-purpose="建立後續接觸機制，提供持續價值而非強推銷售">
+  <div class="newsletter-inner reveal">
+    <div class="newsletter-content">
+      <span class="section-label" data-text="newsletter-label" data-text-description="電子報訂閱小標">STAY UPDATED</span>
+      <h2 class="newsletter-title" data-text="newsletter-title" data-text-description="電子報主標題">每月設計洞察</h2>
+      <p class="newsletter-desc" data-text="newsletter-desc" data-text-description="電子報說明文字">訂閱疊工作室的設計電子報，每月收到精選的居家美學內容與設計趨勢分析。</p>
+      <form class="newsletter-form">
+        <input type="email" class="newsletter-input" placeholder="請輸入您的 Email" data-text="newsletter-input" data-text-description="Email 輸入框">
+        <button type="submit" class="newsletter-btn" data-text="newsletter-btn" data-text-description="訂閱按鈕">訂閱電子報</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          疊工作室
+          <span class="footer-logo-sub">DDIE STUDIO</span>
+        </div>
+        <p class="footer-tagline">讓空間說出你沒說出口的品味。<br>台中住宅室內設計，全案服務。</p>
+      </div>
+      <div>
+        <span class="footer-col-title">服務項目</span>
+        <ul class="footer-links">
+          <li><a href="services.html">住宅全案設計</a></li>
+          <li><a href="services.html">格局規劃顧問</a></li>
+          <li><a href="services.html">舊屋翻新</a></li>
+          <li><a href="services.html">預售屋客變</a></li>
+          <li><a href="services.html">小型商業空間</a></li>
+        </ul>
+      </div>
+      <div>
+        <span class="footer-col-title">聯絡資訊</span>
+        <div class="footer-contact-item">
+          <svg width="14" height="14" viewBox="0 0 14 14" stroke-width="1.3"><path d="M2 2.5C2 2.5 2.4 6.5 5.5 9.5 8.5 12.5 12.5 13 12.5 13L14 11.5C14 11.5 12.8 10.3 11.5 10.8L10 12C10 12 7.5 11.2 6 9.5 4.5 7.8 3.8 5.5 3.8 5.5L5 4C5.5 2.7 4.3 1.5 4.3 1.5L2 2.5Z"></path></svg>
+          04-2233-8899
+        </div>
+        <div class="footer-contact-item">
+          <svg width="14" height="14" viewBox="0 0 14 14" stroke-width="1.3"><rect x="1" y="2" width="12" height="10" rx="1.5"></rect><polyline points="1,2 7,8 13,2"></polyline></svg>
+          hello@ddie-studio.com
+        </div>
+        <div class="footer-contact-item">
+          <svg width="14" height="14" viewBox="0 0 14 14" stroke-width="1.3"><path d="M7 1.5 C4.5 1.5 2.5 3.5 2.5 6 C2.5 9.5 7 12.5 7 12.5 C7 12.5 11.5 9.5 11.5 6 C11.5 3.5 9.5 1.5 7 1.5Z"></path><circle cx="7" cy="6" r="1.8"></circle></svg>
+          台中市西區民生路 ○○ 號
+        </div>
+        <div class="footer-contact-item">
+          <svg width="14" height="14" viewBox="0 0 14 14" stroke-width="1.3"><circle cx="7" cy="7" r="5.5"></circle><polyline points="7,3.5 7,7 9.5,9"></polyline></svg>
+          週一至週六 10:00–19:00
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copyright">© 2024 疊工作室 DDIE Studio. All rights reserved.</p>
+      <a href="https://instagram.com/ddie.studio" class="footer-ig" target="_blank">IG @ddie.studio</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Scroll reveal
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.08, rootMargin: '0px 0px -24px 0px' });
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// Newsletter form
+document.querySelector('.newsletter-form').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const email = document.querySelector('.newsletter-input').value;
+  if (email) {
+    alert('感謝您的訂閱！我們會定期寄送優質的設計內容給您。');
+    document.querySelector('.newsletter-input').value = '';
+  }
+});
+</script>
+
+
+</body></html>

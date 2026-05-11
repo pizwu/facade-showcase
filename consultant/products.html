@@ -1,0 +1,1062 @@
+<!DOCTYPE html><html lang="zh-TW"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>培訓方案｜余明道 企業教練｜結構化主管培訓方案</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&amp;family=Noto+Serif+TC:wght@400;600;700&amp;family=Cormorant+Garamond:wght@400;600;700&amp;display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-primary: #0D1F3C;
+      --bg-secondary: #152844;
+      --bg-deep: #091629;
+      --bg-card: #1A3255;
+      --bg-light: #F5F2ED;
+      --text-primary: #F0ECE4;
+      --text-muted: #A8B4C4;
+      --text-light: #6B7D93;
+      --text-dark: #1A2B3C;
+      --accent: #C9A96E;
+      --accent-light: #E2C99A;
+      --border: rgba(201, 169, 110, 0.2);
+      --border-subtle: rgba(255,255,255,0.08);
+      --font-serif: 'Cormorant Garamond', 'Noto Serif TC', serif;
+      --font-sans: 'Noto Sans TC', sans-serif;
+      --section-gap: 120px;
+      --content-max: 1080px;
+      --side-pad: 48px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-sans);
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(13, 31, 60, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .nav-inner {
+      max-width: var(--content-max);
+      margin: 0 auto;
+      padding: 0 var(--side-pad);
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-logo {
+      font-family: var(--font-serif);
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      text-decoration: none;
+      letter-spacing: 0.06em;
+    }
+    .nav-logo span {
+      color: var(--accent);
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.88rem;
+      letter-spacing: 0.04em;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--text-primary); }
+    .nav-cta {
+      background: var(--accent);
+      color: var(--bg-deep) !important;
+      padding: 8px 20px;
+      border-radius: 3px;
+      font-weight: 700;
+      font-size: 0.85rem !important;
+      letter-spacing: 0.06em;
+      transition: background 0.2s !important;
+    }
+    .nav-cta:hover { background: var(--accent-light) !important; color: var(--bg-deep) !important; }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 80vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 120px var(--side-pad) 80px;
+      background:
+        radial-gradient(ellipse 60% 50% at 30% 50%, rgba(201,169,110,0.06) 0%, transparent 70%),
+        linear-gradient(160deg, var(--bg-deep) 0%, var(--bg-primary) 60%, #0F2848 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-image:
+        repeating-linear-gradient(0deg, transparent, transparent 79px, rgba(255,255,255,0.025) 80px),
+        repeating-linear-gradient(90deg, transparent, transparent 79px, rgba(255,255,255,0.025) 80px);
+      pointer-events: none;
+    }
+    .hero-inner {
+      max-width: var(--content-max);
+      margin: 0 auto;
+      width: 100%;
+      position: relative;
+      z-index: 1;
+      max-width: 720px;
+      text-align: center;
+    }
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 28px;
+    }
+    .hero-eyebrow-line {
+      width: 32px;
+      height: 1px;
+      background: var(--accent);
+    }
+    .hero-eyebrow-text {
+      font-size: 0.78rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 500;
+    }
+    .hero-title {
+      font-family: var(--font-serif);
+      font-size: clamp(2.4rem, 5vw, 3.6rem);
+      font-weight: 700;
+      line-height: 1.2;
+      color: var(--text-primary);
+      margin-bottom: 16px;
+      letter-spacing: -0.01em;
+    }
+    .hero-title-accent {
+      color: var(--accent);
+    }
+    .hero-subtitle {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      line-height: 1.8;
+      margin-bottom: 48px;
+    }
+
+    /* ── SECTION COMMON ── */
+    .section {
+      padding: var(--section-gap) var(--side-pad);
+    }
+    .section-inner {
+      max-width: var(--content-max);
+      margin: 0 auto;
+    }
+    .section-label {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    .section-label-line {
+      width: 24px;
+      height: 1px;
+      background: var(--accent);
+    }
+    .section-label-text {
+      font-size: 0.74rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 500;
+    }
+    .section-title {
+      font-family: var(--font-serif);
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      font-weight: 700;
+      line-height: 1.3;
+      color: var(--text-primary);
+      margin-bottom: 16px;
+      letter-spacing: -0.01em;
+    }
+    .section-desc {
+      font-size: 1rem;
+      color: var(--text-muted);
+      max-width: 540px;
+      line-height: 1.8;
+    }
+    .section-header {
+      margin-bottom: 64px;
+      text-align: center;
+    }
+    .section-header .section-label {
+      justify-content: center;
+    }
+
+    /* ── PRODUCT CARDS ── */
+    .products {
+      background: var(--bg-light);
+      color: var(--text-dark);
+    }
+    .products .section-title {
+      color: var(--text-dark);
+    }
+    .products .section-desc {
+      color: #5A6B7D;
+    }
+    .products .section-label-text {
+      color: var(--accent);
+    }
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+    }
+    .product-card {
+      background: white;
+      border: 1px solid #E5E7E9;
+      border-radius: 6px;
+      overflow: hidden;
+      transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s;
+      cursor: default;
+    }
+    .product-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-6px);
+      box-shadow: 0 12px 32px rgba(13, 31, 60, 0.08);
+    }
+    .product-image {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      background: linear-gradient(135deg, #E8DCC6 0%, #F5F2ED 100%);
+    }
+    .product-content {
+      padding: 36px 32px;
+    }
+    .product-tag {
+      display: inline-block;
+      background: var(--accent);
+      color: white;
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      padding: 4px 12px;
+      border-radius: 2px;
+      margin-bottom: 20px;
+      font-weight: 500;
+    }
+    .product-title {
+      font-family: var(--font-serif);
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 8px;
+      line-height: 1.3;
+    }
+    .product-subtitle {
+      font-size: 0.9rem;
+      color: #6B7D93;
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+    .product-details {
+      margin-bottom: 24px;
+    }
+    .detail-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+      padding: 8px 0;
+      border-bottom: 1px solid #F0F2F4;
+    }
+    .detail-row:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+    }
+    .detail-label {
+      font-size: 0.85rem;
+      color: #5A6B7D;
+      font-weight: 500;
+    }
+    .detail-value {
+      font-size: 0.85rem;
+      color: var(--text-dark);
+      font-weight: 600;
+    }
+    .product-features {
+      margin-bottom: 28px;
+    }
+    .features-title {
+      font-size: 0.8rem;
+      color: var(--accent);
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      margin-bottom: 12px;
+    }
+    .features-list {
+      list-style: none;
+    }
+    .features-list li {
+      font-size: 0.85rem;
+      color: #5A6B7D;
+      margin-bottom: 6px;
+      position: relative;
+      padding-left: 16px;
+      line-height: 1.5;
+    }
+    .features-list li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 9px;
+      width: 4px;
+      height: 4px;
+      background: var(--accent);
+      border-radius: 50%;
+    }
+    .product-price {
+      text-align: center;
+      margin-bottom: 24px;
+      padding: 16px 0;
+      background: #F8F9FA;
+      border-radius: 3px;
+    }
+    .price-label {
+      font-size: 0.75rem;
+      color: #6B7D93;
+      margin-bottom: 4px;
+      letter-spacing: 0.08em;
+    }
+    .price-value {
+      font-family: var(--font-serif);
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text-dark);
+    }
+    .btn-primary {
+      background: var(--accent);
+      color: white;
+      padding: 12px 24px;
+      border-radius: 3px;
+      font-weight: 700;
+      font-size: 0.88rem;
+      letter-spacing: 0.06em;
+      text-decoration: none;
+      display: block;
+      text-align: center;
+      transition: background 0.2s, transform 0.15s;
+      width: 100%;
+    }
+    .btn-primary:hover { 
+      background: var(--accent-light); 
+      transform: translateY(-1px);
+      color: white;
+    }
+
+    /* ── COMPARISON ── */
+    .comparison {
+      background: var(--bg-secondary);
+    }
+    .comparison-table {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      overflow: hidden;
+    }
+    .table-header {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      background: rgba(201,169,110,0.08);
+      border-bottom: 1px solid var(--border);
+    }
+    .table-header-cell {
+      padding: 20px 16px;
+      text-align: center;
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: var(--text-primary);
+    }
+    .table-header-cell:first-child {
+      text-align: left;
+      color: var(--accent);
+      font-size: 0.8rem;
+      letter-spacing: 0.08em;
+    }
+    .table-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      border-bottom: 1px solid var(--border-subtle);
+      transition: background 0.2s;
+    }
+    .table-row:hover {
+      background: rgba(255,255,255,0.02);
+    }
+    .table-row:last-child {
+      border-bottom: none;
+    }
+    .table-cell {
+      padding: 16px;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+    }
+    .table-cell:first-child {
+      color: var(--text-primary);
+      font-weight: 600;
+    }
+
+    /* ── FAQ ── */
+    .faq {
+      background: var(--bg-light);
+      color: var(--text-dark);
+    }
+    .faq .section-title {
+      color: var(--text-dark);
+    }
+    .faq-list {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .faq-item {
+      background: white;
+      border: 1px solid #E5E7E9;
+      border-radius: 6px;
+      margin-bottom: 16px;
+      overflow: hidden;
+    }
+    .faq-question {
+      padding: 20px 24px;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: var(--text-dark);
+      transition: background 0.2s;
+    }
+    .faq-question:hover {
+      background: #F8F9FA;
+    }
+    .faq-icon {
+      width: 20px;
+      height: 20px;
+      color: var(--accent);
+      transition: transform 0.3s;
+    }
+    .faq-item.active .faq-icon {
+      transform: rotate(180deg);
+    }
+    .faq-answer {
+      padding: 0 24px 20px;
+      color: #5A6B7D;
+      line-height: 1.7;
+      font-size: 0.9rem;
+      display: none;
+    }
+    .faq-item.active .faq-answer {
+      display: block;
+    }
+
+    /* ── CTA ── */
+    .cta-section {
+      background: linear-gradient(135deg, var(--bg-secondary) 0%, #0F2848 100%);
+      border-top: 1px solid var(--border-subtle);
+      border-bottom: 1px solid var(--border-subtle);
+      padding: 100px var(--side-pad);
+      text-align: center;
+    }
+    .cta-inner {
+      max-width: 640px;
+      margin: 0 auto;
+    }
+    .cta-title {
+      font-family: var(--font-serif);
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 16px;
+      line-height: 1.3;
+    }
+    .cta-desc {
+      font-size: 1rem;
+      color: var(--text-muted);
+      line-height: 1.8;
+      margin-bottom: 40px;
+    }
+    .cta-note {
+      margin-top: 20px;
+      font-size: 0.8rem;
+      color: var(--text-light);
+    }
+    .cta-section .btn-primary {
+      background: var(--accent);
+      color: var(--bg-deep);
+      padding: 14px 32px;
+      border-radius: 3px;
+      font-weight: 700;
+      font-size: 0.92rem;
+      letter-spacing: 0.06em;
+      text-decoration: none;
+      display: inline-block;
+      transition: background 0.2s, transform 0.15s;
+      width: auto;
+    }
+    .cta-section .btn-primary:hover { 
+      background: var(--accent-light); 
+      transform: translateY(-1px); 
+      color: var(--bg-deep);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--bg-deep);
+      padding: 64px var(--side-pad) 40px;
+      border-top: 1px solid var(--border-subtle);
+    }
+    .footer-inner {
+      max-width: var(--content-max);
+      margin: 0 auto;
+    }
+    .footer-top {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr;
+      gap: 48px;
+      margin-bottom: 48px;
+    }
+    .footer-brand {
+      font-family: var(--font-serif);
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 12px;
+      letter-spacing: 0.04em;
+    }
+    .footer-brand span { color: var(--accent); }
+    .footer-tagline {
+      font-size: 0.84rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+    .footer-contact-item {
+      font-size: 0.84rem;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+    }
+    .footer-contact-item strong {
+      color: var(--text-primary);
+      font-size: 0.76rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 2px;
+    }
+    .footer-col-title {
+      font-size: 0.76rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 16px;
+      font-weight: 500;
+    }
+    .footer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .footer-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.88rem;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--text-primary); }
+    .footer-bottom {
+      border-top: 1px solid var(--border-subtle);
+      padding-top: 28px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .footer-copy {
+      font-size: 0.78rem;
+      color: var(--text-light);
+    }
+    .footer-linkedin {
+      font-size: 0.78rem;
+      color: var(--text-light);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-linkedin:hover { color: var(--accent); }
+
+    /* ── REVEAL ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .reveal-delay-1 { transition-delay: 0.08s; }
+    .reveal-delay-2 { transition-delay: 0.16s; }
+    .reveal-delay-3 { transition-delay: 0.24s; }
+    .reveal-delay-4 { transition-delay: 0.32s; }
+
+    /* ── RWD ── */
+    @media (max-width: 960px) {
+      :root { --side-pad: 32px; --section-gap: 80px; }
+      .nav-links li:not(:last-child) { display: none; }
+      .products-grid { grid-template-columns: 1fr 1fr; }
+      .table-header, .table-row {
+        grid-template-columns: 1fr;
+      }
+      .table-header-cell, .table-cell {
+        text-align: left;
+        border-bottom: 1px solid var(--border-subtle);
+      }
+      .table-header-cell:last-child, .table-cell:last-child {
+        border-bottom: none;
+      }
+      .comparison-table {
+        display: none;
+      }
+      .comparison-mobile {
+        display: block;
+      }
+      .footer-top { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 700px) {
+      :root { --side-pad: 20px; --section-gap: 64px; }
+      .nav-links { display: none; }
+      .products-grid { grid-template-columns: 1fr; }
+      .footer-top { grid-template-columns: 1fr; gap: 32px; }
+      .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══ NAV ══ -->
+<nav data-section="navigation" data-section-title="導覽選單" data-section-purpose="提供主要頁面連結，重點突出預約諮詢CTA按鈕">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo" data-text="nav-logo" data-text-description="導覽區品牌標誌文字">余明道<span>．</span>企業教練</a>
+    <ul class="nav-links">
+      <li><a href="about.html">關於我</a></li>
+      <li><a href="services.html">服務項目</a></li>
+      <li><a href="portfolio.html">成功案例</a></li>
+      <li><a href="blog.html">部落格</a></li>
+      <li><a href="contact.html" class="nav-cta">預約諮詢</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ══ HERO ══ -->
+<section class="hero" data-section="hero" data-section-title="培訓方案主視覺" data-section-purpose="定義頁面價值，說明為何需要結構化的培訓方案">
+  <div class="hero-inner">
+    <div class="hero-eyebrow reveal">
+      <div class="hero-eyebrow-line"></div>
+      <span class="hero-eyebrow-text" data-text="hero-eyebrow" data-text-description="主視覺區的服務類別標籤">Training Programs</span>
+    </div>
+    <h1 class="hero-title reveal reveal-delay-1" data-text="hero-title" data-text-description="培訓方案頁標題，強調不再浪費培訓經費">
+      不再讓主管培訓變成<br><span class="hero-title-accent">「花錢買心安」</span>
+    </h1>
+    <p class="hero-subtitle reveal reveal-delay-2" data-text="hero-subtitle" data-text-description="副標題，說明結構化方案的優勢">
+      三種結構化培訓方案，依企業需求與預算彈性選擇。每一種都有明確的交付內容與成果指標，不讓培訓經費石沉大海。
+    </p>
+  </div>
+</section>
+
+<!-- ══ PRODUCTS ══ -->
+<section class="section products" data-section="products" data-section-title="培訓方案" data-section-purpose="展示三個核心培訓方案，讓決策者快速找到適合的選項">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <div class="section-label">
+        <div class="section-label-line"></div>
+        <span class="section-label-text" data-text="products-label" data-text-description="方案區塊英文標籤">Training Solutions</span>
+      </div>
+      <h2 class="section-title" data-text="products-title" data-text-description="方案區塊標題">選擇最適合你們企業現況的培訓方案</h2>
+    </div>
+    
+    <div class="products-grid">
+      <!-- 基礎方案 -->
+      <div class="product-card reveal" data-section="product-basic" data-section-title="基礎培訓方案" data-section-purpose="提供單日快速培訓選項">
+        <img src="https://images.pexels.com/photos/6285120/pexels-photo-6285120.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=650&amp;w=940" alt="Corporate training workshop presenter teaching" class="product-image" data-img-query="corporate training workshop presenter teaching" data-img-orientation="landscape" data-img-description="企業內訓現場，講師在台上授課">
+        
+        <div class="product-content">
+          <span class="product-tag" data-text="product-basic-tag" data-text-description="基礎方案標籤">基礎方案</span>
+          
+          <h3 class="product-title" data-text="product-basic-title" data-text-description="基礎方案名稱">主管帶人技術 單日培訓</h3>
+          
+          <p class="product-subtitle" data-text="product-basic-subtitle" data-text-description="基礎方案適合對象">50-150 人企業，需要快速提升主管基本帶人能力</p>
+          
+          <div class="product-details">
+            <div class="detail-row">
+              <span class="detail-label" data-text="product-basic-duration-label" data-text-description="課程時長標籤">課程時長</span>
+              <span class="detail-value" data-text="product-basic-duration" data-text-description="基礎方案時長">1 天（6 小時）</span>
+            </div>
+            <div class="detail-row">
+              <span class="detail-label" data-text="product-basic-participants-label" data-text-description="參與人數標籤">參與人數</span>
+              <span class="detail-value" data-text="product-basic-participants" data-text-description="基礎方案人數">8-15 位主管</span>
+            </div>
+            <div class="detail-row">
+              <span class="detail-label" data-text="product-basic-support-label" data-text-description="後續支援標籤">後續支援</span>
+              <span class="detail-value" data-text="product-basic-support" data-text-description="基礎方案支援">3 個月成效回訪</span>
+            </div>
+          </div>
+          
+          <div class="product-features">
+            <div class="features-title" data-text="product-basic-features-title" data-text-description="基礎方案內容標題">核心內容</div>
+            <ul class="features-list">
+              <li data-text="product-basic-feature-1" data-text-description="基礎方案內容1">有效溝通與回饋技巧</li>
+              <li data-text="product-basic-feature-2" data-text-description="基礎方案內容2">問題員工處理流程</li>
+              <li data-text="product-basic-feature-3" data-text-description="基礎方案內容3">團隊目標設定方法</li>
+            </ul>
+          </div>
+          
+          <div class="product-price">
+            <div class="price-label" data-text="product-basic-price-label" data-text-description="基礎方案價格標籤">價格範圍</div>
+            <div class="price-value" data-text="product-basic-price" data-text-description="基礎方案價格">依企業規模報價</div>
+          </div>
+          
+          <a href="contact.html" class="btn-primary" data-text="product-basic-cta" data-text-description="基礎方案CTA按鈕">了解基礎方案</a>
+        </div>
+      </div>
+
+      <!-- 進階方案 -->
+      <div class="product-card reveal reveal-delay-1" data-section="product-advanced" data-section-title="進階培訓方案" data-section-purpose="提供系統性三個月培訓計畫">
+        <img src="https://images.pexels.com/photos/7693107/pexels-photo-7693107.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=650&amp;w=940" alt="Management training workshop small group discussion" class="product-image" data-img-query="management training workshop small group discussion" data-img-orientation="landscape" data-img-description="小組討論或工作坊形式的培訓">
+        
+        <div class="product-content">
+          <span class="product-tag" data-text="product-advanced-tag" data-text-description="進階方案標籤">進階方案</span>
+          
+          <h3 class="product-title" data-text="product-advanced-title" data-text-description="進階方案名稱">領導力系統培訓 3 個月計畫</h3>
+          
+          <p class="product-subtitle" data-text="product-advanced-subtitle" data-text-description="進階方案適合對象">100-300 人企業，主管層需要深度改造</p>
+          
+          <div class="product-details">
+            <div class="detail-row">
+              <span class="detail-label" data-text="product-advanced-duration-label" data-text-description="課程時長標籤">課程時長</span>
+              <span class="detail-value" data-text="product-advanced-duration" data-text-description="進階方案時長">3 個月（共 6 天）</span>
+            </div>
+            <div class="detail-row">
+              <span class="detail-label" data-text="product-advanced-participants-label" data-text-description="參與人數標籤">參與人數</span>
+              <span class="detail-value" data-text="product-advanced-participants" data-text-description="進階方案人數">15-25 位主管</span>
+            </div>
+            <div class="detail-row">
+              <span class="detail-label" data-text="product-advanced-support-label" data-text-description="後續支援標籤">後續支援</span>
+              <span class="detail-value" data-text="product-advanced-support" data-text-description="進階方案支援">6 個月成效追蹤</span>
+            </div>
+          </div>
+          
+          <div class="product-features">
+            <div class="features-title" data-text="product-advanced-features-title" data-text-description="進階方案內容標題">核心內容</div>
+            <ul class="features-list">
+              <li data-text="product-advanced-feature-1" data-text-description="進階方案內容1">領導風格診斷與調整</li>
+              <li data-text="product-advanced-feature-2" data-text-description="進階方案內容2">衝突處理與危機溝通</li>
+              <li data-text="product-advanced-feature-3" data-text-description="進階方案內容3">績效管理與人才發展</li>
+              <li data-text="product-advanced-feature-4" data-text-description="進階方案內容4">組織文化重塑技術</li>
+            </ul>
+          </div>
+          
+          <div class="product-price">
+            <div class="price-label" data-text="product-advanced-price-label" data-text-description="進階方案價格標籤">價格範圍</div>
+            <div class="price-value" data-text="product-advanced-price" data-text-description="進階方案價格">依參訓人數報價</div>
+          </div>
+          
+          <a href="contact.html" class="btn-primary" data-text="product-advanced-cta" data-text-description="進階方案CTA按鈕">了解進階方案</a>
+        </div>
+      </div>
+
+      <!-- 完整方案 -->
+      <div class="product-card reveal reveal-delay-2" data-section="product-complete" data-section-title="完整顧問方案" data-section-purpose="提供年度組織轉型計畫">
+        <img src="https://images.pexels.com/photos/36765732/pexels-photo-36765732.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=650&amp;w=940" alt="Business consultant meeting executive consultation" class="product-image" data-img-query="business consultant meeting executive consultation" data-img-orientation="landscape" data-img-description="一對一諮詢或戰略會議場景">
+        
+        <div class="product-content">
+          <span class="product-tag" data-text="product-complete-tag" data-text-description="完整方案標籤">完整方案</span>
+          
+          <h3 class="product-title" data-text="product-complete-title" data-text-description="完整方案名稱">組織轉型 全年顧問計畫</h3>
+          
+          <p class="product-subtitle" data-text="product-complete-subtitle" data-text-description="完整方案適合對象">200-500 人企業，需要根本性組織變革</p>
+          
+          <div class="product-details">
+            <div class="detail-row">
+              <span class="detail-label" data-text="product-complete-duration-label" data-text-description="課程時長標籤">合作期間</span>
+              <span class="detail-value" data-text="product-complete-duration" data-text-description="完整方案時長">12 個月</span>
+            </div>
+            <div class="detail-row">
+              <span class="detail-label" data-text="product-complete-participants-label" data-text-description="參與人數標籤">涵蓋範圍</span>
+              <span class="detail-value" data-text="product-complete-participants" data-text-description="完整方案人數">全體主管層</span>
+            </div>
+            <div class="detail-row">
+              <span class="detail-label" data-text="product-complete-support-label" data-text-description="後續支援標籤">顧問服務</span>
+              <span class="detail-value" data-text="product-complete-support" data-text-description="完整方案支援">12 個月持續顧問</span>
+            </div>
+          </div>
+          
+          <div class="product-features">
+            <div class="features-title" data-text="product-complete-features-title" data-text-description="完整方案內容標題">核心內容</div>
+            <ul class="features-list">
+              <li data-text="product-complete-feature-1" data-text-description="完整方案內容1">全套領導力系統培訓</li>
+              <li data-text="product-complete-feature-2" data-text-description="完整方案內容2">月度組織診斷與調整</li>
+              <li data-text="product-complete-feature-3" data-text-description="完整方案內容3">主管個別教練輔導</li>
+              <li data-text="product-complete-feature-4" data-text-description="完整方案內容4">文化轉型戰略規劃</li>
+            </ul>
+          </div>
+          
+          <div class="product-price">
+            <div class="price-label" data-text="product-complete-price-label" data-text-description="完整方案價格標籤">價格範圍</div>
+            <div class="price-value" data-text="product-complete-price" data-text-description="完整方案價格">年度專案報價</div>
+          </div>
+          
+          <a href="contact.html" class="btn-primary" data-text="product-complete-cta" data-text-description="完整方案CTA按鈕">了解完整方案</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ COMPARISON ══ -->
+<section class="section comparison" data-section="comparison" data-section-title="方案比較" data-section-purpose="幫助決策者理性比較，降低選擇困難">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <div class="section-label">
+        <div class="section-label-line"></div>
+        <span class="section-label-text" data-text="comparison-label" data-text-description="比較區塊英文標籤">Comparison Table</span>
+      </div>
+      <h2 class="section-title" data-text="comparison-title" data-text-description="比較區塊標題">三種方案的詳細比較</h2>
+    </div>
+    
+    <div class="comparison-table reveal">
+      <div class="table-header">
+        <div class="table-header-cell" data-text="comparison-header-1" data-text-description="比較表格標題列第一欄">比較項目</div>
+        <div class="table-header-cell" data-text="comparison-header-2" data-text-description="比較表格標題列第二欄">基礎方案</div>
+        <div class="table-header-cell" data-text="comparison-header-3" data-text-description="比較表格標題列第三欄">進階方案</div>
+        <div class="table-header-cell" data-text="comparison-header-4" data-text-description="比較表格標題列第四欄">完整方案</div>
+      </div>
+      
+      <div class="table-row">
+        <div class="table-cell" data-text="comparison-row-1-col-1" data-text-description="比較項目：培訓時間">培訓時間</div>
+        <div class="table-cell" data-text="comparison-row-1-col-2" data-text-description="基礎方案培訓時間">1 天</div>
+        <div class="table-cell" data-text="comparison-row-1-col-3" data-text-description="進階方案培訓時間">3 個月</div>
+        <div class="table-cell" data-text="comparison-row-1-col-4" data-text-description="完整方案培訓時間">12 個月</div>
+      </div>
+      
+      <div class="table-row">
+        <div class="table-cell" data-text="comparison-row-2-col-1" data-text-description="比較項目：適合企業規模">適合企業規模</div>
+        <div class="table-cell" data-text="comparison-row-2-col-2" data-text-description="基礎方案適合規模">50-150 人</div>
+        <div class="table-cell" data-text="comparison-row-2-col-3" data-text-description="進階方案適合規模">100-300 人</div>
+        <div class="table-cell" data-text="comparison-row-2-col-4" data-text-description="完整方案適合規模">200-500 人</div>
+      </div>
+      
+      <div class="table-row">
+        <div class="table-cell" data-text="comparison-row-3-col-1" data-text-description="比較項目：客製化程度">客製化程度</div>
+        <div class="table-cell" data-text="comparison-row-3-col-2" data-text-description="基礎方案客製化程度">標準課程</div>
+        <div class="table-cell" data-text="comparison-row-3-col-3" data-text-description="進階方案客製化程度">半客製</div>
+        <div class="table-cell" data-text="comparison-row-3-col-4" data-text-description="完整方案客製化程度">完全客製</div>
+      </div>
+      
+      <div class="table-row">
+        <div class="table-cell" data-text="comparison-row-4-col-1" data-text-description="比較項目：後續支援">後續支援</div>
+        <div class="table-cell" data-text="comparison-row-4-col-2" data-text-description="基礎方案後續支援">3 個月回訪</div>
+        <div class="table-cell" data-text="comparison-row-4-col-3" data-text-description="進階方案後續支援">6 個月追蹤</div>
+        <div class="table-cell" data-text="comparison-row-4-col-4" data-text-description="完整方案後續支援">12 個月顧問</div>
+      </div>
+      
+      <div class="table-row">
+        <div class="table-cell" data-text="comparison-row-5-col-1" data-text-description="比較項目：預期成果">預期成果</div>
+        <div class="table-cell" data-text="comparison-row-5-col-2" data-text-description="基礎方案預期成果">技能提升</div>
+        <div class="table-cell" data-text="comparison-row-5-col-3" data-text-description="進階方案預期成果">行為改變</div>
+        <div class="table-cell" data-text="comparison-row-5-col-4" data-text-description="完整方案預期成果">文化轉型</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FAQ ══ -->
+<section class="section faq" data-section="faq" data-section-title="常見問題" data-section-purpose="消除對培訓方案的常見疑慮，建立信心">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <div class="section-label">
+        <div class="section-label-line"></div>
+        <span class="section-label-text" data-text="faq-label" data-text-description="FAQ區塊英文標籤">Frequently Asked</span>
+      </div>
+      <h2 class="section-title" data-text="faq-title" data-text-description="FAQ區塊標題">關於培訓方案的常見問題</h2>
+    </div>
+    
+    <div class="faq-list">
+      <div class="faq-item reveal" data-section="faq-1" data-section-title="FAQ第一題" data-section-purpose="解答課程客製化疑問">
+        <div class="faq-question" data-text="faq-1-question" data-text-description="第一個常見問題">
+          可以只選擇需要的部分課程嗎？
+          <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </div>
+        <div class="faq-answer" data-text="faq-1-answer" data-text-description="第一個問題的回答">
+          可以。每個方案都可以根據企業實際需求調整內容，但建議保持課程的完整性，效果會更明顯。
+        </div>
+      </div>
+      
+      <div class="faq-item reveal reveal-delay-1" data-section="faq-2" data-section-title="FAQ第二題" data-section-purpose="解答效果保證疑問">
+        <div class="faq-question" data-text="faq-2-question" data-text-description="第二個常見問題">
+          培訓結束後如果沒有改變怎麼辦？
+          <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </div>
+        <div class="faq-answer" data-text="faq-2-answer" data-text-description="第二個問題的回答">
+          我們會在培訓結束後 3-6 個月進行成效回訪。如果改變不如預期，會免費提供補強建議。
+        </div>
+      </div>
+      
+      <div class="faq-item reveal reveal-delay-2" data-section="faq-3" data-section-title="FAQ第三題" data-section-purpose="解答試教體驗疑問">
+        <div class="faq-question" data-text="faq-3-question" data-text-description="第三個常見問題">
+          可以先體驗一小部分嗎？
+          <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </div>
+        <div class="faq-answer" data-text="faq-3-answer" data-text-description="第三個問題的回答">
+          可以。每個方案都提供 2 小時免費試教，讓主管先體驗教學風格再決定。
+        </div>
+      </div>
+      
+      <div class="faq-item reveal reveal-delay-3" data-section="faq-4" data-section-title="FAQ第四題" data-section-purpose="解答價格計算疑問">
+        <div class="faq-question" data-text="faq-4-question" data-text-description="第四個常見問題">
+          價格如何計算？
+          <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </div>
+        <div class="faq-answer" data-text="faq-4-answer" data-text-description="第四個問題的回答">
+          主要依參訓人數、客製化程度、時間長度計價。確切報價會在了解需求後提供。
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CTA ══ -->
+<section class="cta-section" data-section="cta" data-section-title="行動召喚" data-section-purpose="引導已決定方案方向的訪客進入諮詢流程">
+  <div class="cta-inner">
+    <h2 class="cta-title reveal" data-text="cta-title" data-text-description="CTA標題，邀請不確定方案的訪客先諮詢">
+      不確定選哪個方案？<br>先聊聊你的狀況
+    </h2>
+    <p class="cta-desc reveal reveal-delay-1" data-text="cta-desc" data-text-description="CTA說明文字，強調免費諮詢協助選擇">
+      每家企業的主管問題都不同，最適合的方案也不同。60 分鐘免費諮詢，幫你釐清現況、建議最合適的培訓方式。
+    </p>
+    <a href="contact.html" class="btn-primary reveal reveal-delay-2" data-text="cta-button" data-text-description="CTA主要按鈕文字">預約免費方案諮詢</a>
+    <p class="cta-note reveal reveal-delay-3" data-text="cta-note" data-text-description="補充說明，降低預約門檻">
+      通常於 1 個工作天內回覆｜可安排線上或實體會議
+    </p>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+<footer data-section="footer" data-section-title="頁尾資訊" data-section-purpose="提供完整聯絡資訊與快速連結，建立專業信任感">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand" data-text="footer-brand" data-text-description="頁尾品牌名稱">余明道<span>．</span>企業教練</div>
+        <p class="footer-tagline" data-text="footer-tagline" data-text-description="頁尾品牌標語">讓主管真的會帶人，不只是會管人。<br>服務全台 50–500 人中型企業。</p>
+        <div class="footer-contact-item">
+          <strong data-text="footer-email-label" data-text-description="聯絡信箱標籤">聯絡信箱</strong>
+          <span data-text="footer-email" data-text-description="聯絡信箱地址">hello@mingdaoyu.com</span>
+        </div>
+        <div class="footer-contact-item">
+          <strong data-text="footer-address-label" data-text-description="辦公地址標籤">辦公地址</strong>
+          <span data-text="footer-address" data-text-description="辦公地址">台北市信義區松仁路○○號 ○ 樓</span>
+        </div>
+        <div class="footer-contact-item">
+          <strong data-text="footer-phone-label" data-text-description="服務電話標籤">服務電話</strong>
+          <span data-text="footer-phone" data-text-description="服務電話號碼">02-○○○○-○○○○</span>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title" data-text="footer-services-title" data-text-description="服務項目標題">服務</div>
+        <ul class="footer-links">
+          <li><a href="services.html">企業主管內訓課程</a></li>
+          <li><a href="services.html">組織文化轉型顧問</a></li>
+          <li><a href="services.html">主管個別教練輔導</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title" data-text="footer-more-title" data-text-description="了解更多標題">了解更多</div>
+        <ul class="footer-links">
+          <li><a href="about.html">關於我</a></li>
+          <li><a href="portfolio.html">成功案例</a></li>
+          <li><a href="blog.html">部落格</a></li>
+          <li><a href="contact.html">聯絡我們</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy" data-text="footer-copy" data-text-description="版權聲明">© 2024 余明道 企業教練｜mingdaoyu.com</span>
+      <a href="https://linkedin.com" target="_blank" class="footer-linkedin" data-text="footer-linkedin" data-text-description="LinkedIn連結">LinkedIn →</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Scroll reveal
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -24px 0px' });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // Hero immediate reveal
+  const heroReveals = document.querySelectorAll('.hero .reveal');
+  setTimeout(() => {
+    heroReveals.forEach(el => el.classList.add('visible'));
+  }, 80);
+
+  // FAQ accordion
+  document.querySelectorAll('.faq-question').forEach(question => {
+    question.addEventListener('click', () => {
+      const item = question.parentElement;
+      const isActive = item.classList.contains('active');
+      
+      // Close all FAQ items
+      document.querySelectorAll('.faq-item').forEach(faq => {
+        faq.classList.remove('active');
+      });
+      
+      // Open clicked item if it wasn't active
+      if (!isActive) {
+        item.classList.add('active');
+      }
+    });
+  });
+</script>
+
+</body></html>

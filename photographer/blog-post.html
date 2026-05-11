@@ -1,0 +1,857 @@
+<!DOCTYPE html><html lang="zh-Hant"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>婚禮攝影中最容易錯過的5個珍貴瞬間｜光葉影像 Hikari Photo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&amp;family=Noto+Sans+TC:wght@300;400;500&amp;family=Noto+Serif+TC:wght@300;400&amp;display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-primary: #faf7f2;
+      --bg-secondary: #f3ede3;
+      --bg-deep: #e8dfd0;
+      --bg-warm: #ede6d8;
+      --text-primary: #2c2420;
+      --text-muted: #7a6a5e;
+      --text-light: #a89280;
+      --accent: #b5855a;
+      --accent-soft: #d4a97a;
+      --border: rgba(180, 155, 125, 0.22);
+      --border-soft: rgba(180, 155, 125, 0.12);
+      --font-serif: 'Cormorant Garamond', 'Noto Serif TC', serif;
+      --font-sans: 'Noto Sans TC', sans-serif;
+      --section-gap: 120px;
+      --content-max: 1080px;
+      --side-pad: 48px;
+      --nav-h: 68px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-sans);
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      font-size: 16px;
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      height: var(--nav-h);
+      background: rgba(250, 247, 242, 0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-soft);
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 var(--side-pad);
+    }
+
+    .nav-logo {
+      font-family: var(--font-serif);
+      font-size: 1.2rem;
+      font-weight: 400;
+      letter-spacing: 0.06em;
+      color: var(--text-primary);
+      text-decoration: none;
+      line-height: 1.2;
+    }
+
+    .nav-logo span {
+      display: block;
+      font-size: 0.6rem;
+      font-family: var(--font-sans);
+      font-weight: 300;
+      letter-spacing: 0.18em;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 36px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.8rem;
+      font-weight: 300;
+      letter-spacing: 0.1em;
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.25s;
+    }
+
+    .nav-links a:hover { color: var(--text-primary); }
+
+    .nav-cta {
+      font-size: 0.78rem;
+      font-weight: 400;
+      letter-spacing: 0.12em;
+      color: var(--accent);
+      border: 1px solid var(--accent);
+      padding: 8px 20px;
+      text-decoration: none;
+      transition: all 0.28s;
+    }
+
+    .nav-cta:hover {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    /* ── ARTICLE HERO ── */
+    .article-hero {
+      padding: calc(var(--nav-h) + 80px) var(--side-pad) 80px;
+      text-align: center;
+      background: var(--bg-primary);
+    }
+
+    .article-hero-inner {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .article-meta {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 24px;
+      font-size: 0.72rem;
+      font-weight: 300;
+      color: var(--text-light);
+      letter-spacing: 0.12em;
+      margin-bottom: 32px;
+    }
+
+    .article-meta-divider {
+      width: 1px;
+      height: 12px;
+      background: var(--border);
+    }
+
+    .article-title {
+      font-family: var(--font-serif);
+      font-size: clamp(1.8rem, 4vw, 3.2rem);
+      font-weight: 300;
+      line-height: 1.35;
+      letter-spacing: 0.04em;
+      color: var(--text-primary);
+      margin-bottom: 20px;
+    }
+
+    .article-author {
+      font-size: 0.8rem;
+      font-weight: 300;
+      color: var(--text-muted);
+      letter-spacing: 0.08em;
+    }
+
+    /* ── ARTICLE BODY ── */
+    .article-body {
+      padding: var(--section-gap) 0;
+      background: var(--bg-primary);
+    }
+
+    .article-content {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 var(--side-pad);
+    }
+
+    .article-content h2 {
+      font-family: var(--font-serif);
+      font-size: clamp(1.4rem, 2.5vw, 1.8rem);
+      font-weight: 300;
+      line-height: 1.4;
+      letter-spacing: 0.04em;
+      color: var(--text-primary);
+      margin: 48px 0 20px 0;
+    }
+
+    .article-content h2:first-child {
+      margin-top: 0;
+    }
+
+    .article-content h3 {
+      font-family: var(--font-serif);
+      font-size: clamp(1.2rem, 2vw, 1.5rem);
+      font-weight: 300;
+      line-height: 1.45;
+      letter-spacing: 0.04em;
+      color: var(--text-primary);
+      margin: 40px 0 16px 0;
+    }
+
+    .article-content p {
+      font-size: 0.88rem;
+      font-weight: 300;
+      line-height: 2;
+      color: var(--text-muted);
+      margin-bottom: 28px;
+      letter-spacing: 0.02em;
+    }
+
+    .article-content strong {
+      font-weight: 400;
+      color: var(--text-primary);
+    }
+
+    .article-content em {
+      font-style: italic;
+      color: var(--accent);
+    }
+
+    .article-content blockquote {
+      font-family: var(--font-serif);
+      font-size: clamp(1.1rem, 2.2vw, 1.4rem);
+      font-style: italic;
+      font-weight: 300;
+      line-height: 1.75;
+      color: var(--text-primary);
+      border-left: 3px solid var(--accent-soft);
+      padding: 32px 0 32px 32px;
+      margin: 48px 0;
+      background: var(--bg-secondary);
+      margin-left: -40px;
+      margin-right: -40px;
+      padding-left: 72px;
+      padding-right: 40px;
+      letter-spacing: 0.04em;
+    }
+
+    .article-content ul, .article-content ol {
+      margin: 28px 0;
+      padding-left: 20px;
+    }
+
+    .article-content li {
+      font-size: 0.88rem;
+      font-weight: 300;
+      line-height: 1.95;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+      letter-spacing: 0.02em;
+    }
+
+    .article-content a {
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid var(--accent-soft);
+      transition: all 0.25s;
+    }
+
+    .article-content a:hover {
+      color: var(--text-primary);
+      border-color: var(--text-muted);
+    }
+
+    .article-content img {
+      width: 100%;
+      height: auto;
+      margin: 48px 0;
+      object-fit: cover;
+      border-radius: 0;
+    }
+
+    .article-divider {
+      width: 60px;
+      height: 1px;
+      background: var(--accent-soft);
+      margin: 64px auto;
+    }
+
+    /* ── RELATED POSTS ── */
+    .related-section {
+      padding: var(--section-gap) 0;
+      background: var(--bg-secondary);
+    }
+
+    .related-inner {
+      max-width: var(--content-max);
+      margin: 0 auto;
+      padding: 0 var(--side-pad);
+    }
+
+    .related-header {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+
+    .section-label {
+      font-size: 0.68rem;
+      font-weight: 300;
+      letter-spacing: 0.28em;
+      color: var(--text-light);
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .section-title {
+      font-family: var(--font-serif);
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      font-weight: 300;
+      line-height: 1.4;
+      letter-spacing: 0.04em;
+      color: var(--text-primary);
+      margin-bottom: 20px;
+    }
+
+    .section-divider {
+      width: 40px;
+      height: 1px;
+      background: var(--accent-soft);
+      margin: 0 auto 28px;
+    }
+
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+
+    .related-card {
+      background: var(--bg-primary);
+      border: 1px solid var(--border);
+      transition: all 0.28s;
+      overflow: hidden;
+    }
+
+    .related-card:hover {
+      border-color: var(--accent-soft);
+      box-shadow: 0 8px 40px rgba(181, 133, 90, 0.1);
+      transform: translateY(-2px);
+    }
+
+    .related-thumb {
+      width: 100%;
+      height: 180px;
+      background: linear-gradient(135deg, #c8b09a 0%, #b09078 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255,255,255,0.2);
+      font-family: var(--font-serif);
+      font-size: 2rem;
+      font-style: italic;
+      object-fit: cover;
+      transition: transform 0.5s;
+    }
+
+    .related-card:hover .related-thumb {
+      transform: scale(1.05);
+    }
+
+    .related-content {
+      padding: 24px 20px;
+    }
+
+    .related-title {
+      font-family: var(--font-serif);
+      font-size: 1.1rem;
+      font-weight: 300;
+      line-height: 1.5;
+      color: var(--text-primary);
+      margin-bottom: 12px;
+      letter-spacing: 0.04em;
+    }
+
+    .related-desc {
+      font-size: 0.8rem;
+      font-weight: 300;
+      line-height: 1.75;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+    }
+
+    .related-meta {
+      font-size: 0.72rem;
+      font-weight: 300;
+      color: var(--text-light);
+      letter-spacing: 0.08em;
+    }
+
+    /* ── ARTICLE CTA ── */
+    .article-cta {
+      padding: var(--section-gap) 0;
+      background: var(--bg-primary);
+      text-align: center;
+    }
+
+    .article-cta-inner {
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 0 var(--side-pad);
+    }
+
+    .article-cta-title {
+      font-family: var(--font-serif);
+      font-size: clamp(1.4rem, 2.8vw, 2rem);
+      font-weight: 300;
+      line-height: 1.5;
+      letter-spacing: 0.04em;
+      color: var(--text-primary);
+      margin-bottom: 32px;
+    }
+
+    .article-cta-actions {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 24px;
+      flex-wrap: wrap;
+      margin-bottom: 28px;
+    }
+
+    .btn-primary {
+      display: inline-block;
+      font-size: 0.8rem;
+      font-weight: 400;
+      letter-spacing: 0.14em;
+      color: #fff;
+      background: var(--accent);
+      padding: 14px 32px;
+      text-decoration: none;
+      transition: all 0.28s;
+    }
+
+    .btn-primary:hover { background: #9e6d45; }
+
+    .btn-text {
+      font-size: 0.8rem;
+      font-weight: 300;
+      letter-spacing: 0.1em;
+      color: var(--text-muted);
+      text-decoration: none;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 2px;
+      transition: all 0.25s;
+    }
+
+    .btn-text:hover { color: var(--text-primary); border-color: var(--text-muted); }
+
+    .article-cta-note {
+      font-size: 0.75rem;
+      font-weight: 300;
+      color: var(--text-light);
+      letter-spacing: 0.06em;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--text-primary);
+      padding: 72px var(--side-pad) 40px;
+    }
+
+    .footer-inner {
+      max-width: var(--content-max);
+      margin: 0 auto;
+    }
+
+    .footer-top {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1.5fr;
+      gap: 48px;
+      margin-bottom: 56px;
+    }
+
+    .footer-logo {
+      font-family: var(--font-serif);
+      font-size: 1.15rem;
+      font-weight: 300;
+      letter-spacing: 0.08em;
+      color: rgba(255,255,255,0.85);
+      margin-bottom: 16px;
+    }
+
+    .footer-logo span {
+      display: block;
+      font-family: var(--font-sans);
+      font-size: 0.6rem;
+      font-weight: 300;
+      letter-spacing: 0.2em;
+      color: rgba(255,255,255,0.4);
+      margin-top: 4px;
+    }
+
+    .footer-tagline {
+      font-size: 0.8rem;
+      font-weight: 300;
+      line-height: 1.85;
+      color: rgba(255,255,255,0.45);
+      max-width: 260px;
+    }
+
+    .footer-col-title {
+      font-size: 0.68rem;
+      font-weight: 400;
+      letter-spacing: 0.2em;
+      color: rgba(255,255,255,0.35);
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .footer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .footer-links a {
+      font-size: 0.82rem;
+      font-weight: 300;
+      color: rgba(255,255,255,0.55);
+      text-decoration: none;
+      transition: color 0.25s;
+      letter-spacing: 0.04em;
+    }
+
+    .footer-links a:hover { color: rgba(255,255,255,0.85); }
+
+    .footer-contact-item {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .footer-contact-label {
+      font-size: 0.68rem;
+      font-weight: 300;
+      letter-spacing: 0.12em;
+      color: rgba(255,255,255,0.3);
+      min-width: 32px;
+      padding-top: 2px;
+      flex-shrink: 0;
+    }
+
+    .footer-contact-value {
+      font-size: 0.82rem;
+      font-weight: 300;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.65;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 28px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-copy {
+      font-size: 0.72rem;
+      font-weight: 300;
+      color: rgba(255,255,255,0.25);
+      letter-spacing: 0.06em;
+    }
+
+    .footer-ig {
+      font-size: 0.72rem;
+      font-weight: 300;
+      letter-spacing: 0.12em;
+      color: rgba(255,255,255,0.35);
+      text-decoration: none;
+      transition: color 0.25s;
+    }
+
+    .footer-ig:hover { color: rgba(255,255,255,0.65); }
+
+    /* ── REVEAL ANIMATION ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 0.72s ease, transform 0.72s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reveal-delay-1 { transition-delay: 0.08s; }
+    .reveal-delay-2 { transition-delay: 0.16s; }
+    .reveal-delay-3 { transition-delay: 0.24s; }
+
+    /* ── RWD ── */
+    @media (max-width: 960px) {
+      :root { --side-pad: 32px; --section-gap: 80px; }
+
+      .related-grid { grid-template-columns: 1fr; max-width: 520px; margin: 0 auto; }
+      .footer-top { grid-template-columns: 1fr 1fr; }
+
+      .article-content blockquote {
+        margin-left: -32px;
+        margin-right: -32px;
+        padding-left: 48px;
+        padding-right: 32px;
+      }
+    }
+
+    @media (max-width: 700px) {
+      :root { --side-pad: 22px; --section-gap: 64px; }
+
+      .nav-links { display: none; }
+
+      .article-meta {
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .article-meta-divider { display: none; }
+
+      .article-cta-actions {
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+      }
+
+      .footer-top { grid-template-columns: 1fr; }
+
+      .article-content blockquote {
+        margin-left: -22px;
+        margin-right: -22px;
+        padding-left: 32px;
+        padding-right: 22px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav data-section="nav" data-section-title="導航選單" data-section-purpose="提供網站主要頁面的快速導航，以及重點行動按鈕">
+    <a href="/" class="nav-logo" data-text="nav-logo" data-text-description="網站品牌標誌，中英文品牌名稱">
+      光葉影像
+      <span>HIKARI PHOTO</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="portfolio.html">作品集</a></li>
+      <li><a href="services.html">服務方案</a></li>
+      <li><a href="about.html">關於我們</a></li>
+      <li><a href="blog.html">部落格</a></li>
+      <li><a href="contact.html" class="nav-cta">預約諮詢</a></li>
+    </ul>
+  </nav>
+
+  <!-- ARTICLE HERO -->
+  <section class="article-hero" data-section="article-hero" data-section-title="文章標題區" data-section-purpose="快速傳達文章價值，建立專業第一印象">
+    <div class="article-hero-inner">
+      <div class="article-meta reveal">
+        <span data-text="article-date" data-text-description="文章發布日期">2024年12月15日</span>
+        <div class="article-meta-divider"></div>
+        <span data-text="article-reading-time" data-text-description="文章閱讀時間">約 5 分鐘</span>
+        <div class="article-meta-divider"></div>
+        <span data-text="article-author" data-text-description="文章作者">光葉影像</span>
+      </div>
+      
+      <h1 class="article-title reveal reveal-delay-1" data-text="article-title" data-text-description="文章主標題，專業攝影師的深度見解">
+        婚禮攝影中最容易錯過的5個珍貴瞬間
+      </h1>
+    </div>
+  </section>
+
+  <!-- ARTICLE BODY -->
+  <section class="article-body" data-section="article-body" data-section-title="文章內文" data-section-purpose="展現專業知識深度，建立攝影師差異化認知">
+    <article class="article-content">
+      <p data-text="article-intro" data-text-description="文章開場，點出稍縱即逝瞬間的價值">每場婚禮都有那些稍縱即逝的時刻，如果沒有專業攝影師的敏銳觀察，很可能就這樣錯過了。作為一個專門拍攝婚禮的攝影師，我發現有些瞬間特別珍貴，卻經常被忽略。</p>
+
+      <h2 data-text="section-1-title" data-text-description="第一個珍貴瞬間標題">1. 新娘在後台獨處的那一刻</h2>
+
+      <p data-text="section-1-highlight" data-text-description="第一個瞬間的核心描述"><strong>不是化妝時的忙碌，而是她一個人靜下來的瞬間。</strong></p>
+
+      <p data-text="section-1-detail" data-text-description="第一個瞬間的詳細說明">可能是看著鏡中的自己，可能是深呼吸準備走出門，那個表情裡有期待、有緊張、有對未來的憧憬。這種真實的情緒流露，比任何擺拍的笑容都來得動人。</p>
+
+      <p data-text="section-1-experience" data-text-description="攝影師的專業觀察">很多攝影師會專注在化妝過程的記錄，但我總是會留意新娘獨自面對鏡子的時候。那個眼神，多年後她看到一定會記起那天的心情。</p>
+
+      <img src="https://images.pexels.com/photos/7119167/pexels-photo-7119167.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=650&amp;w=940" alt="新娘準備中的獨處時刻" data-img-query="bride preparation solo moment mirror reflection wedding" data-img-orientation="landscape" data-img-description="新娘在準備過程中的獨處瞬間，面對鏡子的真實情緒" data-img-size="large" data-img-ratio="4:3">
+
+      <h2 data-text="section-2-title" data-text-description="第二個珍貴瞬間標題">2. 新郎第一眼看到新娘時的反應</h2>
+
+      <p data-text="section-2-detail" data-text-description="第二個瞬間的說明">不是儀式上的那個瞬間，而是<strong>真正第一次看到當天新娘造型的那個反應</strong>。</p>
+
+      <p data-text="section-2-location" data-text-description="發生場景描述">有時候是在飯店房間門口，有時候是在化妝室，那個「哇」的表情是裝不出來的。眼睛會發亮，嘴角會不自覺上揚，那是愛情最真實的樣子。</p>
+
+      <p data-text="section-2-timing" data-text-description="瞬間的珍貴性">這個瞬間通常很快就過去，因為接下來就會有其他人開始讚美、拍照，但那最初的驚豔反應，是最珍貴的。</p>
+
+      <h2 data-text="section-3-title" data-text-description="第三個珍貴瞬間標題">3. 父母在角落的眼神</h2>
+
+      <blockquote data-text="section-3-quote" data-text-description="父母心境的詩意描述">「女兒真的要結婚了。」</blockquote>
+
+      <p data-text="section-3-emotion" data-text-description="父母複雜心境">婚禮當天，父母的心情其實很複雜。開心、不捨、驕傲、擔心，各種情緒交織在一起。<strong>我經常會捕捉到父親在角落默默看著女兒的眼神，或是母親在整理新娘頭紗時的專注神情。</strong></p>
+
+      <p data-text="section-3-meaning" data-text-description="父母眼神中的故事">這些畫面裡有太多故事。那是養育了二十幾年的孩子要開始自己的人生了，那種心情只有當父母的才懂。</p>
+
+      <h2 data-text="section-4-title" data-text-description="第四個珍貴瞬間標題">4. 賓客之間的真實互動</h2>
+
+      <p data-text="section-4-contrast" data-text-description="區分真實與表面互動">不是敬酒時的客套，而是<strong>老朋友久別重逢時的真心擁抱，或是小朋友在婚禮上的天真反應</strong>。</p>
+
+      <p data-text="section-4-example" data-text-description="真實案例分享">我記得有一次拍到新郎的爺爺奶奶相視而笑的畫面，那個眼神裡有「我們的孫子也結婚了」的欣慰，還有兩個老人家之間幾十年的默契。那張照片後來成為那場婚禮最讓人印象深刻的作品之一。</p>
+
+      <p data-text="section-4-insight" data-text-description="婚禮的本質洞察">婚禮是家族聚會，很多故事都藏在這些互動細節裡。</p>
+
+      <img src="https://images.pexels.com/photos/14203526/pexels-photo-14203526.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=650&amp;w=940" alt="賓客真實互動瞬間" data-img-query="wedding guests genuine interaction family moments candid" data-img-orientation="landscape" data-img-description="婚禮賓客之間的真實互動，家族情感交流" data-img-size="large" data-img-ratio="4:3">
+
+      <h2 data-text="section-5-title" data-text-description="第五個珍貴瞬間標題">5. 儀式結束後的放鬆瞬間</h2>
+
+      <p data-text="section-5-timing" data-text-description="特殊時機點的描述"><strong>當所有流程都結束，新人終於可以鬆一口氣的時候。</strong></p>
+
+      <p data-text="section-5-scene" data-text-description="場景與互動描述">可能是在休息室裡，可能是在車上，新人會有一個很自然的互動——可能是相視而笑，可能是一個擁抱，可能只是安靜地牽著手。那個時候的表情是最真實的，因為「我們終於結婚了」的實感剛剛湧現。</p>
+
+      <p data-text="section-5-value" data-text-description="容易被忽略的原因及價值">這個瞬間很多人會錯過，因為大家都在收拾或是準備下一個行程，但對新人來說，這可能是整天最值得紀念的時刻之一。</p>
+
+      <div class="article-divider"></div>
+
+      <h2 data-text="conclusion-title" data-text-description="總結段落標題">為什麼這些瞬間這麼重要？</h2>
+
+      <p data-text="conclusion-answer" data-text-description="核心答案"><strong>因為這些都是「回不去」的時刻。</strong></p>
+
+      <p data-text="conclusion-value" data-text-description="長遠價值說明">婚禮只有一次，這些情緒也只會在那一天出現。五年後、十年後，當你們翻開婚禮照片，這些真實的瞬間會讓你們想起那天的感受，而不只是記起有辦過一場婚禮。</p>
+
+      <p data-text="conclusion-philosophy" data-text-description="專業攝影師價值觀">這就是為什麼我總是告訴客戶，好的婚禮攝影師不是拍得漂亮的人，而是<strong>能看見並留住這些珍貴瞬間的人</strong>。技術可以學，器材可以買，但這種觀察力和對情感的敏銳度，需要時間累積和用心體會。</p>
+    </article>
+  </section>
+
+  <!-- RELATED POSTS -->
+  <section class="related-section" data-section="related-posts" data-section-title="延伸閱讀" data-section-purpose="增加站內停留時間，展現內容深度與專業持續性">
+    <div class="related-inner">
+      <div class="related-header reveal">
+        <p class="section-label" data-text="related-label" data-text-description="延伸閱讀英文標籤">More Articles</p>
+        <div class="section-divider"></div>
+        <h2 class="section-title" data-text="related-title" data-text-description="延伸閱讀區塊標題">你可能也會喜歡</h2>
+      </div>
+
+      <div class="related-grid">
+        <article class="related-card reveal">
+          <img src="https://images.pexels.com/photos/33699908/pexels-photo-33699908.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=650&amp;w=940" alt="婚禮攝影風格" class="related-thumb" data-img-query="wedding photography style guide elegant minimal" data-img-orientation="landscape" data-img-description="不同婚禮攝影風格對比圖" data-img-size="medium" data-img-ratio="16:9">
+          <div class="related-content">
+            <h3 class="related-title" data-text="related-1-title" data-text-description="延伸閱讀文章一標題">如何選擇適合你們的婚禮攝影風格</h3>
+            <p class="related-desc" data-text="related-1-desc" data-text-description="延伸閱讀文章一簡介">從自然紀實到編輯風格，找到最能表達你們個性的拍攝方式</p>
+            <div class="related-meta" data-text="related-1-meta" data-text-description="延伸閱讀文章一資訊">4 分鐘</div>
+          </div>
+        </article>
+
+        <article class="related-card reveal reveal-delay-1">
+          <img src="https://images.pexels.com/photos/30559073/pexels-photo-30559073.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=650&amp;w=940" alt="婚禮配合技巧" class="related-thumb" data-img-query="wedding day cooperation photographer tips natural" data-img-orientation="landscape" data-img-description="婚禮當天配合攝影師的實用建議" data-img-size="medium" data-img-ratio="16:9">
+          <div class="related-content">
+            <h3 class="related-title" data-text="related-2-title" data-text-description="延伸閱讀文章二標題">婚禮當天與攝影師配合的5個小技巧</h3>
+            <p class="related-desc" data-text="related-2-desc" data-text-description="延伸閱讀文章二簡介">讓拍攝過程更順利，留下更自然美好的回憶</p>
+            <div class="related-meta" data-text="related-2-meta" data-text-description="延伸閱讀文章二資訊">3 分鐘</div>
+          </div>
+        </article>
+
+        <article class="related-card reveal reveal-delay-2">
+          <img src="https://images.pexels.com/photos/37066374/pexels-photo-37066374.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=650&amp;w=940" alt="印象深刻時刻" class="related-thumb" data-img-query="memorable wedding moments touching emotional stories" data-img-orientation="landscape" data-img-description="令人印象深刻的婚禮時刻集錦" data-img-size="medium" data-img-ratio="16:9">
+          <div class="related-content">
+            <h3 class="related-title" data-text="related-3-title" data-text-description="延伸閱讀文章三標題">那些年，讓我印象最深刻的婚禮時刻</h3>
+            <p class="related-desc" data-text="related-3-desc" data-text-description="延伸閱讀文章三簡介">每一場婚禮都有獨特的故事，分享幾個特別感動的瞬間</p>
+            <div class="related-meta" data-text="related-3-meta" data-text-description="延伸閱讀文章三資訊">6 分鐘</div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ARTICLE CTA -->
+  <section class="article-cta" data-section="article-cta" data-section-title="文章底部行動召喚" data-section-purpose="在讀者認同專業度後，溫和邀請進一步接觸，不破壞閱讀體驗">
+    <div class="article-cta-inner">
+      <p class="article-cta-title reveal" data-text="article-cta-title" data-text-description="溫和的邀請文字">
+        如果這些文字讓你想起了什麼特別的時刻，或是你也希望有人能夠細心留住你們的珍貴瞬間，歡迎跟我聊聊你們的婚禮計畫。
+      </p>
+      
+      <div class="article-cta-actions reveal reveal-delay-1">
+        <a href="https://instagram.com/hikari.photo" class="btn-text" target="_blank" data-text="article-cta-ig" data-text-description="次要行動：追蹤IG">追蹤 Instagram 看更多作品 →</a>
+        <a href="contact.html" class="btn-primary" data-text="article-cta-contact" data-text-description="主要行動：預約諮詢">預約諮詢</a>
+      </div>
+      
+      <p class="article-cta-note reveal reveal-delay-2" data-text="article-cta-note" data-text-description="補充說明，降低聯絡門檻">
+        每一對新人的故事都不一樣，我很樂意了解你們的想法。
+      </p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer data-section="footer" data-section-title="網站底部" data-section-purpose="提供完整的聯絡資訊、網站導航，以及品牌相關連結">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div>
+          <div class="footer-logo" data-text="footer-logo" data-text-description="Footer品牌標誌">
+            光葉影像
+            <span>HIKARI PHOTO</span>
+          </div>
+          <p class="footer-tagline" data-text="footer-tagline" data-text-description="Footer品牌標語">那些眼神和細節，值得被好好留下來。</p>
+        </div>
+
+        <div>
+          <p class="footer-col-title" data-text="footer-nav-title" data-text-description="Footer導航分類標題">頁面</p>
+          <ul class="footer-links">
+            <li><a href="portfolio.html">作品集</a></li>
+            <li><a href="services.html">服務方案</a></li>
+            <li><a href="about.html">關於我們</a></li>
+            <li><a href="blog.html">部落格</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <p class="footer-col-title" data-text="footer-service-title" data-text-description="Footer服務分類標題">服務</p>
+          <ul class="footer-links">
+            <li><a href="services.html">婚禮紀錄</a></li>
+            <li><a href="services.html">品牌形象照</a></li>
+            <li><a href="services.html">活動拍攝</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <p class="footer-col-title" data-text="footer-contact-title" data-text-description="Footer聯絡資訊標題">聯絡資訊</p>
+          <div class="footer-contact-item">
+            <span class="footer-contact-label">Mail</span>
+            <span class="footer-contact-value" data-text="footer-email" data-text-description="聯絡Email">hello@hikari.photo</span>
+          </div>
+          <div class="footer-contact-item">
+            <span class="footer-contact-label">Tel</span>
+            <span class="footer-contact-value" data-text="footer-tel" data-text-description="聯絡電話">0912-345-678</span>
+          </div>
+          <div class="footer-contact-item">
+            <span class="footer-contact-label">IG</span>
+            <span class="footer-contact-value" data-text="footer-ig" data-text-description="Instagram帳號">@hikari.photo</span>
+          </div>
+          <div class="footer-contact-item">
+            <span class="footer-contact-label">地址</span>
+            <span class="footer-contact-value" data-text="footer-address" data-text-description="工作室地址">台北市中山區</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-copy" data-text="footer-copy" data-text-description="版權宣告">© 2025 光葉影像 Hikari Photo. All rights reserved.</p>
+        <a href="https://instagram.com/hikari.photo" class="footer-ig" target="_blank" data-text="footer-ig-link" data-text-description="Footer Instagram連結">Instagram @hikari.photo</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Scroll Reveal
+    const revealEls = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(el => {
+        if (el.isIntersecting) {
+          el.target.classList.add('visible');
+          observer.unobserve(el.target);
+        }
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -24px 0px' });
+
+    revealEls.forEach(el => observer.observe(el));
+  </script>
+
+</body></html>

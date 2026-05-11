@@ -1,0 +1,918 @@
+<!DOCTYPE html><html lang="zh-TW"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>線上預約｜余明道 企業教練｜60分鐘免費諮詢</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&amp;family=Noto+Serif+TC:wght@400;600;700&amp;family=Cormorant+Garamond:wght@400;600;700&amp;display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-primary: #0D1F3C;
+      --bg-secondary: #152844;
+      --bg-deep: #091629;
+      --bg-card: #1A3255;
+      --bg-light: #F5F2ED;
+      --text-primary: #F0ECE4;
+      --text-muted: #A8B4C4;
+      --text-light: #6B7D93;
+      --text-dark: #1A2B3C;
+      --accent: #C9A96E;
+      --accent-light: #E2C99A;
+      --border: rgba(201, 169, 110, 0.2);
+      --border-subtle: rgba(255,255,255,0.08);
+      --font-serif: 'Cormorant Garamond', 'Noto Serif TC', serif;
+      --font-sans: 'Noto Sans TC', sans-serif;
+      --section-gap: 120px;
+      --content-max: 1080px;
+      --side-pad: 48px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-sans);
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(13, 31, 60, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .nav-inner {
+      max-width: var(--content-max);
+      margin: 0 auto;
+      padding: 0 var(--side-pad);
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-logo {
+      font-family: var(--font-serif);
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      text-decoration: none;
+      letter-spacing: 0.06em;
+    }
+    .nav-logo span {
+      color: var(--accent);
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.88rem;
+      letter-spacing: 0.04em;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--text-primary); }
+    .nav-cta {
+      background: var(--accent);
+      color: var(--bg-deep) !important;
+      padding: 8px 20px;
+      border-radius: 3px;
+      font-weight: 700;
+      font-size: 0.85rem !important;
+      letter-spacing: 0.06em;
+      transition: background 0.2s !important;
+    }
+    .nav-cta:hover { background: var(--accent-light) !important; color: var(--bg-deep) !important; }
+
+    /* ── SECTION COMMON ── */
+    .section {
+      padding: var(--section-gap) var(--side-pad);
+    }
+    .section-inner {
+      max-width: var(--content-max);
+      margin: 0 auto;
+    }
+    .section-label {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    .section-label-line {
+      width: 24px;
+      height: 1px;
+      background: var(--accent);
+    }
+    .section-label-text {
+      font-size: 0.74rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 500;
+    }
+    .section-title {
+      font-family: var(--font-serif);
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      font-weight: 700;
+      line-height: 1.3;
+      color: var(--text-primary);
+      margin-bottom: 16px;
+      letter-spacing: -0.01em;
+    }
+    .section-desc {
+      font-size: 1rem;
+      color: var(--text-muted);
+      max-width: 540px;
+      line-height: 1.8;
+    }
+    .section-header {
+      margin-bottom: 64px;
+    }
+
+    /* ── BOOKING HERO ── */
+    .booking-hero {
+      min-height: 80vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 120px var(--side-pad) 80px;
+      background:
+        radial-gradient(ellipse 50% 60% at 30% 40%, rgba(201,169,110,0.08) 0%, transparent 70%),
+        linear-gradient(140deg, var(--bg-deep) 0%, var(--bg-primary) 50%, #0F2848 100%);
+      position: relative;
+      text-align: center;
+    }
+    .booking-hero-inner {
+      max-width: 720px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+    .booking-hero-title {
+      font-family: var(--font-serif);
+      font-size: clamp(2.4rem, 5vw, 4rem);
+      font-weight: 700;
+      line-height: 1.2;
+      color: var(--text-primary);
+      margin-bottom: 20px;
+      letter-spacing: -0.01em;
+    }
+    .booking-hero-title-accent {
+      color: var(--accent);
+    }
+    .booking-hero-subtitle {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      line-height: 1.8;
+      margin-bottom: 48px;
+      max-width: 580px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .booking-hero-guarantees {
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+      margin-bottom: 52px;
+    }
+    .guarantee-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.9rem;
+      color: var(--text-primary);
+    }
+    .guarantee-icon {
+      width: 20px;
+      height: 20px;
+      background: var(--accent);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    /* ── CONSULTATION VALUE ── */
+    .consultation-value {
+      background: var(--bg-secondary);
+      border-top: 1px solid var(--border-subtle);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .consultation-content {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 64px;
+      align-items: start;
+    }
+    .consultation-text {
+      padding-top: 20px;
+    }
+    .consultation-values {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+    .value-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 6px;
+      padding: 32px 28px;
+      transition: border-color 0.25s, transform 0.25s;
+    }
+    .value-card:hover {
+      border-color: var(--border);
+      transform: translateY(-3px);
+    }
+    .value-icon {
+      width: 48px;
+      height: 48px;
+      background: rgba(201,169,110,0.12);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+    .value-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 10px;
+    }
+    .value-desc {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
+
+    /* ── BOOKING PROCESS ── */
+    .booking-process {
+      background: var(--bg-primary);
+    }
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 48px;
+      position: relative;
+    }
+    .process-steps::before {
+      content: '';
+      position: absolute;
+      top: 32px;
+      left: calc(16.67%);
+      right: calc(16.67%);
+      height: 1px;
+      background: var(--border);
+      z-index: 0;
+    }
+    .process-step {
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+    .step-num {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 24px;
+      font-family: var(--font-serif);
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--accent);
+    }
+    .step-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 12px;
+      letter-spacing: 0.02em;
+    }
+    .step-desc {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
+
+    /* ── BOOKING FORM ── */
+    .booking-form-section {
+      background: linear-gradient(135deg, var(--bg-secondary) 0%, #0F2848 100%);
+      border-top: 1px solid var(--border-subtle);
+      border-bottom: 1px solid var(--border-subtle);
+      padding: 100px var(--side-pad);
+    }
+    .booking-form-inner {
+      max-width: 600px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .booking-form-title {
+      font-family: var(--font-serif);
+      font-size: clamp(1.8rem, 3vw, 2.4rem);
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 48px;
+      line-height: 1.3;
+    }
+    .booking-form {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 44px 40px;
+      text-align: left;
+    }
+    .form-group {
+      margin-bottom: 24px;
+    }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    .form-label {
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 8px;
+      letter-spacing: 0.02em;
+    }
+    .form-required {
+      color: var(--accent);
+    }
+    .form-input {
+      width: 100%;
+      padding: 12px 16px;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-subtle);
+      border-radius: 3px;
+      color: var(--text-primary);
+      font-size: 0.9rem;
+      font-family: var(--font-sans);
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .form-input:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 2px rgba(201,169,110,0.1);
+    }
+    .form-select {
+      width: 100%;
+      padding: 12px 16px;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-subtle);
+      border-radius: 3px;
+      color: var(--text-primary);
+      font-size: 0.9rem;
+      font-family: var(--font-sans);
+      cursor: pointer;
+      transition: border-color 0.2s;
+    }
+    .form-select:focus {
+      outline: none;
+      border-color: var(--accent);
+    }
+    .form-textarea {
+      width: 100%;
+      min-height: 100px;
+      padding: 12px 16px;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-subtle);
+      border-radius: 3px;
+      color: var(--text-primary);
+      font-size: 0.9rem;
+      font-family: var(--font-sans);
+      resize: vertical;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .form-textarea:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 2px rgba(201,169,110,0.1);
+    }
+    .form-submit {
+      width: 100%;
+      background: var(--accent);
+      color: var(--bg-deep);
+      padding: 16px 32px;
+      border: none;
+      border-radius: 3px;
+      font-weight: 700;
+      font-size: 1rem;
+      letter-spacing: 0.06em;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s;
+      margin-top: 16px;
+    }
+    .form-submit:hover {
+      background: var(--accent-light);
+      transform: translateY(-1px);
+    }
+    .form-note {
+      text-align: center;
+      margin-top: 24px;
+      font-size: 0.8rem;
+      color: var(--text-light);
+    }
+
+    /* ── FAQ ── */
+    .faq-section {
+      background: var(--bg-secondary);
+      border-top: 1px solid var(--border-subtle);
+    }
+    .faq-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .faq-item {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 6px;
+      padding: 28px 32px;
+      transition: border-color 0.25s;
+    }
+    .faq-item:hover {
+      border-color: var(--border);
+    }
+    .faq-question {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 12px;
+    }
+    .faq-answer {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--bg-deep);
+      padding: 64px var(--side-pad) 40px;
+      border-top: 1px solid var(--border-subtle);
+    }
+    .footer-inner {
+      max-width: var(--content-max);
+      margin: 0 auto;
+    }
+    .footer-top {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr;
+      gap: 48px;
+      margin-bottom: 48px;
+    }
+    .footer-brand {
+      font-family: var(--font-serif);
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 12px;
+      letter-spacing: 0.04em;
+    }
+    .footer-brand span { color: var(--accent); }
+    .footer-tagline {
+      font-size: 0.84rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+    .footer-contact-item {
+      font-size: 0.84rem;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+    }
+    .footer-contact-item strong {
+      color: var(--text-primary);
+      font-size: 0.76rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 2px;
+    }
+    .footer-col-title {
+      font-size: 0.76rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 16px;
+      font-weight: 500;
+    }
+    .footer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .footer-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.88rem;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--text-primary); }
+    .footer-bottom {
+      border-top: 1px solid var(--border-subtle);
+      padding-top: 28px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .footer-copy {
+      font-size: 0.78rem;
+      color: var(--text-light);
+    }
+    .footer-linkedin {
+      font-size: 0.78rem;
+      color: var(--text-light);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-linkedin:hover { color: var(--accent); }
+
+    /* ── REVEAL ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .reveal-delay-1 { transition-delay: 0.08s; }
+    .reveal-delay-2 { transition-delay: 0.16s; }
+    .reveal-delay-3 { transition-delay: 0.24s; }
+    .reveal-delay-4 { transition-delay: 0.32s; }
+
+    /* ── RWD ── */
+    @media (max-width: 960px) {
+      :root { --side-pad: 32px; --section-gap: 80px; }
+      .nav-links li:not(:last-child) { display: none; }
+      .booking-hero-guarantees { flex-direction: column; align-items: center; gap: 16px; }
+      .consultation-content { grid-template-columns: 1fr; gap: 48px; }
+      .process-steps { grid-template-columns: 1fr; gap: 32px; }
+      .process-steps::before { display: none; }
+      .form-row { grid-template-columns: 1fr; }
+      .footer-top { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 700px) {
+      :root { --side-pad: 20px; --section-gap: 64px; }
+      .nav-links { display: none; }
+      .booking-form { padding: 32px 24px; }
+      .footer-top { grid-template-columns: 1fr; gap: 32px; }
+      .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══ NAV ══ -->
+<nav data-section="navigation" data-section-title="導覽選單" data-section-purpose="提供主要頁面連結，重點突出預約諮詢CTA按鈕">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo" data-text="nav-logo" data-text-description="導覽區品牌標誌文字">余明道<span>．</span>企業教練</a>
+    <ul class="nav-links">
+      <li><a href="about.html">關於我</a></li>
+      <li><a href="services.html">服務項目</a></li>
+      <li><a href="portfolio.html">成功案例</a></li>
+      <li><a href="blog.html">部落格</a></li>
+      <li><a href="contact.html" class="nav-cta">預約諮詢</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ══ BOOKING HERO ══ -->
+<section class="booking-hero" data-section="booking-hero" data-section-title="預約英雄區" data-section-purpose="立即消除要錢和會被推銷的疑慮，建立安全感">
+  <div class="booking-hero-inner">
+    <h1 class="booking-hero-title reveal" data-text="booking-hero-title" data-text-description="預約頁面主標題，強調免費與問題導向">
+      <span class="booking-hero-title-accent">60 分鐘免費諮詢</span><br>幫你釐清主管問題的根源
+    </h1>
+    <p class="booking-hero-subtitle reveal reveal-delay-1" data-text="booking-hero-subtitle" data-text-description="預約頁面副標題，強調無壓力與實用性">
+      不推銷、不收費，帶著你目前遇到的主管困境來就好。我們一起評估問題，找到可行的改善方向。
+    </p>
+    <div class="booking-hero-guarantees reveal reveal-delay-2">
+      <div class="guarantee-item">
+        <div class="guarantee-icon">
+          <svg width="12" height="9" viewBox="0 0 12 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1 4.5L4 7.5L11 0.5" stroke="#0D1F3C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+        </div>
+        <span data-text="guarantee-1" data-text-description="第一個保證項目">完全免費，無後續義務</span>
+      </div>
+      <div class="guarantee-item">
+        <div class="guarantee-icon">
+          <svg width="12" height="9" viewBox="0 0 12 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1 4.5L4 7.5L11 0.5" stroke="#0D1F3C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+        </div>
+        <span data-text="guarantee-2" data-text-description="第二個保證項目">1對1深度對話，非制式簡報</span>
+      </div>
+      <div class="guarantee-item">
+        <div class="guarantee-icon">
+          <svg width="12" height="9" viewBox="0 0 12 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1 4.5L4 7.5L11 0.5" stroke="#0D1F3C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+        </div>
+        <span data-text="guarantee-3" data-text-description="第三個保證項目">當天就有初步建議</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CONSULTATION VALUE ══ -->
+<section class="section consultation-value" data-section="consultation-value" data-section-title="諮詢內容與價值" data-section-purpose="讓訪客理解這60分鐘能獲得什麼具體價值，不是隨便聊聊">
+  <div class="section-inner">
+    <div class="consultation-content">
+      <div class="consultation-text">
+        <div class="section-label reveal">
+          <div class="section-label-line"></div>
+          <span class="section-label-text" data-text="consultation-label" data-text-description="諮詢價值區塊英文標籤">What You'll Get</span>
+        </div>
+        <h2 class="section-title reveal reveal-delay-1" data-text="consultation-title" data-text-description="諮詢價值區塊標題">這 60 分鐘，你會得到什麼？</h2>
+        <p class="section-desc reveal reveal-delay-2" data-text="consultation-desc" data-text-description="諮詢價值區塊說明文字">不是閒聊，也不是制式簡報。每一分鐘都聚焦在你的實際問題上。</p>
+      </div>
+      <div class="consultation-values">
+        <div class="value-card reveal reveal-delay-1" data-section="value-card-1" data-section-title="第一項諮詢價值" data-section-purpose="說明問題診斷的價值">
+          <div class="value-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M9 11H15M9 15H15M17 21H7C5.89543 21 5 20.1046 5 19V5C5 3.89543 5.89543 3 7 3H12.5858C12.851 3 13.1054 3.10536 13.2929 3.29289L19.7071 9.70711C19.8946 9.89464 20 10.149 20 10.4142V19C20 20.1046 19.1046 21 18 21H17Z" stroke="#C9A96E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+          </div>
+          <div class="value-title" data-text="value-1-title" data-text-description="第一項價值標題">問題根源診斷</div>
+          <div class="value-desc" data-text="value-1-desc" data-text-description="第一項價值說明">深入了解你的主管痛點背後的真正原因，不只看表象。</div>
+        </div>
+        <div class="value-card reveal reveal-delay-2" data-section="value-card-2" data-section-title="第二項諮詢價值" data-section-purpose="說明初步建議的價值">
+          <div class="value-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M9.663 17H7.5C5.567 17 4 15.433 4 13.5C4 11.567 5.567 10 7.5 10C7.5 7.462 9.462 5.5 12 5.5S16.5 7.462 16.5 10C18.433 10 20 11.567 20 13.5S18.433 17 16.5 17H14.337" stroke="#C9A96E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+              <path d="M12 21L12 13M12 13L9 16M12 13L15 16" stroke="#C9A96E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+          </div>
+          <div class="value-title" data-text="value-2-title" data-text-description="第二項價值標題">初步改善建議</div>
+          <div class="value-desc" data-text="value-2-desc" data-text-description="第二項價值說明">基於你的組織狀況，給出 2-3 個可立即嘗試的具體做法。</div>
+        </div>
+        <div class="value-card reveal reveal-delay-3" data-section="value-card-3" data-section-title="第三項諮詢價值" data-section-purpose="說明合作評估的誠實性">
+          <div class="value-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M20 7L12 3L4 7L12 11L20 7Z" stroke="#C9A96E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+              <path d="M4 12L12 16L20 12" stroke="#C9A96E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+              <path d="M4 17L12 21L20 17" stroke="#C9A96E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+          </div>
+          <div class="value-title" data-text="value-3-title" data-text-description="第三項價值標題">合作可行性評估</div>
+          <div class="value-desc" data-text="value-3-desc" data-text-description="第三項價值說明">誠實告訴你是否適合進一步合作，不適合也會推薦其他選項。</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ BOOKING PROCESS ══ -->
+<section class="section booking-process" data-section="booking-process" data-section-title="三步驟預約流程" data-section-purpose="讓訪客知道預約很簡單，降低行動阻力">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <div class="section-label">
+        <div class="section-label-line"></div>
+        <span class="section-label-text" data-text="process-label" data-text-description="預約流程區塊英文標籤">Booking Process</span>
+      </div>
+      <h2 class="section-title" data-text="process-title" data-text-description="預約流程區塊標題">三個步驟，完成預約</h2>
+    </div>
+    <div class="process-steps">
+      <div class="process-step reveal">
+        <div class="step-num" data-text="process-step-1-num" data-text-description="第一步驟編號">01</div>
+        <div class="step-title" data-text="process-step-1-title" data-text-description="第一步驟標題">填寫基本資料</div>
+        <div class="step-desc" data-text="process-step-1-desc" data-text-description="第一步驟說明">姓名、公司、聯絡方式，以及簡述目前遇到的主管問題。</div>
+      </div>
+      <div class="process-step reveal reveal-delay-1">
+        <div class="step-num" data-text="process-step-2-num" data-text-description="第二步驟編號">02</div>
+        <div class="step-title" data-text="process-step-2-title" data-text-description="第二步驟標題">選擇方便時間</div>
+        <div class="step-desc" data-text="process-step-2-desc" data-text-description="第二步驟說明">我會在 1 個工作天內回覆，跟您確認具體的諮詢時間。</div>
+      </div>
+      <div class="process-step reveal reveal-delay-2">
+        <div class="step-num" data-text="process-step-3-num" data-text-description="第三步驟編號">03</div>
+        <div class="step-title" data-text="process-step-3-title" data-text-description="第三步驟標題">收到確認通知</div>
+        <div class="step-desc" data-text="process-step-3-desc" data-text-description="第三步驟說明">連同會議連結一起發送，也會提醒您諮詢前的準備事項。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ BOOKING FORM ══ -->
+<section class="booking-form-section" data-section="booking-form" data-section-title="線上預約表單" data-section-purpose="讓訪客能快速完成預約，成為整頁的行動高點">
+  <div class="booking-form-inner">
+    <h2 class="booking-form-title reveal" data-text="booking-form-title" data-text-description="預約表單區塊標題">立即預約免費諮詢</h2>
+    <form class="booking-form reveal reveal-delay-1" action="#" method="post">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="name" class="form-label" data-text="form-label-name" data-text-description="姓名欄位標籤">姓名 <span class="form-required">*</span></label>
+          <input type="text" id="name" name="name" class="form-input" required="">
+        </div>
+        <div class="form-group">
+          <label for="company" class="form-label" data-text="form-label-company" data-text-description="公司名稱欄位標籤">公司名稱 <span class="form-required">*</span></label>
+          <input type="text" id="company" name="company" class="form-input" required="">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="position" class="form-label" data-text="form-label-position" data-text-description="職位欄位標籤">職位 <span class="form-required">*</span></label>
+          <input type="text" id="position" name="position" class="form-input" required="">
+        </div>
+        <div class="form-group">
+          <label for="phone" class="form-label" data-text="form-label-phone" data-text-description="聯絡電話欄位標籤">聯絡電話 <span class="form-required">*</span></label>
+          <input type="tel" id="phone" name="phone" class="form-input" required="">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="email" class="form-label" data-text="form-label-email" data-text-description="電子信箱欄位標籤">電子信箱 <span class="form-required">*</span></label>
+        <input type="email" id="email" name="email" class="form-input" required="">
+      </div>
+      <div class="form-group">
+        <label for="company-size" class="form-label" data-text="form-label-company-size" data-text-description="公司規模欄位標籤">公司規模</label>
+        <select id="company-size" name="company-size" class="form-select">
+          <option value="">請選擇</option>
+          <option value="under-50" data-text="form-option-under-50" data-text-description="公司規模選項1">50人以下</option>
+          <option value="50-100" data-text="form-option-50-100" data-text-description="公司規模選項2">50-100人</option>
+          <option value="100-300" data-text="form-option-100-300" data-text-description="公司規模選項3">100-300人</option>
+          <option value="300-500" data-text="form-option-300-500" data-text-description="公司規模選項4">300-500人</option>
+          <option value="over-500" data-text="form-option-over-500" data-text-description="公司規模選項5">500人以上</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="problem" class="form-label" data-text="form-label-problem" data-text-description="問題描述欄位標籤">目前遇到的主管問題（簡述） <span class="form-required">*</span></label>
+        <textarea id="problem" name="problem" class="form-textarea" placeholder="例如：主管留不住人、部門溝通效率差、主管不知道怎麼帶新人等..." required="" data-text="form-placeholder-problem" data-text-description="問題描述欄位提示文字"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="preferred-time" class="form-label" data-text="form-label-preferred-time" data-text-description="希望時間欄位標籤">希望諮詢時間</label>
+        <select id="preferred-time" name="preferred-time" class="form-select">
+          <option value="">請選擇</option>
+          <option value="weekdays" data-text="form-option-weekdays" data-text-description="時間選項1">週間上班時間</option>
+          <option value="weekends" data-text="form-option-weekends" data-text-description="時間選項2">週末時間</option>
+          <option value="flexible" data-text="form-option-flexible" data-text-description="時間選項3">都可以配合</option>
+        </select>
+      </div>
+      <button type="submit" class="form-submit" data-text="form-submit-button" data-text-description="表單提交按鈕">提交預約申請</button>
+      <p class="form-note" data-text="form-note" data-text-description="表單下方補充說明">通常 1 個工作天內回覆確認｜諮詢可線上或面對面進行</p>
+    </form>
+  </div>
+</section>
+
+<!-- ══ FAQ ── -->
+<section class="section faq-section" data-section="faq" data-section-title="預約FAQ" data-section-purpose="消除最後的疑慮，包括時間、費用、準備事項等">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <div class="section-label">
+        <div class="section-label-line"></div>
+        <span class="section-label-text" data-text="faq-label" data-text-description="FAQ區塊英文標籤">Common Questions</span>
+      </div>
+      <h2 class="section-title" data-text="faq-title" data-text-description="FAQ區塊標題">還有疑問嗎？</h2>
+    </div>
+    <div class="faq-grid">
+      <div class="faq-item reveal" data-section="faq-item-1" data-section-title="FAQ項目1" data-section-purpose="消除對費用的疑慮">
+        <div class="faq-question" data-text="faq-1-question" data-text-description="第一個常見問題">Q: 真的完全免費嗎？</div>
+        <div class="faq-answer" data-text="faq-1-answer" data-text-description="第一個問題的答案">A: 是的，首次 60 分鐘諮詢完全不收費。即使最後我們沒有進一步合作，這個諮詢對您依然有價值。</div>
+      </div>
+      <div class="faq-item reveal reveal-delay-1" data-section="faq-item-2" data-section-title="FAQ項目2" data-section-purpose="消除對準備工作的疑慮">
+        <div class="faq-question" data-text="faq-2-question" data-text-description="第二個常見問題">Q: 需要事先準備什麼資料嗎？</div>
+        <div class="faq-answer" data-text="faq-2-answer" data-text-description="第二個問題的答案">A: 不需要準備任何正式資料。只要能描述目前遇到的主管問題就足夠了。</div>
+      </div>
+      <div class="faq-item reveal reveal-delay-2" data-section="faq-item-3" data-section-title="FAQ項目3" data-section-purpose="說明諮詢進行方式">
+        <div class="faq-question" data-text="faq-3-question" data-text-description="第三個常見問題">Q: 諮詢會在哪裡進行？</div>
+        <div class="faq-answer" data-text="faq-3-answer" data-text-description="第三個問題的答案">A: 可以線上視訊或面對面，依您的方便為主。台北市內可到府諮詢。</div>
+      </div>
+      <div class="faq-item reveal reveal-delay-3" data-section="faq-item-4" data-section-title="FAQ項目4" data-section-purpose="承諾不推銷">
+        <div class="faq-question" data-text="faq-4-question" data-text-description="第四個常見問題">Q: 如果不適合合作，你會推銷嗎？</div>
+        <div class="faq-answer" data-text="faq-4-answer" data-text-description="第四個問題的答案">A: 不會。如果我評估後認為不適合，會誠實告知，並推薦其他可能的解決方案。</div>
+      </div>
+      <div class="faq-item reveal reveal-delay-4" data-section="faq-item-5" data-section-title="FAQ項目5" data-section-purpose="說明後續回覆時程">
+        <div class="faq-question" data-text="faq-5-question" data-text-description="第五個常見問題">Q: 諮詢後多久會知道是否適合進一步合作？</div>
+        <div class="faq-answer" data-text="faq-5-answer" data-text-description="第五個問題的答案">A: 諮詢結束前就會有初步判斷。如需要更詳細評估，會在 3 個工作天內給您完整回覆。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+<footer data-section="footer" data-section-title="頁尾資訊" data-section-purpose="提供完整聯絡資訊與快速連結，建立專業信任感">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand" data-text="footer-brand" data-text-description="頁尾品牌名稱">余明道<span>．</span>企業教練</div>
+        <p class="footer-tagline" data-text="footer-tagline" data-text-description="頁尾品牌標語">讓主管真的會帶人，不只是會管人。<br>服務全台 50–500 人中型企業。</p>
+        <div class="footer-contact-item">
+          <strong data-text="footer-email-label" data-text-description="聯絡信箱標籤">聯絡信箱</strong>
+          <span data-text="footer-email" data-text-description="聯絡信箱地址">hello@mingdaoyu.com</span>
+        </div>
+        <div class="footer-contact-item">
+          <strong data-text="footer-address-label" data-text-description="辦公地址標籤">辦公地址</strong>
+          <span data-text="footer-address" data-text-description="辦公地址">台北市信義區松仁路○○號 ○ 樓</span>
+        </div>
+        <div class="footer-contact-item">
+          <strong data-text="footer-phone-label" data-text-description="服務電話標籤">服務電話</strong>
+          <span data-text="footer-phone" data-text-description="服務電話號碼">02-○○○○-○○○○</span>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title" data-text="footer-services-title" data-text-description="服務項目標題">服務</div>
+        <ul class="footer-links">
+          <li><a href="services.html">企業主管內訓課程</a></li>
+          <li><a href="services.html">組織文化轉型顧問</a></li>
+          <li><a href="services.html">主管個別教練輔導</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title" data-text="footer-more-title" data-text-description="了解更多標題">了解更多</div>
+        <ul class="footer-links">
+          <li><a href="about.html">關於我</a></li>
+          <li><a href="portfolio.html">成功案例</a></li>
+          <li><a href="blog.html">部落格</a></li>
+          <li><a href="contact.html">聯絡我們</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy" data-text="footer-copy" data-text-description="版權聲明">© 2024 余明道 企業教練｜mingdaoyu.com</span>
+      <a href="https://linkedin.com" target="_blank" class="footer-linkedin" data-text="footer-linkedin" data-text-description="LinkedIn連結">LinkedIn →</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Scroll reveal
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -24px 0px' });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // Form enhancement
+  document.querySelector('.booking-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    // Basic validation
+    const requiredFields = this.querySelectorAll('[required]');
+    let isValid = true;
+    
+    requiredFields.forEach(field => {
+      if (!field.value.trim()) {
+        field.style.borderColor = '#ff6b6b';
+        isValid = false;
+      } else {
+        field.style.borderColor = '';
+      }
+    });
+    
+    if (isValid) {
+      // Show success message (in real scenario, submit to server)
+      const submitBtn = this.querySelector('.form-submit');
+      const originalText = submitBtn.textContent;
+      submitBtn.textContent = '送出中...';
+      submitBtn.disabled = true;
+      
+      setTimeout(() => {
+        submitBtn.textContent = '預約申請已送出！';
+        setTimeout(() => {
+          submitBtn.textContent = originalText;
+          submitBtn.disabled = false;
+          this.reset();
+        }, 2000);
+      }, 1000);
+    }
+  });
+
+  // Form field focus effects
+  document.querySelectorAll('.form-input, .form-select, .form-textarea').forEach(field => {
+    field.addEventListener('focus', function() {
+      this.parentNode.style.transform = 'translateY(-1px)';
+    });
+    
+    field.addEventListener('blur', function() {
+      this.parentNode.style.transform = '';
+    });
+  });
+</script>
+
+</body></html>

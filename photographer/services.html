@@ -1,0 +1,1085 @@
+<!DOCTYPE html><html lang="zh-Hant"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>服務項目｜光葉影像 Hikari Photo｜台北婚禮紀錄攝影師</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&amp;family=Noto+Sans+TC:wght@300;400;500&amp;family=Noto+Serif+TC:wght@300;400&amp;display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-primary: #faf7f2;
+      --bg-secondary: #f3ede3;
+      --bg-deep: #e8dfd0;
+      --bg-warm: #ede6d8;
+      --text-primary: #2c2420;
+      --text-muted: #7a6a5e;
+      --text-light: #a89280;
+      --accent: #b5855a;
+      --accent-soft: #d4a97a;
+      --border: rgba(180, 155, 125, 0.22);
+      --border-soft: rgba(180, 155, 125, 0.12);
+      --font-serif: 'Cormorant Garamond', 'Noto Serif TC', serif;
+      --font-sans: 'Noto Sans TC', sans-serif;
+      --section-gap: 120px;
+      --content-max: 1080px;
+      --side-pad: 48px;
+      --nav-h: 68px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-sans);
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      font-size: 16px;
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      height: var(--nav-h);
+      background: rgba(250, 247, 242, 0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-soft);
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 var(--side-pad);
+    }
+
+    .nav-logo {
+      font-family: var(--font-serif);
+      font-size: 1.2rem;
+      font-weight: 400;
+      letter-spacing: 0.06em;
+      color: var(--text-primary);
+      text-decoration: none;
+      line-height: 1.2;
+    }
+
+    .nav-logo span {
+      display: block;
+      font-size: 0.6rem;
+      font-family: var(--font-sans);
+      font-weight: 300;
+      letter-spacing: 0.18em;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 36px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.8rem;
+      font-weight: 300;
+      letter-spacing: 0.1em;
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.25s;
+    }
+
+    .nav-links a:hover { color: var(--text-primary); }
+    .nav-links a.active { color: var(--text-primary); }
+
+    .nav-cta {
+      font-size: 0.78rem;
+      font-weight: 400;
+      letter-spacing: 0.12em;
+      color: var(--accent);
+      border: 1px solid var(--accent);
+      padding: 8px 20px;
+      text-decoration: none;
+      transition: all 0.28s;
+    }
+
+    .nav-cta:hover {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    /* ── SECTION SHARED ── */
+    .section-inner {
+      max-width: var(--content-max);
+      margin: 0 auto;
+      padding: 0 var(--side-pad);
+    }
+
+    .section-label {
+      font-size: 0.68rem;
+      font-weight: 300;
+      letter-spacing: 0.28em;
+      color: var(--text-light);
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .section-title {
+      font-family: var(--font-serif);
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      font-weight: 300;
+      line-height: 1.4;
+      letter-spacing: 0.04em;
+      color: var(--text-primary);
+      margin-bottom: 20px;
+    }
+
+    .section-desc {
+      font-size: 0.88rem;
+      font-weight: 300;
+      line-height: 1.95;
+      color: var(--text-muted);
+      max-width: 560px;
+    }
+
+    .section-divider {
+      width: 40px;
+      height: 1px;
+      background: var(--accent-soft);
+      margin-bottom: 28px;
+    }
+
+    .btn-primary {
+      display: inline-block;
+      font-size: 0.8rem;
+      font-weight: 400;
+      letter-spacing: 0.14em;
+      color: #fff;
+      background: var(--accent);
+      padding: 14px 32px;
+      text-decoration: none;
+      transition: all 0.28s;
+    }
+
+    .btn-primary:hover { background: #9e6d45; }
+
+    .btn-text {
+      font-size: 0.8rem;
+      font-weight: 300;
+      letter-spacing: 0.1em;
+      color: var(--text-muted);
+      text-decoration: none;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 2px;
+      transition: all 0.25s;
+    }
+
+    .btn-text:hover { color: var(--text-primary); border-color: var(--text-muted); }
+
+    /* ── SERVICES HERO ── */
+    .services-hero {
+      padding: calc(var(--nav-h) + 80px) 0 var(--section-gap);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .services-hero-left {
+      max-width: var(--content-max);
+      margin: 0 auto;
+      padding: 0 var(--side-pad);
+    }
+
+    .services-hero-right {
+      max-width: var(--content-max);
+      margin: 0 auto;
+      padding: 0 var(--side-pad);
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+
+    .service-preview-card {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      padding: 32px 28px;
+      transition: all 0.28s ease;
+      cursor: pointer;
+    }
+
+    .service-preview-card:hover {
+      border-color: var(--accent-soft);
+      box-shadow: 0 8px 40px rgba(181, 133, 90, 0.1);
+      transform: translateY(-2px);
+    }
+
+    .service-preview-title {
+      font-family: var(--font-serif);
+      font-size: 1.2rem;
+      font-weight: 300;
+      color: var(--text-primary);
+      margin-bottom: 12px;
+      letter-spacing: 0.04em;
+    }
+
+    .service-preview-desc {
+      font-size: 0.82rem;
+      font-weight: 300;
+      color: var(--text-muted);
+      line-height: 1.75;
+    }
+
+    /* ── SERVICE DETAIL ── */
+    .service-detail {
+      padding: var(--section-gap) 0;
+    }
+
+    .service-detail-inner {
+      display: grid;
+      grid-template-columns: 5fr 7fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .service-detail.reverse .service-detail-inner {
+      grid-template-columns: 7fr 5fr;
+    }
+
+    .service-detail.alt { background: var(--bg-secondary); }
+    .service-detail.deep { background: var(--bg-deep); }
+
+    .service-img {
+      aspect-ratio: 3 / 4;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .service-content {}
+
+    .service-features {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin: 32px 0;
+    }
+
+    .service-features li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 0.82rem;
+      font-weight: 300;
+      color: var(--text-muted);
+      line-height: 1.75;
+    }
+
+    .service-features li::before {
+      content: '—';
+      color: var(--accent-soft);
+      font-size: 0.75rem;
+      margin-top: 4px;
+      flex-shrink: 0;
+    }
+
+    .service-method {
+      background: rgba(181, 133, 90, 0.08);
+      border-left: 2px solid var(--accent-soft);
+      padding: 24px 28px;
+      margin: 32px 0;
+    }
+
+    .service-method-title {
+      font-size: 0.8rem;
+      font-weight: 400;
+      color: var(--text-primary);
+      margin-bottom: 12px;
+      letter-spacing: 0.1em;
+    }
+
+    .service-method-desc {
+      font-size: 0.82rem;
+      font-weight: 300;
+      color: var(--text-muted);
+      line-height: 1.85;
+    }
+
+    /* ── PHILOSOPHY SECTION ── */
+    .philosophy-section {
+      padding: var(--section-gap) 0;
+      background: var(--bg-warm);
+      text-align: center;
+    }
+
+    .philosophy-quote {
+      font-family: var(--font-serif);
+      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+      font-weight: 300;
+      font-style: italic;
+      line-height: 1.5;
+      letter-spacing: 0.04em;
+      color: var(--text-primary);
+      max-width: 720px;
+      margin: 0 auto 48px;
+    }
+
+    .philosophy-content {
+      max-width: 640px;
+      margin: 0 auto;
+      text-align: left;
+    }
+
+    .philosophy-desc {
+      font-size: 0.88rem;
+      font-weight: 300;
+      line-height: 2;
+      color: var(--text-muted);
+      margin-bottom: 40px;
+    }
+
+    .philosophy-promises {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+    }
+
+    .philosophy-promise {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .philosophy-promise-dot {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--accent-soft);
+      flex-shrink: 0;
+      margin-top: 8px;
+    }
+
+    .philosophy-promise-text {
+      font-size: 0.8rem;
+      font-weight: 300;
+      line-height: 1.75;
+      color: var(--text-muted);
+    }
+
+    /* ── FAQ SECTION ── */
+    .faq-section {
+      padding: var(--section-gap) 0;
+      background: var(--bg-secondary);
+    }
+
+    .faq-header {
+      text-align: center;
+      margin-bottom: 64px;
+    }
+
+    .faq-header .section-divider { margin: 0 auto 28px; }
+
+    .faq-list {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 8px;
+    }
+
+    .faq-question {
+      width: 100%;
+      background: none;
+      border: none;
+      font-family: var(--font-sans);
+      font-size: 0.88rem;
+      font-weight: 400;
+      color: var(--text-primary);
+      text-align: left;
+      padding: 28px 0;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      letter-spacing: 0.04em;
+      line-height: 1.6;
+      transition: color 0.25s;
+    }
+
+    .faq-question:hover { color: var(--accent); }
+
+    .faq-icon {
+      width: 20px;
+      height: 20px;
+      flex-shrink: 0;
+      transition: transform 0.25s;
+    }
+
+    .faq-item.active .faq-icon { transform: rotate(180deg); }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+
+    .faq-item.active .faq-answer { max-height: 200px; }
+
+    .faq-answer-content {
+      padding: 0 0 32px 0;
+      font-size: 0.82rem;
+      font-weight: 300;
+      line-height: 1.85;
+      color: var(--text-muted);
+    }
+
+    /* ── CTA SECTION ── */
+    .cta-section {
+      padding: var(--section-gap) 0;
+      text-align: center;
+    }
+
+    .cta-inner {
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 0 var(--side-pad);
+    }
+
+    .cta-eyebrow {
+      font-size: 0.7rem;
+      font-weight: 300;
+      letter-spacing: 0.28em;
+      color: var(--text-light);
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .cta-title {
+      font-family: var(--font-serif);
+      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+      font-weight: 300;
+      line-height: 1.4;
+      letter-spacing: 0.04em;
+      color: var(--text-primary);
+      margin-bottom: 24px;
+    }
+
+    .cta-subtitle {
+      font-size: 0.88rem;
+      font-weight: 300;
+      line-height: 1.95;
+      color: var(--text-muted);
+      margin-bottom: 48px;
+    }
+
+    .cta-actions {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .cta-note {
+      margin-top: 28px;
+      font-size: 0.75rem;
+      font-weight: 300;
+      color: var(--text-light);
+      letter-spacing: 0.06em;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--text-primary);
+      padding: 72px var(--side-pad) 40px;
+    }
+
+    .footer-inner {
+      max-width: var(--content-max);
+      margin: 0 auto;
+    }
+
+    .footer-top {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1.5fr;
+      gap: 48px;
+      margin-bottom: 56px;
+    }
+
+    .footer-logo {
+      font-family: var(--font-serif);
+      font-size: 1.15rem;
+      font-weight: 300;
+      letter-spacing: 0.08em;
+      color: rgba(255,255,255,0.85);
+      margin-bottom: 16px;
+    }
+
+    .footer-logo span {
+      display: block;
+      font-family: var(--font-sans);
+      font-size: 0.6rem;
+      font-weight: 300;
+      letter-spacing: 0.2em;
+      color: rgba(255,255,255,0.4);
+      margin-top: 4px;
+    }
+
+    .footer-tagline {
+      font-size: 0.8rem;
+      font-weight: 300;
+      line-height: 1.85;
+      color: rgba(255,255,255,0.45);
+      max-width: 260px;
+    }
+
+    .footer-col-title {
+      font-size: 0.68rem;
+      font-weight: 400;
+      letter-spacing: 0.2em;
+      color: rgba(255,255,255,0.35);
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .footer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .footer-links a {
+      font-size: 0.82rem;
+      font-weight: 300;
+      color: rgba(255,255,255,0.55);
+      text-decoration: none;
+      transition: color 0.25s;
+      letter-spacing: 0.04em;
+    }
+
+    .footer-links a:hover { color: rgba(255,255,255,0.85); }
+
+    .footer-contact-item {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .footer-contact-label {
+      font-size: 0.68rem;
+      font-weight: 300;
+      letter-spacing: 0.12em;
+      color: rgba(255,255,255,0.3);
+      min-width: 32px;
+      padding-top: 2px;
+      flex-shrink: 0;
+    }
+
+    .footer-contact-value {
+      font-size: 0.82rem;
+      font-weight: 300;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.65;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 28px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-copy {
+      font-size: 0.72rem;
+      font-weight: 300;
+      color: rgba(255,255,255,0.25);
+      letter-spacing: 0.06em;
+    }
+
+    .footer-ig {
+      font-size: 0.72rem;
+      font-weight: 300;
+      letter-spacing: 0.12em;
+      color: rgba(255,255,255,0.35);
+      text-decoration: none;
+      transition: color 0.25s;
+    }
+
+    .footer-ig:hover { color: rgba(255,255,255,0.65); }
+
+    /* ── REVEAL ANIMATION ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 0.72s ease, transform 0.72s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reveal-delay-1 { transition-delay: 0.08s; }
+    .reveal-delay-2 { transition-delay: 0.16s; }
+    .reveal-delay-3 { transition-delay: 0.24s; }
+    .reveal-delay-4 { transition-delay: 0.32s; }
+
+    /* ── RWD ── */
+    @media (max-width: 960px) {
+      :root { --side-pad: 32px; --section-gap: 80px; }
+
+      .services-hero { 
+        grid-template-columns: 1fr; 
+        gap: 48px;
+        padding: calc(var(--nav-h) + 64px) 0 80px;
+      }
+
+      .service-detail-inner { 
+        grid-template-columns: 1fr; 
+        gap: 48px; 
+      }
+
+      .service-detail.reverse .service-detail-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .service-img { aspect-ratio: 16/9; }
+
+      .philosophy-promises { 
+        grid-template-columns: 1fr; 
+        gap: 20px; 
+      }
+
+      .footer-top { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 700px) {
+      :root { --side-pad: 22px; --section-gap: 64px; }
+
+      .nav-links { display: none; }
+
+      .services-hero {
+        padding: calc(var(--nav-h) + 48px) 0 64px;
+        gap: 32px;
+      }
+
+      .service-detail-inner { gap: 32px; }
+
+      .philosophy-promises { gap: 16px; }
+
+      .cta-actions { flex-direction: column; align-items: stretch; gap: 16px; }
+
+      .footer-top { grid-template-columns: 1fr; }
+
+      .footer-bottom { 
+        flex-direction: column; 
+        align-items: flex-start; 
+        gap: 16px; 
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav data-section="nav" data-section-title="導航選單" data-section-purpose="提供網站主要頁面的快速導航，以及重點行動按鈕">
+    <a href="index.html" class="nav-logo" data-text="nav-logo" data-text-description="網站品牌標誌，中英文品牌名稱">
+      光葉影像
+      <span>HIKARI PHOTO</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="portfolio.html">作品集</a></li>
+      <li><a href="services.html">服務方案</a></li>
+      <li><a href="about.html">關於我們</a></li>
+      <li><a href="blog.html">部落格</a></li>
+      <li><a href="contact.html" class="nav-cta">預約諮詢</a></li>
+    </ul>
+  </nav>
+
+  <!-- SERVICES HERO -->
+  <section class="services-hero" data-section="services-hero" data-section-title="服務總覽" data-section-purpose="快速建立專業印象，展示服務廣度與核心專長">
+    <div class="services-hero-left">
+      <p class="section-label reveal" data-text="services-hero-label" data-text-description="服務總覽英文標籤">Our Services</p>
+      <div class="section-divider reveal"></div>
+      <h1 class="section-title reveal reveal-delay-1" data-text="services-hero-title" data-text-description="服務總覽主標題">用鏡頭記錄重要時刻</h1>
+      <p class="section-desc reveal reveal-delay-2" data-text="services-hero-subtitle" data-text-description="服務總覽副標題">三個專業領域，一個共同目標——讓美好時光永遠留下來</p>
+    </div>
+
+    <div class="services-hero-right">
+      <div class="service-preview-card reveal reveal-delay-1" onclick="scrollToSection('#wedding')">
+        <h3 class="service-preview-title" data-text="service-wedding-preview-title" data-text-description="婚禮紀錄預覽卡標題">婚禮紀錄</h3>
+        <p class="service-preview-desc" data-text="service-wedding-preview-desc" data-text-description="婚禮紀錄預覽卡說明">捕捉愛情最真實的樣子</p>
+      </div>
+
+      <div class="service-preview-card reveal reveal-delay-2" onclick="scrollToSection('#portrait')">
+        <h3 class="service-preview-title" data-text="service-portrait-preview-title" data-text-description="品牌形象照預覽卡標題">品牌形象照</h3>
+        <p class="service-preview-desc" data-text="service-portrait-preview-desc" data-text-description="品牌形象照預覽卡說明">展現最自信的你</p>
+      </div>
+
+      <div class="service-preview-card reveal reveal-delay-3" onclick="scrollToSection('#event')">
+        <h3 class="service-preview-title" data-text="service-event-preview-title" data-text-description="活動拍攝預覽卡標題">活動拍攝</h3>
+        <p class="service-preview-desc" data-text="service-event-preview-desc" data-text-description="活動拍攝預覽卡說明">重要時刻的專業見證</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WEDDING DETAIL -->
+  <section id="wedding" class="service-detail alt" data-section="wedding-detail" data-section-title="婚禮紀錄詳細說明" data-section-purpose="深度展示主要服務，建立專業信任，強調情感價值">
+    <div class="section-inner">
+      <div class="service-detail-inner">
+        <div class="reveal">
+          <img class="service-img" src="https://images.pexels.com/photos/33434579/pexels-photo-33434579.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=650&amp;w=940" alt="婚禮紀錄" data-img-query="wedding ceremony emotional bride groom tears joy candid" data-img-orientation="portrait" data-img-description="新人情感流露的真實瞬間">
+        </div>
+
+        <div class="service-content">
+          <p class="section-label reveal" data-text="wedding-label" data-text-description="婚禮紀錄英文標籤">Wedding Photography</p>
+          <div class="section-divider reveal"></div>
+          
+          <h2 class="section-title reveal reveal-delay-1" data-text="wedding-title" data-text-description="婚禮紀錄標題">捕捉無法重來的瞬間</h2>
+          
+          <p class="section-desc reveal reveal-delay-2" data-text="wedding-description" data-text-description="婚禮紀錄主要說明">婚禮那天的每個表情、每個眼神，都承載著你們愛情的重量。我用不打擾的方式記錄，讓照片成為多年後你們還能感受到那天心跳的證明。</p>
+
+          <ul class="service-features reveal reveal-delay-3">
+            <li data-text="wedding-feature-1" data-text-description="婚禮紀錄特色一">全天候跟拍，從準備到送客完整記錄</li>
+            <li data-text="wedding-feature-2" data-text-description="婚禮紀錄特色二">不強迫擺拍，專注抓拍真實情感</li>
+            <li data-text="wedding-feature-3" data-text-description="婚禮紀錄特色三">精修 300+ 張高品質照片</li>
+            <li data-text="wedding-feature-4" data-text-description="婚禮紀錄特色四">線上相簿永久保存 + 精選實體沖印</li>
+            <li data-text="wedding-feature-5" data-text-description="婚禮紀錄特色五">婚前風格討論，確保符合你們的期待</li>
+          </ul>
+
+          <div class="service-method reveal reveal-delay-4">
+            <h4 class="service-method-title" data-text="wedding-method-title" data-text-description="婚禮紀錄工作方式標題">工作方式</h4>
+            <p class="service-method-desc" data-text="wedding-method-desc" data-text-description="婚禮紀錄工作方式說明">在不干擾的前提下記錄你們最自然的樣子，重要時刻不錯過，日常互動也珍藏。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PORTRAIT DETAIL -->
+  <section id="portrait" class="service-detail reverse" data-section="portrait-detail" data-section-title="品牌形象照" data-section-purpose="展示其他服務能力，擴大客戶群">
+    <div class="section-inner">
+      <div class="service-detail-inner">
+        <div class="service-content">
+          <p class="section-label reveal" data-text="portrait-label" data-text-description="品牌形象照英文標籤">Brand Portrait</p>
+          <div class="section-divider reveal"></div>
+          
+          <h2 class="section-title reveal reveal-delay-1" data-text="portrait-title" data-text-description="品牌形象照標題">展現最真實的你</h2>
+          
+          <p class="section-desc reveal reveal-delay-2" data-text="portrait-description" data-text-description="品牌形象照主要說明">好的形象照不只是美，更要有你的個性與故事。無論是個人品牌建立或商業需求，我們一起打造最能代表你的視覺形象。</p>
+
+          <ul class="service-features reveal reveal-delay-3">
+            <li data-text="portrait-feature-1" data-text-description="品牌形象照特色一">拍攝前造型與風格討論</li>
+            <li data-text="portrait-feature-2" data-text-description="品牌形象照特色二">2-3 小時彈性拍攝時間</li>
+            <li data-text="portrait-feature-3" data-text-description="品牌形象照特色三">多組造型與場景變化</li>
+            <li data-text="portrait-feature-4" data-text-description="品牌形象照特色四">精修 80 張以上專業照片</li>
+            <li data-text="portrait-feature-5" data-text-description="品牌形象照特色五">可加選 Behind the scenes 影片記錄</li>
+          </ul>
+        </div>
+
+        <div class="reveal">
+          <img class="service-img" src="https://images.pexels.com/photos/27086757/pexels-photo-27086757.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=650&amp;w=940" alt="品牌形象照" data-img-query="professional portrait business woman confident natural light" data-img-orientation="portrait" data-img-description="專業女性形象照，自然光線">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EVENT DETAIL -->
+  <section id="event" class="service-detail deep" data-section="event-detail" data-section-title="活動拍攝" data-section-purpose="展示服務完整性，增加接觸點">
+    <div class="section-inner">
+      <div class="service-detail-inner">
+        <div class="reveal">
+          <img class="service-img" src="https://images.pexels.com/photos/8761634/pexels-photo-8761634.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=650&amp;w=940" alt="活動拍攝" data-img-query="corporate event conference candid professional gathering" data-img-orientation="landscape" data-img-description="活動現場的自然互動瞬間">
+        </div>
+
+        <div class="service-content">
+          <p class="section-label reveal" data-text="event-label" data-text-description="活動拍攝英文標籤">Event Photography</p>
+          <div class="section-divider reveal"></div>
+          
+          <h2 class="section-title reveal reveal-delay-1" data-text="event-title" data-text-description="活動拍攝標題">重要時刻的見證者</h2>
+          
+          <p class="section-desc reveal reveal-delay-2" data-text="event-description" data-text-description="活動拍攝主要說明">企業活動、產品發表、重要聚會——每個場合都有值得保留的時刻。用專業的眼光記錄活動精彩，讓回憶更有份量。</p>
+
+          <div class="service-method reveal reveal-delay-3">
+            <h4 class="service-method-title" data-text="event-occasions-title" data-text-description="活動拍攝適用場合標題">適用場合</h4>
+            <p class="service-method-desc" data-text="event-occasions-desc" data-text-description="活動拍攝適用場合說明">企業活動、產品發表會、家庭聚會、畢業典禮、慶祝派對</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PHILOSOPHY SECTION -->
+  <section class="philosophy-section" data-section="philosophy" data-section-title="服務理念" data-section-purpose="深化品牌價值，建立情感連結">
+    <div class="section-inner">
+      <blockquote class="philosophy-quote reveal" data-text="philosophy-quote" data-text-description="服務理念核心引言">攝影不只是技術，更是理解每個瞬間背後的意義</blockquote>
+
+      <div class="philosophy-content">
+        <p class="philosophy-desc reveal reveal-delay-1" data-text="philosophy-description" data-text-description="服務理念說明">我相信最好的照片來自於真實的連結。不是完美的姿勢或夢幻的場景，而是那些讓人想起「對，我們就是這樣」的瞬間。這就是為什麼我花時間了解每個客戶，因為只有真正懂你的人，才能拍出真正屬於你的照片。</p>
+
+        <div class="philosophy-promises reveal reveal-delay-2">
+          <div class="philosophy-promise">
+            <div class="philosophy-promise-dot"></div>
+            <p class="philosophy-promise-text" data-text="philosophy-promise-1" data-text-description="服務承諾一">準時專業，絕不讓重要時刻等待</p>
+          </div>
+          <div class="philosophy-promise">
+            <div class="philosophy-promise-dot"></div>
+            <p class="philosophy-promise-text" data-text="philosophy-promise-2" data-text-description="服務承諾二">尊重每個客戶的風格與需求</p>
+          </div>
+          <div class="philosophy-promise">
+            <div class="philosophy-promise-dot"></div>
+            <p class="philosophy-promise-text" data-text="philosophy-promise-3" data-text-description="服務承諾三">用心後製，確保每張照片都值得珍藏</p>
+          </div>
+          <div class="philosophy-promise">
+            <div class="philosophy-promise-dot"></div>
+            <p class="philosophy-promise-text" data-text="philosophy-promise-4" data-text-description="服務承諾四">持續學習，保持作品質感與時俱進</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ SECTION -->
+  <section class="faq-section" data-section="faq" data-section-title="常見問題" data-section-purpose="解答實用疑慮，降低諮詢門檻">
+    <div class="section-inner">
+      <div class="faq-header">
+        <p class="section-label reveal" data-text="faq-label" data-text-description="常見問題英文標籤">FAQ</p>
+        <div class="section-divider reveal"></div>
+        <h2 class="section-title reveal" data-text="faq-title" data-text-description="常見問題標題">你可能想知道的事</h2>
+      </div>
+
+      <div class="faq-list">
+        <div class="faq-item reveal">
+          <button class="faq-question" data-text="faq-question-1" data-text-description="常見問題一">
+            拍攝當天會有幾位攝影師？
+            <svg class="faq-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M6 9L12 15L18 9"></path>
+            </svg>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-content">
+              <p data-text="faq-answer-1" data-text-description="常見問題一答案">
+                通常是我一個人拍攝，專注在品質而非數量。如果是大型婚禮或特殊需求，會事前討論是否需要助理攝影師協助。
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item reveal reveal-delay-1">
+          <button class="faq-question" data-text="faq-question-2" data-text-description="常見問題二">
+            照片什麼時候可以收到？
+            <svg class="faq-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M6 9L12 15L18 9"></path>
+            </svg>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-content">
+              <p data-text="faq-answer-2" data-text-description="常見問題二答案">
+                婚禮紀錄約 4-6 週交付，品牌形象照約 2-3 週。我會先提供幾張預覽照讓你們先睹為快。
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item reveal reveal-delay-2">
+          <button class="faq-question" data-text="faq-question-3" data-text-description="常見問題三">
+            可以指定一定要拍到的畫面嗎？
+            <svg class="faq-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M6 9L12 15L18 9"></path>
+            </svg>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-content">
+              <p data-text="faq-answer-3" data-text-description="常見問題三答案">
+                當然可以！婚前會詳細討論你們希望保留的重要時刻，像是交換戒指、家人合照等關鍵時刻絕對不會錯過。
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item reveal reveal-delay-3">
+          <button class="faq-question" data-text="faq-question-4" data-text-description="常見問題四">
+            如果天氣不好會影響拍攝嗎？
+            <svg class="faq-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M6 9L12 15L18 9"></path>
+            </svg>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-content">
+              <p data-text="faq-answer-4" data-text-description="常見問題四答案">
+                室內儀式不受影響。如果有戶外橋段遇到下雨，會即時調整拍攝計畫，雨天也有雨天的浪漫。
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item reveal reveal-delay-4">
+          <button class="faq-question" data-text="faq-question-5" data-text-description="常見問題五">
+            外縣市婚禮會加收交通費嗎？
+            <svg class="faq-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M6 9L12 15L18 9"></path>
+            </svg>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-content">
+              <p data-text="faq-answer-5" data-text-description="常見問題五答案">
+                台北、新北不加收。桃園、新竹會酌收車馬費，更遠地區可個別討論。費用會事前告知。
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item reveal reveal-delay-5">
+          <button class="faq-question" data-text="faq-question-6" data-text-description="常見問題六">
+            可以單獨拍攝某個環節嗎？
+            <svg class="faq-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M6 9L12 15L18 9"></path>
+            </svg>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-content">
+              <p data-text="faq-answer-6" data-text-description="常見問題六答案">
+                可以！如果只需要儀式或宴客單一環節，價格會相對調整。歡迎討論最適合你們的方案。
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section" data-section="cta" data-section-title="行動召喚" data-section-purpose="引導已建立信任的訪客採取行動">
+    <div class="cta-inner">
+      <p class="cta-eyebrow reveal" data-text="cta-eyebrow" data-text-description="行動召喚標語">Let's begin</p>
+      <h2 class="cta-title reveal reveal-delay-1" data-text="cta-title" data-text-description="行動召喚主標題">開始我們的合作</h2>
+      <p class="cta-subtitle reveal reveal-delay-2" data-text="cta-subtitle" data-text-description="行動召喚說明，降低諮詢門檻">每個故事都值得被好好記錄。告訴我你們的計畫，讓我們聊聊最適合的拍攝方案。</p>
+
+      <div class="cta-actions reveal reveal-delay-3">
+        <a href="portfolio.html" class="btn-text" data-text="cta-btn-portfolio" data-text-description="次要行動：查看作品集">查看作品集 →</a>
+        <a href="contact.html" class="btn-primary" data-text="cta-btn-contact" data-text-description="主要行動：預約諮詢">預約諮詢</a>
+      </div>
+
+      <p class="cta-note reveal reveal-delay-4" data-text="cta-note" data-text-description="補充說明，消除諮詢顧慮">免費諮詢・24小時內回覆・彈性方案規劃</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer data-section="footer" data-section-title="網站底部" data-section-purpose="提供完整的聯絡資訊、網站導航，以及品牌相關連結">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div>
+          <div class="footer-logo" data-text="footer-logo" data-text-description="Footer品牌標誌">
+            光葉影像
+            <span>HIKARI PHOTO</span>
+          </div>
+          <p class="footer-tagline" data-text="footer-tagline" data-text-description="Footer品牌標語">那些眼神和細節，值得被好好留下來。</p>
+        </div>
+
+        <div>
+          <p class="footer-col-title" data-text="footer-nav-title" data-text-description="Footer導航分類標題">頁面</p>
+          <ul class="footer-links">
+            <li><a href="portfolio.html">作品集</a></li>
+            <li><a href="services.html">服務方案</a></li>
+            <li><a href="about.html">關於我們</a></li>
+            <li><a href="blog.html">部落格</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <p class="footer-col-title" data-text="footer-service-title" data-text-description="Footer服務分類標題">服務</p>
+          <ul class="footer-links">
+            <li><a href="services.html">婚禮紀錄</a></li>
+            <li><a href="services.html">品牌形象照</a></li>
+            <li><a href="services.html">活動拍攝</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <p class="footer-col-title" data-text="footer-contact-title" data-text-description="Footer聯絡資訊標題">聯絡資訊</p>
+          <div class="footer-contact-item">
+            <span class="footer-contact-label">Mail</span>
+            <span class="footer-contact-value" data-text="footer-email" data-text-description="聯絡Email">hello@hikari.photo</span>
+          </div>
+          <div class="footer-contact-item">
+            <span class="footer-contact-label">Tel</span>
+            <span class="footer-contact-value" data-text="footer-tel" data-text-description="聯絡電話">0912-345-678</span>
+          </div>
+          <div class="footer-contact-item">
+            <span class="footer-contact-label">IG</span>
+            <span class="footer-contact-value" data-text="footer-ig" data-text-description="Instagram帳號">@hikari.photo</span>
+          </div>
+          <div class="footer-contact-item">
+            <span class="footer-contact-label">地址</span>
+            <span class="footer-contact-value" data-text="footer-address" data-text-description="工作室地址">台北市中山區</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-copy" data-text="footer-copy" data-text-description="版權宣告">© 2025 光葉影像 Hikari Photo. All rights reserved.</p>
+        <a href="https://instagram.com/hikari.photo" class="footer-ig" target="_blank" data-text="footer-ig-link" data-text-description="Footer Instagram連結">Instagram @hikari.photo</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Scroll Reveal
+    const revealEls = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(el => {
+        if (el.isIntersecting) {
+          el.target.classList.add('visible');
+          observer.unobserve(el.target);
+        }
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -24px 0px' });
+
+    revealEls.forEach(el => observer.observe(el));
+
+    // FAQ Accordion
+    const faqQuestions = document.querySelectorAll('.faq-question');
+    faqQuestions.forEach(question => {
+      question.addEventListener('click', () => {
+        const faqItem = question.parentElement;
+        const isActive = faqItem.classList.contains('active');
+        
+        // Close all FAQ items
+        document.querySelectorAll('.faq-item').forEach(item => {
+          item.classList.remove('active');
+        });
+        
+        // Open clicked item if it wasn't active
+        if (!isActive) {
+          faqItem.classList.add('active');
+        }
+      });
+    });
+
+    // Smooth scroll to sections
+    function scrollToSection(selector) {
+      const element = document.querySelector(selector);
+      if (element) {
+        element.scrollIntoView({ 
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+    }
+
+    // Auto-reveal hero section
+    setTimeout(() => {
+      document.querySelectorAll('.services-hero .reveal').forEach(el => {
+        el.classList.add('visible');
+      });
+    }, 100);
+  </script>
+
+</body></html>

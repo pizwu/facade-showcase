@@ -1,0 +1,750 @@
+<!DOCTYPE html><html lang="zh-TW"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>新主管最常犯的3個帶人錯誤｜余明道 企業教練</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&amp;family=Noto+Serif+TC:wght@400;600;700&amp;family=Cormorant+Garamond:wght@400;600;700&amp;display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-primary: #0D1F3C;
+      --bg-secondary: #152844;
+      --bg-deep: #091629;
+      --bg-card: #1A3255;
+      --bg-light: #F5F2ED;
+      --text-primary: #F0ECE4;
+      --text-muted: #A8B4C4;
+      --text-light: #6B7D93;
+      --text-dark: #1A2B3C;
+      --accent: #C9A96E;
+      --accent-light: #E2C99A;
+      --border: rgba(201, 169, 110, 0.2);
+      --border-subtle: rgba(255,255,255,0.08);
+      --font-serif: 'Cormorant Garamond', 'Noto Serif TC', serif;
+      --font-sans: 'Noto Sans TC', sans-serif;
+      --section-gap: 120px;
+      --content-max: 1080px;
+      --side-pad: 48px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-sans);
+      background: var(--bg-light);
+      color: var(--text-dark);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(13, 31, 60, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .nav-inner {
+      max-width: var(--content-max);
+      margin: 0 auto;
+      padding: 0 var(--side-pad);
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-logo {
+      font-family: var(--font-serif);
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      text-decoration: none;
+      letter-spacing: 0.06em;
+    }
+    .nav-logo span {
+      color: var(--accent);
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.88rem;
+      letter-spacing: 0.04em;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--text-primary); }
+    .nav-cta {
+      background: var(--accent);
+      color: var(--bg-deep) !important;
+      padding: 8px 20px;
+      border-radius: 3px;
+      font-weight: 700;
+      font-size: 0.85rem !important;
+      letter-spacing: 0.06em;
+      transition: background 0.2s !important;
+    }
+    .nav-cta:hover { background: var(--accent-light) !important; color: var(--bg-deep) !important; }
+
+    /* ── ARTICLE HERO ── */
+    .article-hero {
+      background: var(--bg-primary);
+      padding: 120px var(--side-pad) 80px;
+      text-align: center;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .article-hero-inner {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .article-meta {
+      margin-bottom: 24px;
+    }
+    .article-author {
+      color: var(--accent);
+      font-size: 0.9rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+    }
+    .article-date {
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      margin: 0 16px;
+    }
+    .article-readtime {
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+    .article-title {
+      font-family: var(--font-serif);
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      font-weight: 700;
+      line-height: 1.25;
+      color: var(--text-primary);
+      margin-bottom: 20px;
+      letter-spacing: -0.01em;
+    }
+    .article-excerpt {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      line-height: 1.8;
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    /* ── ARTICLE CONTENT ── */
+    .article-content {
+      background: var(--bg-light);
+      padding: var(--section-gap) var(--side-pad);
+    }
+    .article-content-inner {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .article-text h3 {
+      font-family: var(--font-serif);
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin: 48px 0 20px 0;
+      line-height: 1.4;
+    }
+    .article-text h4 {
+      font-family: var(--font-serif);
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: var(--text-dark);
+      margin: 40px 0 16px 0;
+      line-height: 1.4;
+    }
+    .article-text p {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      margin-bottom: 20px;
+      color: var(--text-dark);
+    }
+    .article-text strong {
+      font-weight: 700;
+      color: var(--accent);
+    }
+    .article-image {
+      margin: 48px 0;
+      border-radius: 6px;
+      overflow: hidden;
+    }
+    .article-image img {
+      width: 100%;
+      height: 320px;
+      object-fit: cover;
+    }
+
+    /* ── HIGHLIGHT BOX ── */
+    .highlight-box {
+      background: var(--bg-secondary);
+      padding: var(--section-gap) var(--side-pad);
+      margin: var(--section-gap) 0;
+    }
+    .highlight-box-inner {
+      max-width: var(--content-max);
+      margin: 0 auto;
+    }
+    .highlight-title {
+      font-family: var(--font-serif);
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 32px;
+      text-align: center;
+    }
+    .highlight-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+    .highlight-item {
+      background: var(--bg-card);
+      padding: 28px 32px;
+      border-radius: 6px;
+      border: 1px solid var(--border-subtle);
+      transition: border-color 0.25s, transform 0.25s;
+    }
+    .highlight-item:hover {
+      border-color: var(--border);
+      transform: translateY(-2px);
+    }
+    .highlight-item-title {
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 12px;
+      font-size: 1rem;
+    }
+    .highlight-item-text {
+      color: var(--text-muted);
+      font-size: 0.92rem;
+      line-height: 1.7;
+    }
+
+    /* ── AUTHOR SECTION ── */
+    .author-section {
+      background: var(--bg-primary);
+      padding: var(--section-gap) var(--side-pad);
+      border-top: 1px solid var(--border-subtle);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .author-inner {
+      max-width: var(--content-max);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+    .author-info h3 {
+      font-family: var(--font-serif);
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 8px;
+    }
+    .author-role {
+      color: var(--accent);
+      font-size: 1rem;
+      margin-bottom: 24px;
+      letter-spacing: 0.04em;
+    }
+    .author-desc {
+      color: var(--text-muted);
+      line-height: 1.8;
+      margin-bottom: 32px;
+    }
+    .author-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .author-stat {
+      text-align: center;
+    }
+    .author-stat-num {
+      font-family: var(--font-serif);
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--accent);
+      display: block;
+    }
+    .author-stat-label {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+    .author-photo {
+      display: flex;
+      justify-content: center;
+    }
+    .author-photo img {
+      width: 280px;
+      height: 320px;
+      object-fit: cover;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+    }
+
+    /* ── RELATED POSTS ── */
+    .related-posts {
+      background: var(--bg-light);
+      padding: var(--section-gap) var(--side-pad);
+    }
+    .related-inner {
+      max-width: var(--content-max);
+      margin: 0 auto;
+    }
+    .related-title {
+      font-family: var(--font-serif);
+      font-size: clamp(1.8rem, 3vw, 2.4rem);
+      font-weight: 700;
+      color: var(--text-dark);
+      text-align: center;
+      margin-bottom: 64px;
+    }
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+    }
+    .related-card {
+      background: white;
+      border: 1px solid #e1e8f0;
+      border-radius: 6px;
+      overflow: hidden;
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+    .related-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(13, 31, 60, 0.1);
+    }
+    .related-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+    .related-card-content {
+      padding: 24px;
+    }
+    .related-card-title {
+      font-family: var(--font-serif);
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--text-dark);
+      line-height: 1.5;
+      margin-bottom: 8px;
+    }
+    .related-card-title:hover {
+      color: var(--accent);
+    }
+    .related-card-excerpt {
+      font-size: 0.9rem;
+      color: var(--text-light);
+      line-height: 1.6;
+    }
+
+    /* ── CTA SECTION ── */
+    .cta-section {
+      background: linear-gradient(135deg, var(--bg-secondary) 0%, #0F2848 100%);
+      border-top: 1px solid var(--border-subtle);
+      padding: 100px var(--side-pad);
+      text-align: center;
+    }
+    .cta-inner {
+      max-width: 640px;
+      margin: 0 auto;
+    }
+    .cta-title {
+      font-family: var(--font-serif);
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 16px;
+      line-height: 1.3;
+    }
+    .cta-desc {
+      font-size: 1rem;
+      color: var(--text-muted);
+      line-height: 1.8;
+      margin-bottom: 40px;
+    }
+    .btn-primary {
+      background: var(--accent);
+      color: var(--bg-deep);
+      padding: 14px 32px;
+      border-radius: 3px;
+      font-weight: 700;
+      font-size: 0.92rem;
+      letter-spacing: 0.06em;
+      text-decoration: none;
+      display: inline-block;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .btn-primary:hover { background: var(--accent-light); transform: translateY(-1px); }
+    .cta-note {
+      margin-top: 20px;
+      font-size: 0.8rem;
+      color: var(--text-light);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--bg-deep);
+      padding: 64px var(--side-pad) 40px;
+      border-top: 1px solid var(--border-subtle);
+    }
+    .footer-inner {
+      max-width: var(--content-max);
+      margin: 0 auto;
+    }
+    .footer-top {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr;
+      gap: 48px;
+      margin-bottom: 48px;
+    }
+    .footer-brand {
+      font-family: var(--font-serif);
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 12px;
+      letter-spacing: 0.04em;
+    }
+    .footer-brand span { color: var(--accent); }
+    .footer-tagline {
+      font-size: 0.84rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+    .footer-contact-item {
+      font-size: 0.84rem;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+    }
+    .footer-contact-item strong {
+      color: var(--text-primary);
+      font-size: 0.76rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 2px;
+    }
+    .footer-col-title {
+      font-size: 0.76rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 16px;
+      font-weight: 500;
+    }
+    .footer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .footer-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.88rem;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--text-primary); }
+    .footer-bottom {
+      border-top: 1px solid var(--border-subtle);
+      padding-top: 28px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .footer-copy {
+      font-size: 0.78rem;
+      color: var(--text-light);
+    }
+    .footer-linkedin {
+      font-size: 0.78rem;
+      color: var(--text-light);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-linkedin:hover { color: var(--accent); }
+
+    /* ── REVEAL ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .reveal-delay-1 { transition-delay: 0.08s; }
+    .reveal-delay-2 { transition-delay: 0.16s; }
+    .reveal-delay-3 { transition-delay: 0.24s; }
+
+    /* ── RWD ── */
+    @media (max-width: 960px) {
+      :root { --side-pad: 32px; --section-gap: 80px; }
+      .nav-links li:not(:last-child) { display: none; }
+      .highlight-grid { grid-template-columns: 1fr; }
+      .author-inner { grid-template-columns: 1fr; gap: 40px; text-align: center; }
+      .author-stats { grid-template-columns: repeat(3, 1fr); }
+      .related-grid { grid-template-columns: repeat(2, 1fr); }
+      .footer-top { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 700px) {
+      :root { --side-pad: 20px; --section-gap: 64px; }
+      .nav-links { display: none; }
+      .article-title { font-size: 2rem; }
+      .article-text h3 { font-size: 1.5rem; }
+      .article-text h4 { font-size: 1.2rem; }
+      .highlight-grid { grid-template-columns: 1fr; gap: 16px; }
+      .author-stats { grid-template-columns: 1fr; gap: 16px; }
+      .related-grid { grid-template-columns: 1fr; }
+      .footer-top { grid-template-columns: 1fr; gap: 32px; }
+      .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══ NAV ══ -->
+<nav data-section="navigation" data-section-title="導覽選單" data-section-purpose="提供主要頁面連結，重點突出預約諮詢CTA按鈕">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo" data-text="nav-logo" data-text-description="導覽區品牌標誌文字">余明道<span>．</span>企業教練</a>
+    <ul class="nav-links">
+      <li><a href="about.html">關於我</a></li>
+      <li><a href="services.html">服務項目</a></li>
+      <li><a href="portfolio.html">成功案例</a></li>
+      <li><a href="blog.html">部落格</a></li>
+      <li><a href="contact.html" class="nav-cta">預約諮詢</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ══ ARTICLE HERO ══ -->
+<section class="article-hero" data-section="article-hero" data-section-title="文章開場區" data-section-purpose="快速建立文章價值感，讓訪客確認內容與需求匹配">
+  <div class="article-hero-inner">
+    <div class="article-meta reveal">
+      <span class="article-author" data-text="article-author" data-text-description="文章作者">余明道</span>
+      <span class="article-date" data-text="article-date" data-text-description="發布日期">2024年3月15日</span>
+      <span class="article-readtime" data-text="article-readtime" data-text-description="閱讀時間">閱讀時間約8分鐘</span>
+    </div>
+    <h1 class="article-title reveal reveal-delay-1" data-text="article-title" data-text-description="文章主標題">新主管最常犯的3個帶人錯誤<br>（避開就能留住90%的人才）</h1>
+    <p class="article-excerpt reveal reveal-delay-2" data-text="article-excerpt" data-text-description="文章摘要">每個企業都在頭痛主管留不住人，但很少人注意到問題出在「新主管的前90天」。從我輔導過的30多家企業經驗來看，避開這3個常見錯誤，主管留才成功率能提升近9成。</p>
+  </div>
+</section>
+
+<!-- ══ ARTICLE CONTENT ══ -->
+<section class="article-content" data-section="article-content" data-section-title="文章正文" data-section-purpose="提供有價值的管理知識，建立專業可信度">
+  <div class="article-content-inner">
+    <div class="article-text">
+      <h3 data-text="section-1-title" data-text-description="第一段落標題">為什麼新主管特別容易「帶跑」人才？</h3>
+      <p data-text="section-1-p1" data-text-description="開場情境案例">上個月一家製造業客戶的HR找我：「我們新提拔的部門主管，3個月內走了5個人，包括2個核心員工。技術沒問題，為什麼一當主管就留不住人？」</p>
+      
+      <p data-text="section-1-p2" data-text-description="問題普遍性說明">這個問題我聽過太多次。數據顯示，新主管上任後的前90天，是員工離職率最高的時期。不是因為薪水，不是因為工作內容，而是因為新主管在「帶人」這件事上，犯了幾個致命錯誤。</p>
+
+      <p data-text="section-1-p3" data-text-description="引出三大錯誤">從我8年來輔導過的企業案例分析，新主管最容易踩到的3個地雷是這些：</p>
+
+      <div class="article-image">
+        <img src="https://images.pexels.com/photos/7648050/pexels-photo-7648050.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=650&amp;w=940" alt="Corporate meeting leadership training" data-img-query="corporate meeting leadership training" data-img-orientation="landscape" data-img-description="企業會議或培訓場景">
+      </div>
+
+      <h4 data-text="error-1-title" data-text-description="第一個錯誤標題">錯誤1：把「管事」當「管人」，忽略員工感受</h4>
+      <p data-text="error-1-situation" data-text-description="錯誤1的常見狀況"><strong>最常見的狀況</strong>：新主管一上任就急著展現權威，用管理事情的邏輯來管理人。「這個任務明天交」、「流程要照我的方式做」，完全不考慮員工的想法和感受。</p>
+
+      <p data-text="error-1-case" data-text-description="錯誤1的實際案例"><strong>實際案例</strong>：台北一家軟體公司的新主管，上任第一週就要求團隊按照他的時間表工作，完全不了解原有的協作模式。結果3個資深工程師在2個月內離職。</p>
+
+      <p data-text="error-1-why" data-text-description="錯誤1的原因分析"><strong>為什麼會出錯</strong>：多數新主管以為「有權威才有效率」，但實際上，人需要被理解和尊重，不是被指揮和控制。</p>
+
+      <p data-text="error-1-solution" data-text-description="錯誤1的正確做法"><strong>正確做法</strong>：上任前30天，先花時間了解每個員工的工作習慣、專長和困難。問「你覺得怎樣調整會更好？」而不是直接下指令。</p>
+
+      <h4 data-text="error-2-title" data-text-description="第二個錯誤標題">錯誤2：試圖「一視同仁」，忽略個別差異</h4>
+      <p data-text="error-2-situation" data-text-description="錯誤2的常見狀況"><strong>最常見的狀況</strong>：新主管想展現公平，用同樣的標準和方式對待所有員工，不分資歷、性格、能力差異。</p>
+
+      <p data-text="error-2-case" data-text-description="錯誤2的實際案例"><strong>實際案例</strong>：一家連鎖零售業的新店長，對有5年經驗的資深員工和剛入職的新人用完全相同的管理方式。資深員工覺得被當新人對待，感到不被信任，最終選擇離職。</p>
+
+      <p data-text="error-2-why" data-text-description="錯誤2的原因分析"><strong>為什麼會出錯</strong>：新主管害怕被說偏心，但「一視同仁」往往變成「一視同盲」。</p>
+
+      <p data-text="error-2-solution" data-text-description="錯誤2的正確做法"><strong>正確做法</strong>：了解每個員工的成長階段和需求，給資深員工更多自主空間，給新員工更多指導支持。管理不是工廠生產線，每個人需要不同的帶領方式。</p>
+
+      <h4 data-text="error-3-title" data-text-description="第三個錯誤標題">錯誤3：只關注結果，不關注過程中的人</h4>
+      <p data-text="error-3-situation" data-text-description="錯誤3的常見狀況"><strong>最常見的狀況</strong>：新主管只盯數字、盯績效，員工怎麼達成的、過程中遇到什麼困難、心理狀態如何，完全不在意。</p>
+
+      <p data-text="error-3-case" data-text-description="錯誤3的實際案例"><strong>實際案例</strong>：某製造業新主管上任後，每週只關心生產數字有沒有達標，從不詢問員工在執行過程中是否需要支援。團隊士氣越來越低，雖然短期數字還算穩定，但半年後優秀員工紛紛轉調其他部門。</p>
+
+      <p data-text="error-3-why" data-text-description="錯誤3的原因分析"><strong>為什麼會出錯</strong>：新主管承受業績壓力，以為專注結果就是負責任的表現。</p>
+
+      <p data-text="error-3-solution" data-text-description="錯誤3的正確做法"><strong>正確做法</strong>：定期和員工討論工作過程，了解他們的挑戰和需要的資源。真正的管理是幫助員工成功，而不是監督員工達標。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══ HIGHLIGHT BOX ══ -->
+<section class="highlight-box" data-section="highlight-summary" data-section-title="要點整理" data-section-purpose="方便忙碌的管理者快速抓取重點，提升內容實用性">
+  <div class="highlight-box-inner">
+    <h3 class="highlight-title reveal" data-text="highlight-title" data-text-description="重點整理標題">新主管避雷指南</h3>
+    <div class="highlight-grid">
+      <div class="highlight-item reveal">
+        <div class="highlight-item-title" data-text="highlight-1-title" data-text-description="重點1標題">用「帶人」思維取代「管事」思維</div>
+        <div class="highlight-item-text" data-text="highlight-1-text" data-text-description="重點1說明">先理解再要求，建立信任比建立權威更重要</div>
+      </div>
+      <div class="highlight-item reveal reveal-delay-1">
+        <div class="highlight-item-title" data-text="highlight-2-title" data-text-description="重點2標題">因材施教，避免一視同盲</div>
+        <div class="highlight-item-text" data-text="highlight-2-text" data-text-description="重點2說明">不同員工需要不同的管理方式和成長支援</div>
+      </div>
+      <div class="highlight-item reveal reveal-delay-2">
+        <div class="highlight-item-title" data-text="highlight-3-title" data-text-description="重點3標題">關注過程，幫助員工成功</div>
+        <div class="highlight-item-text" data-text="highlight-3-text" data-text-description="重點3說明">而不只是監督員工達標，提供需要的資源</div>
+      </div>
+      <div class="highlight-item reveal reveal-delay-3">
+        <div class="highlight-item-title" data-text="highlight-4-title" data-text-description="重點4標題">前90天是關鍵期</div>
+        <div class="highlight-item-text" data-text="highlight-4-text" data-text-description="重點4說明">多聽少說，投資時間了解團隊現狀</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ AUTHOR SECTION ══ -->
+<section class="author-section" data-section="author-intro" data-section-title="關於作者" data-section-purpose="建立余明道個人權威感和信任度，為CTA鋪墊">
+  <div class="author-inner">
+    <div class="author-info reveal">
+      <h3 data-text="author-name" data-text-description="作者姓名">余明道</h3>
+      <div class="author-role" data-text="author-role" data-text-description="作者職稱">企業教練｜8年企業培訓經驗</div>
+      <p class="author-desc" data-text="author-desc" data-text-description="作者專業背景">專精於中型企業主管領導力培訓，已協助30多家企業解決主管留才問題。培訓完成後6個月追蹤顯示，主管層離職率平均下降41%。</p>
+      <div class="author-stats">
+        <div class="author-stat">
+          <span class="author-stat-num" data-text="author-stat-1" data-text-description="作者數據1">30+</span>
+          <div class="author-stat-label" data-text="author-stat-1-label" data-text-description="數據1說明">服務企業</div>
+        </div>
+        <div class="author-stat">
+          <span class="author-stat-num" data-text="author-stat-2" data-text-description="作者數據2">50-500</span>
+          <div class="author-stat-label" data-text="author-stat-2-label" data-text-description="數據2說明">企業規模</div>
+        </div>
+        <div class="author-stat">
+          <span class="author-stat-num" data-text="author-stat-3" data-text-description="作者數據3">1,800+</span>
+          <div class="author-stat-label" data-text="author-stat-3-label" data-text-description="數據3說明">LinkedIn連結</div>
+        </div>
+      </div>
+    </div>
+    <div class="author-photo reveal reveal-delay-1">
+      <img src="https://images.pexels.com/photos/8871934/pexels-photo-8871934.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=650&amp;w=940" alt="余明道專業照片" data-img-query="professional business consultant portrait" data-img-orientation="portrait" data-img-description="余明道正式西裝照">
+    </div>
+  </div>
+</section>
+
+<!-- ══ RELATED POSTS ══ -->
+<section class="related-posts" data-section="related-posts" data-section-title="相關文章推薦" data-section-purpose="增加頁面停留時間，展示更多專業內容">
+  <div class="related-inner">
+    <h3 class="related-title reveal" data-text="related-title" data-text-description="延伸閱讀標題">延伸閱讀</h3>
+    <div class="related-grid">
+      <article class="related-card reveal">
+        <img src="https://images.pexels.com/photos/5686014/pexels-photo-5686014.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=650&amp;w=940" alt="team leadership meeting" data-img-query="team leadership business meeting" data-img-orientation="landscape" data-img-description="團隊領導會議場景">
+        <div class="related-card-content">
+          <h4 class="related-card-title" data-text="related-1-title" data-text-description="相關文章1標題">為什麼你的主管培訓「上完就忘」？3個讓學習真正落地的方法</h4>
+          <p class="related-card-excerpt" data-text="related-1-excerpt" data-text-description="相關文章1摘要">多數企業培訓課後效果不彰，問題出在缺乏系統性的落地機制...</p>
+        </div>
+      </article>
+      <article class="related-card reveal reveal-delay-1">
+        <img src="https://images.pexels.com/photos/5862377/pexels-photo-5862377.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=650&amp;w=940" alt="manager coaching employee workplace" data-img-query="manager coaching employee workplace" data-img-orientation="landscape" data-img-description="主管教練員工職場場景">
+        <div class="related-card-content">
+          <h4 class="related-card-title" data-text="related-2-title" data-text-description="相關文章2標題">HR如何判斷主管培訓需求？5個觀察指標告訴你</h4>
+          <p class="related-card-excerpt" data-text="related-2-excerpt" data-text-description="相關文章2摘要">從這5個客觀指標，提前發現主管能力短板，避免等到離職潮才處理...</p>
+        </div>
+      </article>
+      <article class="related-card reveal reveal-delay-2">
+        <img src="https://images.pexels.com/photos/8761519/pexels-photo-8761519.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=650&amp;w=940" alt="corporate training workshop session" data-img-query="corporate training workshop session" data-img-orientation="landscape" data-img-description="企業培訓工作坊場景">
+        <div class="related-card-content">
+          <h4 class="related-card-title" data-text="related-3-title" data-text-description="相關文章3標題">中小企業主管培訓預算怎麼抓？完整成本效益分析</h4>
+          <p class="related-card-excerpt" data-text="related-3-excerpt" data-text-description="相關文章3摘要">培訓投資如何計算ROI？用數據說話，讓老闆看見培訓的真實價值...</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CTA ══ -->
+<section class="cta-section" data-section="cta" data-section-title="諮詢邀請" data-section-purpose="從閱讀轉化為實際行動，預約諮詢">
+  <div class="cta-inner">
+    <h2 class="cta-title reveal" data-text="cta-title" data-text-description="CTA標題，基於文章內容的自然引導">你的新主管也在犯這些錯誤嗎？</h2>
+    <p class="cta-desc reveal reveal-delay-1" data-text="cta-desc" data-text-description="CTA說明文字，降低諮詢門檻">如果你發現公司的新主管留才率不理想，或是正在考慮如何提升主管帶人能力，歡迎預約一次免費的問題診斷諮詢。我們可以針對你的組織狀況，討論最適合的改善方向。</p>
+    <a href="mailto:hello@mingdaoyu.com" class="btn-primary reveal reveal-delay-2" data-text="cta-button" data-text-description="CTA主要按鈕文字">預約免費諮詢電話</a>
+    <p class="cta-note reveal reveal-delay-3" data-text="cta-note" data-text-description="補充說明，降低預約門檻">通常於1個工作天內回覆｜服務全台企業</p>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+<footer data-section="footer" data-section-title="頁尾資訊" data-section-purpose="提供完整聯絡資訊與快速連結，建立專業信任感">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand" data-text="footer-brand" data-text-description="頁尾品牌名稱">余明道<span>．</span>企業教練</div>
+        <p class="footer-tagline" data-text="footer-tagline" data-text-description="頁尾品牌標語">讓主管真的會帶人，不只是會管人。<br>服務全台 50–500 人中型企業。</p>
+        <div class="footer-contact-item">
+          <strong data-text="footer-email-label" data-text-description="聯絡信箱標籤">聯絡信箱</strong>
+          <span data-text="footer-email" data-text-description="聯絡信箱地址">hello@mingdaoyu.com</span>
+        </div>
+        <div class="footer-contact-item">
+          <strong data-text="footer-address-label" data-text-description="辦公地址標籤">辦公地址</strong>
+          <span data-text="footer-address" data-text-description="辦公地址">台北市信義區松仁路○○號 ○ 樓</span>
+        </div>
+        <div class="footer-contact-item">
+          <strong data-text="footer-phone-label" data-text-description="服務電話標籤">服務電話</strong>
+          <span data-text="footer-phone" data-text-description="服務電話號碼">02-○○○○-○○○○</span>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title" data-text="footer-services-title" data-text-description="服務項目標題">服務</div>
+        <ul class="footer-links">
+          <li><a href="services.html">企業主管內訓課程</a></li>
+          <li><a href="services.html">組織文化轉型顧問</a></li>
+          <li><a href="services.html">主管個別教練輔導</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title" data-text="footer-more-title" data-text-description="了解更多標題">了解更多</div>
+        <ul class="footer-links">
+          <li><a href="about.html">關於我</a></li>
+          <li><a href="portfolio.html">成功案例</a></li>
+          <li><a href="blog.html">部落格</a></li>
+          <li><a href="contact.html">聯絡我們</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy" data-text="footer-copy" data-text-description="版權聲明">© 2024 余明道 企業教練｜mingdaoyu.com</span>
+      <a href="https://linkedin.com" target="_blank" class="footer-linkedin" data-text="footer-linkedin" data-text-description="LinkedIn連結">LinkedIn →</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Scroll reveal
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -24px 0px' });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+
+</body></html>

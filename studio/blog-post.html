@@ -1,0 +1,853 @@
+<!DOCTYPE html><html lang="zh-TW"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>如何向室內設計師清楚表達你想要的「感覺」？｜疊工作室 DDIE Studio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&amp;family=Noto+Sans+TC:wght@300;400;500&amp;family=Noto+Serif+TC:wght@300;400&amp;display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg-primary: #faf8f5;
+  --bg-secondary: #f3efe9;
+  --bg-deep: #2c2820;
+  --text-primary: #2c2820;
+  --text-muted: #7a7168;
+  --text-light: #b0a898;
+  --accent: #8a7560;
+  --accent-warm: #c4a882;
+  --green-mist: #d4ddd4;
+  --border: #e5dfd6;
+  --font-serif: 'Cormorant Garamond', 'Noto Serif TC', serif;
+  --font-sans: 'Noto Sans TC', sans-serif;
+  --section-gap: 120px;
+  --content-max: 1080px;
+  --side-pad: 48px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-sans);
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-weight: 300;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+/* ── NAV ── */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  background: rgba(250, 248, 245, 0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+.nav-inner {
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding: 0 var(--side-pad);
+  height: 68px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav-logo {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: var(--text-primary);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.nav-logo span {
+  font-size: 0.72rem;
+  font-family: var(--font-sans);
+  font-weight: 300;
+  letter-spacing: 0.12em;
+  color: var(--text-muted);
+  display: block;
+  margin-top: -2px;
+}
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+  list-style: none;
+}
+.nav-links a {
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.25s;
+}
+.nav-links a:hover { color: var(--text-primary); }
+.nav-cta {
+  background: var(--accent);
+  color: #fff !important;
+  padding: 10px 22px;
+  border-radius: 40px;
+  font-size: 0.78rem !important;
+  letter-spacing: 0.1em !important;
+  transition: background 0.25s !important;
+}
+.nav-cta:hover { background: var(--bg-deep) !important; color: #fff !important; }
+
+/* ── REVEAL ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.72s ease, transform 0.72s ease;
+}
+.reveal.visible { opacity: 1; transform: none; }
+.reveal-delay-1 { transition-delay: 0.08s; }
+.reveal-delay-2 { transition-delay: 0.16s; }
+.reveal-delay-3 { transition-delay: 0.24s; }
+.reveal-delay-4 { transition-delay: 0.32s; }
+
+/* ── ARTICLE HERO ── */
+.article-hero {
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  padding-top: 68px;
+  position: relative;
+  overflow: hidden;
+}
+.article-hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+.article-hero-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.article-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(44,40,32,0.8) 0%,
+    rgba(44,40,32,0.6) 50%,
+    rgba(44,40,32,0.4) 100%
+  );
+}
+.article-hero-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 var(--side-pad);
+  width: 100%;
+  text-align: center;
+}
+.article-meta {
+  font-size: 0.76rem;
+  letter-spacing: 0.2em;
+  color: var(--accent-warm);
+  font-weight: 400;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+.article-meta::before,
+.article-meta::after {
+  content: '';
+  display: inline-block;
+  width: 32px;
+  height: 1px;
+  background: var(--accent-warm);
+}
+.article-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2.2rem, 5vw, 3.6rem);
+  font-weight: 300;
+  line-height: 1.3;
+  color: #fff;
+  margin-bottom: 20px;
+  letter-spacing: 0.01em;
+}
+.article-subtitle {
+  font-size: 1.05rem;
+  color: rgba(255,255,255,0.8);
+  font-weight: 300;
+  line-height: 1.65;
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+/* ── ARTICLE CONTENT ── */
+.article-content {
+  padding: var(--section-gap) 0;
+  background: var(--bg-primary);
+}
+.article-content-inner {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 var(--side-pad);
+}
+.article-content h2 {
+  font-family: var(--font-serif);
+  font-size: clamp(1.6rem, 2.8vw, 2.2rem);
+  font-weight: 300;
+  color: var(--text-primary);
+  margin: 48px 0 24px 0;
+  line-height: 1.4;
+  letter-spacing: 0.01em;
+}
+.article-content h3 {
+  font-family: var(--font-serif);
+  font-size: 1.3rem;
+  font-weight: 300;
+  color: var(--text-primary);
+  margin: 36px 0 16px 0;
+  line-height: 1.45;
+  letter-spacing: 0.01em;
+}
+.article-content p {
+  font-size: 0.95rem;
+  line-height: 1.85;
+  color: var(--text-primary);
+  margin-bottom: 20px;
+  font-weight: 300;
+}
+.article-content p:first-of-type {
+  font-size: 1.1rem;
+  font-style: italic;
+  color: var(--text-muted);
+  margin-bottom: 32px;
+  line-height: 1.75;
+}
+.article-content ul,
+.article-content ol {
+  margin: 20px 0;
+  padding-left: 28px;
+}
+.article-content li {
+  font-size: 0.9rem;
+  line-height: 1.75;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+.article-content ul li::marker {
+  color: var(--accent);
+}
+.article-content ol li::marker {
+  color: var(--accent);
+  font-weight: 400;
+}
+.article-content blockquote {
+  background: var(--bg-secondary);
+  border-left: 4px solid var(--accent);
+  padding: 32px 36px;
+  margin: 40px 0;
+  border-radius: 0 16px 16px 0;
+  position: relative;
+}
+.article-content blockquote p {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  font-style: italic;
+  color: var(--text-primary);
+  margin: 0;
+  line-height: 1.6;
+  font-weight: 300;
+}
+.article-content img {
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  margin: 32px 0;
+  object-fit: cover;
+  display: block;
+}
+.article-content a {
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(138,117,96,0.3);
+  transition: border-color 0.25s, color 0.25s;
+}
+.article-content a:hover {
+  color: var(--bg-deep);
+  border-bottom-color: var(--bg-deep);
+}
+.article-content strong {
+  font-weight: 500;
+  color: var(--text-primary);
+}
+.article-content em {
+  font-style: italic;
+  color: var(--text-muted);
+}
+
+/* ── EXPERT SUMMARY ── */
+.expert-summary {
+  padding: 80px 0;
+  background: var(--bg-secondary);
+}
+.expert-summary-inner {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 var(--side-pad);
+  text-align: center;
+}
+.expert-summary-title {
+  font-family: var(--font-serif);
+  font-size: 1.4rem;
+  font-weight: 300;
+  color: var(--text-primary);
+  margin-bottom: 28px;
+  letter-spacing: 0.01em;
+}
+.expert-quote {
+  background: var(--bg-primary);
+  border-radius: 20px;
+  padding: 40px 44px;
+  position: relative;
+  box-shadow: 0 8px 32px rgba(44,40,32,0.06);
+}
+.expert-quote blockquote {
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  font-style: italic;
+  color: var(--text-primary);
+  line-height: 1.65;
+  margin: 0;
+  font-weight: 300;
+}
+.expert-quote cite {
+  display: block;
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  color: var(--text-light);
+  margin-top: 20px;
+  font-style: normal;
+}
+
+/* ── SERVICE LINK ── */
+.service-link {
+  padding: 80px var(--side-pad);
+  max-width: var(--content-max);
+  margin: 0 auto;
+}
+.service-link-inner {
+  background: var(--bg-primary);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 44px 48px;
+  display: flex;
+  align-items: center;
+  gap: 36px;
+  transition: border-color 0.25s, box-shadow 0.25s, transform 0.2s;
+}
+.service-link-inner:hover {
+  border-color: var(--accent);
+  box-shadow: 0 12px 48px rgba(138,117,96,0.1);
+  transform: translateY(-2px);
+}
+.service-link-icon {
+  width: 64px;
+  height: 64px;
+  background: var(--bg-secondary);
+  border-radius: 50%;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.service-link-icon svg {
+  width: 28px;
+  height: 28px;
+  stroke: var(--accent);
+  fill: none;
+}
+.service-link-text {
+  flex: 1;
+}
+.service-link-title {
+  font-family: var(--font-serif);
+  font-size: 1.3rem;
+  font-weight: 300;
+  color: var(--text-primary);
+  margin-bottom: 6px;
+}
+.service-link-desc {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+.service-link-cta {
+  background: var(--accent);
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 40px;
+  font-size: 0.82rem;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  transition: background 0.25s, transform 0.2s;
+  flex-shrink: 0;
+}
+.service-link-cta:hover {
+  background: var(--bg-deep);
+  transform: translateY(-1px);
+}
+
+/* ── RELATED ARTICLES ── */
+.related-articles {
+  padding: var(--section-gap) 0;
+  background: var(--bg-secondary);
+}
+.related-articles-inner {
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding: 0 var(--side-pad);
+}
+.related-articles-header {
+  text-align: center;
+  margin-bottom: 56px;
+}
+.section-label {
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
+  color: var(--accent);
+  font-weight: 400;
+  display: block;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+.section-title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.9rem, 3.6vw, 2.8rem);
+  font-weight: 300;
+  line-height: 1.35;
+  color: var(--text-primary);
+}
+.related-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+}
+.related-card {
+  background: var(--bg-primary);
+  border-radius: 16px;
+  overflow: hidden;
+  text-decoration: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.related-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 24px 60px rgba(44,40,32,0.1);
+}
+.related-card-img {
+  height: 200px;
+  display: block;
+  width: 100%;
+  object-fit: cover;
+}
+.related-card-body {
+  padding: 28px;
+}
+.related-card-date {
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  color: var(--text-light);
+  margin-bottom: 8px;
+}
+.related-card-title {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  font-weight: 300;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+  line-height: 1.45;
+}
+.related-card-excerpt {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+}
+
+/* ── FOOTER ── */
+footer {
+  background: var(--bg-deep);
+  padding: 72px var(--side-pad) 40px;
+}
+.footer-inner {
+  max-width: var(--content-max);
+  margin: 0 auto;
+}
+.footer-top {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  gap: 64px;
+  padding-bottom: 56px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.footer-brand {}
+.footer-logo {
+  font-family: var(--font-serif);
+  font-size: 1.3rem;
+  color: #f5f0e8;
+  font-weight: 300;
+  letter-spacing: 0.04em;
+}
+.footer-logo-sub {
+  font-size: 0.68rem;
+  letter-spacing: 0.18em;
+  color: rgba(255,255,255,0.3);
+  margin-top: 4px;
+  display: block;
+}
+.footer-tagline {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.4);
+  line-height: 1.8;
+  margin-top: 20px;
+  max-width: 260px;
+}
+.footer-col-title {
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  color: var(--accent-warm);
+  margin-bottom: 20px;
+  display: block;
+}
+.footer-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.footer-links a {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.45);
+  text-decoration: none;
+  transition: color 0.25s;
+}
+.footer-links a:hover { color: rgba(255,255,255,0.8); }
+.footer-contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.83rem;
+  color: rgba(255,255,255,0.45);
+  margin-bottom: 12px;
+  line-height: 1.6;
+}
+.footer-contact-item svg { flex-shrink: 0; margin-top: 2px; stroke: rgba(255,255,255,0.25); fill: none; }
+.footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 32px;
+}
+.footer-copyright {
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.2);
+  letter-spacing: 0.05em;
+}
+.footer-ig {
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.3);
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  transition: color 0.25s;
+}
+.footer-ig:hover { color: rgba(255,255,255,0.65); }
+
+/* ── RWD ── */
+@media (max-width: 960px) {
+  :root { --side-pad: 32px; --section-gap: 88px; }
+  .article-content-inner { max-width: none; }
+  .expert-summary-inner { max-width: none; }
+  .related-grid { grid-template-columns: 1fr; }
+  .service-link-inner { flex-direction: column; text-align: center; gap: 24px; }
+  .footer-top { grid-template-columns: 1fr 1fr; gap: 40px; }
+}
+@media (max-width: 700px) {
+  :root { --side-pad: 20px; --section-gap: 72px; }
+  .nav-links { display: none; }
+  .nav-cta { display: flex; }
+  .article-hero { min-height: 50vh; }
+  .article-title { font-size: 2rem; }
+  .article-content h2 { font-size: 1.5rem; margin: 32px 0 16px 0; }
+  .article-content h3 { font-size: 1.2rem; margin: 24px 0 12px 0; }
+  .article-content { padding: 60px 0; }
+  .expert-summary { padding: 60px 0; }
+  .expert-quote { padding: 28px 24px; }
+  .service-link { padding: 60px var(--side-pad); }
+  .service-link-inner { padding: 32px 24px; }
+  .related-articles { padding: 60px 0; }
+  .footer-top { grid-template-columns: 1fr; }
+  .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo" data-text="nav-logo" data-text-description="品牌名稱，導覽列左上角">
+      疊工作室
+      <span data-text="nav-logo-en" data-text-description="品牌英文名稱">DDIE STUDIO</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="portfolio.html">作品集</a></li>
+      <li><a href="services.html">服務項目</a></li>
+      <li><a href="about.html">關於我們</a></li>
+      <li><a href="blog.html">設計誌</a></li>
+      <li><a href="contact.html" class="nav-cta">預約諮詢</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ARTICLE HERO -->
+<section class="article-hero" data-section="article-hero" data-section-title="文章主視覺" data-section-purpose="吸引注意力，建立閱讀期待，展現文章主題的專業性">
+  <div class="article-hero-bg">
+    <img src="https://images.pexels.com/photos/7642122/pexels-photo-7642122.jpeg" alt="" data-img-query="home consultation interior designer client meeting Taiwan" data-img-orientation="landscape" data-img-description="展現文章主題氛圍，設計師與客戶討論或正在規劃的空間場景" data-img-size="xlarge" data-img-ratio="21:9">
+  </div>
+  <div class="article-hero-overlay"></div>
+  <div class="article-hero-inner">
+    <div class="reveal">
+      <div class="article-meta" data-text="article-meta" data-text-description="文章發布資訊">
+        2024.03.15｜疊工作室設計心得
+      </div>
+    </div>
+    <div class="reveal reveal-delay-1">
+      <h1 class="article-title" data-text="article-title" data-text-description="文章主標題">
+        如何向室內設計師<br>清楚表達你想要的「感覺」？
+      </h1>
+    </div>
+    <div class="reveal reveal-delay-2">
+      <p class="article-subtitle" data-text="article-subtitle" data-text-description="文章副標題">
+        很多屋主說不清楚自己想要什麼，但又怕最後做出來不是自己要的。其實，你只需要學會這幾個溝通技巧。
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ARTICLE CONTENT -->
+<section class="article-content" data-section="article-content" data-section-title="文章內文" data-section-purpose="提供實用資訊，建立專業信任感，展現設計師的思考深度">
+  <div class="article-content-inner reveal">
+    
+    <p>「我想要有質感一點，但又不要太冷。」<br>
+    「希望看起來溫馨，但不要太俗氣。」<br>
+    「就是要有家的感覺，你知道的那種感覺嗎？」</p>
+
+    <p>如果你曾經這樣跟設計師描述你的需求，然後看到對方困惑的表情，你並不孤單。</p>
+
+    <h2>為什麼「感覺」這麼難說清楚？</h2>
+
+    <p>大部分人都知道自己喜歡什麼樣的空間，但要用語言表達出來卻非常困難。這是因為空間感受是多重感官的綜合體驗——光線、材質、色彩、比例、甚至氣味，這些元素共同創造了一個「感覺」。</p>
+
+    <p>但這不代表溝通是不可能的。經過七年的住宅設計經驗，我發現最有效的溝通方式不是用抽象的形容詞，而是用具體的場景與聯想。</p>
+
+    <h2>三個讓溝通更精準的方法</h2>
+
+    <h3>1. 用生活場景來描述</h3>
+
+    <p>比起說「我要溫馨的客廳」，試試這樣說：</p>
+
+    <blockquote>
+      <p>「我希望週日下午在客廳看書的時候，陽光灑進來，我會想要一直待在這裡，不想出門。」</p>
+    </blockquote>
+
+    <p>這樣的描述讓設計師能想像到光線條件、家具配置、甚至空間的色溫需求。</p>
+
+    <h3>2. 收集參考圖片，但要說明為什麼喜歡</h3>
+
+    <p>不要只是收集一堆美美的照片，而是針對每張圖片說明：</p>
+
+    <ul>
+      <li>喜歡這張照片的哪個部分？</li>
+      <li>是材質、顏色、比例，還是光線？</li>
+      <li>不喜歡的地方是什麼？</li>
+    </ul>
+
+    <img src="https://images.pexels.com/photos/32177992/pexels-photo-32177992.png?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=650&amp;w=940" alt="" data-img-query="interior design style comparison modern minimalist warm" data-img-orientation="landscape" data-img-description="展現不同設計風格對比的空間圖片，說明風格差異" data-img-size="large" data-img-ratio="16:9">
+
+    <h3>3. 描述你的日常習慣</h3>
+
+    <p>告訴設計師你的作息、使用習慣：</p>
+
+    <ul>
+      <li>你習慣在哪裡工作、放鬆、用餐？</li>
+      <li>通常什麼時候在家？需要什麼樣的燈光？</li>
+      <li>有什麼特殊的收納需求？</li>
+      <li>會不會在家招待朋友？</li>
+    </ul>
+
+    <p>這些看似平常的資訊，實際上決定了空間的設計邏輯。</p>
+
+    <h2>設計師最怕聽到的幾句話</h2>
+
+    <p>坦白說，有些話真的讓設計師不知道怎麼回應：</p>
+
+    <ul>
+      <li>「就照你的專業啦，我都可以」</li>
+      <li>「我沒有特別要求，隨便弄弄就好」</li>
+      <li>「做得像某某樣品屋那樣就對了」</li>
+    </ul>
+
+    <p>這些話的問題在於，它們無法幫助設計師理解你的真實需求。每個人的生活方式不同，沒有一套標準答案能適用所有人。</p>
+
+    <blockquote>
+      <p>好的設計不是讓你印象深刻，而是讓你住進去就不想離開。要做到這點，設計師需要真正理解你的生活方式。</p>
+    </blockquote>
+
+    <h2>疊工作室的經驗分享</h2>
+
+    <p>在我們的設計過程中，初次諮詢通常會花 60-90 分鐘，其中大部分時間都在聊生活。我們會問很多看似與設計無關的問題：</p>
+
+    <ul>
+      <li>你早上起床後的第一件事是什麼？</li>
+      <li>晚上回家最想做什麼？</li>
+      <li>什麼樣的空間會讓你感到放鬆？</li>
+      <li>有哪些地方（可能是咖啡廳、朋友家、旅行住過的地方）讓你特別有感覺？</li>
+    </ul>
+
+    <p>這些對話幫助我們理解，你想要的不只是一個美美的空間，而是一個真正適合你生活的家。</p>
+
+    <img src="https://images.pexels.com/photos/4977410/pexels-photo-4977410.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=650&amp;w=940" alt="" data-img-query="interior designer showing material samples to client Taiwan" data-img-orientation="landscape" data-img-description="設計師展示材質樣本或設計圖的溝通過程" data-img-size="large" data-img-ratio="16:9">
+
+  </div>
+</section>
+
+<!-- EXPERT SUMMARY -->
+<section class="expert-summary" data-section="expert-summary" data-section-title="專業建議總結" data-section-purpose="強化專業形象，為後續 CTA 做鋪墊">
+  <div class="expert-summary-inner reveal">
+    <h2 class="expert-summary-title" data-text="expert-summary-title" data-text-description="總結標題">疊工作室專業建議</h2>
+    <div class="expert-quote">
+      <blockquote data-text="expert-summary-quote" data-text-description="專業建議重點總結">
+        最好的溝通是雙向的。設計師有責任引導你表達需求，但你也可以主動準備：收集生活靈感、記錄現在的不滿意、想像理想的一天。當你能具體描述這些，設計師就能更準確地把握你要的「感覺」，做出真正適合你的空間設計。
+      </blockquote>
+      <cite data-text="expert-summary-cite" data-text-description="引言署名">— 疊工作室設計團隊</cite>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICE LINK -->
+<section class="service-link" data-section="service-link" data-section-title="相關服務推薦" data-section-purpose="自然連結到商業服務，引導諮詢行動">
+  <div class="service-link-inner reveal">
+    <div class="service-link-icon">
+      <svg viewBox="0 0 24 24" stroke-width="1.5">
+        <path d="M7.5 21 3 16.5 M21 3l-6 6m0 0V4m0 5h5M3 21l6-6m0 0h5m-5 0v-5"></path>
+      </svg>
+    </div>
+    <div class="service-link-text">
+      <h3 class="service-link-title" data-text="service-link-title" data-text-description="服務推薦標題">住宅全案設計諮詢</h3>
+      <p class="service-link-desc" data-text="service-link-desc" data-text-description="服務推薦說明">如果這篇文章讓你更清楚如何表達需求，歡迎預約免費諮詢。我們會花時間理解你的生活方式，找到專屬於你的設計方向。</p>
+    </div>
+    <a href="contact.html" class="service-link-cta">預約諮詢</a>
+  </div>
+</section>
+
+<!-- RELATED ARTICLES -->
+<section class="related-articles" data-section="related-articles" data-section-title="延伸閱讀推薦" data-section-purpose="增加頁面停留時間，展現內容深度">
+  <div class="related-articles-inner">
+    <div class="related-articles-header reveal">
+      <span class="section-label" data-text="related-label" data-text-description="延伸閱讀小標">RELATED ARTICLES</span>
+      <h2 class="section-title" data-text="related-title" data-text-description="延伸閱讀主標題">延伸閱讀</h2>
+    </div>
+    <div class="related-grid">
+      <a href="#" class="related-card reveal reveal-delay-1">
+        <img class="related-card-img" src="https://images.pexels.com/photos/35530436/pexels-photo-35530436.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=650&amp;w=940" alt="" data-img-query="modern living room design Taiwan residential" data-img-orientation="landscape" data-img-description="完工住宅空間照片，客廳設計案例" data-img-size="medium" data-img-ratio="21:9">
+        <div class="related-card-body">
+          <div class="related-card-date" data-text="related-1-date" data-text-description="文章日期">2024.03.08</div>
+          <h3 class="related-card-title" data-text="related-1-title" data-text-description="相關文章標題一">小坪數也能有大格局：28坪住宅的空間魔法</h3>
+          <p class="related-card-excerpt" data-text="related-1-excerpt" data-text-description="文章摘要一">透過聰明的格局規劃與視覺技巧，讓小空間也能擁有寬敞舒適的居住感受。</p>
+        </div>
+      </a>
+      <a href="#" class="related-card reveal reveal-delay-2">
+        <img class="related-card-img" src="https://images.pexels.com/photos/6583362/pexels-photo-6583362.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=650&amp;w=940" alt="" data-img-query="interior design material selection natural warm" data-img-orientation="landscape" data-img-description="材質選配過程或材質樣本展示" data-img-size="medium" data-img-ratio="21:9">
+        <div class="related-card-body">
+          <div class="related-card-date" data-text="related-2-date" data-text-description="文章日期">2024.02.28</div>
+          <h3 class="related-card-title" data-text="related-2-title" data-text-description="相關文章標題二">材質選配的藝術：如何讓空間有溫度又有質感</h3>
+          <p class="related-card-excerpt" data-text="related-2-excerpt" data-text-description="文章摘要二">探討木材、石材、織品等天然材質的搭配原則，創造溫暖而精緻的居住氛圍。</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          疊工作室
+          <span class="footer-logo-sub">DDIE STUDIO</span>
+        </div>
+        <p class="footer-tagline">讓空間說出你沒說出口的品味。<br>台中住宅室內設計，全案服務。</p>
+      </div>
+      <div>
+        <span class="footer-col-title">服務項目</span>
+        <ul class="footer-links">
+          <li><a href="services.html">住宅全案設計</a></li>
+          <li><a href="services.html">格局規劃顧問</a></li>
+          <li><a href="services.html">舊屋翻新</a></li>
+          <li><a href="services.html">預售屋客變</a></li>
+          <li><a href="services.html">小型商業空間</a></li>
+        </ul>
+      </div>
+      <div>
+        <span class="footer-col-title">聯絡資訊</span>
+        <div class="footer-contact-item">
+          <svg width="14" height="14" viewBox="0 0 14 14" stroke-width="1.3"><path d="M2 2.5C2 2.5 2.4 6.5 5.5 9.5 8.5 12.5 12.5 13 12.5 13L14 11.5C14 11.5 12.8 10.3 11.5 10.8L10 12C10 12 7.5 11.2 6 9.5 4.5 7.8 3.8 5.5 3.8 5.5L5 4C5.5 2.7 4.3 1.5 4.3 1.5L2 2.5Z"></path></svg>
+          04-2233-8899
+        </div>
+        <div class="footer-contact-item">
+          <svg width="14" height="14" viewBox="0 0 14 14" stroke-width="1.3"><rect x="1" y="2" width="12" height="10" rx="1.5"></rect><polyline points="1,2 7,8 13,2"></polyline></svg>
+          hello@ddie-studio.com
+        </div>
+        <div class="footer-contact-item">
+          <svg width="14" height="14" viewBox="0 0 14 14" stroke-width="1.3"><path d="M7 1.5 C4.5 1.5 2.5 3.5 2.5 6 C2.5 9.5 7 12.5 7 12.5 C7 12.5 11.5 9.5 11.5 6 C11.5 3.5 9.5 1.5 7 1.5Z"></path><circle cx="7" cy="6" r="1.8"></circle></svg>
+          台中市西區民生路 ○○ 號
+        </div>
+        <div class="footer-contact-item">
+          <svg width="14" height="14" viewBox="0 0 14 14" stroke-width="1.3"><circle cx="7" cy="7" r="5.5"></circle><polyline points="7,3.5 7,7 9.5,9"></polyline></svg>
+          週一至週六 10:00–19:00
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copyright">© 2024 疊工作室 DDIE Studio. All rights reserved.</p>
+      <a href="https://instagram.com/ddie.studio" class="footer-ig" target="_blank">IG @ddie.studio</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Scroll reveal
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.08, rootMargin: '0px 0px -24px 0px' });
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// Hero delayed trigger  
+setTimeout(() => {
+  document.querySelectorAll('.article-hero .reveal').forEach(el => {
+    el.classList.add('visible');
+  });
+}, 80);
+</script>
+
+
+</body></html>
