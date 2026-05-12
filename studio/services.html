@@ -619,8 +619,8 @@ body {
   .service-guide-grid { grid-template-columns: 1fr; gap: 20px; }
   .service-detail-inner { grid-template-columns: 1fr; gap: 48px; }
   .service-detail.reverse .service-detail-inner { grid-template-columns: 1fr; }
-  .service-detail.reverse .service-detail-content { grid-order: 1; }
-  .service-detail.reverse .service-detail-img-wrap { grid-order: 2; }
+  .service-detail.reverse .service-detail-content { grid-order: 2; }
+  .service-detail.reverse .service-detail-img-wrap { grid-order: 1; }
   .service-detail-img { height: 320px; }
   .service-detail-tag { right: 16px; }
   .comparison-grid { grid-template-columns: 1fr; }
@@ -630,9 +630,17 @@ body {
   :root { --side-pad: 20px; --section-gap: 72px; }
   .page-header-inner { padding-top: 48px; }
   .page-header-title { font-size: 2.4rem; }
+  .page-header::before { font-size: 7rem; top: 16px; right: -24px; }
   .service-guide-card { padding: 28px 24px; }
+  .service-detail-meta-item { flex-direction: column; align-items: flex-start; gap: 4px; }
   .comparison-side { padding: 36px 28px; }
+  .faq-question { padding: 22px 20px; gap: 16px; }
+  .faq-item.active .faq-answer { padding: 0 20px 24px; }
   .cta-inner { padding: 48px 28px; }
+  .cta-option { padding: 22px 20px; gap: 14px; }
+  .cta-option-icon { width: 42px; height: 42px; }
+  .cta-option-arrow { display: none; }
+  .cta-option-sub { font-size: 0.74rem; line-height: 1.5; }
 }
 </style>
 </head>
