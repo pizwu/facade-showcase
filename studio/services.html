@@ -5,6 +5,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&amp;family=Noto+Sans+TC:wght@300;400;500&amp;family=Noto+Serif+TC:wght@300;400&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="_shared.css">
 
 <style>
 :root {
@@ -37,66 +38,6 @@ body {
   line-height: 1.7;
   overflow-x: hidden;
 }
-
-/* ── NAV ── */
-nav {
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  z-index: 100;
-  background: rgba(250, 248, 245, 0.92);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--border);
-}
-.nav-inner {
-  max-width: var(--content-max);
-  margin: 0 auto;
-  padding: 0 var(--side-pad);
-  height: 68px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.nav-logo {
-  font-family: var(--font-serif);
-  font-size: 1.25rem;
-  font-weight: 400;
-  color: var(--text-primary);
-  text-decoration: none;
-  letter-spacing: 0.04em;
-}
-.nav-logo span {
-  font-size: 0.72rem;
-  font-family: var(--font-sans);
-  font-weight: 300;
-  letter-spacing: 0.12em;
-  color: var(--text-muted);
-  display: block;
-  margin-top: -2px;
-}
-.nav-links {
-  display: flex;
-  align-items: center;
-  gap: 36px;
-  list-style: none;
-}
-.nav-links a {
-  font-size: 0.82rem;
-  letter-spacing: 0.08em;
-  color: var(--text-muted);
-  text-decoration: none;
-  transition: color 0.25s;
-}
-.nav-links a:hover { color: var(--text-primary); }
-.nav-cta {
-  background: var(--accent);
-  color: #fff !important;
-  padding: 10px 22px;
-  border-radius: 40px;
-  font-size: 0.78rem !important;
-  letter-spacing: 0.1em !important;
-  transition: background 0.25s !important;
-}
-.nav-cta:hover { background: var(--bg-deep) !important; color: #fff !important; }
 
 /* ── REVEAL ── */
 .reveal {
@@ -672,94 +613,6 @@ nav {
   color: var(--accent);
 }
 
-/* ── FOOTER ── */
-footer {
-  background: var(--bg-deep);
-  padding: 72px var(--side-pad) 40px;
-}
-.footer-inner {
-  max-width: var(--content-max);
-  margin: 0 auto;
-}
-.footer-top {
-  display: grid;
-  grid-template-columns: 1.4fr 1fr 1fr;
-  gap: 64px;
-  padding-bottom: 56px;
-  border-bottom: 1px solid rgba(255,255,255,0.08);
-}
-.footer-brand {}
-.footer-logo {
-  font-family: var(--font-serif);
-  font-size: 1.3rem;
-  color: #f5f0e8;
-  font-weight: 300;
-  letter-spacing: 0.04em;
-}
-.footer-logo-sub {
-  font-size: 0.68rem;
-  letter-spacing: 0.18em;
-  color: rgba(255,255,255,0.3);
-  margin-top: 4px;
-  display: block;
-}
-.footer-tagline {
-  font-size: 0.85rem;
-  color: rgba(255,255,255,0.4);
-  line-height: 1.8;
-  margin-top: 20px;
-  max-width: 260px;
-}
-.footer-col-title {
-  font-size: 0.72rem;
-  letter-spacing: 0.2em;
-  color: var(--accent-warm);
-  margin-bottom: 20px;
-  display: block;
-}
-.footer-links {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-.footer-links a {
-  font-size: 0.85rem;
-  color: rgba(255,255,255,0.45);
-  text-decoration: none;
-  transition: color 0.25s;
-}
-.footer-links a:hover { color: rgba(255,255,255,0.8); }
-.footer-contact-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  font-size: 0.83rem;
-  color: rgba(255,255,255,0.45);
-  margin-bottom: 12px;
-  line-height: 1.6;
-}
-.footer-contact-item svg { flex-shrink: 0; margin-top: 2px; stroke: rgba(255,255,255,0.25); fill: none; }
-.footer-bottom {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding-top: 32px;
-}
-.footer-copyright {
-  font-size: 0.75rem;
-  color: rgba(255,255,255,0.2);
-  letter-spacing: 0.05em;
-}
-.footer-ig {
-  font-size: 0.75rem;
-  color: rgba(255,255,255,0.3);
-  text-decoration: none;
-  letter-spacing: 0.1em;
-  transition: color 0.25s;
-}
-.footer-ig:hover { color: rgba(255,255,255,0.65); }
-
 /* ── RWD ── */
 @media (max-width: 960px) {
   :root { --side-pad: 32px; --section-gap: 88px; }
@@ -772,40 +625,21 @@ footer {
   .service-detail-tag { right: 16px; }
   .comparison-grid { grid-template-columns: 1fr; }
   .cta-inner { grid-template-columns: 1fr; padding: 56px 40px; }
-  .footer-top { grid-template-columns: 1fr 1fr; gap: 40px; }
 }
 @media (max-width: 700px) {
   :root { --side-pad: 20px; --section-gap: 72px; }
-  .nav-links { display: none; }
-  .nav-cta { display: flex; }
   .page-header-inner { padding-top: 48px; }
   .page-header-title { font-size: 2.4rem; }
   .service-guide-card { padding: 28px 24px; }
   .comparison-side { padding: 36px 28px; }
   .cta-inner { padding: 48px 28px; }
-  .footer-top { grid-template-columns: 1fr; }
-  .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
 }
 </style>
 </head>
 <body>
 
-<!-- NAV -->
-<nav>
-  <div class="nav-inner">
-    <a href="index.html" class="nav-logo" data-text="nav-logo" data-text-description="品牌名稱，導覽列左上角">
-      疊工作室
-      <span data-text="nav-logo-en" data-text-description="品牌英文名稱">DDIE STUDIO</span>
-    </a>
-    <ul class="nav-links">
-      <li><a href="portfolio.html">作品集</a></li>
-      <li><a href="services.html">服務項目</a></li>
-      <li><a href="about.html">關於我們</a></li>
-      <li><a href="blog.html">設計誌</a></li>
-      <li><a href="contact.html" class="nav-cta">預約諮詢</a></li>
-    </ul>
-  </div>
-</nav>
+<!-- NAV (shared) -->
+<div id="shared-nav"></div>
 
 <!-- PAGE HEADER -->
 <section class="page-header" data-section="page-header" data-section-title="服務項目頁面標題" data-section-purpose="建立頁面脈絡，幫助訪客快速了解頁面主題">
@@ -1187,53 +1021,8 @@ footer {
   </div>
 </section>
 
-<!-- FOOTER -->
-<footer>
-  <div class="footer-inner">
-    <div class="footer-top">
-      <div class="footer-brand">
-        <div class="footer-logo">
-          疊工作室
-          <span class="footer-logo-sub">DDIE STUDIO</span>
-        </div>
-        <p class="footer-tagline">讓空間說出你沒說出口的品味。<br>台中住宅室內設計，全案服務。</p>
-      </div>
-      <div>
-        <span class="footer-col-title">服務項目</span>
-        <ul class="footer-links">
-          <li><a href="services.html">住宅全案設計</a></li>
-          <li><a href="services.html">格局規劃顧問</a></li>
-          <li><a href="services.html">舊屋翻新</a></li>
-          <li><a href="services.html">預售屋客變</a></li>
-          <li><a href="services.html">小型商業空間</a></li>
-        </ul>
-      </div>
-      <div>
-        <span class="footer-col-title">聯絡資訊</span>
-        <div class="footer-contact-item">
-          <svg width="14" height="14" viewBox="0 0 14 14" stroke-width="1.3"><path d="M2 2.5C2 2.5 2.4 6.5 5.5 9.5 8.5 12.5 12.5 13 12.5 13L14 11.5C14 11.5 12.8 10.3 11.5 10.8L10 12C10 12 7.5 11.2 6 9.5 4.5 7.8 3.8 5.5 3.8 5.5L5 4C5.5 2.7 4.3 1.5 4.3 1.5L2 2.5Z"></path></svg>
-          04-2233-8899
-        </div>
-        <div class="footer-contact-item">
-          <svg width="14" height="14" viewBox="0 0 14 14" stroke-width="1.3"><rect x="1" y="2" width="12" height="10" rx="1.5"></rect><polyline points="1,2 7,8 13,2"></polyline></svg>
-          hello@ddie-studio.com
-        </div>
-        <div class="footer-contact-item">
-          <svg width="14" height="14" viewBox="0 0 14 14" stroke-width="1.3"><path d="M7 1.5 C4.5 1.5 2.5 3.5 2.5 6 C2.5 9.5 7 12.5 7 12.5 C7 12.5 11.5 9.5 11.5 6 C11.5 3.5 9.5 1.5 7 1.5Z"></path><circle cx="7" cy="6" r="1.8"></circle></svg>
-          台中市西區民生路 72 號
-        </div>
-        <div class="footer-contact-item">
-          <svg width="14" height="14" viewBox="0 0 14 14" stroke-width="1.3"><circle cx="7" cy="7" r="5.5"></circle><polyline points="7,3.5 7,7 9.5,9"></polyline></svg>
-          週一至週六 10:00–19:00
-        </div>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p class="footer-copyright">© 2024 疊工作室 DDIE Studio. All rights reserved.</p>
-      <a href="https://instagram.com/ddie.studio" class="footer-ig" target="_blank">IG @ddie.studio</a>
-    </div>
-  </div>
-</footer>
+<!-- FOOTER (shared) -->
+<div id="shared-footer"></div>
 
 <script>
 // Scroll reveal
@@ -1273,5 +1062,5 @@ document.querySelectorAll('.faq-question').forEach(question => {
 });
 </script>
 
-
+<script src="_shared.js"></script>
 </body></html>
