@@ -734,6 +734,9 @@
 
     .footer-ig:hover { color: rgba(255,255,255,0.65); }
 
+    /* ── UTILITY ── */
+    .is-hidden { display: none !important; }
+
     /* ── REVEAL ANIMATION ── */
     .reveal {
       opacity: 0;
@@ -772,15 +775,61 @@
 
       .nav-links { display: none; }
 
-      .categories-tabs { flex-direction: column; width: 100%; }
-      .category-tab { border-right: none; border-bottom: 1px solid var(--border); }
-      .category-tab:last-child { border-bottom: none; }
+      /* Hero: 縮小高度讓作品更快被看到 */
+      .portfolio-hero { min-height: 72vh; }
+      .portfolio-hero-title { font-size: 2rem; }
+      .portfolio-hero-subtitle { font-size: 0.9rem; }
+
+      /* Featured / Stories: 手機版圖片一律在上 */
+      .featured-work .featured-work-img,
+      .story-item .story-img {
+        order: -1;
+      }
+
+      /* Categories tabs: 橫向滑動 */
+      .categories-tabs {
+        width: 100%;
+        overflow-x: auto;
+        flex-direction: row;
+        justify-content: flex-start;
+      }
+      .category-tab {
+        white-space: nowrap;
+        flex: 0 0 auto;
+        border-bottom: none;
+        border-right: 1px solid var(--border);
+      }
+      .category-tab:last-child { border-right: none; }
+
+      /* Overlay: 手機無 hover，預設顯示 */
+      .category-work-overlay { opacity: 1; }
 
       .categories-grid { grid-template-columns: repeat(2, 1fr); }
+
+      /* Gallery: 取消 masonry，統一正方形 */
       .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+      .gallery-item,
+      .gallery-item:nth-child(3n),
+      .gallery-item:nth-child(7n) {
+        grid-column: auto;
+        grid-row: auto;
+        aspect-ratio: 1 / 1;
+      }
       
       .gallery-filter { gap: 16px; }
-      .cta-actions { flex-direction: column; align-items: stretch; }
+
+      /* CTA: btn-text 不要滿版 */
+      .cta-actions {
+        flex-direction: column;
+        align-items: center;
+      }
+      .cta-actions .btn-primary {
+        width: 100%;
+        text-align: center;
+      }
+      .cta-actions .btn-text {
+        width: auto;
+      }
       
       .footer-top { grid-template-columns: 1fr; }
     }
@@ -1093,11 +1142,7 @@
         
         const category = tab.dataset.category;
         categoryWorks.forEach(work => {
-          if (category === 'all' || work.dataset.category === category) {
-            work.style.display = 'block';
-          } else {
-            work.style.display = 'none';
-          }
+          work.classList.toggle('is-hidden', !(category === 'all' || work.dataset.category === category));
         });
       });
     });
@@ -1113,11 +1158,7 @@
         
         const filter = btn.dataset.filter;
         galleryItems.forEach(item => {
-          if (filter === 'all' || item.dataset.category === filter) {
-            item.style.display = 'block';
-          } else {
-            item.style.display = 'none';
-          }
+          item.classList.toggle('is-hidden', !(filter === 'all' || item.dataset.category === filter));
         });
       });
     });
