@@ -5,6 +5,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&amp;family=Noto+Serif+TC:wght@400;600;700&amp;family=Cormorant+Garamond:wght@400;600;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="_shared.css">
   <style>
     :root {
       --bg-primary: #0D1F3C;
@@ -630,7 +631,6 @@
     /* ── RWD ── */
     @media (max-width: 960px) {
       :root { --side-pad: 32px; --section-gap: 80px; }
-      .nav-links li:not(:last-child) { display: none; }
       .products-grid { grid-template-columns: 1fr 1fr; }
       .table-header, .table-row {
         grid-template-columns: 1fr;
@@ -652,28 +652,14 @@
     }
     @media (max-width: 700px) {
       :root { --side-pad: 20px; --section-gap: 64px; }
-      .nav-links { display: none; }
       .products-grid { grid-template-columns: 1fr; }
-      .footer-top { grid-template-columns: 1fr; gap: 32px; }
-      .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
     }
   </style>
 </head>
 <body>
 
 <!-- ══ NAV ══ -->
-<nav data-section="navigation" data-section-title="導覽選單" data-section-purpose="提供主要頁面連結，重點突出預約諮詢CTA按鈕">
-  <div class="nav-inner">
-    <a href="index.html" class="nav-logo" data-text="nav-logo" data-text-description="導覽區品牌標誌文字">余明道<span>．</span>企業教練</a>
-    <ul class="nav-links">
-      <li><a href="about.html">關於我</a></li>
-      <li><a href="services.html">服務項目</a></li>
-      <li><a href="portfolio.html">成功案例</a></li>
-      <li><a href="blog.html">部落格</a></li>
-      <li><a href="contact.html" class="nav-cta">預約諮詢</a></li>
-    </ul>
-  </div>
-</nav>
+<div id="shared-nav"></div>
 
 <!-- ══ HERO ══ -->
 <section class="hero" data-section="hero" data-section-title="培訓方案主視覺" data-section-purpose="定義頁面價值，說明為何需要結構化的培訓方案">
@@ -977,49 +963,7 @@
 </section>
 
 <!-- ══ FOOTER ══ -->
-<footer data-section="footer" data-section-title="頁尾資訊" data-section-purpose="提供完整聯絡資訊與快速連結，建立專業信任感">
-  <div class="footer-inner">
-    <div class="footer-top">
-      <div>
-        <div class="footer-brand" data-text="footer-brand" data-text-description="頁尾品牌名稱">余明道<span>．</span>企業教練</div>
-        <p class="footer-tagline" data-text="footer-tagline" data-text-description="頁尾品牌標語">讓主管真的會帶人，不只是會管人。<br>服務全台 50–500 人中型企業。</p>
-        <div class="footer-contact-item">
-          <strong data-text="footer-email-label" data-text-description="聯絡信箱標籤">聯絡信箱</strong>
-          <span data-text="footer-email" data-text-description="聯絡信箱地址">hello@mingdaoyu.com</span>
-        </div>
-        <div class="footer-contact-item">
-          <strong data-text="footer-address-label" data-text-description="辦公地址標籤">辦公地址</strong>
-          <span data-text="footer-address" data-text-description="辦公地址">台北市信義區松仁路 168 號 9 樓</span>
-        </div>
-        <div class="footer-contact-item">
-          <strong data-text="footer-phone-label" data-text-description="服務電話標籤">服務電話</strong>
-          <span data-text="footer-phone" data-text-description="服務電話號碼">02-2796-5831</span>
-        </div>
-      </div>
-      <div>
-        <div class="footer-col-title" data-text="footer-services-title" data-text-description="服務項目標題">服務</div>
-        <ul class="footer-links">
-          <li><a href="services.html">企業主管內訓課程</a></li>
-          <li><a href="services.html">組織文化轉型顧問</a></li>
-          <li><a href="services.html">主管個別教練輔導</a></li>
-        </ul>
-      </div>
-      <div>
-        <div class="footer-col-title" data-text="footer-more-title" data-text-description="了解更多標題">了解更多</div>
-        <ul class="footer-links">
-          <li><a href="about.html">關於我</a></li>
-          <li><a href="portfolio.html">成功案例</a></li>
-          <li><a href="blog.html">部落格</a></li>
-          <li><a href="contact.html">聯絡我們</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <span class="footer-copy" data-text="footer-copy" data-text-description="版權聲明">© 2024 余明道 企業教練｜mingdaoyu.com</span>
-      <a href="https://linkedin.com" target="_blank" class="footer-linkedin" data-text="footer-linkedin" data-text-description="LinkedIn連結">LinkedIn →</a>
-    </div>
-  </div>
-</footer>
+<div id="shared-footer"></div>
 
 <script>
   // Scroll reveal
@@ -1058,5 +1002,6 @@
     });
   });
 </script>
+<script src="_shared.js"></script>
 
 </body></html>
