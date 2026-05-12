@@ -658,18 +658,32 @@
     }
     @media (max-width: 700px) {
       :root { --side-pad: 20px; --section-gap: 64px; }
-      .nav-links { display: none; }
-      .hero-numbers { flex-direction: column; gap: 20px; padding: 24px; }
+      /* 1. 手機版保留 CTA */
+      .nav-links { display: flex; }
+      .nav-links li:not(:last-child) { display: none; }
+      .nav-cta { padding: 7px 14px; font-size: 0.78rem !important; }
+      /* 3. Hero padding 優化 */
+      .hero { min-height: auto; padding: 88px var(--side-pad) 56px; }
+      /* 2. Hero 數字區改 2 欄 grid */
+      .hero-numbers { display: grid; grid-template-columns: 1fr 1fr; width: 100%; gap: 20px; padding: 20px; }
+      .hero-num-item { text-align: center; }
+      .hero-num-value { font-size: 2.2rem; }
       .hero-num-divider { display: none; }
       .hero-title { font-size: 2.1rem; }
       .hero-actions { flex-direction: column; align-items: flex-start; }
+      /* 4. Outcomes padding 縮小 */
       .outcomes-grid { grid-template-columns: 1fr; }
-      .outcome-item { border-right: none !important; border-top: 1px solid var(--border); }
+      .outcome-item { border-right: none !important; border-top: 1px solid var(--border); padding: 28px 24px; }
       .outcome-item:first-child { border-top: none; }
+      .outcome-num { font-size: 2.4rem; }
+      /* 5. Cases padding 縮小 */
       .cases-grid { grid-template-columns: 1fr; }
+      .case-card { padding: 28px 22px; }
+      .case-result-highlight { font-size: 1.5rem; }
       .process-steps { grid-template-columns: 1fr; }
       .footer-top { grid-template-columns: 1fr; gap: 32px; }
-      .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+      /* 6. Footer 左對齊 */
+      .footer-bottom { flex-direction: column; gap: 12px; align-items: flex-start; text-align: left; }
       .testimonial-card { padding: 32px 24px; }
     }
   </style>
@@ -1034,20 +1048,30 @@
     heroReveals.forEach(el => el.classList.add('visible'));
   }, 80);
 
-  // Number counter animation
+  // Number counter animation — only update the text node, preserve child spans
   function animateCounter(el) {
-    const text = el.textContent;
-    const match = text.match(/[\d.]+/);
+    // Find the first text node that contains a number
+    let targetNode = null;
+    let fullText = '';
+    for (const node of el.childNodes) {
+      if (node.nodeType === Node.TEXT_NODE && /[\d.]/.test(node.textContent)) {
+        targetNode = node;
+        fullText = node.textContent;
+        break;
+      }
+    }
+    if (!targetNode) return;
+    const match = fullText.match(/[\d.]+/);
     if (!match) return;
     const target = parseFloat(match[0]);
-    const isDecimal = text.includes('.');
+    const isDecimal = fullText.includes('.');
     const duration = 1200;
     const start = performance.now();
     function update(now) {
       const progress = Math.min((now - start) / duration, 1);
       const eased = 1 - Math.pow(1 - progress, 3);
       const current = eased * target;
-      el.textContent = text.replace(/[\d.]+/, isDecimal ? current.toFixed(1) : Math.floor(current));
+      targetNode.textContent = fullText.replace(/[\d.]+/, isDecimal ? current.toFixed(1) : Math.floor(current));
       if (progress < 1) requestAnimationFrame(update);
     }
     requestAnimationFrame(update);
