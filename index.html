@@ -6,6 +6,22 @@
 <title>門面 Facade — 作品範例</title>
 <meta name="description" content="門面為不同專業者製作的網站範例，每個產業各自從商業邏輯出發，整理品牌主張與首頁敘事架構。">
 
+<!-- OG / Social -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://pizwu.github.io/facade-demo/">
+<meta property="og:title" content="門面 Facade — 作品範例集">
+<meta property="og:description" content="攝影師・設計師・顧問・工作室的網站範例集。每個 demo 從服務情境與品牌感覺出發，整理成完整的首頁敘事架構。">
+<meta property="og:image" content="https://pizwu.github.io/facade-demo/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="zh_TW">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="門面 Facade — 作品範例集">
+<meta name="twitter:description" content="攝影師・設計師・顧問・工作室的網站範例集。每個 demo 從服務情境與品牌感覺出發，整理成完整的首頁敘事架構。">
+<meta name="twitter:image" content="https://pizwu.github.io/facade-demo/og-image.png">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Noto+Sans+TC:wght@300;400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
@@ -334,12 +350,198 @@ footer {
   letter-spacing: 0.06em;
 }
 
+/* ── CTA ── */
+.cta-section {
+  padding: 100px 48px 96px;
+  text-align: center;
+  background: var(--charcoal);
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-section::before {
+  content: '門面';
+  font-family: var(--font-serif);
+  font-size: 260px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.03);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
+  pointer-events: none;
+  letter-spacing: -0.02em;
+}
+
+.cta-inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+
+.cta-eyebrow {
+  font-family: var(--font-en);
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--accent-gold);
+  margin-bottom: 24px;
+}
+
+.cta-title {
+  font-family: var(--font-serif);
+  font-size: clamp(34px, 5vw, 60px);
+  font-weight: 300;
+  line-height: 1.2;
+  color: #FAF9F6;
+  margin-bottom: 20px;
+  letter-spacing: -0.01em;
+}
+
+.cta-title em {
+  font-style: italic;
+  color: var(--accent-gold);
+}
+
+.cta-desc {
+  font-size: 15px;
+  font-weight: 300;
+  color: var(--muted-light);
+  margin-bottom: 44px;
+  letter-spacing: 0.02em;
+}
+
+.cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 32px;
+  border: 1px solid rgba(196,169,107,0.5);
+  color: var(--accent-gold);
+  font-family: var(--font-en);
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  transition: background 0.3s, border-color 0.3s, color 0.3s;
+}
+.cta-btn svg {
+  width: 18px;
+  height: 18px;
+}
+.cta-btn:hover {
+  background: var(--accent-gold);
+  border-color: var(--accent-gold);
+  color: var(--charcoal);
+}
+
+/* reveal-cta */
+.reveal-cta {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.reveal-cta.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Intro block ── */
+.intro-section {
+  padding: 0 48px 72px;
+}
+.intro-inner {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 40px 48px;
+  background: var(--cream);
+  border-left: 2px solid var(--sand-dark);
+}
+.intro-text {
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 2;
+  color: var(--muted);
+  letter-spacing: 0.02em;
+}
+
+/* ── Process block ── */
+.process-section {
+  padding: 80px 48px 96px;
+  background: var(--cream);
+}
+.process-inner {
+  max-width: 1120px;
+  margin: 0 auto;
+}
+.process-eyebrow {
+  font-family: var(--font-en);
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--muted-light);
+  margin-bottom: 52px;
+}
+.process-steps {
+  display: flex;
+  align-items: flex-start;
+  gap: 0;
+}
+.process-step {
+  flex: 1;
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+.process-divider {
+  width: 60px;
+  height: 1px;
+  background: var(--sand);
+  margin-top: 14px;
+  flex-shrink: 0;
+}
+.step-num {
+  font-family: var(--font-serif);
+  font-size: 36px;
+  font-weight: 300;
+  color: var(--sand-dark);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  flex-shrink: 0;
+  padding-top: 2px;
+}
+.step-title {
+  font-family: var(--font-serif);
+  font-size: 22px;
+  font-weight: 400;
+  color: var(--charcoal);
+  margin-bottom: 10px;
+  letter-spacing: 0.02em;
+}
+.step-desc {
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--muted);
+  line-height: 1.8;
+}
+
 /* ── Responsive ── */
 @media (max-width: 860px) {
   nav { padding: 0 28px; }
   .hero { padding-left: 28px; padding-right: 28px; }
+  .intro-section { padding: 0 28px 56px; }
+  .intro-inner { padding: 28px 28px; }
   .demos-section { padding: 0 28px 80px; }
   .demos-grid { grid-template-columns: 1fr; gap: 16px; }
+  .process-section { padding: 64px 28px 80px; }
+  .process-steps { flex-direction: column; gap: 36px; }
+  .process-divider { width: 1px; height: 32px; margin: 0 0 0 14px; }
   footer { padding: 32px 28px; flex-direction: column; gap: 12px; text-align: center; }
 }
 
@@ -367,6 +569,15 @@ footer {
     每個產業各自從商業邏輯出發，整理品牌主張、建立首頁敘事架構。<br>
     點擊任一範例，在新分頁中完整瀏覽。
   </p>
+</section>
+
+<!-- Intro block -->
+<section class="intro-section">
+  <div class="intro-inner">
+    <p class="intro-text">
+      這些不是單純的網頁模板。每個 demo 都是從一個服務情境、目標客群與品牌感覺出發，整理成首頁敘事與網站方向。建議點進去實際滑滑看，互動和段落節奏會比截圖更清楚。
+    </p>
+  </div>
 </section>
 
 <!-- Demo Grid -->
@@ -537,6 +748,55 @@ footer {
   </div>
 </section>
 
+<!-- Process block -->
+<section class="process-section">
+  <div class="process-inner">
+    <p class="process-eyebrow">How It Works</p>
+    <div class="process-steps">
+      <div class="process-step">
+        <div class="step-num">01</div>
+        <div class="step-content">
+          <h3 class="step-title">講出想法</h3>
+          <p class="step-desc">把你的服務、客群、特色、想給人的感覺說出來。</p>
+        </div>
+      </div>
+      <div class="process-divider"></div>
+      <div class="process-step">
+        <div class="step-num">02</div>
+        <div class="step-content">
+          <h3 class="step-title">整理方向</h3>
+          <p class="step-desc">用流程和 AI 整理成網站主軸、首頁架構與頁面方向。</p>
+        </div>
+      </div>
+      <div class="process-divider"></div>
+      <div class="process-step">
+        <div class="step-num">03</div>
+        <div class="step-content">
+          <h3 class="step-title">變成網站</h3>
+          <p class="step-desc">產出可以滑、可以看、可以討論，最後能正式上線的網站。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="cta-inner">
+    <p class="cta-eyebrow reveal-cta">Next Step</p>
+    <h2 class="cta-title reveal-cta">建立屬於你的<em>門面</em></h2>
+    <p class="cta-desc reveal-cta">你的專業值得一個真正說得出話的網站。<br>私訊聊聊，從你的故事開始。</p>
+    <a class="cta-btn reveal-cta" href="https://instagram.com/taker.break" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="2" y="2" width="20" height="20" rx="5.5" stroke="currentColor" stroke-width="1.5"/>
+        <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.5"/>
+        <circle cx="17.5" cy="6.5" r="1" fill="currentColor"/>
+      </svg>
+      @taker.break
+    </a>
+  </div>
+</section>
+
 <!-- Footer -->
 <footer>
   <div class="footer-brand">
@@ -563,6 +823,17 @@ const io = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.08 });
 cards.forEach(c => io.observe(c));
+
+const ctaEls = document.querySelectorAll('.reveal-cta');
+const ctaIo = new IntersectionObserver((entries) => {
+  entries.forEach((entry, i) => {
+    if (entry.isIntersecting) {
+      setTimeout(() => entry.target.classList.add('visible'), i * 100);
+      ctaIo.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12 });
+ctaEls.forEach(el => ctaIo.observe(el));
 </script>
 
 </body>
