@@ -27,31 +27,32 @@ const DEVICE = {
 
 // ── helpers ──────────────────────────────────────────────
 
-/** 平滑滾動一段距離 */
-async function smoothScroll(page, distance, duration = 1600) {
-  await page.evaluate(
-    ({ distance, duration }) => {
-      return new Promise((resolve) => {
-        const start = window.scrollY;
-        const target = start + distance;
-        const startTime = performance.now();
-        function step(now) {
-          const elapsed = now - startTime;
-          const progress = Math.min(elapsed / duration, 1);
-          // easeInOutCubic
-          const ease =
-            progress < 0.5
-              ? 4 * progress ** 3
-              : 1 - (-2 * progress + 2) ** 3 / 2;
-          window.scrollTo(0, start + (target - start) * ease);
-          if (progress < 1) requestAnimationFrame(step);
-          else resolve();
-        }
-        requestAnimationFrame(step);
-      });
+/** 用 wheel 事件 + easing 滾到指定元素 */
+async function scrollTo(page, selector, { duration = 1800, offset = -60 } = {}) {
+  const distance = await page.evaluate(
+    ({ selector, offset }) => {
+      const el = document.querySelector(selector);
+      if (!el) return 0;
+      const rect = el.getBoundingClientRect();
+      return rect.top + window.scrollY + offset - window.scrollY;
     },
-    { distance, duration }
+    { selector, offset }
   );
+
+  if (Math.abs(distance) < 5) return;
+
+  const steps = Math.max(Math.round(duration / 16), 30);
+  const stepDelay = duration / steps;
+
+  let prevEase = 0;
+  for (let i = 1; i <= steps; i++) {
+    const t = i / steps;
+    const ease = t < 0.5 ? 4 * t ** 3 : 1 - (-2 * t + 2) ** 3 / 2;
+    const delta = (ease - prevEase) * distance;
+    prevEase = ease;
+    await page.mouse.wheel(0, delta);
+    await wait(stepDelay);
+  }
 }
 
 /** 等待一段時間（讓動畫跑完、讓畫面穩定） */
@@ -94,13 +95,12 @@ async function revealAll(page) {
   await revealAll(page);
   await wait(1000);
 
-  // 慢慢往下滑：Hero → 體驗描述 → 適合妳嗎
-  console.log('  滑動中...');
-  await smoothScroll(page, 600, 2000);   // Hero 下半部
-  await wait(800);
-  await smoothScroll(page, 700, 2500);   // 體驗描述（每一堂課都是只為妳準備的）
-  await wait(1000);
-  await smoothScroll(page, 800, 2500);   // 適合妳嗎
+  console.log('  → 體驗描述');
+  await scrollTo(page, '#experience', { duration: 2200 });
+  await wait(1200);
+
+  console.log('  → 適合妳嗎');
+  await scrollTo(page, '#fit', { duration: 2200 });
   await wait(1200);
 
   // ── 2. 光葉影像 Hikari Photo ──
@@ -110,26 +110,33 @@ async function revealAll(page) {
   await revealAll(page);
   await wait(1000);
 
-  console.log('  滑動中...');
-  await smoothScroll(page, 500, 2000);   // Hero 下方
-  await wait(800);
-  await smoothScroll(page, 700, 2500);   // Gallery 作品集
+  console.log('  → 作品集');
+  await scrollTo(page, '#gallery', { duration: 2200 });
   await wait(1200);
-  await smoothScroll(page, 800, 2500);   // meaning / packages
+
+  console.log('  → 保存的意義');
+  await scrollTo(page, '#meaning', { duration: 2200 });
+  await wait(1000);
+
+  console.log('  → 服務方案');
+  await scrollTo(page, '#packages', { duration: 2200 });
   await wait(1000);
 
   // ── 3. Demo Index ──
   console.log('▶ Demo Index...');
   await page.goto(`${BASE}/`, { waitUntil: 'networkidle' });
-  await wait(1500);
+  await wait(2000);
 
-  // 等卡片動畫
-  await wait(1500);
-
-  console.log('  滑動中...');
-  await smoothScroll(page, 500, 2000);   // 四張卡片
+  console.log('  → 作品卡片');
+  await scrollTo(page, '.demos-section', { duration: 2000 });
   await wait(1200);
-  await smoothScroll(page, 600, 2000);   // 流程 + CTA
+
+  console.log('  → 流程');
+  await scrollTo(page, '.process-section', { duration: 2000 });
+  await wait(1000);
+
+  console.log('  → CTA');
+  await scrollTo(page, '.cta-section', { duration: 2000 });
   await wait(2000);
 
   // ── 結束 ──
