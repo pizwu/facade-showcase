@@ -166,6 +166,10 @@ nav.scrolled { border-color: var(--sand); }
   opacity: 0;
   animation: fadeUp 0.7s ease 0.3s forwards;
 }
+.hero-desc-sub {
+  margin-top: 16px;
+  animation-delay: 0.4s;
+}
 
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(20px); }
@@ -535,6 +539,8 @@ footer {
 @media (max-width: 860px) {
   nav { padding: 0 28px; }
   .hero { padding-left: 28px; padding-right: 28px; }
+  .hero-desc { max-width: 100%; }
+  .hero-desc br { display: none; }
   .intro-section { padding: 0 28px 56px; }
   .intro-inner { padding: 28px 28px; }
   .demos-section { padding: 0 28px 80px; }
@@ -565,10 +571,9 @@ footer {
   <p class="hero-eyebrow">Facade · 門面 · Demo Collection</p>
   <h1 class="hero-title">不同專業，<br>不同的<em>門面</em></h1>
   <p class="hero-desc">
-    下面的 demo 都是從不同的 <b>服務情境</b>、<b>目標客群</b> 與 <b>品牌感覺</b> 出發 <br>
-    整理成各自的敘事與網站方向，不是單純的網頁模板
-  </p><br>
-  <p class="hero-desc">
+    下面的 demo 都是從不同的 <b>服務情境</b>、<b>目標客群</b> 與 <b>品牌感覺</b> 出發，整理成各自的敘事與網站方向，不是單純的網頁模板
+  </p>
+  <p class="hero-desc hero-desc-sub">
     可以點進去實際玩玩看，互動和段落節奏會比截圖更有感覺
   </p>
 </section>
