@@ -92,7 +92,7 @@ async function revealAll(page) {
   console.log('▶ 身研所 Hero...');
   await page.goto(`${BASE}/pilates/index.html`, { waitUntil: 'networkidle' });
   await wait(1500);
-  await revealAll(page);
+  // await revealAll(page);
   await wait(1000);
 
   console.log('  → 體驗描述');
@@ -103,11 +103,15 @@ async function revealAll(page) {
   await scrollTo(page, '#fit', { duration: 2200 });
   await wait(1200);
 
+  console.log('  → 合作流程');
+  await scrollTo(page, '#process', { duration: 2200 });
+  await wait(1200);
+
   // ── 2. 光葉影像 Hikari Photo ──
   console.log('▶ 光葉影像 Hero...');
   await page.goto(`${BASE}/photographer/index.html`, { waitUntil: 'networkidle' });
   await wait(1500);
-  await revealAll(page);
+  // await revealAll(page);
   await wait(1000);
 
   console.log('  → 作品集');
@@ -127,8 +131,12 @@ async function revealAll(page) {
   await page.goto(`${BASE}/`, { waitUntil: 'networkidle' });
   await wait(2000);
 
-  console.log('  → 作品卡片');
+  console.log('  → 作品卡片（前兩張）');
   await scrollTo(page, '.demos-section', { duration: 2000 });
+  await wait(1200);
+
+  console.log('  → 作品卡片（後兩張）');
+  await scrollTo(page, '.demo-card:nth-child(3)', { duration: 2000 });
   await wait(1200);
 
   console.log('  → 流程');
