@@ -2,3 +2,5 @@
 .playwright-mcp/
 *.png
 !og-image.png
+recordings/
+node_modules/
