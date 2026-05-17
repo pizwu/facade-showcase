@@ -93,38 +93,38 @@ async function revealAll(page) {
   await page.goto(`${BASE}/pilates/index.html`, { waitUntil: 'networkidle' });
   await wait(1500);
   // await revealAll(page);
-  await wait(1000);
+  // await wait(1000);
 
   console.log('  → 體驗描述');
   await scrollTo(page, '#experience', { duration: 2200 });
-  await wait(1200);
+  await wait(1500);
 
   console.log('  → 適合妳嗎');
   await scrollTo(page, '#fit', { duration: 2200 });
-  await wait(1200);
+  await wait(1500);
 
   console.log('  → 合作流程');
   await scrollTo(page, '#process', { duration: 2200 });
-  await wait(1200);
+  await wait(1500);
 
   // ── 2. 光葉影像 Hikari Photo ──
   console.log('▶ 光葉影像 Hero...');
   await page.goto(`${BASE}/photographer/index.html`, { waitUntil: 'networkidle' });
   await wait(1500);
   // await revealAll(page);
-  await wait(1000);
+  // await wait(1000);
 
   console.log('  → 作品集');
   await scrollTo(page, '#gallery', { duration: 2200 });
-  await wait(1200);
+  await wait(1500);
 
   console.log('  → 保存的意義');
   await scrollTo(page, '#meaning', { duration: 2200 });
-  await wait(1000);
+  await wait(1500);
 
   console.log('  → 服務方案');
   await scrollTo(page, '#packages', { duration: 2200 });
-  await wait(1000);
+  await wait(1500);
 
   // ── 3. Demo Index ──
   console.log('▶ Demo Index...');
@@ -133,15 +133,15 @@ async function revealAll(page) {
 
   console.log('  → 作品卡片（前兩張）');
   await scrollTo(page, '.demos-section', { duration: 2000 });
-  await wait(1200);
+  await wait(1500);
 
   console.log('  → 作品卡片（後兩張）');
   await scrollTo(page, '.demo-card:nth-child(3)', { duration: 2000 });
-  await wait(1200);
+  await wait(1500);
 
   console.log('  → 流程');
   await scrollTo(page, '.process-section', { duration: 2000 });
-  await wait(1000);
+  await wait(1500);
 
   console.log('  → CTA');
   await scrollTo(page, '.cta-section', { duration: 2000 });
